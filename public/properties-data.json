@@ -4,7 +4,7 @@
     "title": "Downtown Austin Renovation",
     "url": "projects/downtown-austin-renovation.html",
     "description": "Section 8 ready property with veteran priority pricing.",
-    "story_description": "This renovated condo offers the perfect blend of urban convenience and veteran-friendly comfort. With restored hardwood floors and a modern kitchen, it's a fresh start in a vibrant community.",
+    "story_description": "This beautifully renovated condo offers the perfect blend of urban convenience and veteran-friendly comfort. With restored hardwood floors and a modern kitchen, it's a fresh start.",
     "location": "Tyler, TX",
     "price": "$1,200/mo",
     "bedrooms": "2",
@@ -26,12 +26,12 @@
   },
   {
     "id": "2",
-    "title": "Historic Jefferson Cottage",
-    "url": "projects/jefferson-riverfront.html",
+    "title": "South Congress Lofts",
+    "url": "projects/south-congress-lofts.html",
     "description": "Historic building conversion with modern amenities.",
-    "story_description": "Transformed from a historic home into comfortable living, this property understands that veterans need spaces that respect history while providing modern comforts.",
-    "location": "Jefferson, TX",
-    "price": "$1,100/mo",
+    "story_description": "Transformed from a historic warehouse into luxurious loft living, this property understands that veterans need spaces that respect their history while providing modern comforts.",
+    "location": "South Congress, Austin, TX",
+    "price": "$1,800/mo",
     "bedrooms": "3",
     "bathrooms": "2",
     "sqft": "1,800",
@@ -42,7 +42,7 @@
     ],
     "renovation_standards": [
       "HVAC System: Central Air",
-      "Electrical: Full renovation"
+      "Roof: Maintained historic exterior"
     ],
     "trust_badges": [
       "Pet-Friendly",
@@ -51,27 +51,27 @@
   },
   {
     "id": "3",
-    "title": "Longview Garden Home",
-    "url": "projects/longview-victorian.html",
-    "description": "Peaceful garden apartment near medical district.",
-    "story_description": "Nestled in a quiet neighborhood, this home provides veterans with a serene sanctuary to heal and rebuild. Lush green spaces create a therapeutic environment.",
-    "location": "Longview, TX",
+    "title": "Riverside Gardens",
+    "url": "projects/riverside-gardens.html",
+    "description": "Waterfront garden apartment near Lady Bird Lake.",
+    "story_description": "Nestled by the peaceful waters of Lady Bird Lake, Riverside Gardens provides veterans with a serene sanctuary to heal and rebuild. Lush green spaces create a therapeutic environment.",
+    "location": "Near Lady Bird Lake, Austin, TX",
     "price": "$950/mo",
     "bedrooms": "1",
     "bathrooms": "1",
     "sqft": "850",
     "type": "project",
-    "tags": ["Section 8 Ready", "Garden Views", "Laundry Facility"],
+    "tags": ["Section 8 Ready", "Waterfront", "Garden Views"],
     "images": [
       "public/images/properties/before-after/patio_wood.jpg"
     ],
     "renovation_standards": [
       "HVAC System: Energy-efficient",
-      "Plumbing: Modern fixtures"
+      "Plumbing: Copper piping"
     ],
     "trust_badges": [
       "Section 8 Voucher",
-      "Community Garden"
+      "Waterfront Location"
     ]
   }
 ]

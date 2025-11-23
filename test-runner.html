@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>P4C Enterprise Validation Runner</title>
+</head>
+<body>
+    <h1>P4C Enterprise Validation Test Runner</h1>
+    <p>Running comprehensive validation of the Properties 4 Creation platform...</p>
+    <div id="results"></div>
+
+    <script src="validation-test.js"></script>
+    <script>
+        // Run full test suite when page loads
+        document.addEventListener('DOMContentLoaded', async function() {
+            console.log('🚀 Starting P4C Comprehensive Validation...');
+            const results = await P4CValidation.runFullSuite();
+            document.getElementById('results').innerHTML = `
+                <h2>Test Results</h2>
+                <p><strong>✅ Passed:</strong> ${results.passed}</p>
+                <p><strong>❌ Failed:</strong> ${results.failed}</p>
+                <p><strong>⚠️ Warnings:</strong> ${results.warnings}</p>
+                <p><strong>Total Tests:</strong> ${results.tests.length}</p>
+                <p><strong>Pass Rate:</strong> ${((results.passed / results.tests.length) * 100).toFixed(1)}%</p>
+            `;
+        });
+    </script>
+</body>
+</html>

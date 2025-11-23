@@ -11,9 +11,22 @@
         tailwind.config = {
             theme: {
                 extend: {
-                    colors: { brand: { navy: '#0B1120', wood: '#C28E5A', beige: '#F5F5F0', slate: '#64748b' } },
-                    fontFamily: { heading: ['Merriweather', 'serif'], body: ['Inter', 'sans-serif'] },
-                    boxShadow: { 'wood': '0 10px 25px -5px rgba(194, 142, 90, 0.4)' }
+                    colors: {
+                        brand: {
+                            navy: '#0B1120',
+                            wood: '#C28E5A',
+                            beige: '#F5F5F0',
+                            slate: '#64748b'
+                        }
+                    },
+                    fontFamily: {
+                        heading: ['Merriweather', 'serif'],
+                        body: ['Inter', 'sans-serif']
+                    },
+                    boxShadow: {
+                        'medium': '0 10px 25px rgba(11, 17, 32, 0.15)',
+                        'wood': '0 10px 25px rgba(194, 142, 90, 0.15)'
+                    }
                 }
             }
         }
@@ -23,13 +36,13 @@
     <div id="header-container"></div>
 
     <main class="pt-16">
-        <section class="bg-gradient-to-br from-brand-navy to-brand-tan text-white py-20">
+        <section class="bg-surface-primary text-inverse py-20" style="background: linear-gradient(135deg, var(--color-primary-navy), var(--color-primary-navy-light));">
             <div class="max-w-6xl mx-auto px-4 text-center">
                 <h1 class="text-4xl md:text-6xl font-heading font-bold mb-6">
                     Our Mission
                     <span class="block text-brand-wood">Serving Veterans</span>
                 </h1>
-                <p class="text-lg md:text-xl text-slate-200 mb-8 max-w-3xl mx-auto">
+                <p class="text-lg md:text-xl text-tertiary mb-8 max-w-3xl mx-auto">
                     We're dedicated to transforming the housing experience for veterans through transparency, fair pricing, and unparalleled renovation quality.
                 </p>
             </div>
@@ -44,29 +57,29 @@
                 </div>
 
                 <div class="grid grid-cols-1 md:grid-cols-3 gap-8 lg:gap-12">
-                    <div class="bg-white p-8 rounded-2xl shadow-sm border-b-4 border-brand-wood relative group hover:-translate-y-2 transition-transform">
+                    <div class="bg-white p-8 rounded-2xl depth-medium border-b-4 border-brand-wood relative group hover:-translate-y-2 transition-transform">
                         <div class="absolute -top-6 left-1/2 -translate-x-1/2 w-12 h-12 bg-brand-navy text-white rounded-full flex items-center justify-center font-bold text-xl border-4 border-brand-beige">1</div>
                         <div class="mt-6 text-center">
                             <h3 class="text-xl font-bold text-brand-navy mb-3">Ethical Acquisition</h3>
-                            <p class="text-slate-600 text-sm leading-relaxed">
+                            <p class="text-secondary text-sm leading-relaxed">
                                 We buy properties from local sellers who want a fair price without the hassle. This provides the raw canvas for our mission.
                             </p>
                         </div>
                     </div>
-                    <div class="bg-white p-8 rounded-2xl shadow-sm border-b-4 border-green-500 relative group hover:-translate-y-2 transition-transform">
-                        <div class="absolute -top-6 left-1/2 -translate-x-1/2 w-12 h-12 bg-green-500 text-white rounded-full flex items-center justify-center font-bold text-xl border-4 border-brand-beige">2</div>
+                    <div class="bg-white p-8 rounded-2xl shadow-medium border-b-4 text-success relative group hover:-translate-y-2 transition-transform" style="border-bottom-color: var(--color-success);">
+                        <div class="absolute -top-6 left-1/2 -translate-x-1/2 w-12 h-12 text-white rounded-full flex items-center justify-center font-bold text-xl border-4 border-brand-beige" style="background-color: var(--color-success);">2</div>
                         <div class="mt-6 text-center">
                             <h3 class="text-xl font-bold text-brand-navy mb-3">Purpose-Driven Reno</h3>
-                            <p class="text-slate-600 text-sm leading-relaxed">
+                            <p class="text-secondary text-sm leading-relaxed">
                                 Our teams renovate specifically for safety and accessibility. We add ramps, modernize HVAC, and certify everything for HUD compliance.
                             </p>
                         </div>
                     </div>
-                    <div class="bg-white p-8 rounded-2xl shadow-sm border-b-4 border-brand-navy relative group hover:-translate-y-2 transition-transform">
+                    <div class="bg-white p-8 rounded-2xl shadow-medium border-b-4 border-brand-navy relative group hover:-translate-y-2 transition-transform">
                         <div class="absolute -top-6 left-1/2 -translate-x-1/2 w-12 h-12 bg-brand-wood text-white rounded-full flex items-center justify-center font-bold text-xl border-4 border-brand-beige">3</div>
                         <div class="mt-6 text-center">
                             <h3 class="text-xl font-bold text-brand-navy mb-3">Veteran Sanctuary</h3>
-                            <p class="text-slate-600 text-sm leading-relaxed">
+                            <p class="text-secondary text-sm leading-relaxed">
                                 The home is placed into our network, offering a dignified, affordable living space for a veteran family to rebuild their future.
                             </p>
                         </div>
@@ -78,7 +91,7 @@
         <section class="py-16 bg-white">
             <div class="max-w-6xl mx-auto px-4 text-center">
                 <h2 class="text-3xl font-bold text-brand-navy mb-4">Veteran-Led Leadership</h2>
-                <p class="text-slate-600">Founded by veterans, for veterans.</p>
+                <p class="text-secondary">Founded by veterans, for veterans.</p>
             </div>
         </section>
     </main>
