@@ -2,10 +2,10 @@
 /* Load this with low priority and defer for optimal performance */
 
 /* ===========================
-   BASIC ANIMATIONS
+   ESSENTIAL ANIMATIONS ONLY
    =========================== */
 
-/* Fade In Up Animation */
+/* Hero headline animations */
 @keyframes fadeInUp {
     from {
         opacity: 0;
@@ -20,7 +20,7 @@
     animation: fadeInUp var(--duration-normal) ease-out forwards;
 }
 
-/* Fade In Left Animation */
+/* Card entrance animations */
 @keyframes fadeInLeft {
     from {
         opacity: 0;
@@ -35,7 +35,6 @@
     animation: fadeInLeft var(--duration-normal) ease-out forwards;
 }
 
-/* Fade In Right Animation */
 @keyframes fadeInRight {
     from {
         opacity: 0;
@@ -50,37 +49,7 @@
     animation: fadeInRight var(--duration-normal) ease-out forwards;
 }
 
-/* Scale In Animation */
-@keyframes scaleIn {
-    from {
-        opacity: 0;
-        transform: scale(0.95);
-    }
-    to {
-        opacity: 1;
-        transform: scale(1);
-    }
-}
-.animate-scale-in {
-    animation: scaleIn var(--duration-normal) ease-out forwards;
-}
-
-/* Slide In Up Animation */
-@keyframes slideInUp {
-    from {
-        opacity: 0;
-        transform: translateY(60px);
-    }
-    to {
-        opacity: 1;
-        transform: translateY(0);
-    }
-}
-.animate-slide-in-up {
-    animation: slideInUp var(--duration-slow) ease-out forwards;
-}
-
-/* Float Animation (subtle continuous) */
+/* Image hover animations (disabled for reduced motion) */
 @keyframes float {
     0%, 100% {
         transform: translateY(0px);
@@ -89,21 +58,14 @@
         transform: translateY(-10px);
     }
 }
-.animate-float {
-    animation: float 3s ease-in-out infinite;
-}
+/* Moved to static-enhanced.css for performance */
 
-/* Pulse Soft Animation */
-@keyframes pulseSoft {
-    0%, 100% {
-        opacity: 1;
-    }
-    50% {
-        opacity: 0.7;
-    }
+@keyframes bounce {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(-10px); }
 }
-.animate-pulse-soft {
-    animation: pulseSoft 2s ease-in-out infinite;
+.animate-bounce {
+    animation: bounce 1s infinite;
 }
 
 /* Shimmer/Glow Animation */

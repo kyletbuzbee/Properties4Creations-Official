@@ -646,15 +646,37 @@ select {
  * ============================================================================ */
 
 .logo-style {
-  @apply w-12 h-12 rounded-lg overflow-hidden ring-2 ring-brand-wood ring-offset-2 ring-offset-brand-navy shadow-lg transform transition-all duration-300;
-}
-
-.logo-style img {
-  @apply w-full h-full object-cover bg-white;
+  width: 3rem; /* Tailwind w-12 */
+  height: 3rem; /* Tailwind h-12 */
+  border-radius: 0.75rem; /* Tailwind rounded-lg */
+  overflow: hidden;
+  box-shadow: 0 10px 15px rgba(0, 0, 0, 0.1); /* Tailwind shadow-lg */
+  transition: transform 0.3s ease;
+  border: 2px solid #C28E5A; /* brand-wood */
+  box-sizing: border-box;
 }
 
 .logo-style:hover {
-  @apply scale-110;
+  transform: scale(1.1);
+}
+
+.logo-style img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  background-color: #ffffff;
+}
+
+/* ============================================================================
+ * PAGE TITLE BANNERS
+ * ============================================================================ */
+
+.page-title-banner {
+  min-height: 400px;
+}
+
+.page-title-banner h1 {
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.8);
 }
 
 /* ============================================================================
