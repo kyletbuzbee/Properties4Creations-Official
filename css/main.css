@@ -344,19 +344,19 @@ textarea:focus,
 
 /* Desktop navigation active state */
 nav a.active {
-    border-bottom: 3px solid var(--color-accent-gold);
-    font-weight: 600;
-    background: rgba(194, 142, 90, 0.1);
-    color: var(--color-primary-navy) !important;
+  background-color: rgba(194, 142, 90, 0.2);
+  color: var(--color-accent-gold);
+  border-bottom: 3px solid var(--color-accent-gold);
+  font-weight: 600;
 }
 
 nav a.active:hover {
-    background: rgba(194, 142, 90, 0.15);
+    background: rgba(194, 142, 90, 0.25);
 }
 
 /* Mobile menu navigation active state */
 #mobile-menu a.active {
-    background: rgba(194, 142, 90, 0.1) !important;
+    background: rgba(194, 142, 90, 0.2) !important;
     border-left: 4px solid var(--color-accent-gold) !important;
     font-weight: 600;
     color: var(--color-accent-gold) !important;
@@ -364,70 +364,5 @@ nav a.active:hover {
 }
 
 #mobile-menu a.active:hover {
-    background: rgba(194, 142, 90, 0.15) !important;
-}
-
-/* ===========================
-   Page Title Background System
-   =========================== */
-.page-title-banner {
-    background: linear-gradient(to right, #1e3c72, #2a5298);
-    color: white;
-    padding: 3rem 2rem;
-    text-align: center;
-    font-size: 2.5rem;
-    font-weight: 700;
-    position: relative;
-    border-bottom: 4px solid var(--color-accent-gold);
-    margin: 0;
-}
-
-.page-title-banner h1 {
-    position: relative;
-    z-index: 1;
-    text-shadow: 1px 1px 3px rgba(0,0,0,0.6);
-    margin: 0;
-    color: white;
-}
-
-.page-title-banner.hero {
-    background-image: url('public/images/hero/front_porch_hero.webp');
-    background-size: cover;
-    background-position: center;
-    background-attachment: fixed;
-    min-height: 400px;
-}
-
-.page-title-banner.hero::before {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    background: rgba(0,0,0,0.4);
-    z-index: 0;
-}
-
-.page-title-banner.hero .banner-content {
-    position: relative;
-    z-index: 1;
-}
-
-.page-title-banner.hero h1 {
-    position: relative;
-    z-index: 1;
-    color: white;
-    font-size: 3rem;
-    text-shadow: 2px 2px 4px rgba(0,0,0,0.8);
-}
-
-/* Dark variant for light text overlays */
-.page-title-banner.dark {
-    background: linear-gradient(to right, #0f172a, #1e293b);
-    border-bottom-color: #f59e0b;
-}
-
-.page-title-banner.dark h1 {
-    text-shadow: 2px 2px 4px rgba(0,0,0,0.8);
+    background: rgba(194, 142, 90, 0.25) !important;
 }

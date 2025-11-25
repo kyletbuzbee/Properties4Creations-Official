@@ -249,65 +249,22 @@
     <!-- Accessibility: Skip to main content -->
     <a href="#main" class="skip-to-content">Skip to main content</a>
     <div id="header-container"></div>
+    <div id="page-banner-container"></div>
 
     <!-- Main Content -->
     <main>
-<section class="hero-split">
-    <!-- Emotional Copy - Left Side -->
-    <div class="hero-content p-5 md:p-16 lg:p-24">
-        <div class="max-w-xl">
-            <div class="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-brand-wood/10 border border-brand-wood/20 mb-8">
-                <span class="w-2 h-2 rounded-full bg-brand-wood animate-pulse"></span>
-                <span class="text-brand-wood text-xs font-bold tracking-widest uppercase">HUD-VASH & Section 8 Approved</span>
-            </div>
-
-            <h1 class="text-3xl md:text-5xl lg:text-6xl font-heading font-bold mb-6 leading-tight text-brand-navy">
-                East Texas Homes Built for
-                <span class="text-brand-wood block mt-2">Affordable Homes for Families & Veterans</span>
-            </h1>
-
-            <p class="text-lg md:text-xl text-slate-600 mb-8 font-light leading-relaxed">
-                We create safe, high-quality homes for families and veterans using vouchers — with transparency, trust, and local pride. Our veteran-owned approach delivers premium renovations that honor those who served.
-            </p>
-
-            <div class="flex flex-col sm:flex-row gap-4 items-start">
-                <a href="get-started.html" class="wood-gradient-button px-8 py-4 rounded-xl flex items-center justify-center gap-2 shadow-wood hover:shadow-xl transition-all text-white">
-                    <span>Get Started</span>
-                    <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4"/>
-                    </svg>
-                </a>
-
-                <a href="contact.html" class="px-8 py-4 border-2 border-brand-navy text-brand-navy rounded-xl font-semibold hover:bg-brand-navy hover:text-white transition-all flex items-center justify-center gap-2">
-                    <span>Connect With Us</span>
-                </a>
-            </div>
-
-            <div class="mt-8 flex items-center gap-4 text-sm text-slate-500">
-                <div class="flex items-center gap-1">
-                    <svg class="w-4 h-4 text-green-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/>
-                    </svg>
-                    <span>Veteran-Owned & Operated</span>
-                </div>
-                <div class="flex items-center gap-1">
-                    <svg class="w-4 h-4 text-green-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"/>
-                    </svg>
-                    <span>Section 8 Certified</span>
-                </div>
-            </div>
-        </div>
-    </div>
-
-    <!-- Family Image - Right Side -->
-    <div class="hero-image">
-        <img src="public/images/hero/front_porch_hero.webp"
-             alt="Beautiful renovated porch and outdoor family space"
-             loading="lazy"
-             class="rounded-xl shadow-xl">
-    </div>
-</section>
+    <script type="application/json" id="page-banner-config">
+    {
+      "variant": "hero",
+      "title": "East Texas Homes Built for Affordable Homes for Families & Veterans",
+      "subtitle": "We create safe, high-quality homes for families and veterans using vouchers — with transparency, trust, and local pride. Our veteran-owned approach delivers premium renovations that honor those who served.",
+      "background": "public/images/hero/front_porch_hero.webp",
+      "eyebrow": "HUD-VASH & Section 8 Approved",
+      "showVoucherBadge": true,
+      "ctaText": "Browse Affordable Homes for Families & Veterans",
+      "ctaHref": "get-started.html"
+    }
+    </script>
 
 <section class="py-16 bg-white border-b border-brand-wood/10 relative overflow-hidden">
     <div class="max-w-6xl mx-auto px-4 relative z-10">
@@ -417,10 +374,12 @@
     
     <!-- Component Loader - Dynamically loads header and footer -->
     <script src="components/component-loader.js"></script>
-    
+
+    <!-- Banner Loader - Dynamically loads page banners -->
+    <script src="js/banner-loader.js" defer></script>
+
     <!-- Accessibility Enhancements - Keyboard navigation and focus management -->
     <script src="accessibility-enhanced.js"></script>
 
 </body>
 </html>
-
