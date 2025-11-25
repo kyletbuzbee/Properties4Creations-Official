@@ -152,29 +152,23 @@
     <!-- Accessibility: Skip to main content -->
     <a href="#main" class="skip-to-content">Skip to main content</a>
     <div id="header-container"></div>
+<div id="page-banner-container"></div>
+
 
     <!-- Main Content -->
-    <main class="pt-2">
-        <!-- Page Title Banner -->
-        <section class="page-title-banner">
-            <div class="max-w-6xl mx-auto px-4">
-                <h1>Our Mission <span class="block text-brand-wood">Affordable Homes for Families & Veterans</span></h1>
-                <div class="mt-6 max-w-3xl mx-auto">
-                    <p class="text-lg md:text-xl text-slate-200 leading-relaxed">
-                        When you sell with P4C, you're not just getting a fair offer—you're creating sanctuary for veterans and building community that matters.
-                    </p>
-                    <div class="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-white/10 backdrop-blur-md border border-white/20 mt-6">
-                        <span class="w-3 h-3 rounded-full bg-green-500 animate-pulse"></span>
-                        <span class="text-green-100 font-semibold text-sm">No Realtor Fees • Fair Cash Offers • Veteran Impact</span>
-                    </div>
-                    <div class="flex justify-center mt-6">
-                        <a href="#impact-form" class="px-8 py-4 bg-white text-brand-navy rounded-xl font-bold text-lg shadow-wood hover:shadow-xl transition-all transform hover:scale-105">
-                            Start Your Impact Journey →
-                        </a>
-                    </div>
-                </div>
-            </div>
-        </section>
+    <main class="pt-16">
+<script type="application/json" id="page-banner-config">
+{
+  "variant": "hero",
+  "title": "Turn Your Property into Purpose",
+  "subtitle": "Sell your home for fair market value and create sanctuary for veterans and families. No fees, complete renovation, sustainable community impact.",
+  "background": "public/images/banners/hero-get-started-banner.webp",
+  "eyebrow": "Fair Cash • No Fees • Veteran Impact",
+  "showVoucherBadge": true,
+  "ctaText": "Get Your Cash Offer",
+  "ctaHref": "#impact-form"
+}
+</script>
 
         <!-- Story Flow Section -->
         <section class="py-20 bg-white">
@@ -488,5 +482,6 @@
 
         });
     </script>
-</body>
 
+<script src="js/banner-loader.js" defer></script>
+</body>

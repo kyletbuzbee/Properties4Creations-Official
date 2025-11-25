@@ -38,20 +38,23 @@
     <!-- Accessibility: Skip to main content -->
     <a href="#main" class="skip-to-content">Skip to main content</a>
     <div id="header-container"></div>
+    <div id="page-banner-container"></div>
 
-    <main class="pt-2">
-        <section class="page-title-banner hero">
-            <div class="banner-content">
-                <div class="max-w-6xl mx-auto px-4 text-center">
-                    <h1 class="text-4xl md:text-5xl font-heading font-bold text-white drop-shadow-lg">
-                        Affordable Homes for Families & Veterans in East Texas
-                    </h1>
-                    <p class="text-lg text-slate-200 leading-relaxed mt-6 max-w-3xl mx-auto">
-                        We're dedicated to transforming the housing experience for East Texas veterans through transparency, fair pricing, and unparalleled renovation quality. Veteran-owned, veteran-focused.
-                    </p>
-                </div>
-            </div>
-        </section>
+    <main>
+<script type="application/json" id="page-banner-config">
+{
+  "variant": "hero",
+  "title": "Our Mission: Homes for Heroes",
+  "subtitle": "From service to stability, we honor veterans with premium renovations and fair pricing. Every home tells the story of those who served.",
+  "background": "public/images/hero/front_porch_hero.webp",
+  "eyebrow": "Veteran Founded, Veteran Focused",
+  "showVoucherBadge": true,
+  "ctaText": "See Our Impact",
+  "ctaHref": "impact.html"
+}
+</script>
+
+
 
         <section class="py-20 bg-brand-beige relative overflow-hidden">
             <div class="absolute top-1/2 left-0 w-full h-24 bg-brand-wood/5 -translate-y-1/2 skew-y-3"></div>
@@ -103,5 +106,7 @@
 
     <div id="footer-container"></div>
     <script src="components/component-loader.js"></script>
+
+<script src="js/banner-loader.js" defer></script>
 </body>
 </html>

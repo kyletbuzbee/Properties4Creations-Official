@@ -147,9 +147,24 @@
 <body class="bg-brand-beige">
     <!-- Header Container -->
     <div id="header-container"></div>
+<div id="page-banner-container"></div>
+
 
     <!-- Main Content -->
     <main class="pt-2">
+<script type="application/json" id="page-banner-config">
+{
+  "variant": "hero",
+  "title": "Affordable Homes for Families & Veterans in East Texas",
+  "subtitle": "We create safe, high-quality homes for families and veterans using vouchers — with transparency, trust, and local pride.",
+  "background": "public/images/hero/front_porch_hero.webp",
+  "eyebrow": "HUD-VASH & Section 8 Approved",
+  "showVoucherBadge": true,
+  "ctaText": "Browse Affordable Homes for Families & Veterans",
+  "ctaHref": "get-started.html"
+}
+</script>
+
 
         <!-- Virtual Tour Hero -->
         <section class="bg-slate-900 text-white py-8">
@@ -546,6 +561,9 @@
             }
         });
     </script>
+
+<script src="js/banner-loader.js" defer></script>
 </body>
 </html>
+
 

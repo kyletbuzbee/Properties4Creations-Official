@@ -147,21 +147,23 @@
 <body class="bg-brand-beige">
     <!-- Header -->
     <div id="header-container"></div>
+<div id="page-banner-container"></div>
 
-    <!-- Main Content -->
-    <main class="pt-2">
-        <section class="page-title-banner hero">
-            <div class="banner-content">
-                <div class="max-w-6xl mx-auto px-4 text-center">
-                    <h1 class="text-4xl md:text-5xl font-heading font-bold text-white drop-shadow-lg">
-                        Our Process <span class="block text-brand-wood">Affordable Homes for Families & Veterans</span>
-                    </h1>
-                    <p class="text-lg text-slate-200 leading-relaxed mt-6 max-w-3xl mx-auto">
-                        Every property we renovate meets rigorous East Texas standards designed specifically for veterans and families. Complete transparency ensures you can trust every detail of your new home.
-                    </p>
-                </div>
-            </div>
-        </section>
+
+        <!-- Main Content -->
+    <main class="pt-16">
+<script type="application/json" id="page-banner-config">
+{
+  "variant": "hero",
+  "title": "Our Renovation Standards",
+  "subtitle": "Complete transparency in every renovation — from copper plumbing to modern electrical systems. We certify every upgrade and stand behind our work.",
+  "background": "public/images/banners/hero-transparency-banner.png",
+  "eyebrow": "Certified Renovations",
+  "showVoucherBadge": false,
+  "ctaText": "View Our Properties",
+  "ctaHref": "projects.html"
+}
+</script>
 
         <!-- Renovation Standards Checklist -->
         <section class="py-16 bg-white">
@@ -480,6 +482,7 @@
             });
         });
     </script>
+
+<script src="js/banner-loader.js" defer></script>
 </body>
 </html>
-

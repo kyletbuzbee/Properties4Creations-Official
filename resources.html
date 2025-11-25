@@ -39,20 +39,22 @@
     <a href="#main" class="skip-to-content">Skip to main content</a>
 
     <div id="header-container"></div>
+<div id="page-banner-container"></div>
 
-    <main id="main" class="pt-2">
-        <section class="page-title-banner hero">
-            <div class="banner-content">
-                <div class="max-w-6xl mx-auto px-4 text-center">
-                    <h1 class="text-4xl md:text-5xl font-heading font-bold text-white drop-shadow-lg">
-                        Housing Support <span class="block text-brand-wood">Guide for Veterans & Families</span>
-                    </h1>
-                    <p class="text-lg text-slate-200 leading-relaxed mt-6 max-w-3xl mx-auto">
-                        Your comprehensive resource for housing assistance programs, veteran benefits, and fair housing support in East Texas. Navigate the system with confidence.
-                    </p>
-                </div>
-            </div>
-        </section>
+
+    <main id="main" class="pt-16">
+<script type="application/json" id="page-banner-config">
+{
+  "variant": "hero",
+  "title": "Housing Support Resources",
+  "subtitle": "Complete guide to veteran housing programs, Section 8 vouchers, and East Texas housing assistance. Navigate the system with confidence.",
+  "background": "public/images/banners/hero-resources-banner.png",
+  "eyebrow": "Housing Assistance Guide",
+  "showVoucherBadge": false,
+  "ctaText": "Get Started",
+  "ctaHref": "get-started.html"
+}
+</script>
 
         <!-- Veteran Benefits Section -->
         <section class="py-20 bg-white">
@@ -352,5 +354,7 @@
 
     <script src="components/component-loader.js"></script>
     <script src="accessibility-enhanced.js"></script>
+
+<script src="js/banner-loader.js" defer></script>
 </body>
 </html>
