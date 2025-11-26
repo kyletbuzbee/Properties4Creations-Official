@@ -20,21 +20,21 @@
                 extend: {
                     colors: {
                         brand: {
-                            navy: '#0B1120',
-                            wood: '#C28E5A',
-                            walnut: '#8B5E3C',
-                            beige: '#F5F5F0',
-                            surface: '#FFFFFF',
-                            slate: '#64748b'
+                            navy: 'var(--color-primary-navy)',
+                            wood: 'var(--color-accent-gold)',
+                            walnut: 'var(--color-secondary-walnut)',
+                            beige: 'var(--color-neutral-beige)',
+                            surface: 'var(--color-neutral-white)',
+                            slate: 'var(--color-neutral-slate-500)'
                         }
                     },
                     fontFamily: {
-                        heading: ['Merriweather', 'serif'],
-                        body: ['Inter', 'sans-serif']
+                        heading: ['Merriweather','serif'],
+                        body: ['Inter','sans-serif']
                     },
                     boxShadow: {
-                        'wood': '0 10px 25px -5px rgba(194, 142, 90, 0.4)',
-                        'navy': '0 10px 30px -10px rgba(11, 17, 32, 0.6)',
+                        wood: 'var(--shadow-wood)',
+                        navy: 'var(--shadow-medium)'
                     }
                 }
             }
@@ -78,7 +78,10 @@
                 <div class="flex flex-col lg:flex-row items-center gap-12 mb-20">
                     <div class="lg:w-1/2 relative">
                         <div class="absolute -top-4 -left-4 w-24 h-24 bg-brand-beige rounded-full z-0"></div>
-                        <img src="public/images/properties/before-after/patio_wood.jpg" class="relative z-10 rounded-2xl shadow-xl w-full" alt="Reynolds Family Home" loading="lazy">
+                        <picture class="relative z-10 rounded-2xl shadow-xl w-full">
+                            <source srcset="public/images/properties/before-after/patio_wood.webp" type="image/webp">
+                            <img src="public/images/properties/before-after/patio_wood.jpg" class="relative z-10 rounded-2xl shadow-xl w-full" alt="Reynolds Family Home before-and-after renovation" loading="lazy" decoding="async">
+                        </picture>
                         <div class="absolute bottom-8 right-8 bg-white p-4 rounded-lg shadow-lg max-w-xs z-20 border-l-4 border-brand-wood">
                             <p class="text-sm italic text-slate-600">"We applied on Monday and had keys by Friday. P4C handled all the VA paperwork."</p>
                         </div>
@@ -148,8 +151,11 @@
                     <!-- Story Card 1 -->
                     <div class="bg-white p-8 rounded-2xl shadow-wood border border-brand-beige">
                         <div class="flex items-start gap-4">
-                    <img src="public/images/avatars/team/team-placeholder.png"
-                         alt="Family photo" class="w-16 h-16 rounded-full object-cover" onerror="this.src='public/images/icons/021-family.png'" loading="lazy">
+                            <picture class="w-16 h-16 rounded-full">
+                                <source srcset="public/images/avatars/team/team-placeholder.webp" type="image/webp">
+                                <img src="public/images/avatars/team/team-placeholder.png"
+                                     alt="Martinez family photo" class="w-16 h-16 rounded-full object-cover" onerror="this.src='public/images/icons/021-family.png'" loading="lazy" decoding="async">
+                            </picture>
                             <div>
                                 <h3 class="text-xl font-bold text-brand-navy mb-2">The Martinez Family</h3>
                                 <div class="flex items-center gap-2 mb-3">
@@ -170,7 +176,7 @@
                     <div class="bg-white p-8 rounded-2xl shadow-wood border border-brand-beige">
                         <div class="flex items-start gap-4">
                             <img src="public/images/icons/034-soldier.png"
-                                 alt="Staff Sgt. Thompson veteran photo" class="w-16 h-16 rounded-full object-cover" loading="lazy">
+                                 alt="Staff Sgt. Thompson veteran photo" class="w-16 h-16 rounded-full object-cover" loading="lazy" decoding="async">
                             <div>
                                 <h3 class="text-xl font-bold text-brand-navy mb-2">Staff Sgt. Thompson</h3>
                                 <div class="flex items-center gap-2 mb-3">
@@ -191,7 +197,7 @@
                     <div class="bg-white p-8 rounded-2xl shadow-wood border border-brand-beige">
                         <div class="flex items-start gap-4">
                             <img src="public/images/icons/022-family-1.png"
-                                 alt="Garcia seniors family photo" class="w-16 h-16 rounded-full object-cover" loading="lazy">
+                                 alt="Garcia seniors family photo" class="w-16 h-16 rounded-full object-cover" loading="lazy" decoding="async">
                             <div>
                                 <h3 class="text-xl font-bold text-brand-navy mb-2">The Garcia Seniors</h3>
                                 <div class="flex items-center gap-2 mb-3">

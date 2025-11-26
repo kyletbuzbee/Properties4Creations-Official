@@ -1,4 +1,48 @@
 <!-- Reusable Footer Component - Loaded dynamically via JavaScript -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Footer Template | Properties 4 Creation</title>
+    <link rel="stylesheet" href="../css/design-tokens.css">
+    <link rel="stylesheet" href="../css/components.css">
+    <link rel="stylesheet" href="../css/main.css">
+    <meta name="description" content="Affordable housing solutions for families and veterans in East Texas. Transparent pricing, premium renovations, and community impact.">
+    <link rel="canonical" href="https://properties4creations.com/footer.html">
+
+    <link href="https://fonts.googleapis.com/css2?family=Merriweather:wght@400;700&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        brand: {
+                            navy: 'var(--color-primary-navy)',
+                            wood: 'var(--color-accent-gold)',
+                            walnut: 'var(--color-secondary-walnut)',
+                            beige: 'var(--color-neutral-beige)',
+                            surface: 'var(--color-neutral-white)',
+                            slate: 'var(--color-neutral-slate-500)'
+                        }
+                    },
+                    fontFamily: {
+                        heading: ['Merriweather','serif'],
+                        body: ['Inter','sans-serif']
+                    },
+                    boxShadow: {
+                        wood: 'var(--shadow-wood)',
+                        navy: 'var(--shadow-medium)'
+                    }
+                }
+            }
+        }
+    </script>
+</head>
+<body class="bg-brand-beige">
+    <a href="#main" class="skip-to-content">Skip to main content</a>
+
 <footer class="bg-brand-navy text-white border-t border-white/5">
     <div class="max-w-7xl mx-auto px-4 py-16">
         <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-12">

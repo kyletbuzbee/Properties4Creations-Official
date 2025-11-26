@@ -88,7 +88,7 @@
       "publisher": {
         "@type": "RealEstateAgent",
         "name": "Properties 4 Creation",
-        "telephone": "(903) 647-0000",
+        "telephone": "(903) 283-1770",
         "address": {
           "@type": "PostalAddress",
           "addressLocality": "Longview",
@@ -99,6 +99,11 @@
     }
     </script>
 
+    <!-- Design System CSS (MUST be first) -->
+    <link rel="stylesheet" href="../css/design-tokens.css">
+    <link rel="stylesheet" href="../css/components.css">
+    <link rel="stylesheet" href="../css/main.css">
+
     <link href="https://fonts.googleapis.com/css2?family=Merriweather:wght@400;700&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     <script src="https://cdn.tailwindcss.com"></script>
     <script>
@@ -107,17 +112,21 @@
                 extend: {
                     colors: {
                         brand: {
-                            navy: '#1e293b',
-                            beige: '#ffffff',
-                            sage: '#059669',
-                            tan: '#475569',
-                            red: '#dc2626',
-                            olive: '#4d7c0f'
+                            navy: 'var(--color-primary-navy)',
+                            wood: 'var(--color-accent-gold)',
+                            walnut: 'var(--color-secondary-walnut)',
+                            beige: 'var(--color-neutral-beige)',
+                            surface: 'var(--color-neutral-white)',
+                            slate: 'var(--color-neutral-slate-500)'
                         }
                     },
                     fontFamily: {
-                        heading: ['Merriweather', 'serif'],
-                        body: ['Inter', 'sans-serif']
+                        heading: ['Merriweather','serif'],
+                        body: ['Inter','sans-serif']
+                    },
+                    boxShadow: {
+                        wood: 'var(--shadow-wood)',
+                        navy: 'var(--shadow-medium)'
                     }
                 }
             }
@@ -142,9 +151,11 @@
             h1 { font-size: 1.75rem; }
             h2 { font-size: 1.5rem; }
         }
-    </style>
+</style>
 </head>
 <body class="bg-brand-beige">
+    <!-- Accessibility: Skip to main content -->
+    <a href="#main" class="skip-to-content">Skip to main content</a>
     <!-- Header Container -->
     <div id="header-container"></div>
 <div id="page-banner-container"></div>
@@ -289,7 +300,7 @@
 
                         <form
                             id="property-inquiry"
-                            action="https://formspree.io/f/YOUR_FORM_ID"
+                            action=""
                             method="POST"
                             class="space-y-4"
                             novalidate>
@@ -530,24 +541,11 @@
     <div id="footer-container"></div>
 
     <!-- Component Loader - Dynamically loads header and footer -->
+    <script src="../static-forms.js"></script>
     <script src="components/component-loader.js"></script>
 
     <!-- Accessibility Enhancements - Keyboard navigation and focus management -->
     <script src="accessibility-enhanced.js"></script>
-
-    <!-- Property Page Script -->
-    <script>
-        document.addEventListener('DOMContentLoaded', function() {
-            // Handle property inquiry form
-            const inquiryForm = document.getElementById('property-inquiry');
-            if (inquiryForm) {
-                inquiryForm.addEventListener('submit', function(e) {
-                    e.preventDefault();
-                    alert('Thank you for your interest! We\'ll contact you within 24 hours to schedule a tour of this historic Victorian.');
-                });
-            }
-        });
-    </script>
 
 <script src="js/banner-loader.js" defer></script>
 </body>

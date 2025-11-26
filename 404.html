@@ -9,7 +9,8 @@
 
     <!-- Design System CSS (MUST be first) -->
     <link rel="stylesheet" href="css/design-tokens.css">
-    <link rel="stylesheet" href="css/components.css" media="print" onload="this.media='all'">
+    <link rel="stylesheet" href="css/components.css">
+    <link rel="stylesheet" href="css/main.css">
 
     <!-- Structured Data -->
     <script type="application/ld+json">
@@ -84,10 +85,12 @@
     </style>
 </head>
 <body class="bg-brand-beige flex items-center justify-center min-h-screen text-center px-4">
-    <div class="max-w-md">
+    <!-- Accessibility: Skip to main content -->
+    <a href="#main" class="skip-to-content">Skip to main content</a>
+    <main id="main" class="max-w-md">
         <!-- Compass Icon -->
         <div class="w-24 h-24 mx-auto mb-8 relative">
-            <img src="public/images/icons/036-patriotism.png" alt="" class="w-full h-full opacity-20 compass-spin" />
+            <img src="public/images/icons/036-patriotism.png" alt="" class="w-full h-full opacity-20 compass-spin" loading="lazy" decoding="async" />
             <div class="absolute inset-0 flex items-center justify-center">
                 <div class="w-16 h-16 bg-brand-navy rounded-full flex items-center justify-center">
                     <span class="text-2xl">🧭</span>
@@ -120,16 +123,16 @@
         <div class="mt-12 pt-8 border-t border-slate-200">
             <p class="text-sm text-slate-500">
                 Need immediate help? Call us at
-                <a href="tel:+19036470000" class="text-brand-wood hover:text-brand-navy font-semibold">
-                    (903) 647-0000
+                <a href="tel:+19032831770" class="text-brand-wood hover:text-brand-navy font-semibold">
+                    (903) 283-1770
                 </a>
             </p>
         </div>
-    </div>
+    </main>
 
     <!-- P4C Interactive Libraries for consistent behavior -->
     <script defer src="components/component-loader.js"></script>
     <script defer src="accessibility-enhanced.js"></script>
+    <script defer src="js/banner-loader.js"></script>
 </body>
 </html>
-

@@ -17,10 +17,23 @@
             theme: {
                 extend: {
                     colors: {
-                        brand: { navy: '#0B1120', wood: '#C28E5A', walnut: '#8B5E3C', beige: '#F5F5F0', surface: '#FFFFFF', slate: '#64748b' }
+                        brand: {
+                            navy: 'var(--color-primary-navy)',
+                            wood: 'var(--color-accent-gold)',
+                            walnut: 'var(--color-secondary-walnut)',
+                            beige: 'var(--color-neutral-beige)',
+                            surface: 'var(--color-neutral-white)',
+                            slate: 'var(--color-neutral-slate-500)'
+                        }
                     },
-                    fontFamily: { heading: ['Merriweather', 'serif'], body: ['Inter', 'sans-serif'] },
-                    boxShadow: { 'wood': '0 10px 25px -5px rgba(194, 142, 90, 0.4)', 'navy': '0 10px 30px -10px rgba(11, 17, 32, 0.6)' }
+                    fontFamily: {
+                        heading: ['Merriweather','serif'],
+                        body: ['Inter','sans-serif']
+                    },
+                    boxShadow: {
+                        wood: 'var(--shadow-wood)',
+                        navy: 'var(--shadow-medium)'
+                    }
                 }
             }
         }

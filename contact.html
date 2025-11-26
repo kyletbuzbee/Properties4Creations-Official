@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Contact Us | Properties 4 Creations</title>
     <meta name="description" content="Affordable housing solutions for families and veterans in East Texas. Transparent pricing, premium renovations, and community impact.">
+    <link rel="canonical" href="https://properties4creations.com/contact.html">
     <link rel="stylesheet" href="css/design-tokens.css">
     <link rel="stylesheet" href="css/components.css">
     <link rel="stylesheet" href="css/main.css">
@@ -12,7 +13,26 @@
     <script>
         tailwind.config = {
             theme: {
-                extend: { colors: { brand: { navy: '#0B1120', wood: '#C28E5A', beige: '#F5F5F0' } } }
+                extend: {
+                    colors: {
+                        brand: {
+                            navy: 'var(--color-primary-navy)',
+                            wood: 'var(--color-accent-gold)',
+                            walnut: 'var(--color-secondary-walnut)',
+                            beige: 'var(--color-neutral-beige)',
+                            surface: 'var(--color-neutral-white)',
+                            slate: 'var(--color-neutral-slate-500)'
+                        }
+                    },
+                    fontFamily: {
+                        heading: ['Merriweather','serif'],
+                        body: ['Inter','sans-serif']
+                    },
+                    boxShadow: {
+                        wood: 'var(--shadow-wood)',
+                        navy: 'var(--shadow-medium)'
+                    }
+                }
             }
         }
     </script>
@@ -39,28 +59,41 @@
 </script>
 
         <section class="max-w-4xl mx-auto py-12 px-4">
-            <form action="thank-you.html" method="POST" class="bg-white p-8 rounded-xl shadow-lg space-y-6">
+            <form id="contact-form" action="" method="POST" class="bg-white p-8 rounded-xl shadow-lg space-y-6">
+                <input type="hidden" name="_subject" value="Contact Form Inquiry">
+                <input type="hidden" name="_next" value="thank-you.html">
+
                 <div class="grid md:grid-cols-2 gap-6">
                     <div>
                         <label class="block font-bold text-brand-navy mb-2">Name</label>
-                        <input type="text" class="w-full border rounded-lg p-3" placeholder="Your Name">
+                        <input type="text" name="name" required class="w-full border rounded-lg p-3" placeholder="Your Name">
                     </div>
                     <div>
                         <label class="block font-bold text-brand-navy mb-2">Email</label>
-                        <input type="email" class="w-full border rounded-lg p-3" placeholder="email@example.com">
+                        <input type="email" name="email" required class="w-full border rounded-lg p-3" placeholder="email@example.com">
                     </div>
                 </div>
                 <div>
-                    <label class="block font-bold text-brand-navy mb-2">Message</label>
-                    <textarea class="w-full border rounded-lg p-3 h-32" placeholder="How can we help?"></textarea>
+                    <label class="block font-bold text-brand-navy mb-2">Phone (Optional)</label>
+                    <input type="tel" name="phone" class="w-full border rounded-lg p-3" placeholder="(903) 555-0123">
                 </div>
-                <button class="wheelchair-accessible-button px-8 py-3 text-white rounded-lg font-bold w-full text-lg">Send Message</button>
+                <div>
+                    <label class="block font-bold text-brand-navy mb-2">Message</label>
+                    <textarea name="message" class="w-full border rounded-lg p-3 h-32" placeholder="How can we help?" rows="4" required></textarea>
+                </div>
+                <div class="flex items-center">
+                    <input type="checkbox" id="veteran-contact" name="veteran" class="mr-2">
+                    <label for="veteran-contact" class="text-slate-700">U.S. Military Veteran</label>
+                </div>
+                <button type="submit" class="btn-base btn-primary px-8 py-3 text-white rounded-lg font-bold w-full text-lg">Send Message</button>
             </form>
         </section>
     </main>
 
     <div id="footer-container"></div>
+    <script src="static-forms.js"></script>
     <script src="components/component-loader.js"></script>
+    <script src="accessibility-enhanced.js"></script>
     <script src="js/banner-loader.js" defer></script>
 </body>
 </html>
