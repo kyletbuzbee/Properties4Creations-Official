@@ -444,7 +444,9 @@
     <script>
         document.addEventListener('DOMContentLoaded', function() {
             // Initialize all interactive features
-            window.P4C.init();
+            if (window.P4C && window.P4C.init) {
+                window.P4C.init();
+            }
 
             // Animate checkmarks on scroll
             const observerOptions = {

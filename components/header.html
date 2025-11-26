@@ -1,210 +1,41 @@
 <!-- Reusable Header Component - Loaded dynamically via JavaScript -->
 <header id="main-header" class="sticky top-0 z-50 transition-all duration-300 bg-brand-navy text-white shadow-lg">
-    <div class="max-w-7xl mx-auto px-4 lg:px-8">
-        <div class="flex items-center justify-between h-20">
-            <!-- Logo and Brand -->
-            <div class="flex items-center">
-                <a href="index.html" class="flex items-center space-x-3 group">
-                    <div class="logo-container w-32 h-auto text-brand-navy" aria-label="Properties 4 Creations logo: Affordable housing for families and veterans in East Texas">
-                        <!-- Properties4 Creations – House + Flag Roof (Gold on Navy) -->
-                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 500" role="img" aria-labelledby="logoTitle logoDesc" class="w-full h-auto">
-                          <title id="logoTitle">Properties4 Creations Logo</title>
-                          <desc id="logoDesc">Stylized house with flag roof (four stars, three wavy stripes) and metallic gold text on navy background.</desc>
-
-                          <defs>
-                            <!-- Navy background -->
-                            <linearGradient id="bgNavy" x1="0" y1="0" x2="0" y2="1">
-                              <stop offset="0%" stop-color="#0B1120"/>
-                              <stop offset="100%" stop-color="#15243C"/>
-                            </linearGradient>
-
-                            <!-- Metallic gold gradient -->
-                            <linearGradient id="gold" x1="0" y1="0" x2="1" y2="1">
-                              <stop offset="0%" stop-color="#E5B567"/>
-                              <stop offset="35%" stop-color="#CFA156"/>
-                              <stop offset="60%" stop-color="#F2C87A"/>
-                              <stop offset="85%" stop-color="#B8883F"/>
-                              <stop offset="100%" stop-color="#F7D089"/>
-                            </linearGradient>
-
-                            <!-- Gold stroke accent -->
-                            <linearGradient id="goldStroke" x1="0" y1="0" x2="1" y2="0">
-                              <stop offset="0%" stop-color="#CFA156"/>
-                              <stop offset="100%" stop-color="#F2C87A"/>
-                            </linearGradient>
-
-                            <!-- Soft metallic sheen overlay -->
-                            <linearGradient id="sheen" x1="0" y1="0" x2="1" y2="0">
-                              <stop offset="0%" stop-color="rgba(255,255,255,0.25)"/>
-                              <stop offset="30%" stop-color="rgba(255,255,255,0.08)"/>
-                              <stop offset="100%" stop-color="rgba(255,255,255,0.00)"/>
-                            </linearGradient>
-                          </defs>
-
-                          <!-- Background -->
-                          <rect x="0" y="0" width="1200" height="500" fill="url(#bgNavy)"/>
-
-                          <!-- Logo group -->
-                          <g transform="translate(120, 70)">
-                            <!-- House block -->
-                            <g transform="translate(0, 100)">
-                              <!-- House body -->
-                              <rect x="0" y="100" width="280" height="170" rx="14" fill="url(#gold)" stroke="url(#goldStroke)" stroke-width="8"/>
-                              <!-- Door -->
-                              <rect x="40" y="140" width="60" height="90" rx="8" fill="#0B1120" opacity="0.75" stroke="url(#goldStroke)" stroke-width="4"/>
-                              <!-- Roof -->
-                              <path d="M -30 100 L 140 -10 L 310 100" fill="none" stroke="url(#goldStroke)" stroke-width="18" stroke-linecap="round" stroke-linejoin="round"/>
-                              <!-- Chimney -->
-                              <rect x="220" y="-40" width="28" height="70" rx="6" fill="url(#gold)" stroke="url(#goldStroke)" stroke-width="6"/>
-                            </g>
-
-                            <!-- Flag roof motif attached to roofline -->
-                            <g transform="translate(300, 30)">
-                              <!-- Flag wedge boundary -->
-                              <path d="M 0 0 L 520 70 L 520 210 L 0 140 Z" fill="none" stroke="url(#goldStroke)" stroke-width="12" stroke-linejoin="round"/>
-
-                              <!-- Stars block: four simplified stars -->
-                              <g transform="translate(26, 64)" fill="url(#gold)">
-                                <path d="M0,0 l9,26 l-22,-16 h26 l-22,16 z" transform="translate(0,0)"/>
-                                <path d="M0,0 l9,26 l-22,-16 h26 l-22,16 z" transform="translate(60,0)"/>
-                                <path d="M0,0 l9,26 l-22,-16 h26 l-22,16 z" transform="translate(120,0)"/>
-                                <path d="M0,0 l9,26 l-22,-16 h26 l-22,16 z" transform="translate(180,0)"/>
-                              </g>
-
-                              <!-- Three wavy stripes -->
-                              <g fill="url(#gold)">
-                                <path d="M 20 110 C 190 130, 330 110, 520 140 L 520 158 C 330 125, 190 145, 20 125 Z" opacity="0.95"/>
-                                <path d="M 20 150 C 190 170, 330 150, 520 180 L 520 198 C 330 165, 190 185, 20 165 Z" opacity="0.85"/>
-                                <path d="M 20 190 C 190 210, 330 190, 520 220 L 520 238 C 330 205, 190 225, 20 205 Z" opacity="0.75"/>
-                              </g>
-
-                              <!-- Sheen overlay -->
-                              <rect x="0" y="60" width="520" height="160" fill="url(#sheen)" opacity="0.22"/>
-                            </g>
-
-                            <!-- Text: PROPERTIES4 CREATIONS (single line) -->
-                            <g transform="translate(0, 340)">
-                              <text x="0" y="0"
-                                    font-family="Merriweather, Georgia, 'Times New Roman', serif"
-                                    font-size="86"
-                                    font-weight="800"
-                                    letter-spacing="2"
-                                    fill="url(#gold)"
-                                    stroke="url(#goldStroke)"
-                                    stroke-width="2.5">
-                                PROPERTIES4 CREATIONS
-                              </text>
-                              <!-- Underline -->
-                              <rect x="0" y="24" width="860" height="7" fill="url(#gold)" opacity="0.7"/>
-                            </g>
-                          </g>
-                        </svg>
-                    </div>
-
-                    <span class="text-xl font-bold group-hover:text-brand-wood transition-colors duration-200 hidden sm:inline">
-                        Properties 4 Creations
-                    </span>
-                </a>
-            </div>
-
-                <!-- Desktop Navigation -->
-                <nav class="hidden lg:flex items-center space-x-8">
-                    <a href="index.html" class="px-3 py-2 text-sm font-medium rounded-md text-slate-200 hover:text-brand-wood transition-all duration-200">Home</a>
-                    <a href="projects.html" class="px-3 py-2 text-sm font-medium rounded-md text-slate-200 hover:text-brand-wood transition-all duration-200">Our Properties</a>
-                    <a href="impact.html" class="px-3 py-2 text-sm font-medium rounded-md text-slate-200 hover:text-brand-wood transition-all duration-200">Our Impact</a>
-                    <a href="resources.html" class="px-3 py-2 text-sm font-medium rounded-md text-slate-200 hover:text-brand-wood transition-all duration-200">Housing Support</a>
-                    <a href="about.html" class="px-3 py-2 text-sm font-medium rounded-md text-slate-200 hover:text-brand-wood transition-all duration-200">About Us</a>
-                    <a href="transparency.html" class="px-3 py-2 text-sm font-medium rounded-md text-slate-200 hover:text-brand-wood transition-all duration-200">Transparency</a>
-                    <a href="contact.html" class="px-3 py-2 text-sm font-medium rounded-md text-slate-200 hover:text-brand-wood transition-all duration-200">Contact</a>
-
-                <!-- Search Button -->
-                <button id="header-search-toggle" class="flex items-center gap-2 px-3 py-2 text-sm font-medium text-slate-200 hover:text-brand-wood rounded-md transition-all duration-200" title="Search (⌘K)">
-                    <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" />
-                    </svg>
-                </button>
-
-                <!-- Portal Button -->
-                <button id="header-portal-toggle" class="px-3 py-2 text-sm font-medium text-slate-200 hover:text-brand-wood rounded-md transition-all duration-200">
-                    Portals
-                </button>
-
-                <!-- CTA Button -->
-                <a href="get-started.html"
-                   class="btn-primary px-5 py-2.5 text-sm font-semibold rounded-lg shadow-wood hover:shadow-xl transition-all"
-                   style="font-size: 0.75rem; padding: 0.625rem 1rem;"
-                   id="header-cta-button">
-                    Browse Affordable Homes for Families & Veterans
-                </a>
-            </nav>
-
-            <!-- Mobile Menu Button -->
-            <button id="mobile-menu-toggle" class="lg:hidden p-2 rounded-md text-slate-200 hover:text-white hover:bg-white/10 transition-colors duration-200" aria-expanded="false" aria-label="Toggle navigation menu">
-                <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
-                </svg>
-            </button>
-        </div>
-
-        <!-- Mobile Navigation Menu -->
-        <div id="mobile-menu" class="lg:hidden overflow-hidden transition-all duration-300 ease-in-out max-h-0 opacity-0 invisible -translate-y-2">
-            <div class="px-4 py-6 bg-slate-900/50 border-t border-white/10 backdrop-blur-sm space-y-4">
-                <a href="index.html" class="block px-4 py-3 rounded-lg text-base font-medium text-slate-200 hover:text-white hover:bg-white/10 transition-all duration-200">Home</a>
-                <a href="projects.html" class="block px-4 py-3 rounded-lg text-base font-medium text-slate-200 hover:text-white hover:bg-white/10 transition-all duration-200">Our Properties</a>
-                <a href="impact.html" class="block px-4 py-3 rounded-lg text-base font-medium text-slate-200 hover:text-white hover:bg-white/10 transition-all duration-200">Our Impact</a>
-                <a href="resources.html" class="block px-4 py-3 rounded-lg text-base font-medium text-slate-200 hover:text-white hover:bg-white/10 transition-all duration-200">Housing Support</a>
-                <a href="about.html" class="block px-4 py-3 rounded-lg text-base font-medium text-slate-200 hover:text-white hover:bg-white/10 transition-all duration-200">About Us</a>
-                <a href="transparency.html" class="block px-4 py-3 rounded-lg text-base font-medium text-slate-200 hover:text-white hover:bg-white/10 transition-all duration-200">Transparency</a>
-                <a href="contact.html" class="block px-4 py-3 rounded-lg text-base font-medium text-slate-200 hover:text-white hover:bg-white/10 transition-all duration-200">Contact</a>
-
-                <button id="mobile-search-toggle" class="w-full text-left px-4 py-3 rounded-lg text-base font-medium text-slate-200 hover:text-white hover:bg-white/10 transition-all duration-200">
-                    <svg class="w-4 h-4 inline mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" />
-                    </svg>
-                    Search
-                </button>
-
-                <button id="mobile-portal-toggle" class="w-full text-left px-4 py-3 rounded-lg text-base font-medium text-slate-200 hover:text-white hover:bg-white/10 transition-all duration-200">
-                    Portals
-                </button>
-
-                <a href="get-started.html"
-                   class="block w-full text-center btn-primary px-4 py-3 rounded-lg font-medium transition-all duration-200 hover:shadow-lg mt-4">
-                    Browse Affordable Homes for Families & Veterans
-                </a>
+    <nav class="flex items-center justify-between px-6 py-4 bg-brand-navy text-white">
+        <div class="flex items-center gap-4">
+            <!-- Logo -->
+            <div class="logo flex items-center gap-3">
+                <span class="text-lg font-bold tracking-wide">PROPERTIES 4 CREATION</span>
             </div>
         </div>
+
+        <div class="hidden md:flex items-center gap-6">
+            <a href="index.html" class="hover:text-brand-wood">Home</a>
+            <a href="projects.html" class="hover:text-brand-wood">Our Properties</a>
+            <!-- Add more links as needed -->
+        </div>
+
+        <!-- Mobile menu icon -->
+        <button id="mobile-menu-toggle" class="md:hidden p-2 ml-auto" aria-expanded="false" aria-label="Toggle navigation menu">
+            <svg class="w-6 h-6" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+                <path d="M4 6h16M4 12h16M4 18h16"/>
+            </svg>
+        </button>
+    </nav>
+
+    <!-- Mobile menu dropdown -->
+    <div id="mobile-menu" class="md:hidden mt-2 px-6 space-y-4">
+        <a href="index.html" class="block text-white hover:text-brand-wood">Home</a>
+        <a href="projects.html" class="block text-white hover:text-brand-wood">Our Properties</a>
     </div>
 
     <style>
-        /* Mobile Menu Active State */
-        #mobile-menu.active {
-            max-height: 500px !important;
-            opacity: 1 !important;
-            visibility: visible !important;
-            transform: translateY(0) !important;
+        /* Mobile Navigation Toggle */
+        #mobile-menu {
+            display: none;
         }
 
-        /* Mobile responsiveness for header */
-        @media (max-width: 767px) {
-            #header-cta-button {
-                font-size: 0.75rem !important;
-                padding: 0.625rem 1rem !important;
-            }
-
-            /* Very small screens: consider stacking if needed */
-            @media (max-width: 480px) {
-                #main-header .flex.items-center.justify-between {
-                    flex-direction: column;
-                    gap: 0.75rem;
-                    padding-top: 1rem;
-                    padding-bottom: 1rem;
-                }
-
-                #main-header .flex.items-center > a {
-                    justify-content: center;
-                }
-            }
+        #mobile-menu.active {
+            display: block;
         }
     </style>
 </header>
