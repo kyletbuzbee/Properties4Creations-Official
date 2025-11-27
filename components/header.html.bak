@@ -48,7 +48,7 @@
         <div class="flex items-center gap-4">
             <!-- Logo -->
             <div class="logo flex items-center gap-3">
-                <img src="../public/images/svg/logo.svg" alt="Properties 4 Creations Logo" class="h-8 w-auto" loading="eager">
+                <span class="text-lg font-bold tracking-wide">Properties 4 Creations</span>
             </div>
         </div>
 
@@ -112,3 +112,7 @@
     </script>
 </body>
 </html>
+
+
+
+

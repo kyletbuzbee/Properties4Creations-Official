@@ -17,10 +17,23 @@
             theme: {
                 extend: {
                     colors: {
-                        brand: { navy: '#0B1120', wood: '#C28E5A', walnut: '#8B5E3C', beige: '#F5F5F0', surface: '#FFFFFF', slate: '#64748b' }
+                        brand: {
+                            navy: 'var(--color-primary-navy)',
+                            wood: 'var(--color-accent-gold)',
+                            walnut: 'var(--color-secondary-walnut)',
+                            beige: 'var(--color-neutral-beige)',
+                            surface: 'var(--color-neutral-white)',
+                            slate: 'var(--color-neutral-slate-500)'
+                        }
                     },
-                    fontFamily: { heading: ['Merriweather', 'serif'], body: ['Inter', 'sans-serif'] },
-                    boxShadow: { 'wood': '0 10px 25px -5px rgba(194, 142, 90, 0.4)', 'navy': '0 10px 30px -10px rgba(11, 17, 32, 0.6)' }
+                    fontFamily: {
+                        heading: ['Merriweather','serif'],
+                        body: ['Inter','sans-serif']
+                    },
+                    boxShadow: {
+                        wood: 'var(--shadow-wood)',
+                        navy: 'var(--shadow-medium)'
+                    }
                 }
             }
         }
@@ -30,20 +43,21 @@
     <!-- Accessibility: Skip to main content -->
     <a href="#main" class="skip-to-content">Skip to main content</a>
     <div id="header-container"></div>
+    <div id="page-banner-container"></div>
 
-    <main class="pt-2">
-        <section class="page-title-banner hero">
-            <div class="banner-content">
-                <div class="max-w-6xl mx-auto px-4 text-center">
-                    <h1 class="text-4xl md:text-5xl font-heading font-bold text-white drop-shadow-lg">
-                        Affordable Homes for Families & Veterans in East Texas
-                    </h1>
-                    <p class="text-lg text-slate-200 leading-relaxed mt-6 max-w-3xl mx-auto">
-                        Discover East Texas homes transformed for veterans and families. Fair market value offers, professional renovations, and honest housing solutions with transparency you can trust.
-                    </p>
-                </div>
-            </div>
-        </section>
+    <main>
+<script type="application/json" id="page-banner-config">
+{
+  "variant": "hero",
+  "title": "Transforming Properties into Homes",
+  "subtitle": "Explore our East Texas property portfolio — all designed for families and veterans.",
+  "background": "public/images/banners/hero-projects-banner.webp",
+  "eyebrow": "40+ Properties Renovated",
+  "showVoucherBadge": false,
+  "ctaText": "Browse Properties",
+  "ctaHref": "get-started.html"
+}
+</script>
 
         <section id="properties" class="py-16 bg-slate-50">
             <div class="max-w-7xl mx-auto px-4">
@@ -109,7 +123,7 @@
                                             <span class="font-semibold text-brand-navy">${prop.bathrooms}</span> Bath •
                                             <span class="font-semibold text-brand-navy">${prop.sqft}</span> sqft
                                         </div>
-                                        <a href="contact.html" class="btn-base btn-secondary btn-sm">Schedule Visit</a>
+                                        <a href="contact.html" class="btn-base btn-secondary btn-sm">Browse Affordable Homes for Families & Veterans</a>
                                     </div>
                                 </div>
                             </article>
@@ -130,5 +144,11 @@
 
     <script src="components/component-loader.js"></script>
     <script src="accessibility-enhanced.js"></script>
+
+<script src="js/banner-loader.js" defer></script>
 </body>
 </html>
+
+
+
+
