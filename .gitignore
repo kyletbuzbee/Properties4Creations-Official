@@ -26,3 +26,6 @@ scripts/*.bat
 # --- Node / Tooling (if added later) ---
 node_modules/
 dist/
+
+# --- Environment Files ---
+CNAME
