@@ -49,7 +49,7 @@
                 document.addEventListener('DOMContentLoaded', async () => {
                     const container = document.getElementById('properties-container');
                     try {
-                        const response = await fetch('public/properties-data.json');
+                        const response = await fetch('/public/properties-data.json');
                         const properties = await response.json();
                         container.innerHTML = '';
 

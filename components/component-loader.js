@@ -40,7 +40,7 @@ P4C.ComponentLoader = {
     try {
       const existingHeader = document.getElementById('main-header');
 
-      const response = await fetch('components/header.html');
+      const response = await fetch('/components/header.html');
       if (!response.ok) {
         throw new Error(`Failed to load header: ${response.status}`);
       }
@@ -76,7 +76,7 @@ P4C.ComponentLoader = {
     try {
       const existingFooter = document.querySelector('footer');
 
-      const response = await fetch('components/footer.html');
+      const response = await fetch('/components/footer.html');
       if (!response.ok) {
         throw new Error(`Failed to load footer: ${response.status}`);
       }
