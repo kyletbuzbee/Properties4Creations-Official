@@ -20,7 +20,7 @@
     "bathrooms": 2,
     "sqft": 1400,
     "images": ["public/images/properties/before-after/after_living_room.webp"],
-    "url": "tyler-ranch.html"
+    "url": "projects/tyler-ranch-home.html"
   },
   {
     "id": "longview-victorian",
@@ -43,7 +43,7 @@
     "bathrooms": 3,
     "sqft": 2200,
     "images": ["public/images/properties/before-after/projects_after_kitchen.webp"],
-    "url": "longview-victorian.html"
+    "url": "projects/longview-victorian.html"
   },
   {
     "id": "jefferson-riverfront",
@@ -66,29 +66,6 @@
     "bathrooms": 1,
     "sqft": 950,
     "images": ["public/images/properties/before-after/after_living_room.webp"],
-    "url": "jefferson-riverfront.html"
-  },
-  {
-    "id": "marshall-townhome",
-    "title": "Marshall Townhome",
-    "location": "Marshall, TX",
-    "price": {
-      "amount": 1050,
-      "currency": "USD",
-      "period": "month",
-      "formatted": "$1,050/mo"
-    },
-    "availability": "pending",
-    "datePosted": "2025-11-12",
-    "featured": false,
-    "lastUpdated": "2025-11-23",
-    "story_description": "Modern townhome in quiet neighborhood. Energy efficient with pool access and community amenities.",
-    "tags": ["Section 8 Ready", "Community Amenities", "Energy Efficient"],
-    "trust_badges": ["Energy Star Certified", "Community Pool", "Modern Construction"],
-    "bedrooms": 2,
-    "bathrooms": 2,
-    "sqft": 1200,
-    "images": ["public/images/properties/before-after/patio_wood.jpg"],
-    "url": "marshall-townhome.html"
+    "url": "projects/jefferson-riverfront.html"
   }
 ]
