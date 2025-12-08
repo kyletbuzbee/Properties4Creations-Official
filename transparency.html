@@ -7,12 +7,6 @@
     <meta name="description" content="Affordable housing solutions for families and veterans in East Texas. Transparent pricing, premium renovations, and community impact.">
     <link rel="canonical" href="https://properties4creations.com/transparency.html">
 
-    <!-- Design System CSS (MUST be first) -->
-    <link rel="stylesheet" href="css/design-tokens.css">
-    <link rel="stylesheet" href="css/components.css">
-    <link rel="stylesheet" href="css/main.css">
-
-    <!-- Structured Data for Transparency Page -->
     <script type="application/ld+json">
     {
       "@context": "https://schema.org",
@@ -84,66 +78,34 @@
     </script>
 
     <script src="https://cdn.tailwindcss.com"></script>
-    <link href="https://fonts.googleapis.com/css2?family=Merriweather:wght@400;700&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     <script>
         tailwind.config = {
             theme: {
                 extend: {
                     colors: {
                         brand: {
-                            navy: 'var(--color-primary-navy)',
-                            wood: 'var(--color-accent-gold)',
-                            walnut: 'var(--color-secondary-walnut)',
-                            beige: 'var(--color-neutral-beige)',
-                            surface: 'var(--color-neutral-white)',
-                            slate: 'var(--color-neutral-slate-500)'
+                            navy: '#0B1120',
+                            wood: '#C28E5A',
+                            walnut: '#8B5E3C',
+                            beige: '#F5F5F0',
+                            surface: '#FFFFFF',
+                            slate: '#64748b'
                         }
                     },
                     fontFamily: {
-                        heading: ['Merriweather','serif'],
-                        body: ['Inter','sans-serif']
+                        heading: ['Merriweather', 'serif'],
+                        body: ['Inter', 'sans-serif']
                     },
                     boxShadow: {
-                        wood: 'var(--shadow-wood)',
-                        navy: 'var(--shadow-medium)'
+                        wood: '0 10px 25px -5px rgba(194, 142, 90, 0.4)',
+                        'navy': '0 10px 30px -10px rgba(11, 17, 32, 0.6)',
                     }
                 }
             }
         }
     </script>
 
-    <style>
-        body {
-            font-family: 'Merriweather', 'Inter', system-ui, -apple-system, sans-serif;
-        }
-
-        .trust-signal {
-            transition: all 0.3s ease-out;
-        }
-
-        .trust-signal:hover {
-            transform: translateY(-2px);
-            box-shadow: 0 15px 35px rgba(194, 142, 90, 0.2);
-        }
-
-        .standard-item {
-            transition: all 0.2s ease-out;
-        }
-
-        .standard-item:hover {
-            transform: translateX(4px);
-        }
-
-        .checkmark {
-            animation: checkmark 0.6s ease-in-out;
-        }
-
-        @keyframes checkmark {
-            0% { transform: scale(0) rotate(-180deg); opacity: 0; }
-            50% { transform: scale(1.2) rotate(0deg); opacity: 1; }
-            100% { transform: scale(1) rotate(0deg); opacity: 1; }
-        }
-    </style>
+    <link rel="stylesheet" href="css/styles.css">
 </head>
 <body class="bg-brand-beige">
     <!-- Accessibility: Skip to main content -->

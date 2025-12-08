@@ -6,29 +6,56 @@
     <title>About Properties 4 Creations - Veteran Housing Mission</title>
     <meta name="description" content="Affordable housing solutions for families and veterans in East Texas. Transparent pricing, premium renovations, and community impact.">
     <link rel="canonical" href="https://properties4creations.com/about.html">
-    <link rel="stylesheet" href="css/design-tokens.css">
-    <link rel="stylesheet" href="css/components.css">
-    <link rel="stylesheet" href="css/main.min.css">
+
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        brand: {
+                            navy: '#0B1120',
+                            wood: '#C28E5A',
+                            walnut: '#8B5E3C',
+                            beige: '#F5F5F0',
+                            surface: '#FFFFFF',
+                            slate: '#64748b'
+                        }
+                    },
+                    fontFamily: {
+                        heading: ['Merriweather', 'serif'],
+                        body: ['Inter', 'sans-serif']
+                    },
+                    boxShadow: {
+                        wood: '0 10px 25px -5px rgba(194, 142, 90, 0.4)',
+                        'navy': '0 10px 30px -10px rgba(11, 17, 32, 0.6)',
+                    }
+                }
+            }
+        }
+    </script>
+
+    <link rel="stylesheet" href="css/styles.css">
 </head>
 <body class="bg-brand-beige">
     <!-- Accessibility: Skip to main content -->
     <a href="#main" class="skip-to-content">Skip to main content</a>
-    <div id="header-container"></div>
+    <div id="header-container" style="min-height: 76px;"></div>
     <div id="page-banner-container"></div>
 
     <main>
-<script type="application/json" id="page-banner-config">
-{
-  "variant": "hero",
-  "title": "Our Mission: Homes for Families & Heroes in East Texas",
-  "subtitle": "From service to stability, we honor families and veterans with premium renovations and fair pricing. Every home tells the story of those who served.",
-  "background": "public/images/hero/front_porch_hero.webp",
-  "eyebrow": "Veteran Founded, Veteran Focused",
-  "showVoucherBadge": true,
-  "ctaText": "Explore Our Impact",
-  "ctaHref": "impact.html"
-}
-</script>
+    <script type="application/json" id="page-banner-config">
+    {
+      "variant": "hero",
+      "title": "Our Mission: Homes for Families & Heroes in East Texas",
+      "subtitle": "From service to stability, we honor families and veterans with premium renovations and fair pricing. Every home tells the story of those who served.",
+      "background": "public/videos/hero-our-work-banner.mp4",
+      "eyebrow": "Veteran Founded, Veteran Focused",
+      "showVoucherBadge": true,
+      "ctaText": "Explore Our Impact",
+      "ctaHref": "impact.html"
+    }
+    </script>
 
 
 
@@ -81,6 +108,10 @@
     </main>
 
     <div id="footer-container"></div>
-    <script src="js/bundle.min.js" defer></script>
+
+    <!-- P4C Interactive Libraries -->
+    <script src="components/component-loader.js"></script>
+    <script src="accessibility-enhanced.js"></script>
+    <script src="js/banner-loader.js" defer></script>
 </body>
 </html>

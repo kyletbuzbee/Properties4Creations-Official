@@ -5,8 +5,8 @@
 /* Add to css/components.css */
 .nav-glass {
     background: rgba(11, 17, 32, 0.85) !important; /* Navy with 85% opacity */
-    backdrop-filter: blur(12px);         /* The blur effect */
     -webkit-backdrop-filter: blur(12px); /* Safari support */
+    backdrop-filter: blur(12px);         /* The blur effect */
     border-bottom: 1px solid rgba(255, 255, 255, 0.1);
     box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
 }

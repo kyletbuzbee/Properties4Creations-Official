@@ -58,7 +58,7 @@ P4C.ComponentLoader = {
       // Reinitialize header interactivity
       this.reinitializeHeaderInteractivity();
 
-      // Apppy smastanov iiti highlighing
+      // Apply navigation highlighting based on current page
       this.applyNavigationHighlighting();
     } catch (error) {
       console.error('Error loading header component:', error);
@@ -107,19 +107,14 @@ P4C.ComponentLoader = {
    * @function reinitializeHeaderInteractivity
    */
   reinitializeHeaderInteractivity: function() {
-    // Mobile menu toggle - FIXED: Use IDs instead of classes
+    // Mobile menu toggle - Use proper show/hide logic
     const mobileMenuToggle = document.getElementById('mobile-menu-toggle');
     const mobileMenu = document.getElementById('mobile-menu');
 
     if (mobileMenuToggle && mobileMenu) {
       mobileMenuToggle.addEventListener('click', (e) => {
         e.stopPropagation();
-        // Toggle the active class
-        mobileMenu.classList.toggle('active');
-
-        // Update ARIA state
-        const isExpanded = mobileMenu.classList.contains('active');
-        mobileMenuToggle.setAttribute('aria-expanded', isExpanded ? 'true' : 'false');
+        this.toggleMobileMenu();
       });
     }
 
@@ -127,10 +122,7 @@ P4C.ComponentLoader = {
     if (mobileMenu) {
       document.addEventListener('click', (e) => {
         if (!mobileMenu.contains(e.target) && !mobileMenuToggle.contains(e.target)) {
-          mobileMenu.classList.remove('active');
-          if (mobileMenuToggle) {
-            mobileMenuToggle.setAttribute('aria-expanded', 'false');
-          }
+          this.closeMobileMenu();
         }
       });
     }
@@ -182,94 +174,132 @@ P4C.ComponentLoader = {
   },
 
   /**
+   * Toggle mobile menu visibility
+   * Handles smooth animation and ARIA state
+   * @function toggleMobileMenu
+   */
+  toggleMobileMenu: function() {
+    const mobileMenuToggle = document.getElementById('mobile-menu-toggle');
+    const mobileMenu = document.getElementById('mobile-menu');
+
+    if (!mobileMenu || !mobileMenuToggle) return;
+
+    const isExpanded = mobileMenuToggle.getAttribute('aria-expanded') === 'true';
+    const newState = !isExpanded;
+
+    // Update ARIA state
+    mobileMenuToggle.setAttribute('aria-expanded', newState ? 'true' : 'false');
+
+    // Toggle menu visibility with smooth animation
+    if (newState) {
+      mobileMenu.style.maxHeight = '0px'; // Start collapsed
+      mobileMenu.offsetHeight; // Force reflow
+      mobileMenu.style.maxHeight = '500px'; // Expand
+    } else {
+      mobileMenu.style.maxHeight = '0px'; // Collapse
+    }
+  },
+
+  /**
+   * Close mobile menu
+   * @function closeMobileMenu
+   */
+  closeMobileMenu: function() {
+    const mobileMenuToggle = document.getElementById('mobile-menu-toggle');
+    const mobileMenu = document.getElementById('mobile-menu');
+
+    if (mobileMenuToggle) {
+      mobileMenuToggle.setAttribute('aria-expanded', 'false');
+    }
+    if (mobileMenu) {
+      mobileMenu.style.maxHeight = '0px';
+    }
+  },
+
+  /**
    * Apply smart navigation highlighting based on current page
-   * Detects current page from URL and highlights corresponding nav links
+   * Uses robust path normalization for reliable highlighting
    * @function applyNavigationHighlighting
    */
   applyNavigationHighlighting: function() {
-    // Get current page from URL (handle both relative and absolute paths)
-    let currentPath = window.location.pathname;
+    // Robust Navigation Highlighting
+    const normalizePath = (path) => {
+        if (!path) return '';
+        return path.replace(/^(?:https?:\/\/[^\/]+)?/, '') // Remove domain
+                   .replace(/\/$/, '')                      // Remove trailing slash
+                   .replace(/\/index\.html$/, '')           // Remove index.html
+                   .replace(/\.html$/, '');                 // Remove .html extension
+    };
 
-    // Handle root path and extract filename
-    if (currentPath === '/' || currentPath === '') {
-      currentPath = 'index.html';
-    } else {
-      // Remove leading slash and get the filename
-      currentPath = currentPath.split('/').pop() || 'index.html';
-    }
-
-    // Handle query parameters (strip everything after ?)
-    currentPath = currentPath.split('?')[0];
-    // Handle hash fragments (strip everything after #)
-    currentPath = currentPath.split('#')[0];
-    // Ensure we have a default filename
-    if (!currentPath || currentPath === '') {
-      currentPath = 'index.html';
-    }
-
-    console.log('🔍 Applying navigation highlighting for:', currentPath);
-
-    // Find all navigation links - both desktop and mobile
-    const desktopNavLinks = document.querySelectorAll('header nav a');
-    const mobileNavLinks = document.querySelectorAll('#mobile-menu a');
-
-    // Combine all navigation links
-    const allNavLinks = [...desktopNavLinks, ...mobileNavLinks];
-
-    allNavLinks.forEach(link => {
-      const linkHref = link.getAttribute('href');
-      const isMobileLink = link.closest('#mobile-menu') !== null;
-
-      // Clean the href for comparison (remove leading slash if present)
-      let cleanHref = linkHref;
-      if (cleanHref && cleanHref.startsWith('/')) {
-        cleanHref = cleanHref.substring(1);
-      }
-      if (cleanHref && cleanHref === '') {
-        cleanHref = 'index.html';
-      }
-
-      // DEBUG: Log comparison for troubleshooting
-      console.log(`🔍 [${isMobileLink ? 'MOBILE' : 'DESKTOP'}] Comparing:`, currentPath, 'vs', cleanHref, 'for link:', linkHref);
-
-      if (cleanHref === currentPath) {
-        // Apply active state styling - different logic for mobile vs desktop
-        link.classList.add('active');
-
-        if (isMobileLink) {
-          // Mobile links: remove default hover states that might interfere
-          link.classList.remove('hover:text-white', 'hover:bg-white/10');
-        } else {
-          // Desktop links: adjust text color and remove hover states
-          link.classList.remove('text-slate-200', 'hover:text-brand-wood');
+    const currentPath = normalizePath(location.pathname);
+    const navLinks = document.querySelectorAll('nav a[href], #mobile-menu a[href]');
+    
+    navLinks.forEach(link => {
+        const linkPath = normalizePath(link.getAttribute('href'));
+        // Highlight if paths match OR if current path is a sub-section of the link
+        if (linkPath === currentPath || (linkPath !== '' && currentPath.startsWith(linkPath))) {
+            link.classList.add('bg-white/20', 'font-bold', 'text-white');
         }
-
-        console.log(`✅ [${isMobileLink ? 'MOBILE' : 'DESKTOP'}] Applied active state to:`, linkHref);
-      } else {
-        // Ensure inactive state - different logic for mobile vs desktop
-        link.classList.remove('active');
-
-        if (isMobileLink) {
-          // Mobile links: restore default hover states if not present
-          if (!link.classList.contains('hover:text-white')) {
-            link.classList.add('text-slate-200');
-          }
-          if (!link.classList.contains('hover:bg-white/10')) {
-            link.classList.add('hover:text-white', 'hover:bg-white/10');
-          }
-        } else {
-          // Desktop links: ensure proper inactive styling
-          if (!link.classList.contains('text-slate-200')) {
-            link.classList.add('text-slate-200');
-          }
-          if (!link.classList.contains('hover:text-brand-wood')) {
-            link.classList.add('hover:text-brand-wood');
-          }
-        }
-      }
     });
   }
 };
+
+// Gallery Tab Switching Logic (Option B Implementation)
+/**
+ * Switch between renovation gallery tabs
+ * @param {string} tabName - Name of tab to show ('deck', 'kitchen', 'living')
+ */
+window.switchTab = function(tabName) {
+  // Reset all tabs
+  document.querySelectorAll('[id^="tab-"]').forEach(tab => {
+    tab.className = 'px-6 py-2 rounded-lg font-bold text-sm transition-all text-slate-600 hover:text-brand-navy hover:bg-white';
+  });
+
+  // Highlight active tab
+  const activeTab = document.getElementById(`tab-${tabName}`);
+  if(activeTab) {
+    activeTab.className = 'px-6 py-2 rounded-lg font-bold text-sm transition-all bg-brand-wood text-white shadow-md';
+  }
+
+  // Hide all content
+  document.querySelectorAll('.tab-content').forEach(content => {
+    content.classList.remove('opacity-100', 'z-10');
+    content.classList.add('opacity-0', 'z-0', 'pointer-events-none');
+  });
+
+  // Show active content
+  const activeContent = document.getElementById(`content-${tabName}`);
+  if(activeContent) {
+    activeContent.classList.remove('opacity-0', 'z-0', 'pointer-events-none');
+    activeContent.classList.add('opacity-100', 'z-10');
+  }
+};
+
+/* Gallery Comparison Sliders Initialization */
+document.addEventListener('DOMContentLoaded', () => {
+  // Handle slider input events for comparison sliders
+  document.body.addEventListener('input', (e) => {
+    if (e.target.classList.contains('slider-control')) {
+      const slider = e.target.closest('.comparison-slider');
+      if (slider) {
+        const val = e.target.value + '%';
+        slider.querySelector('.overlay').style.width = val;
+        slider.querySelector('.slider-handle').style.left = val;
+      }
+    }
+  });
+});
+
+// Initialize PWA Service Worker registration
+if ('serviceWorker' in navigator) {
+  navigator.serviceWorker.register('/public/sw.js')
+    .then(function(registration) {
+      console.log('P4C Service Worker registered:', registration);
+    })
+    .catch(function(error) {
+      console.log('P4C Service Worker registration failed:', error);
+    });
+}
 
 // Initialize when DOM is ready
 if (document.readyState === 'loading') {
@@ -279,3 +309,6 @@ if (document.readyState === 'loading') {
 } else {
   P4C.ComponentLoader.init();
 }
+
+// Event dispatch for race condition fix
+window.dispatchEvent(new Event('P4C:ComponentsReady'));

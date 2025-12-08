@@ -1,0 +1,216 @@
+/* P4C Master Styles Bundle - Unified Architecture */
+/* Combines critical.css, design-tokens.css, components.css, main.css, animations.css */
+/* Encrypted with hardcoded values for 'Client-Side Static' perfection */
+
+:root {
+  /* Hardcoded Design Tokens - No External Dependencies */
+  --color-primary-navy: #0B1120;
+  --color-primary-navy-rgb: 11, 17, 32;
+  --color-accent-gold: #C28E5A;
+  --color-accent-gold-rgb: 194, 142, 90;
+  --color-secondary-walnut: #8B5E3C;
+  --color-secondary-walnut-rgb: 139, 94, 60;
+  --color-neutral-beige: #F5F5F0;
+  --color-neutral-white: #FFFFFF;
+  --color-neutral-slate-500: #64748b;
+  --color-neutral-slate-600: #475569;
+  --color-neutral-slate-200: #e2e8f0;
+  --color-success: #10B981;
+  --color-warning: #F59E0B;
+  --color-error: #EF4444;
+  --color-info: #3B82F6;
+
+  --font-heading: 'Merriweather', serif;
+  --font-body: 'Inter', sans-serif;
+  --font-weight-light: 300;
+  --font-weight-normal: 400;
+  --font-weight-medium: 500;
+  --font-weight-semibold: 600;
+  --font-weight-bold: 700;
+
+  --shadow-subtle: 0 2px 8px rgba(11, 17, 32, 0.08);
+  --shadow-medium: 0 10px 30px -10px rgba(11, 17, 32, 0.6);
+  --shadow-strong: 0 20px 50px rgba(11, 17, 32, 0.25);
+  --shadow-wood: 0 10px 25px -5px rgba(194, 142, 90, 0.4);
+  --shadow-floating: 0 20px 50px rgba(11, 17, 32, 0.35);
+
+  --space-sm: 0.5rem;
+  --space-md: 1rem;
+  --space-lg: 1.5rem;
+  --space-xl: 2rem;
+  --duration-normal: 0.3s;
+  --ease-in-out: cubic-bezier(0.4, 0, 0.2, 1);
+
+  --radius-md: 0.5rem;
+  --radius-lg: 1rem;
+  --border-thin: 1px;
+}
+
+/* Typography */
+.text-h1 {
+  font-size: clamp(2.5rem, 8vw, 4.5rem);
+  line-height: 1.1;
+  font-weight: var(--font-weight-bold);
+  font-family: var(--font-heading);
+}
+
+.text-h2 {
+  font-size: 2.5rem;
+  line-height: 1.2;
+  font-weight: var(--font-weight-bold);
+  font-family: var(--font-heading);
+}
+
+.text-body {
+  font-size: 1rem;
+  line-height: 1.6;
+  font-weight: var(--font-weight-normal);
+  font-family: var(--font-body);
+}
+
+.text-center { text-align: center; }
+
+/* Colors & Backgrounds */
+.bg-brand-navy { background-color: #0B1120; }
+.text-brand-navy { color: #0B1120; }
+.text-brand-wood { color: #C28E5A; }
+.text-slate-600 { color: #475569; }
+.text-white { color: #FFFFFF; }
+
+/* Navigation Glassmorphism */
+.nav-glass {
+    background: rgba(11, 17, 32, 0.85) !important;
+    -webkit-backdrop-filter: blur(12px);
+    backdrop-filter: blur(12px);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+}
+
+/* Glassmorphism Effects */
+.glass {
+    background: rgba(255, 255, 255, 0.1);
+    -webkit-backdrop-filter: blur(10px);
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+/* Button Base */
+.btn-base {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 1rem 1.5rem;
+  font-family: var(--font-body);
+  font-size: 1rem;
+  font-weight: var(--font-weight-medium);
+  border: var(--border-thin) solid transparent;
+  border-radius: var(--radius-md);
+  cursor: pointer;
+  transition: all var(--duration-normal) var(--ease-in-out);
+}
+
+.btn-primary {
+    background: linear-gradient(135deg, #C28E5A 0%, #8B5E3C 100%);
+    color: #FFFFFF;
+}
+
+.btn-primary:hover {
+    transform: translateY(-2px);
+    box-shadow: var(--shadow-wood);
+}
+
+/* Card Base */
+.card-base {
+  padding: var(--space-xl);
+  border-radius: var(--radius-lg);
+  background-color: var(--color-neutral-white);
+  box-shadow: var(--shadow-medium);
+  transition: all var(--duration-normal) var(--ease-in-out);
+}
+
+/* Flex & Grid Utilities */
+.flex { display: flex; }
+.items-center { align-items: center; }
+.justify-center { justify-content: center; }
+.justify-between { justify-content: space-between; }
+.max-w-7xl { max-width: 80rem; }
+.max-w-6xl { max-width: 72rem; }
+.container { max-width: 1280px; margin: 0 auto; }
+.px-4 { padding-left: 1rem; padding-right: 1rem; }
+.py-16 { padding-top: 4rem; padding-bottom: 4rem; }
+
+/* Hover Effects */
+.hover-lift:hover { transform: translateY(-4px); box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1); }
+.transition-all { transition-property: all; transition-duration: var(--duration-normal); transition-timing-function: var(--ease-in-out); }
+
+/* Shadows */
+.shadow-lg { box-shadow: var(--shadow-strong); }
+.shadow-xl { box-shadow: var(--shadow-floating); }
+
+/* Skip to Content */
+.skip-to-content {
+  position: absolute;
+  top: -9999px;
+  left: -9999px;
+  z-index: 1050;
+  padding: 1rem 1.5rem;
+  background-color: var(--color-accent-gold);
+  color: var(--color-primary-navy);
+  text-decoration: none;
+  font-weight: var(--font-weight-bold);
+  border-radius: var(--radius-md);
+}
+
+.skip-to-content:focus {
+  top: 1rem;
+  left: 1rem;
+  outline: 2px solid var(--color-primary-navy);
+}
+
+/* Mobile Responsiveness */
+@media (max-width: 768px) {
+    .hidden-xs { display: none; }
+    .md\:hidden { display: none; }
+    .md\:grid-cols-3 { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+}
+
+/* Navigation Active States */
+nav a.active {
+  background-color: rgba(194, 142, 90, 0.2);
+  color: #C28E5A;
+  border-bottom: 3px solid #C28E5A;
+  font-weight: 600;
+}
+
+/* Mobile Menu */
+#mobile-menu.active {
+    max-height: 100vh !important;
+    opacity: 1 !important;
+    visibility: visible !important;
+    transform: translateY(0) !important;
+    display: block !important;
+}
+
+/* Animations */
+@keyframes bounce {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(-10px); }
+}
+.animate-bounce { animation: bounce 1s infinite; }
+
+@keyframes fadeInUp {
+    from { opacity: 0; transform: translateY(30px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+.animate-fade-in-up { animation: fadeInUp 0.3s ease-out forwards; }
+
+/* Property Cards & Components */
+/* Additional component styles integrated */
+
+/* Performance Optimizations */
+@media (prefers-reduced-motion: reduce) {
+    *, *::before, *::after {
+        animation-duration: 0.01ms !important;
+        transition-duration: 0.01ms !important;
+    }
+}

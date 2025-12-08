@@ -6,10 +6,7 @@
     <title>Contact Us | Properties 4 Creations</title>
     <meta name="description" content="Affordable housing solutions for families and veterans in East Texas. Transparent pricing, premium renovations, and community impact.">
     <link rel="canonical" href="https://properties4creations.com/contact.html">
-    <link rel="stylesheet" href="css/design-tokens.css">
-    <link rel="stylesheet" href="css/components.css">
-    <link rel="stylesheet" href="css/main.css">
-    <link href="https://fonts.googleapis.com/css2?family=Merriweather:wght@400;700&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
     <script src="https://cdn.tailwindcss.com"></script>
     <script>
         tailwind.config = {
@@ -17,31 +14,33 @@
                 extend: {
                     colors: {
                         brand: {
-                            navy: 'var(--color-primary-navy)',
-                            wood: 'var(--color-accent-gold)',
-                            walnut: 'var(--color-secondary-walnut)',
-                            beige: 'var(--color-neutral-beige)',
-                            surface: 'var(--color-neutral-white)',
-                            slate: 'var(--color-neutral-slate-500)'
+                            navy: '#0B1120',
+                            wood: '#C28E5A',
+                            walnut: '#8B5E3C',
+                            beige: '#F5F5F0',
+                            surface: '#FFFFFF',
+                            slate: '#64748b'
                         }
                     },
                     fontFamily: {
-                        heading: ['Merriweather','serif'],
-                        body: ['Inter','sans-serif']
+                        heading: ['Merriweather', 'serif'],
+                        body: ['Inter', 'sans-serif']
                     },
                     boxShadow: {
-                        wood: 'var(--shadow-wood)',
-                        navy: 'var(--shadow-medium)'
+                        wood: '0 10px 25px -5px rgba(194, 142, 90, 0.4)',
+                        'navy': '0 10px 30px -10px rgba(11, 17, 32, 0.6)',
                     }
                 }
             }
         }
     </script>
+
+    <link rel="stylesheet" href="css/styles.css">
 </head>
 <body class="bg-brand-beige">
     <!-- Accessibility: Skip to main content -->
     <a href="#main" class="skip-to-content">Skip to main content</a>
-    <div id="header-container"></div>
+    <div id="header-container" style="min-height: 76px;"></div>
     <div id="page-banner-container"></div>
 
     <!-- Main Content -->
@@ -66,24 +65,24 @@
 
                 <div class="grid md:grid-cols-2 gap-6">
                     <div>
-                        <label class="block font-bold text-brand-navy mb-2">Name</label>
-                        <input type="text" name="name" required class="w-full border rounded-lg p-3" placeholder="Your Name">
+                        <label for="name" class="block font-bold text-brand-navy mb-2">Name</label>
+                        <input type="text" id="name" name="name" required class="w-full border rounded-lg p-3" placeholder="Your Name">
                     </div>
                     <div>
-                        <label class="block font-bold text-brand-navy mb-2">Email</label>
-                        <input type="email" name="email" required class="w-full border rounded-lg p-3" placeholder="email@example.com">
+                        <label for="email" class="block font-bold text-brand-navy mb-2">Email</label>
+                        <input type="email" id="email" name="email" required class="w-full border rounded-lg p-3" placeholder="email@example.com">
                     </div>
                 </div>
                 <div>
-                    <label class="block font-bold text-brand-navy mb-2">Phone (Optional)</label>
-                    <input type="tel" name="phone" class="w-full border rounded-lg p-3" placeholder="(903) 555-0123">
+                    <label for="phone" class="block font-bold text-brand-navy mb-2">Phone (Optional)</label>
+                    <input type="tel" id="phone" name="phone" class="w-full border rounded-lg p-3" placeholder="(903) 555-0123">
                 </div>
                 <div>
-                    <label class="block font-bold text-brand-navy mb-2">Message</label>
-                    <textarea name="message" class="w-full border rounded-lg p-3 h-32" placeholder="How can we help?" rows="4" required></textarea>
+                    <label for="message" class="block font-bold text-brand-navy mb-2">Message</label>
+                    <textarea id="message" name="message" class="w-full border rounded-lg p-3 h-32" placeholder="How can we help?" rows="4" required></textarea>
                 </div>
                 <div class="flex items-center">
-                    <input type="checkbox" id="veteran-contact" name="veteran" class="mr-2">
+                    <input type="checkbox" id="veteran-contact" name="veteran" value="yes" class="mr-2">
                     <label for="veteran-contact" class="text-slate-700">U.S. Military Veteran</label>
                 </div>
                 <button type="submit" class="btn-base btn-primary px-8 py-3 text-white rounded-lg font-bold w-full text-lg">Send Message</button>
@@ -98,7 +97,3 @@
     <script src="js/banner-loader.js" defer></script>
 </body>
 </html>
-
-
-
-

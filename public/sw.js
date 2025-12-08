@@ -6,19 +6,34 @@ const DYNAMIC_CACHE = 'properties-4-creation-dynamic-v1'
 // Resources to cache on install
 const STATIC_ASSETS = [
   '/',
+  '/index.html',
   '/about.html',
   '/projects.html',
   '/contact.html',
   '/get-started.html',
+  '/impact.html',
+  '/transparency.html',
+  '/privacy.html',
+  '/terms.html',
+  '/thank-you.html',
+  '/resources.html',
   '/manifest.json',
-  '/favicon.ico',
-  '/css/main.min.css',
-  '/js/bundle.min.js',
+  '/public/favicon.svg',
   '/css/design-tokens.css',
   '/css/components.css',
-  '/public/images/**/*',
-  '/public/images/banners/**/*',
-  '/public/images/hero/**/*',
+  '/css/main.css',
+  '/css/animations.css',
+  'components/component-loader.js',
+  'js/banner-loader.js',
+  'js/leaflet.js',
+  'static-forms.js',
+  'accessibility-enhanced.js',
+  // Critical images for PWA
+  '/public/images/logo/BRAND_LOGO.svg',
+  '/public/images/banners/hero-projects-banner.webp',
+  '/public/images/hero/front_porch_hero.webp',
+  // Property data for offline viewing
+  '/public/properties-data.json'
 ]
 
 // Install event - cache static assets

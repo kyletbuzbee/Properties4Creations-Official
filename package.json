@@ -1,0 +1,37 @@
+{
+  "name": "properties-4-creations-official",
+  "version": "3.0.0",
+  "description": "Properties 4 Creations - Veteran Housing Platform - Unified Static Architecture",
+  "main": "index.html",
+  "scripts": {
+    "dev": "npm run audit && npm run start",
+    "start": "python3 -m http.server 8080 || python -m http.server 8080 || npx serve . -p 8080",
+    "audit": "node scripts/audit-html-consistency.mjs",
+    "convert-images": "cd scripts && (convert-images.bat || ./convert-images.sh)",
+    "optimize": "npm run convert-images && npm run audit && npm run build",
+    "build": "echo 'Static site - no build step needed - ready for deployment'",
+    "deploy": "echo 'Deploy to GitHub Pages or your hosting provider'",
+    "postinstall": "npm run audit"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/kyletbuzbee/Properties4Creations-Official.git"
+  },
+  "keywords": [
+    "static-site",
+    "pwa",
+    "veteran-housing",
+    "tailwind-css",
+    "accessibility",
+    "performance"
+  ],
+  "author": "Properties 4 Creations",
+  "license": "MIT",
+  "devDependencies": {
+    "serve": "^14.2.1"
+  },
+  "engines": {
+    "node": ">=14.0.0"
+  },
+  "homepage": "https://properties4creations.com"
+}

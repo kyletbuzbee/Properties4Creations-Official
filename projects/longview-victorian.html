@@ -157,7 +157,7 @@
     <!-- Accessibility: Skip to main content -->
     <a href="#main" class="skip-to-content">Skip to main content</a>
     <!-- Header Container -->
-    <div id="header-container"></div>
+<div id="header-container" style="min-height: 76px;"></div>
 <div id="page-banner-container"></div>
 
 
@@ -302,20 +302,19 @@
                             id="property-inquiry"
                             action=""
                             method="POST"
-                            class="space-y-4"
-                            novalidate>
+                            class="space-y-4">
 
                     <input type="hidden" name="_subject" value="Lead: Longview Victorian">
                     <input type="hidden" name="_next" value="thank-you.html">
 
-                    <label class="block text-sm font-medium text-slate-700 mb-1">Full Name</label>
-                    <input type="text" name="name" required class="input-base">
+                    <label for="name" class="block text-sm font-medium text-slate-700 mb-1">Full Name</label>
+                    <input type="text" id="name" name="name" required class="input-base" aria-describedby="name-error">
 
-                    <label class="block text-sm font-medium text-slate-700 mb-1">Email</label>
-                    <input type="email" name="email" required class="input-base">
+                    <label for="email" class="block text-sm font-medium text-slate-700 mb-1">Email</label>
+                    <input type="email" id="email" name="email" required class="input-base" aria-describedby="email-error">
 
-                    <label class="block text-sm font-medium text-slate-700 mb-1">Phone</label>
-                    <input type="tel" name="phone" required class="input-base">
+                    <label for="phone" class="block text-sm font-medium text-slate-700 mb-1">Phone</label>
+                    <input type="tel" id="phone" name="phone" required class="input-base" aria-describedby="phone-error">
 
                     <div class="flex items-center">
                         <input type="checkbox" id="veteran" name="veteran" class="mr-2">
@@ -550,7 +549,3 @@
 <script src="js/banner-loader.js" defer></script>
 </body>
 </html>
-
-
-
-
