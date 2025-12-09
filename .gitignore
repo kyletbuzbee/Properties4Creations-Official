@@ -1,31 +1,41 @@
-# --- OS & Editor ---
+# Ignore backups and logs
+*.bak
+*.log
+*.tmp
+test-runner-log
+
+# Ignore OS files
 .DS_Store
 Thumbs.db
-.vscode/
-*.swp
 
-# --- Logs & Reports ---
-*.log
-npm-debug.log*
-yarn-debug.log*
-yarn-error.log*
-audit-report.json
+# Ignore duplicate CNAMEs if generated
+CNAME copy
 
-# --- Backups & Temp Files ---
-*.bak
-*.tmp
-
-# --- Build & Bundled Artifacts ---
-css/main.min.css
-js/bundle.min.js
-
-# --- Scripts (local dev only, not production) ---
-scripts/*.ps1
-scripts/*.bat
-
-# --- Node / Tooling (if added later) ---
 node_modules/
 dist/
+.env
+.vscode/
+.idea/
+coverage/
+*.local
+*.swp
+*.swo
+*.pid
+*.seed
+*.pid.lock
 
-# --- Environment Files ---
-CNAME
+# Ignore build artifacts
+build/
+out/
+.cache/
+*.exe
+*.dll
+*.so
+
+# Ignore package lock files
+package-lock.json
+yarn.lock
+.pnpm-debug.log
+.npmrc
+.pnpm-store/
+*.tsbuildinfo

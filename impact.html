@@ -40,22 +40,66 @@
 <body class="bg-brand-beige">
     <!-- Accessibility: Skip to main content -->
     <a href="#main" class="skip-to-content">Skip to main content</a>
-    <div id="header-container"></div>
-    <div id="page-banner-container"></div>
+<div class="bg-brand-wood text-white text-xs font-bold py-2 text-center relative z-50">
+    <span class="hidden sm:inline">🇺🇸 Veteran Owned & Operated &nbsp;|&nbsp; </span>
+    <span>Serving Families & Veterans in East Texas</span>
+</div>
+<header id="main-header" class="sticky top-0 z-50 w-full glass-premium transition-all duration-300">
+    <nav role="navigation" aria-label="Main navigation" class="relative max-w-7xl mx-auto flex items-center justify-between px-4 py-4 sm:px-6 lg:px-8">
+        <div class="flex items-center gap-4">
+            <a href="impact.html" class="flex items-center gap-3 group" aria-label="Properties 4 Creations Home">
+                <img src="public/images/logo/brand-logo-header1.svg" alt="Properties 4 Creations Logo" class="h-10 w-auto group-hover:scale-105 transition-transform duration-200 drop-shadow-md">
+                <div class="hidden sm:block leading-tight">
+                    <div class="font-bold text-lg tracking-wide text-white text-shadow-sm">Properties 4 Creations</div>
+                    <div class="text-[10px] uppercase tracking-widest text-brand-wood font-bold">Families & Veteran Housing</div>
+                </div>
+            </a>
+        </div>
+        <div class="hidden md:flex items-center gap-8">
+            <a href="index.html" class="text-sm font-medium text-white/90 hover:text-white transition-all">Home</a>
+            <a href="projects.html" class="text-sm font-medium text-white/90 hover:text-white transition-all">Properties</a>
+            <a href="impact.html" class="text-sm font-medium text-white/90 hover:text-white bg-white/10 rounded-lg transition-all">Impact</a>
+            <a href="resources.html" class="text-sm font-medium text-white/90 hover:text-white transition-all">Resources</a>
+            <a href="get-started.html" class="inline-flex items-center justify-center px-5 py-2 text-sm font-bold text-white transition-all duration-200 bg-brand-wood/90 hover:bg-brand-wood rounded-lg shadow-lg border border-white/10 backdrop-blur-sm">Get Started</a>
+        </div>
+        <button id="mobile-menu-toggle" class="md:hidden p-2 text-white/80 hover:text-white focus:outline-none transition-colors">
+            <svg class="w-8 h-8 drop-shadow-sm" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M4 6h16M4 12h16M4 18h16"/></svg>
+        </button>
+    </nav>
+    <div id="mobile-menu" class="hidden md:hidden absolute w-full left-0 border-t border-white/10 bg-brand-navy/95 backdrop-blur-xl shadow-2xl">
+        <div class="px-4 pt-4 pb-8 space-y-3">
+            <a href="index.html" class="block px-4 py-3 rounded-xl text-base font-medium text-slate-300 hover:text-white hover:bg-white/5 transition-colors">Home</a>
+            <a href="projects.html" class="block px-4 py-3 rounded-xl text-base font-medium text-slate-300 hover:text-white hover:bg-white/5 transition-colors">Our Properties</a>
+            <a href="impact.html" class="block px-4 py-3 rounded-xl text-base font-medium text-white bg-white/10 border border-white/5">Impact</a>
+            <a href="resources.html" class="block px-4 py-3 rounded-xl text-base font-medium text-slate-300 hover:text-white hover:bg-white/5 transition-colors">Resources</a>
+            <a href="get-started.html" class="block px-4 py-3 rounded-xl text-base font-bold text-center text-white bg-brand-wood shadow-lg mt-6">Get Started</a>
+        </div>
+    </div>
+</header>
 
-    <main>
-<script type="application/json" id="page-banner-config">
-{
-  "variant": "hero",
-  "title": "Real Families, Real Sanctuaries",
-  "subtitle": "See the human impact of fair housing through stories of veterans rebuilding their futures.",
-  "background": "public/videos/hero-impact-banner-1080.mp4",
-  "eyebrow": "Community Impact",
-  "showVoucherBadge": true,
-  "ctaText": "Share Your Story",
-  "ctaHref": "contact.html"
-}
-</script>
+<section class="relative h-[60vh] min-h-[500px] w-full overflow-hidden flex items-center justify-center">
+    <video autoplay muted loop playsinline class="absolute inset-0 w-full h-full object-cover z-0">
+        <source src="public/videos/hero-impact-banner-1080.mp4" type="video/mp4">
+        <img src="public/images/banners/hero-impact_banner.webp" alt="Impact Banner" class="w-full h-full object-cover">
+    </video>
+
+    <div class="absolute inset-0 bg-gradient-to-r from-brand-navy/90 via-brand-navy/70 to-transparent z-10"></div>
+
+    <div class="relative z-20 max-w-7xl mx-auto px-4 w-full">
+        <span class="text-brand-wood font-bold tracking-widest uppercase text-sm mb-2 block">Community Impact</span>
+        <h1 class="text-5xl md:text-6xl font-heading font-bold text-white mb-6 max-w-2xl">
+            Real Families, <br>Real Sanctuaries
+        </h1>
+        <p class="text-xl text-slate-200 max-w-lg mb-8">
+            See the human impact of fair housing through stories of veterans rebuilding their futures.
+        </p>
+        <a href="#stories" class="inline-flex items-center justify-center px-8 py-4 bg-brand-wood text-white font-bold rounded-xl hover:bg-brand-walnut transition-all shadow-lg hover:-translate-y-1">
+            Read Our Stories
+        </a>
+    </div>
+</section>
+
+<main>
 
         <!-- Featured Family Story -->
         <section class="py-20 bg-white">
