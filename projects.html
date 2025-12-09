@@ -1,586 +1,188 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Properties 4 Creations - Veteran Housing Properties</title>
-  <meta name="description" content="Affordable housing solutions for families and veterans in East Texas. Transparent pricing, premium renovations, and community impact.">
-  <link rel="canonical" href="https://properties4creations.com/projects.html">
-
-  <link href="https://fonts.googleapis.com/css2?family=Merriweather:wght@400;700&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
-  <script src="https://cdn.tailwindcss.com"></script>
-  <script>
-    tailwind.config = { theme: { extend: {
-      colors:{ brand:{ navy:'#0B1120', wood:'#C28E5A', walnut:'#8B5E3C', beige:'#F5F5F0', surface:'#FFFFFF', slate:'#64748b' } },
-      fontFamily:{ heading:['Merriweather','serif'], body:['Inter','sans-serif'] },
-      boxShadow:{ wood:'0 10px 25px -5px rgba(194,142,90,.4)', navy:'0 10px 30px -10px rgba(11,17,32,.6)' }
-    } } };
-  </script>
-  <link rel="stylesheet" href="css/styles.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Available Properties - Properties 4 Creations</title>
+    <link rel="stylesheet" href="css/styles.css">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        brand: { navy: '#0B1120', wood: '#C28E5A', beige: '#F5F5F0' }
+                    }
+                }
+            }
+        }
+    </script>
 </head>
 <body class="bg-brand-beige">
-  <a href="#main" class="skip-to-content">Skip to main content</a>
-<div class="bg-brand-wood text-white text-xs font-bold py-2 text-center relative z-50">
-    <span class="hidden sm:inline">🇺🇸 Veteran Owned & Operated &nbsp;|&nbsp; </span>
-    <span>Serving Families & Veterans in East Texas</span>
-</div>
-<header id="main-header" class="sticky top-0 z-50 w-full transition-all duration-300">
-    <div class="absolute inset-0 bg-brand-navy/95 backdrop-blur-md border-b border-white/10 shadow-lg"></div>
-    <nav role="navigation" aria-label="Main navigation" class="relative max-w-7xl mx-auto flex items-center justify-between px-4 py-4 sm:px-6 lg:px-8">
-        <div class="flex items-center gap-4">
-            <a href="projects.html" class="flex items-center gap-3 group" aria-label="Properties 4 Creations Home">
-                <img src="public/images/logo/brand-logo-header-footer.svg" alt="Properties 4 Creations Logo" class="h-10 w-auto group-hover:scale-105 transition-transform duration-200 drop-shadow-md">
-                <div class="hidden sm:block leading-tight">
-                    <div class="font-bold text-lg tracking-wide text-white text-shadow-sm">Properties 4 Creations</div>
-                    <div class="text-[10px] uppercase tracking-widest text-brand-wood font-bold">Families & Veteran Housing</div>
+    <a href="#main" class="skip-to-content">Skip to main content</a>
+    <div id="header-container"></div>
+
+    <main id="main">
+        <section class="py-16 bg-white">
+            <div class="max-w-6xl mx-auto px-4 text-center">
+                <h2 class="text-3xl font-bold text-brand-navy mb-2">See the Transformation</h2>
+                <p class="text-slate-600 mb-8">Click tabs to explore our renovation work across different rooms.</p>
+
+                <div class="flex justify-center gap-4 mb-8 border-b border-slate-200 pb-1">
+                    <button onclick="switchTab('kitchen')" id="tab-kitchen" class="pb-2 px-4 text-brand-wood border-b-2 border-brand-wood font-bold transition-all">Kitchen</button>
+                    <button onclick="switchTab('living')" id="tab-living" class="pb-2 px-4 text-slate-500 hover:text-brand-navy transition-all">Living Room</button>
                 </div>
-            </a>
-        </div>
-        <div class="hidden md:flex items-center gap-8">
-            <a href="index.html" class="text-sm font-medium text-white/90 hover:text-white transition-all">Home</a>
-            <a href="projects.html" class="text-sm font-medium text-white/90 hover:text-white bg-white/10 rounded-lg transition-all">Properties</a>
-            <a href="impact.html" class="text-sm font-medium text-white/90 hover:text-white transition-all">Impact</a>
-            <a href="resources.html" class="text-sm font-medium text-white/90 hover:text-white transition-all">Resources</a>
-            <a href="get-started.html" class="inline-flex items-center justify-center px-5 py-2 text-sm font-bold text-white transition-all duration-200 bg-brand-wood/90 hover:bg-brand-wood rounded-lg shadow-lg border border-white/10 backdrop-blur-sm">Get Started</a>
-        </div>
-        <button id="mobile-menu-toggle" class="md:hidden p-2 text-white/80 hover:text-white focus:outline-none transition-colors" aria-label="Toggle mobile navigation menu" aria-expanded="false">
-            <svg class="w-8 h-8 drop-shadow-sm" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" d="M4 6h16M4 12h16M4 18h16"/></svg>
-        </button>
-    </nav>
-    <div id="mobile-menu" class="hidden md:hidden absolute w-full left-0 border-t border-white/10 bg-brand-navy/95 backdrop-blur-xl shadow-2xl">
-        <div class="px-4 pt-4 pb-8 space-y-3">
-            <a href="index.html" class="block px-4 py-3 rounded-xl text-base font-medium text-slate-300 hover:text-white hover:bg-white/5 transition-colors">Home</a>
-            <a href="projects.html" class="block px-4 py-3 rounded-xl text-base font-medium text-white bg-white/10 border border-white/5">Properties</a>
-            <a href="impact.html" class="block px-4 py-3 rounded-xl text-base font-medium text-slate-300 hover:text-white hover:bg-white/5 transition-colors">Impact</a>
-            <a href="resources.html" class="block px-4 py-3 rounded-xl text-base font-medium text-slate-300 hover:text-white hover:bg-white/5 transition-colors">Resources</a>
-            <a href="get-started.html" class="block px-4 py-3 rounded-xl text-base font-bold text-center text-white bg-brand-wood shadow-lg mt-6">Get Started</a>
-        </div>
-    </div>
-</header>
 
-  <main id="main" class="pt-16">
-
-<div class="max-w-5xl mx-auto my-16 px-4">
-    <div class="text-center mb-8">
-        <h3 class="text-2xl font-bold text-brand-navy">See the Transformation</h3>
-        <p class="text-slate-600">Click tabs to explore our renovation work across different rooms.</p>
-    </div>
-
-    <div class="w-full">
-        <!-- Tab Navigation -->
-        <div class="flex justify-center mb-6 border-b border-slate-200">
-            <button id="tab-kitchen" class="tab-button px-6 py-3 font-medium text-brand-navy border-b-2 border-transparent hover:border-brand-wood transition-colors focus:outline-none focus:border-brand-wood" data-tab="kitchen">Kitchen</button>
-            <button id="tab-bathroom" class="tab-button px-6 py-3 font-medium text-slate-600 border-b-2 border-transparent hover:border-brand-wood hover:text-brand-navy transition-colors focus:outline-none focus:border-brand-wood" data-tab="bathroom">Bathroom</button>
-            <button id="tab-living-room" class="tab-button px-6 py-3 font-medium text-slate-600 border-b-2 border-transparent hover:border-brand-wood hover:text-brand-navy transition-colors focus:outline-none focus:border-brand-wood" data-tab="living-room">Living Room</button>
-            <button id="tab-exterior" class="tab-button px-6 py-3 font-medium text-slate-600 border-b-2 border-transparent hover:border-brand-wood hover:text-brand-navy transition-colors focus:outline-none focus:border-brand-wood" data-tab="exterior">Exterior</button>
-        </div>
-
-        <!-- Tab Content -->
-        <div class="relative w-full h-[400px] md:h-[500px] rounded-2xl overflow-hidden shadow-2xl group select-none">
-
-            <!-- Kitchen Tab -->
-            <div id="content-kitchen" class="tab-content absolute inset-0">
-                <div class="relative w-full h-full overflow-hidden">
-                    <img src="public/images/properties/before-after/comparison/projects-after-kitchen.webp" alt="Renovated kitchen after renovation" class="w-full h-full object-cover">
-                    <div class="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent"></div>
-                    <div class="absolute bottom-6 left-6 right-6 text-white">
-                        <h4 class="text-xl font-bold mb-2">Kitchen Renovation</h4>
-                        <p class="text-sm text-white/90">Modern appliances, custom cabinetry, and premium finishes</p>
+                <div class="relative w-full max-w-4xl mx-auto h-[400px] md:h-[500px] rounded-2xl overflow-hidden shadow-2xl group">
+                    <div id="content-kitchen" class="absolute inset-0 w-full h-full">
+                        <div class="absolute inset-0 bg-cover bg-center" style="background-image: url('public/images/properties/before-after/projects_after_kitchen.webp');">
+                            <span class="absolute top-4 right-4 bg-green-500 text-white px-3 py-1 rounded font-bold text-xs shadow-md">AFTER</span>
+                        </div>
+                        <div class="overlay absolute inset-0 w-[50%] bg-cover bg-center border-r-2 border-white" style="background-image: url('public/images/properties/before-after/projects-kitchen-before.webp');">
+                            <span class="absolute top-4 left-4 bg-brand-wood text-white px-3 py-1 rounded font-bold text-xs shadow-md">BEFORE</span>
+                        </div>
+                        <input type="range" min="0" max="100" value="50" class="slider-control absolute inset-0 w-full h-full opacity-0 cursor-ew-resize z-20" oninput="updateSlider(this)">
+                        <div class="slider-handle absolute top-1/2 left-1/2 w-8 h-8 bg-white rounded-full shadow-lg flex items-center justify-center -translate-x-1/2 -translate-y-1/2 z-10 pointer-events-none text-brand-navy">
+                            ↔
+                        </div>
                     </div>
-                    <span class="absolute top-4 right-4 bg-green-500 text-white px-3 py-1 rounded-full text-xs font-bold">AFTER</span>
-                </div>
-                <!-- Before overlay -->
-                <div class="absolute inset-0 w-1/2 h-full overflow-hidden border-r-2 border-white" id="kitchen-slider-overlay">
-                    <img src="public/images/properties/before-after/comparison/projects-kitchen-before.webp" alt="Kitchen before renovation" class="absolute top-0 -left-1/2 h-full w-full object-cover object-center">
-                    <span class="absolute top-4 left-4 bg-brand-wood text-white px-3 py-1 rounded-full text-xs font-bold">BEFORE</span>
-                </div>
-            </div>
 
-            <!-- Bathroom Tab -->
-            <div id="content-bathroom" class="tab-content absolute inset-0 hidden">
-                <div class="relative w-full h-full overflow-hidden">
-                    <img src="public/images/properties/before-after/comparison/projects-after-bathroom.webp" alt="Renovated bathroom after renovation" class="w-full h-full object-cover">
-                    <div class="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent"></div>
-                    <div class="absolute bottom-6 left-6 right-6 text-white">
-                        <h4 class="text-xl font-bold mb-2">Bathroom Upgrade</h4>
-                        <p class="text-sm text-white/90">ADA-compliant fixtures and modern ceramic tile</p>
+                    <div id="content-living" class="absolute inset-0 w-full h-full hidden">
+                         <div class="absolute inset-0 bg-cover bg-center" style="background-image: url('public/images/properties/before-after/after_living_room.webp');">
+                            <span class="absolute top-4 right-4 bg-green-500 text-white px-3 py-1 rounded font-bold text-xs shadow-md">AFTER</span>
+                        </div>
+                        <div class="overlay absolute inset-0 w-[50%] bg-cover bg-center border-r-2 border-white" style="background-image: url('public/images/properties/before-after/projects-before-living-room.webp');">
+                            <span class="absolute top-4 left-4 bg-brand-wood text-white px-3 py-1 rounded font-bold text-xs shadow-md">BEFORE</span>
+                        </div>
+                        <input type="range" min="0" max="100" value="50" class="slider-control absolute inset-0 w-full h-full opacity-0 cursor-ew-resize z-20" oninput="updateSlider(this)">
+                        <div class="slider-handle absolute top-1/2 left-1/2 w-8 h-8 bg-white rounded-full shadow-lg flex items-center justify-center -translate-x-1/2 -translate-y-1/2 z-10 pointer-events-none text-brand-navy">
+                            ↔
+                        </div>
                     </div>
-                    <span class="absolute top-4 right-4 bg-green-500 text-white px-3 py-1 rounded-full text-xs font-bold">AFTER</span>
-                </div>
-                <!-- Before overlay -->
-                <div class="absolute inset-0 w-1/2 h-full overflow-hidden border-r-2 border-white hidden" id="bathroom-slider-overlay">
-                    <img src="public/images/properties/before-after/comparison/projects-bathroom-before.webp" alt="Bathroom before renovation" class="absolute top-0 -left-1/2 h-full w-full object-cover object-center">
-                    <span class="absolute top-4 left-4 bg-brand-wood text-white px-3 py-1 rounded-full text-xs font-bold">BEFORE</span>
                 </div>
             </div>
+        </section>
 
-            <!-- Living Room Tab -->
-            <div id="content-living-room" class="tab-content absolute inset-0 hidden">
-                <div class="relative w-full h-full overflow-hidden">
-                    <img src="public/images/properties/before-after/comparison/after_living_room.webp" alt="Renovated living room after renovation" class="w-full h-full object-cover">
-                    <div class="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent"></div>
-                    <div class="absolute bottom-6 left-6 right-6 text-white">
-                        <h4 class="text-xl font-bold mb-2">Living Room Transformation</h4>
-                        <p class="text-sm text-white/90">Spacious, comfortable family living spaces</p>
+        <section class="py-16 px-4">
+            <div class="max-w-7xl mx-auto">
+                <div class="text-center mb-12">
+                    <span class="text-brand-wood font-bold tracking-widest uppercase text-sm">Available Properties</span>
+                    <h2 class="text-3xl font-bold text-brand-navy mt-2">Find Your New Home</h2>
+                </div>
+
+                <div class="flex justify-center gap-3 mb-10">
+                    <button class="bg-brand-navy text-white px-4 py-2 rounded-full text-sm">All</button>
+                    <button class="bg-white text-slate-600 hover:bg-slate-100 px-4 py-2 rounded-full text-sm border border-slate-200">Tyler</button>
+                    <button class="bg-white text-slate-600 hover:bg-slate-100 px-4 py-2 rounded-full text-sm border border-slate-200">Longview</button>
+                    <button class="bg-green-100 text-green-800 px-4 py-2 rounded-full text-sm border border-green-200 font-bold">• Section 8</button>
+                </div>
+
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                    <div class="bg-white rounded-xl overflow-hidden shadow-lg group hover:-translate-y-1 transition-all">
+                        <div class="relative h-64 bg-slate-200">
+                             <img src="public/images/projects_finished_wood_deck.jpg" alt="Home" class="w-full h-full object-cover">
+                             <div class="absolute top-4 left-4 flex gap-2">
+                                 <span class="bg-green-500 text-white text-xs font-bold px-2 py-1 rounded">Available Now</span>
+                                 <span class="bg-brand-navy text-white text-xs font-bold px-2 py-1 rounded">Section 8 Ready</span>
+                             </div>
+                             <div class="absolute bottom-4 right-4 bg-white/90 backdrop-blur px-3 py-1 rounded font-bold text-brand-navy">
+                                 $1,800/mo
+                             </div>
+                        </div>
+                        <div class="p-6">
+                            <h3 class="text-xl font-bold text-brand-navy mb-1">Tyler Ranch Home</h3>
+                            <p class="text-slate-500 text-sm mb-4">📍 Tyler, TX</p>
+                            <div class="flex gap-4 text-sm text-slate-600 mb-6 border-b border-slate-100 pb-4">
+                                <span>🛏️ 3 BR</span>
+                                <span>🚿 2 BA</span>
+                                <span>📏 1,850 sq ft</span>
+                            </div>
+                            <div class="flex gap-3">
+                                <a href="tyler-ranch-home.html" class="flex-1 bg-brand-navy text-white text-center py-2 rounded-lg font-medium hover:bg-slate-800">View Details</a>
+                                <a href="contact.html" class="flex-1 border border-slate-300 text-slate-700 text-center py-2 rounded-lg font-medium hover:bg-slate-50">Contact</a>
+                            </div>
+                        </div>
                     </div>
-                    <span class="absolute top-4 right-4 bg-green-500 text-white px-3 py-1 rounded-full text-xs font-bold">AFTER</span>
-                </div>
-                <!-- Before overlay -->
-                <div class="absolute inset-0 w-1/2 h-full overflow-hidden border-r-2 border-white hidden" id="living-room-slider-overlay">
-                    <img src="public/images/properties/before-after/comparison/projects-before-living-room.webp" alt="Living room before renovation" class="absolute top-0 -left-1/2 h-full w-full object-cover object-center">
-                    <span class="absolute top-4 left-4 bg-brand-wood text-white px-3 py-1 rounded-full text-xs font-bold">BEFORE</span>
-                </div>
-            </div>
 
-            <!-- Exterior Tab -->
-            <div id="content-exterior" class="tab-content absolute inset-0 hidden">
-                <div class="relative w-full h-full overflow-hidden">
-                    <img src="public/images/properties/before-after/comparison/projects-front-porch-after.webp" alt="Front porch exterior after renovation" class="w-full h-full object-cover">
-                    <div class="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent"></div>
-                    <div class="absolute bottom-6 left-6 right-6 text-white">
-                        <h4 class="text-xl font-bold mb-2">Exterior Enhancement</h4>
-                        <p class="text-sm text-white/90">Curb appeal improvements and outdoor spaces</p>
+                    <div class="bg-white rounded-xl overflow-hidden shadow-lg group hover:-translate-y-1 transition-all">
+                        <div class="relative h-64 bg-slate-200">
+                             <img src="public/images/properties/details/property-hero-1.jpg" alt="Home" class="w-full h-full object-cover">
+                             <div class="absolute top-4 left-4 flex gap-2">
+                                 <span class="bg-green-500 text-white text-xs font-bold px-2 py-1 rounded">Available Now</span>
+                             </div>
+                             <div class="absolute bottom-4 right-4 bg-white/90 backdrop-blur px-3 py-1 rounded font-bold text-brand-navy">
+                                 $1,950/mo
+                             </div>
+                        </div>
+                        <div class="p-6">
+                            <h3 class="text-xl font-bold text-brand-navy mb-1">Longview Victorian</h3>
+                            <p class="text-slate-500 text-sm mb-4">📍 Longview, TX</p>
+                            <div class="flex gap-4 text-sm text-slate-600 mb-6 border-b border-slate-100 pb-4">
+                                <span>🛏️ 4 BR</span>
+                                <span>🚿 2.5 BA</span>
+                                <span>📏 2,200 sq ft</span>
+                            </div>
+                            <div class="flex gap-3">
+                                <a href="longview-victorian.html" class="flex-1 bg-brand-navy text-white text-center py-2 rounded-lg font-medium hover:bg-slate-800">View Details</a>
+                                <a href="contact.html" class="flex-1 border border-slate-300 text-slate-700 text-center py-2 rounded-lg font-medium hover:bg-slate-50">Contact</a>
+                            </div>
+                        </div>
                     </div>
-                    <span class="absolute top-4 right-4 bg-green-500 text-white px-3 py-1 rounded-full text-xs font-bold">AFTER</span>
-                </div>
-                <!-- Before overlay -->
-                <div class="absolute inset-0 w-1/2 h-full overflow-hidden border-r-2 border-white hidden" id="exterior-slider-overlay">
-                    <img src="public/images/properties/before-after/comparison/projects-front-porch-before.webp" alt="Front porch exterior before renovation" class="absolute top-0 -left-1/2 h-full w-full object-cover object-center">
-                    <span class="absolute top-4 left-4 bg-brand-wood text-white px-3 py-1 rounded-full text-xs font-bold">BEFORE</span>
+
+                     <div class="bg-white rounded-xl overflow-hidden shadow-lg group hover:-translate-y-1 transition-all">
+                        <div class="relative h-64 bg-slate-200">
+                             <img src="public/images/properties/neighborhood/bayou-scene.jpg" alt="Home" class="w-full h-full object-cover">
+                             <div class="absolute top-4 left-4 flex gap-2">
+                                 <span class="bg-green-500 text-white text-xs font-bold px-2 py-1 rounded">Available Now</span>
+                             </div>
+                             <div class="absolute bottom-4 right-4 bg-white/90 backdrop-blur px-3 py-1 rounded font-bold text-brand-navy">
+                                 $1,650/mo
+                             </div>
+                        </div>
+                        <div class="p-6">
+                            <h3 class="text-xl font-bold text-brand-navy mb-1">Jefferson Riverfront</h3>
+                            <p class="text-slate-500 text-sm mb-4">📍 Jefferson, TX</p>
+                            <div class="flex gap-4 text-sm text-slate-600 mb-6 border-b border-slate-100 pb-4">
+                                <span>🛏️ 2 BR</span>
+                                <span>🚿 1 BA</span>
+                                <span>📏 950 sq ft</span>
+                            </div>
+                            <div class="flex gap-3">
+                                <a href="jefferson-riverfront.html" class="flex-1 bg-brand-navy text-white text-center py-2 rounded-lg font-medium hover:bg-slate-800">View Details</a>
+                                <a href="contact.html" class="flex-1 border border-slate-300 text-slate-700 text-center py-2 rounded-lg font-medium hover:bg-slate-50">Contact</a>
+                            </div>
+                        </div>
+                    </div>
                 </div>
             </div>
-
-            <!-- Slider Controls (shown on all tabs) -->
-            <div class="absolute top-0 bottom-0 left-1/2 w-10 -ml-5 cursor-ew-resize z-20">
-                <div class="w-10 h-10 bg-white rounded-full shadow-lg flex items-center justify-center text-brand-navy absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2">
-                    <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 9l4-4 4 4m0 6l-4 4-4-4" /></svg>
-                </div>
-            </div>
-
-            <label for="comparison-slider-control" class="sr-only">Comparison slider control to reveal before/after renovation differences</label>
-            <input type="range" id="comparison-slider-control" min="0" max="100" value="50" class="absolute inset-0 w-full h-full opacity-0 cursor-ew-resize z-30" oninput="updateSlider(this.value)">
-        </div>
-    </div>
-</div>
-
-<script>
-    // Tab functionality for comparison slider
-    document.addEventListener('DOMContentLoaded', function() {
-        // Get all tab buttons and content areas
-        const tabButtons = document.querySelectorAll('.tab-button');
-        const currentSliderControl = document.getElementById('comparison-slider-control');
-
-        // Set default slider position to middle
-        if (currentSliderControl) {
-            updateSlider(currentSliderControl.value);
-        }
-
-        // Tab switching logic
-        tabButtons.forEach(button => {
-            button.addEventListener('click', function() {
-                const tabName = this.getAttribute('data-tab');
-
-                // Remove active state from all tabs
-                tabButtons.forEach(btn => {
-                    btn.classList.remove('text-brand-navy', 'border-brand-wood');
-                    btn.classList.add('text-slate-600', 'border-transparent');
-                });
-
-                // Add active state to clicked tab
-                this.classList.remove('text-slate-600', 'border-transparent');
-                this.classList.add('text-brand-navy', 'border-brand-wood');
-
-                // Hide all tab content
-                document.querySelectorAll('.tab-content').forEach(content => {
-                    content.classList.add('hidden');
-                });
-
-                // Hide all slider overlays
-                document.querySelectorAll('[id$="-slider-overlay"]').forEach(overlay => {
-                    overlay.classList.add('hidden');
-                });
-
-                // Show active tab content and slider overlay
-                const activeContent = document.getElementById('content-' + tabName);
-                const activeOverlay = document.getElementById(tabName + '-slider-overlay');
-
-                if (activeContent) {
-                    activeContent.classList.remove('hidden');
-                }
-
-                if (activeOverlay) {
-                    activeOverlay.classList.remove('hidden');
-                }
-
-                // Reset slider to middle position when switching tabs
-                if (currentSliderControl) {
-                    currentSliderControl.value = 50;
-                    updateSlider(50);
-                }
-            });
-        });
-
-        // Set default active tab (kitchen)
-        const defaultTab = document.getElementById('tab-kitchen');
-        if (defaultTab) {
-            defaultTab.click();
-        }
-    });
-
-    function updateSlider(val) {
-        // Update all visible slider overlays
-        const activeOverlays = document.querySelectorAll('[id$="-slider-overlay"]:not(.hidden)');
-        activeOverlays.forEach(overlay => {
-            overlay.style.width = val + "%";
-        });
-    }
-</script>
-
-<section class="py-16 bg-slate-50">
-  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-    <div class="text-center mb-12">
-      <span class="text-brand-wood font-bold uppercase tracking-wider text-sm">Available Properties</span>
-      <h2 class="text-3xl font-bold text-brand-navy mt-2 mb-4">Find Your New Home</h2>
-      <p class="text-lg text-slate-600 max-w-3xl mx-auto">Browse our professionally renovated homes across East Texas. All properties are fully renovated, Section 8 approved, and ready for your family.</p>
-    </div>
-
-    <div class="flex flex-wrap gap-2 justify-center mb-6" id="filter-chips">
-      <button onclick="filterProperties('all')" class="px-4 py-2 rounded-full bg-brand-navy text-white text-sm font-bold shadow-md hover:bg-brand-wood transition-colors">All</button>
-      <button onclick="filterProperties('Tyler')" class="px-4 py-2 rounded-full bg-white text-brand-navy border border-slate-200 text-sm font-medium hover:border-brand-wood hover:text-brand-wood transition-colors">Tyler</button>
-      <button onclick="filterProperties('Longview')" class="px-4 py-2 rounded-full bg-white text-brand-navy border border-slate-200 text-sm font-medium hover:border-brand-wood hover:text-brand-wood transition-colors">Longview</button>
-      <button onclick="filterProperties('Jefferson')" class="px-4 py-2 rounded-full bg-white text-brand-navy border border-slate-200 text-sm font-medium hover:border-brand-wood hover:text-brand-wood transition-colors">Jefferson</button>
-      <button onclick="filterProperties('Section 8')" class="px-4 py-2 rounded-full bg-green-50 text-green-700 border border-green-200 text-sm font-bold hover:bg-green-100 transition-colors flex items-center gap-2">
-        <span class="w-2 h-2 rounded-full bg-green-500"></span> Section 8
-      </button>
-    </div>
-
-    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8" id="properties-container">
-      <!-- Properties will be loaded here -->
-    </div>
-
+        </section>
+    </main>
+    <div id="footer-container"></div>
+    <script src="components/component-loader.js"></script>
     <script>
-      document.addEventListener('DOMContentLoaded', async () => {
-        const container = document.getElementById('properties-container');
-        try {
-          const response = await fetch('public/properties-data.json');
-          const properties = await response.json();
-
-          container.innerHTML = '';
-
-          properties.forEach(prop => {
-            const isSection8 = prop.tags.some(tag => tag.includes('Section 8'));
-            const imageUrl = prop.images && prop.images.length > 0 ? prop.images[0] : 'public/images/logo/brand-logo-header-footer.svg';
-
-            const propertyCard = `
-              <article class="bg-white rounded-2xl shadow-lg overflow-hidden hover:shadow-xl transition-all duration-300 group">
-                <div class="relative">
-                  <img src="${imageUrl}" alt="${prop.title} property photo" class="w-full h-64 object-cover group-hover:scale-105 transition-transform duration-300" loading="lazy">
-                  <div class="absolute top-4 left-4 flex gap-2">
-                    ${prop.availability === 'available' ? '<span class="bg-green-500 text-white px-3 py-1 rounded-full text-xs font-bold">Available Now</span>' : ''}
-                    ${isSection8 ? '<span class="bg-green-600 text-white px-3 py-1 rounded-full text-xs font-bold">Section 8 Ready</span>' : '<span class="bg-amber-500 text-white px-3 py-1 rounded-full text-xs font-bold">Market Rate</span>'}
-                  </div>
-                  <div class="absolute top-4 right-4">
-                    <div class="bg-white/90 backdrop-blur-sm px-3 py-1 rounded-lg">
-                      <span class="text-2xl font-bold text-brand-navy">${prop.price.formatted}</span>
-                    </div>
-                  </div>
-                  <div class="absolute bottom-4 left-4 right-4">
-                    <div class="bg-white/90 backdrop-blur-sm p-3 rounded-lg">
-                      <div class="flex items-center gap-4 text-sm text-slate-600">
-                        <span class="flex items-center gap-1">
-                          <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 4a1 1 0 011-1h16a1 1 0 011 1v4a1 1 0 01-1 1H4a1 1 0 01-1-1V4z"/></svg>
-                          ${prop.bedrooms} BR
-                        </span>
-                        <span class="flex items-center gap-1">
-                          <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4M21 12a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
-                          ${prop.bathrooms} BA
-                        </span>
-                        <span class="flex items-center gap-1">
-                          <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 7v10c0 2.21 3.582 4 8 4s8-1.79 8-4V7"></path></svg>
-                          ${prop.sqft} sq ft
-                        </span>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-
-                <div class="p-6">
-                  <div class="flex items-start justify-between mb-3">
-                    <div>
-                      <h3 class="text-xl font-bold text-brand-navy mb-1">${prop.title}</h3>
-                      <p class="text-slate-600 text-sm flex items-center gap-1">
-                        <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"/><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"/></svg>
-                        ${prop.location}
-                      </p>
-                    </div>
-                  </div>
-
-                  <p class="text-slate-600 text-sm mb-4 line-clamp-2">${prop.story_description}</p>
-
-                  <div class="flex flex-wrap gap-1 mb-4">
-                    ${prop.trust_badges.map(badge => `<span class="bg-brand-beige text-brand-wood text-xs px-2 py-1 rounded-md">${badge}</span>`).join('')}
-                  </div>
-
-                  <div class="flex gap-3">
-                    <a href="${prop.url}" class="flex-1 bg-brand-navy text-white text-center px-4 py-3 rounded-lg hover:bg-brand-wood transition-colors font-medium">
-                      View Details
-                    </a>
-                    <a href="contact.html" class="bg-white border border-brand-navy text-brand-navy px-4 py-3 rounded-lg hover:bg-brand-beige transition-colors font-medium">
-                      Contact
-                    </a>
-                  </div>
-                </div>
-              </article>
-            `;
-
-            container.innerHTML += propertyCard;
-          });
-
-        } catch (err) {
-          console.error('Error loading properties:', err);
-          container.innerHTML = '<div class="col-span-full text-center py-12"><p class="text-red-500 font-medium">Unable to load properties. Please try again later.</p><p class="text-slate-600 text-sm mt-2">Error: ' + err.message + '</p></div>';
+        // Inline Slider Logic
+        function updateSlider(input) {
+            const container = input.closest('.relative');
+            const overlay = container.querySelector('.overlay');
+            const handle = container.querySelector('.slider-handle');
+            const val = input.value + '%';
+            overlay.style.width = val;
+            handle.style.left = val;
         }
-      });
+
+        function switchTab(tab) {
+            // Hide all content
+            document.getElementById('content-kitchen').classList.add('hidden');
+            document.getElementById('content-living').classList.add('hidden');
+
+            // Reset buttons
+            document.getElementById('tab-kitchen').className = "pb-2 px-4 text-slate-500 hover:text-brand-navy transition-all";
+            document.getElementById('tab-living').className = "pb-2 px-4 text-slate-500 hover:text-brand-navy transition-all";
+
+            // Activate selected
+            document.getElementById('content-' + tab).classList.remove('hidden');
+            document.getElementById('tab-' + tab).className = "pb-2 px-4 text-brand-wood border-b-2 border-brand-wood font-bold transition-all";
+        }
     </script>
-  </div>
-</section>
-
-<script>
-    // Property filter chips functionality
-    let currentFilter = 'all';
-    let allProperties = [];
-
-    async function loadProperties() {
-        try {
-            const response = await fetch('public/properties-data.json');
-            const properties = await response.json();
-            allProperties = properties;
-            displayFilteredProperties();
-        } catch (err) {
-            console.error('Error loading properties:', err);
-        }
-    }
-
-    function filterProperties(filter) {
-        currentFilter = filter;
-
-        // Update button styles
-        document.querySelectorAll('#filter-chips button').forEach(button => {
-            button.className = button.className.replace('bg-brand-navy text-white', 'bg-white text-brand-navy border border-slate-200').replace('bg-green-50 text-green-700', 'bg-green-50 text-green-700 border border-green-200');
-        });
-
-        if (filter === 'all') {
-            document.querySelector('[onclick="filterProperties(\'all\')"]').className = 'px-4 py-2 rounded-full bg-brand-navy text-white text-sm font-bold shadow-md hover:bg-brand-wood transition-colors';
-        } else if (filter === 'Section 8') {
-            document.querySelector('[onclick="filterProperties(\'Section 8\')"]').className = 'px-4 py-2 rounded-full bg-green-50 text-green-700 border border-green-200 text-sm font-bold hover:bg-green-100 transition-colors flex items-center gap-2';
-        } else {
-            document.querySelector(`[onclick="filterProperties('${filter}')"]`).className = 'px-4 py-2 rounded-full bg-white text-brand-navy border border-brand-wood text-sm font-medium hover:bg-brand-wood hover:text-white transition-colors';
-        }
-
-        displayFilteredProperties();
-    }
-
-    function displayFilteredProperties() {
-        const container = document.getElementById('properties-container');
-        container.innerHTML = '';
-
-        let filteredProperties = allProperties;
-
-        if (currentFilter !== 'all') {
-            filteredProperties = allProperties.filter(prop => {
-                if (currentFilter === 'Section 8') {
-                    return prop.tags.some(tag => tag.includes('Section 8'));
-                }
-                return prop.location.includes(currentFilter);
-            });
-        }
-
-        if (filteredProperties.length === 0) {
-            container.innerHTML = '<div class="col-span-full text-center py-12"><p class="text-slate-600 text-lg">No properties found matching your criteria.</p><p class="text-slate-500">Try adjusting your search filters.</p></div>';
-            return;
-        }
-
-        filteredProperties.forEach(prop => {
-            const isSection8 = prop.tags.some(tag => tag.includes('Section 8'));
-            const imageUrl = prop.images && prop.images.length > 0 ? prop.images[0] : 'public/images/logo/brand-logo-header-footer.svg';
-
-            const propertyCard = `
-              <article class="bg-white rounded-2xl shadow-lg overflow-hidden hover:shadow-xl transition-all duration-300 group">
-                <div class="relative">
-                  <img src="${imageUrl}" alt="${prop.title} property photo" class="w-full h-64 object-cover group-hover:scale-105 transition-transform duration-300" loading="lazy">
-                  <div class="absolute top-4 left-4 flex gap-2">
-                    ${prop.availability === 'available' ? '<span class="bg-green-500 text-white px-3 py-1 rounded-full text-xs font-bold">Available Now</span>' : ''}
-                    ${isSection8 ? '<span class="bg-green-600 text-white px-3 py-1 rounded-full text-xs font-bold">Section 8 Ready</span>' : '<span class="bg-amber-500 text-white px-3 py-1 rounded-full text-xs font-bold">Market Rate</span>'}
-                  </div>
-                  <div class="absolute top-4 right-4">
-                    <div class="bg-white/90 backdrop-blur-sm px-3 py-1 rounded-lg">
-                      <span class="text-2xl font-bold text-brand-navy">${prop.price.formatted}</span>
-                    </div>
-                  </div>
-                  <div class="absolute bottom-4 left-4 right-4">
-                    <div class="bg-white/90 backdrop-blur-sm p-3 rounded-lg">
-                      <div class="flex items-center gap-4 text-sm text-slate-600">
-                        <span class="flex items-center gap-1">
-                          <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 4a1 1 0 011-1h16a1 1 0 011 1v4a1 1 0 01-1 1H4a1 1 0 01-1-1V4z"/></svg>
-                          ${prop.bedrooms} BR
-                        </span>
-                        <span class="flex items-center gap-1">
-                          <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4M21 12a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
-                          ${prop.bathrooms} BA
-                        </span>
-                        <span class="flex items-center gap-1">
-                          <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 7v10c0 2.21 3.582 4 8 4s8-1.79 8-4V7"></path></svg>
-                          ${prop.sqft} sq ft
-                        </span>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-
-                <div class="p-6">
-                  <div class="flex items-start justify-between mb-3">
-                    <div>
-                      <h3 class="text-xl font-bold text-brand-navy mb-1">${prop.title}</h3>
-                      <p class="text-slate-600 text-sm flex items-center gap-1">
-                        <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"/><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"/></svg>
-                        ${prop.location}
-                      </p>
-                    </div>
-                  </div>
-
-                  <p class="text-slate-600 text-sm mb-4 line-clamp-2">${prop.story_description}</p>
-
-                  <div class="flex flex-wrap gap-1 mb-4">
-                    ${prop.trust_badges.map(badge => `<span class="bg-brand-beige text-brand-wood text-xs px-2 py-1 rounded-md">${badge}</span>`).join('')}
-                  </div>
-
-                  <div class="flex gap-3">
-                    <a href="${prop.url}" class="flex-1 bg-brand-navy text-white text-center px-4 py-3 rounded-lg hover:bg-brand-wood transition-colors font-medium">
-                      View Details
-                    </a>
-                    <a href="contact.html" class="bg-white border border-brand-navy text-brand-navy px-4 py-3 rounded-lg hover:bg-brand-beige transition-colors font-medium">
-                      Contact
-                    </a>
-                  </div>
-                </div>
-              </article>
-            `;
-
-            container.innerHTML += propertyCard;
-        });
-    }
-
-    // Initialize filter chips on page load
-    document.addEventListener('DOMContentLoaded', function() {
-        loadProperties();
-        // Set default active state for "All" button
-        document.querySelector('[onclick="filterProperties(\'all\')"]').className = 'px-4 py-2 rounded-full bg-brand-navy text-white text-sm font-bold shadow-md hover:bg-brand-wood transition-colors';
-    });
-</script>
-  </main>
-
-<footer class="bg-brand-navy text-white border-t border-white/10 pt-16 pb-8">
-    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 mb-12">
-
-            <div class="space-y-6">
-                <div class="flex items-center gap-3">
-                    <img src="public/images/logo/brand-logo-header-footer.svg" alt="Properties 4 Creations logo" class="h-12 w-auto brightness-0 invert" loading="lazy">
-                    <div>
-                        <h3 class="font-bold text-lg tracking-wide">Properties 4 Creations</h3>
-                        <p class="text-xs text-brand-wood uppercase tracking-widest font-bold">Family & Veteran Housing</p>
-                    </div>
-                </div>
-                <p class="text-slate-400 text-sm leading-relaxed">
-                    Rebuilding East Texas communities one home at a time. We provide premium, safe, and dignified housing for families and veterans.
-                </p>
-                <div class="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-white/5 border border-white/10">
-                    <span class="relative flex h-3 w-3">
-                      <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-green-400 opacity-75"></span>
-                      <span class="relative inline-flex rounded-full h-3 w-3 bg-green-500"></span>
-                    </span>
-                    <span class="text-xs font-medium text-green-400">Section 8 Vouchers Accepted</span>
-                </div>
-            </div>
-
-            <div>
-                <h4 class="text-sm font-bold uppercase tracking-widest text-brand-wood mb-6">Company</h4>
-                <ul class="space-y-3 text-sm text-slate-400">
-                    <li><a href="about.html" class="hover:text-white transition-colors">About Us</a></li>
-                    <li><a href="projects.html" class="hover:text-white transition-colors">Our Properties</a></li>
-                    <li><a href="impact.html" class="hover:text-white transition-colors">Community Impact</a></li>
-                    <li><a href="transparency.html" class="hover:text-white transition-colors">Renovation Standards</a></li>
-                </ul>
-            </div>
-
-            <div>
-                <h4 class="text-sm font-bold uppercase tracking-widest text-brand-wood mb-6">Residents</h4>
-                <ul class="space-y-3 text-sm text-slate-400">
-                    <li><a href="get-started.html" class="hover:text-white transition-colors">Apply for Housing</a></li>
-                    <li><a href="resources.html" class="hover:text-white transition-colors">Veteran Resources</a></li>
-                    <li><a href="contact.html" class="hover:text-white transition-colors">Maintenance Request</a></li>
-                    <li><a href="faq.html" class="hover:text-white transition-colors">FAQs</a></li>
-                </ul>
-            </div>
-
-            <div>
-                <h4 class="text-sm font-bold uppercase tracking-widest text-brand-wood mb-6">Contact</h4>
-                <ul class="space-y-4 text-sm text-slate-400">
-                    <li class="flex items-start gap-3">
-                        <svg class="w-5 h-5 text-brand-wood mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"/><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"/></svg>
-                        <span>Tyler, TX 75701<br>Serving East Texas</span>
-                    </li>
-                    <li class="flex items-center gap-3">
-                        <svg class="w-5 h-5 text-brand-wood" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"/></svg>
-                        <a href="tel:+19032831770" class="hover:text-white transition-colors">(903) 283-1770</a>
-                    </li>
-                    <li class="flex items-center gap-3">
-                        <svg class="w-5 h-5 text-brand-wood" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"/></svg>
-                        <a href="mailto:contact@properties4creations.com" class="hover:text-white transition-colors">contact@properties4creations.com</a>
-                    </li>
-                </ul>
-            </div>
-        </div>
-
-        <div class="border-t border-white/10 pt-8 flex flex-col md:flex-row justify-between items-center gap-4 text-xs text-slate-500">
-            <p>&copy; <span id="current-year">2025</span> Properties 4 Creations. All rights reserved.</p>
-            <div class="flex gap-6">
-                <a href="privacy.html" class="hover:text-brand-wood transition-colors">Privacy Policy</a>
-                <a href="terms.html" class="hover:text-brand-wood transition-colors">Terms of Service</a>
-            </div>
-        </div>
-    </div>
-</footer>
-
-<script>
-    // Mobile Menu & Sticky Header Logic
-    document.addEventListener('DOMContentLoaded', () => {
-        const btn = document.getElementById('mobile-menu-toggle');
-        const menu = document.getElementById('mobile-menu');
-
-        // Toggle Mobile Menu
-        if (btn && menu) {
-            btn.addEventListener('click', (e) => {
-                e.stopPropagation();
-                menu.classList.toggle('hidden');
-                const isExpanded = menu.classList.contains('hidden') ? 'false' : 'true';
-                btn.setAttribute('aria-expanded', isExpanded);
-            });
-
-            // Close when clicking outside
-            document.addEventListener('click', (e) => {
-                if (!menu.contains(e.target) && !btn.contains(e.target)) {
-                    menu.classList.add('hidden');
-                    btn.setAttribute('aria-expanded', 'false');
-                }
-            });
-        }
-    });
-</script>
-
-<script>
-    // Auto-update copyright year
-    document.getElementById('current-year').textContent = new Date().getFullYear();
-</script>
 </body>
 </html>

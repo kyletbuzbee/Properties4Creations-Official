@@ -8,8 +8,9 @@
     "file": "about.html",
     "passed": false,
     "diffs": [
-      "❌ Missing script: components/component-loader.js",
-      "❌ Missing script: accessibility-enhanced.js"
+      "❌ Missing script: accessibility-enhanced.js",
+      "❌ Missing meta: <meta name=\"description\"",
+      "❌ Missing meta: <link rel=\"canonical\""
     ]
   },
   {
@@ -59,7 +60,9 @@
     "file": "get-started.html",
     "passed": false,
     "diffs": [
-      "⚠️ Missing skip-to-content link for accessibility"
+      "❌ Missing script: accessibility-enhanced.js",
+      "❌ Missing meta: <meta name=\"description\"",
+      "❌ Missing meta: <link rel=\"canonical\""
     ]
   },
   {
@@ -100,14 +103,19 @@
     "file": "projects.html",
     "passed": false,
     "diffs": [
-      "❌ Missing script: components/component-loader.js",
-      "❌ Missing script: accessibility-enhanced.js"
+      "❌ Missing script: accessibility-enhanced.js",
+      "❌ Missing meta: <meta name=\"description\"",
+      "❌ Missing meta: <link rel=\"canonical\""
     ]
   },
   {
     "file": "resources.html",
-    "passed": true,
-    "diffs": []
+    "passed": false,
+    "diffs": [
+      "❌ Missing script: accessibility-enhanced.js",
+      "❌ Missing meta: <meta name=\"description\"",
+      "❌ Missing meta: <link rel=\"canonical\""
+    ]
   },
   {
     "file": "terms.html",

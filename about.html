@@ -3,247 +3,81 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>About Properties 4 Creations - Housing Mission For Veterans and Families</title>
-    <meta name="description" content="Affordable housing solutions for families and veterans in East Texas. Transparent pricing, premium renovations, and community impact.">
-    <link rel="canonical" href="https://properties4creations.com/about.html">
-
+    <title>About Us - Properties 4 Creations</title>
+    <link rel="stylesheet" href="css/styles.css">
     <script src="https://cdn.tailwindcss.com"></script>
     <script>
         tailwind.config = {
             theme: {
                 extend: {
                     colors: {
-                        brand: {
-                            navy: '#0B1120',
-                            wood: '#C28E5A',
-                            walnut: '#8B5E3C',
-                            beige: '#F5F5F0',
-                            surface: '#FFFFFF',
-                            slate: '#64748b'
-                        }
-                    },
-                    fontFamily: {
-                        heading: ['Merriweather', 'serif'],
-                        body: ['Inter', 'sans-serif']
-                    },
-                    boxShadow: {
-                        wood: '0 10px 25px -5px rgba(194, 142, 90, 0.4)',
-                        'navy': '0 10px 30px -10px rgba(11, 17, 32, 0.6)',
+                        brand: { navy: '#0B1120', wood: '#C28E5A', beige: '#F5F5F0' }
                     }
                 }
             }
         }
     </script>
-
-    <link rel="stylesheet" href="css/styles.css">
 </head>
 <body class="bg-brand-beige">
-    <!-- Accessibility: Skip to main content -->
     <a href="#main" class="skip-to-content">Skip to main content</a>
-<div class="bg-brand-wood text-white text-xs font-bold py-2 text-center relative z-50">
-    <span class="hidden sm:inline">🇺🇸 Veteran Owned & Operated &nbsp;|&nbsp; </span>
-    <span>Serving Families & Veterans in East Texas</span>
-</div>
-<header id="main-header" class="sticky top-0 z-50 w-full transition-all duration-300">
-    <div class="absolute inset-0 bg-brand-navy/95 backdrop-blur-md border-b border-white/10 shadow-lg"></div>
-    <nav role="navigation" aria-label="Main navigation" class="relative max-w-7xl mx-auto flex items-center justify-between px-4 py-4 sm:px-6 lg:px-8">
-        <div class="flex items-center gap-4">
-            <a href="about.html" class="flex items-center gap-3 group" aria-label="Properties 4 Creations Home">
-                <img src="public/images/logo/brand-logo-header-footer.svg" alt="Properties 4 Creations Logo" class="h-10 w-auto group-hover:scale-105 transition-transform duration-200 drop-shadow-md">
-                <div class="hidden sm:block leading-tight">
-                    <div class="font-bold text-lg tracking-wide text-white text-shadow-sm">Properties 4 Creations</div>
-                    <div class="text-[10px] uppercase tracking-widest text-brand-wood font-bold">Families & Veteran Housing</div>
-                </div>
-            </a>
-        </div>
-        <div class="hidden md:flex items-center gap-8">
-            <a href="index.html" class="text-sm font-medium text-white/90 hover:text-white transition-all">Home</a>
-            <a href="projects.html" class="text-sm font-medium text-white/90 hover:text-white transition-all">Properties</a>
-            <a href="impact.html" class="text-sm font-medium text-white/90 hover:text-white transition-all">Impact</a>
-            <a href="resources.html" class="text-sm font-medium text-white/90 hover:text-white transition-all">Resources</a>
-            <a href="get-started.html" class="inline-flex items-center justify-center px-5 py-2 text-sm font-bold text-white transition-all duration-200 bg-brand-wood/90 hover:bg-brand-wood rounded-lg shadow-lg border border-white/10 backdrop-blur-sm">Get Started</a>
-        </div>
-        <button id="mobile-menu-toggle" class="md:hidden p-2 text-white/80 hover:text-white focus:outline-none transition-colors" aria-label="Toggle mobile navigation menu" aria-expanded="false">
-            <svg class="w-8 h-8 drop-shadow-sm" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" d="M4 6h16M4 12h16M4 18h16"/></svg>
-        </button>
-    </nav>
-    <div id="mobile-menu" class="hidden md:hidden absolute w-full left-0 border-t border-white/10 bg-brand-navy/95 backdrop-blur-xl shadow-2xl">
-        <div class="px-4 pt-4 pb-8 space-y-3">
-            <a href="index.html" class="block px-4 py-3 rounded-xl text-base font-medium text-white bg-white/10 border border-white/5">Home</a>
-            <a href="projects.html" class="block px-4 py-3 rounded-xl text-base font-medium text-slate-300 hover:text-white hover:bg-white/5 transition-colors">Our Properties</a>
-            <a href="impact.html" class="block px-4 py-3 rounded-xl text-base font-medium text-slate-300 hover:text-white hover:bg-white/5 transition-colors">Impact</a>
-            <a href="resources.html" class="block px-4 py-3 rounded-xl text-base font-medium text-slate-300 hover:text-white hover:bg-white/5 transition-colors">Resources</a>
-            <a href="get-started.html" class="block px-4 py-3 rounded-xl text-base font-bold text-center text-white bg-brand-wood shadow-lg mt-6">Get Started</a>
-        </div>
-    </div>
-</header>
+    <div id="header-container"></div>
 
-    <main>
-    <script type="application/json" id="page-banner-config">
-    {
-      "variant": "hero",
-      "title": "Our Mission: Homes for Families & Heroes in East Texas",
-      "subtitle": "From service to stability, we honor families and veterans with premium renovations and fair pricing. Every home tells the story of those who served.",
-      "background": "public/videos/hero-our-work-banner.mp4",
-      "eyebrow": "Veteran Founded, Veteran Focused",
-      "showVoucherBadge": true,
-      "ctaText": "Explore Our Impact",
-      "ctaHref": "impact.html"
-    }
-    </script>
+    <main id="main">
+        <section class="py-20 text-center px-4">
+            <span class="text-brand-wood font-bold tracking-widest uppercase text-sm">The Ecosystem</span>
+            <h1 class="text-4xl md:text-5xl font-bold text-brand-navy mt-2 mb-4">How Your Sale Creates a Home</h1>
+        </section>
 
-
-
-        <section class="py-20 bg-brand-beige relative overflow-hidden">
-            <div class="absolute top-1/2 left-0 w-full h-24 bg-brand-wood/5 -translate-y-1/2 skew-y-3"></div>
-            <div class="max-w-7xl mx-auto px-4 relative z-10">
-                <div class="text-center mb-16">
-                    <span class="text-brand-wood font-bold uppercase tracking-wider text-sm">The Ecosystem</span>
-                    <h2 class="text-4xl font-heading font-bold text-brand-navy mt-2">How Your Sale Creates a Home</h2>
+        <section class="max-w-7xl mx-auto px-4 pb-20">
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <div class="bg-white p-8 rounded-2xl shadow-lg relative pt-12 text-center group hover:-translate-y-1 transition-transform">
+                    <div class="absolute -top-6 left-1/2 -translate-x-1/2 w-12 h-12 bg-brand-navy text-white rounded-full flex items-center justify-center font-bold text-xl border-4 border-brand-beige">1</div>
+                    <h3 class="text-xl font-bold text-brand-navy mb-3">Ethical Acquisition</h3>
+                    <p class="text-slate-600 text-sm">We buy properties from local sellers who want a fair price without the hassle. This provides the raw canvas for our mission.</p>
                 </div>
 
-                <div class="grid grid-cols-1 md:grid-cols-3 gap-8 lg:gap-12">
-                    <div class="bg-white p-8 rounded-2xl depth-medium border-b-4 border-brand-wood relative group hover:-translate-y-2 transition-transform">
-                        <div class="absolute -top-6 left-1/2 -translate-x-1/2 w-12 h-12 bg-brand-navy text-white rounded-full flex items-center justify-center font-bold text-xl border-4 border-brand-beige">1</div>
-                        <div class="mt-6 text-center">
-                            <h3 class="text-xl font-bold text-brand-navy mb-3">Ethical Acquisition</h3>
-                            <p class="text-secondary text-sm leading-relaxed">
-                                We buy properties from local sellers who want a fair price without the hassle. This provides the raw canvas for our mission.
-                            </p>
-                        </div>
-                    </div>
-                    <div class="bg-white p-8 rounded-2xl shadow-medium border-b-4 text-success relative group hover:-translate-y-2 transition-transform" style="border-bottom-color: var(--color-success);">
-                        <div class="absolute -top-6 left-1/2 -translate-x-1/2 w-12 h-12 text-white rounded-full flex items-center justify-center font-bold text-xl border-4 border-brand-beige" style="background-color: var(--color-success);">2</div>
-                        <div class="mt-6 text-center">
-                            <h3 class="text-xl font-bold text-brand-navy mb-3">Purpose-Driven Reno</h3>
-                            <p class="text-secondary text-sm leading-relaxed">
-                                Our teams renovate specifically for safety and accessibility. We add ramps, modernize HVAC, and certify everything for HUD compliance.
-                            </p>
-                        </div>
-                    </div>
-                    <div class="bg-white p-8 rounded-2xl shadow-medium border-b-4 border-brand-navy relative group hover:-translate-y-2 transition-transform">
-                        <div class="absolute -top-6 left-1/2 -translate-x-1/2 w-12 h-12 bg-brand-wood text-white rounded-full flex items-center justify-center font-bold text-xl border-4 border-brand-beige">3</div>
-                        <div class="mt-6 text-center">
-                            <h3 class="text-xl font-bold text-brand-navy mb-3">Family & Veteran Sanctuary</h3>
-                            <p class="text-secondary text-sm leading-relaxed">
-                                The home is placed into our network, offering a dignified, affordable living space for a veteran family to rebuild their future.
-                            </p>
-                        </div>
-                    </div>
+                <div class="bg-white p-8 rounded-2xl shadow-lg relative pt-12 text-center group hover:-translate-y-1 transition-transform border-b-4 border-green-500">
+                    <div class="absolute -top-6 left-1/2 -translate-x-1/2 w-12 h-12 bg-green-500 text-white rounded-full flex items-center justify-center font-bold text-xl border-4 border-brand-beige">2</div>
+                    <h3 class="text-xl font-bold text-brand-navy mb-3">Purpose-Driven Reno</h3>
+                    <p class="text-slate-600 text-sm">Our teams renovate specifically for safety and accessibility. We add ramps, modernize HVAC, and certify everything for HUD compliance.</p>
+                </div>
+
+                <div class="bg-white p-8 rounded-2xl shadow-lg relative pt-12 text-center group hover:-translate-y-1 transition-transform border-b-4 border-brand-wood">
+                    <div class="absolute -top-6 left-1/2 -translate-x-1/2 w-12 h-12 bg-brand-wood text-white rounded-full flex items-center justify-center font-bold text-xl border-4 border-brand-beige">3</div>
+                    <h3 class="text-xl font-bold text-brand-navy mb-3">Family & Veteran Sanctuary</h3>
+                    <p class="text-slate-600 text-sm">The home is placed into our network, offering a dignified, affordable living space for a veteran family to rebuild their future.</p>
                 </div>
             </div>
         </section>
 
-        <section class="py-16 bg-white">
+        <section class="bg-white py-20">
             <div class="max-w-6xl mx-auto px-4 text-center">
                 <h2 class="text-3xl font-bold text-brand-navy mb-4">Veteran-Led Leadership</h2>
-                <p class="text-secondary">Founded by veterans, for veterans.</p>
+                <p class="text-slate-600 mb-12">Founded by veterans, for veterans. We bring military precision to property management.</p>
+
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-4xl mx-auto">
+                    <div class="flex items-center gap-6 p-6 bg-brand-beige rounded-xl text-left">
+                        <div class="w-20 h-20 bg-brand-navy rounded-full flex items-center justify-center text-3xl">🇺🇸</div>
+                        <div>
+                            <h3 class="font-bold text-brand-navy text-lg">Kyle Buzbee</h3>
+                            <p class="text-xs text-brand-wood font-bold uppercase tracking-wide mb-2">Founder & Operations</p>
+                            <p class="text-sm text-slate-600">Dedicated to transforming East Texas real estate into a force for community good.</p>
+                        </div>
+                    </div>
+                     <div class="flex items-center gap-6 p-6 bg-brand-beige rounded-xl text-left">
+                        <div class="w-20 h-20 bg-brand-navy rounded-full flex items-center justify-center text-3xl">🏗️</div>
+                        <div>
+                            <h3 class="font-bold text-brand-navy text-lg">Renovation Team</h3>
+                            <p class="text-xs text-brand-wood font-bold uppercase tracking-wide mb-2">Construction</p>
+                            <p class="text-sm text-slate-600">Local contractors committed to quality, safety, and HUD compliance standards.</p>
+                        </div>
+                    </div>
+                </div>
             </div>
         </section>
     </main>
 
     <div id="footer-container"></div>
     <script src="components/component-loader.js"></script>
-    <script src="js/accessibility-enhanced.js"></script>
-
-<footer class="bg-brand-navy text-white border-t border-white/10 pt-16 pb-8">
-    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 mb-12">
-
-            <div class="space-y-6">
-                <div class="flex items-center gap-3">
-                    <img src="public/images/logo/brand-logo-header-footer.svg" alt="Properties 4 Creations" class="h-12 w-auto brightness-0 invert">
-                    <div>
-                        <h3 class="font-bold text-lg tracking-wide">Properties 4 Creations</h3>
-                        <p class="text-xs text-brand-wood uppercase tracking-widest font-bold">Family & Veteran Housing</p>
-                    </div>
-                </div>
-                <p class="text-slate-400 text-sm leading-relaxed">
-                    Rebuilding East Texas communities one home at a time. We provide premium, safe, and dignified housing for families and veterans.
-                </p>
-                <div class="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-white/5 border border-white/10">
-                    <span class="relative flex h-3 w-3">
-                      <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-green-400 opacity-75"></span>
-                      <span class="relative inline-flex rounded-full h-3 w-3 bg-green-500"></span>
-                    </span>
-                    <span class="text-xs font-medium text-green-400">Section 8 Vouchers Accepted</span>
-                </div>
-            </div>
-
-            <div>
-                <h4 class="text-sm font-bold uppercase tracking-widest text-brand-wood mb-6">Company</h4>
-                <ul class="space-y-3 text-sm text-slate-400">
-                    <li><a href="about.html" class="hover:text-white transition-colors">About Us</a></li>
-                    <li><a href="projects.html" class="hover:text-white transition-colors">Our Properties</a></li>
-                    <li><a href="impact.html" class="hover:text-white transition-colors">Community Impact</a></li>
-                    <li><a href="transparency.html" class="hover:text-white transition-colors">Renovation Standards</a></li>
-                </ul>
-            </div>
-
-            <div>
-                <h4 class="text-sm font-bold uppercase tracking-widest text-brand-wood mb-6">Residents</h4>
-                <ul class="space-y-3 text-sm text-slate-400">
-                    <li><a href="get-started.html" class="hover:text-white transition-colors">Apply for Housing</a></li>
-                    <li><a href="resources.html" class="hover:text-white transition-colors">Veteran Resources</a></li>
-                    <li><a href="contact.html" class="hover:text-white transition-colors">Maintenance Request</a></li>
-                    <li><a href="faq.html" class="hover:text-white transition-colors">FAQs</a></li>
-                </ul>
-            </div>
-
-            <div>
-                <h4 class="text-sm font-bold uppercase tracking-widest text-brand-wood mb-6">Contact</h4>
-                <ul class="space-y-4 text-sm text-slate-400">
-                    <li class="flex items-start gap-3">
-                        <svg class="w-5 h-5 text-brand-wood mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"/><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"/></svg>
-                        <span>Tyler, TX 75701<br>Serving East Texas</span>
-                    </li>
-                    <li class="flex items-center gap-3">
-                        <svg class="w-5 h-5 text-brand-wood" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"/></svg>
-                        <a href="tel:+19032831770" class="hover:text-white transition-colors">(903) 283-1770</a>
-                    </li>
-                    <li class="flex items-center gap-3">
-                        <svg class="w-5 h-5 text-brand-wood" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"/></svg>
-                        <a href="mailto:contact@properties4creations.com" class="hover:text-white transition-colors">contact@properties4creations.com</a>
-                    </li>
-                </ul>
-            </div>
-        </div>
-
-        <div class="border-t border-white/10 pt-8 flex flex-col md:flex-row justify-between items-center gap-4 text-xs text-slate-500">
-            <p>&copy; <span id="current-year">2025</span> Properties 4 Creations. All rights reserved.</p>
-            <div class="flex gap-6">
-                <a href="privacy.html" class="hover:text-brand-wood transition-colors">Privacy Policy</a>
-                <a href="terms.html" class="hover:text-brand-wood transition-colors">Terms of Service</a>
-            </div>
-        </div>
-    </div>
-</footer>
-
-<script>
-<script>
-    // Mobile Menu & Sticky Header Logic
-    document.addEventListener('DOMContentLoaded', () => {
-        const btn = document.getElementById('mobile-menu-toggle');
-        const menu = document.getElementById('mobile-menu');
-
-        // Toggle Mobile Menu
-        if (btn && menu) {
-            btn.addEventListener('click', (e) => {
-                e.stopPropagation();
-                menu.classList.toggle('hidden');
-                const isExpanded = menu.classList.contains('hidden') ? 'false' : 'true';
-                btn.setAttribute('aria-expanded', isExpanded);
-            });
-
-            // Close when clicking outside
-            document.addEventListener('click', (e) => {
-                if (!menu.contains(e.target) && !btn.contains(e.target)) {
-                    menu.classList.add('hidden');
-                    btn.setAttribute('aria-expanded', 'false');
-                }
-            });
-        }
-    });
-</script>
 </body>
 </html>
