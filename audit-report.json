@@ -47,20 +47,18 @@
     "file": "contact.html",
     "passed": false,
     "diffs": [
-      "❌ Missing script: components/component-loader.js",
-      "❌ Missing script: accessibility-enhanced.js"
+      "⚠️ Missing skip-to-content link for accessibility"
     ]
+  },
+  {
+    "file": "faq.html",
+    "passed": true,
+    "diffs": []
   },
   {
     "file": "get-started.html",
     "passed": false,
     "diffs": [
-      "❌ Missing header container (<div id=\"header-container\">)",
-      "❌ Missing footer container (<div id=\"footer-container\">)",
-      "❌ Missing script: components/component-loader.js",
-      "❌ Missing script: accessibility-enhanced.js",
-      "❌ Missing meta: <meta name=\"description\"",
-      "❌ Missing meta: <link rel=\"canonical\"",
       "⚠️ Missing skip-to-content link for accessibility"
     ]
   },

@@ -3,339 +3,102 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Community Impact & Family Success Stories - Properties 4 Creations</title>
-    <meta name="description" content="Affordable housing solutions for families and veterans in East Texas. Transparent pricing, premium renovations, and community impact.">
+    <title>Community Impact - Properties 4 Creations</title>
+    <meta name="description" content="Discover our community impact through veteran housing success stories and renovated homes for families across East Texas. See real transformations.">
     <link rel="canonical" href="https://properties4creations.com/impact.html">
-
+    <link rel="stylesheet" href="css/styles.css">
     <script src="https://cdn.tailwindcss.com"></script>
     <script>
         tailwind.config = {
             theme: {
                 extend: {
                     colors: {
-                        brand: {
-                            navy: '#0B1120',
-                            wood: '#C28E5A',
-                            walnut: '#8B5E3C',
-                            beige: '#F5F5F0',
-                            surface: '#FFFFFF',
-                            slate: '#64748b'
-                        }
-                    },
-                    fontFamily: {
-                        heading: ['Merriweather', 'serif'],
-                        body: ['Inter', 'sans-serif']
-                    },
-                    boxShadow: {
-                        wood: '0 10px 25px -5px rgba(194, 142, 90, 0.4)',
-                        'navy': '0 10px 30px -10px rgba(11, 17, 32, 0.6)',
+                        brand: { navy: '#0B1120', wood: '#C28E5A', beige: '#F5F5F0' }
                     }
                 }
             }
         }
     </script>
-
-    <link rel="stylesheet" href="css/styles.css">
+    <style>
+        .hero-video { opacity: 0; transition: opacity 1.5s ease; }
+        .hero-video.loaded { opacity: 1; }
+    </style>
 </head>
 <body class="bg-brand-beige">
-    <!-- Accessibility: Skip to main content -->
     <a href="#main" class="skip-to-content">Skip to main content</a>
     <div id="header-container"></div>
 
-<section class="relative h-[60vh] min-h-[500px] w-full overflow-hidden flex items-center justify-center will-change-transform">
-<video
-    id="hero-video"
-    autoplay
-    muted
-    loop
-    playsinline
-    preload="auto"
-    poster="public/images/banners/hero-impact_banner.webp"
-    class="absolute inset-0 w-full h-full object-cover z-0 hero-video"
-    aria-label="Hero video showcasing community impact"
->
-    <source src="public/videos/hero-impact-banner-1080.mp4" type="video/mp4">
-    <p class="sr-only">Video unavailable. Hero banner shows community impact stories.</p>
-</video>
+    <main id="main">
+        <section class="relative h-[80vh] min-h-[500px] flex items-center justify-center overflow-hidden">
+            <video id="hero-video" autoplay muted loop playsinline class="hero-video absolute inset-0 w-full h-full object-cover z-0">
+                <source src="public/videos/hero-impact-banner-1080.mp4" type="video/mp4">
+            </video>
+            <img src="public/images/banners/hero-impact_banner.webp" alt="Impact Banner" class="absolute inset-0 w-full h-full object-cover -z-10">
 
-    <div class="absolute inset-0 bg-gradient-to-r from-brand-navy/90 via-brand-navy/70 to-transparent z-10"></div>
+            <div class="absolute inset-0 bg-gradient-to-r from-brand-navy/90 via-brand-navy/60 to-black/30 z-10"></div>
 
-    <div class="relative z-20 max-w-7xl mx-auto px-4 w-full">
-        <span class="text-brand-wood font-bold tracking-widest uppercase text-sm mb-2 block">Community Impact</span>
-        <h1 class="text-5xl md:text-6xl font-heading font-bold text-white mb-6 max-w-2xl">
-            Real Families, <br>Real Sanctuaries
-        </h1>
-        <p class="text-xl text-slate-200 max-w-lg mb-8">
-            See the human impact of fair housing through stories of veterans rebuilding their futures.
-        </p>
-        <a href="#stories" class="inline-flex items-center justify-center px-8 py-4 bg-brand-wood text-white font-bold rounded-xl hover:bg-brand-walnut transition-all shadow-lg hover:-translate-y-1">
-            Read Our Stories
-        </a>
-    </div>
-</section>
-
-<main>
-
-        <!-- Featured Family Story -->
-        <section class="py-20 bg-white">
-            <div class="max-w-6xl mx-auto px-4">
-                <div class="text-center mb-16">
-                    <span class="text-brand-wood font-bold uppercase tracking-wider text-sm">Our Community Impact</span>
-                    <h2 class="text-4xl font-heading font-bold text-brand-navy mt-2">Real Families, Real Sanctuaries</h2>
-                </div>
-
-                <div class="flex flex-col lg:flex-row items-center gap-12 mb-20">
-                    <div class="lg:w-1/2 relative">
-                        <div class="absolute -top-4 -left-4 w-24 h-24 bg-brand-beige rounded-full z-0"></div>
-                        <picture class="relative z-10 rounded-2xl shadow-xl w-full">
-                            <source srcset="public/images/properties/before-after/patio_wood.webp" type="image/webp">
-                            <img src="public/images/properties/before-after/patio_wood.jpg" class="relative z-10 rounded-2xl shadow-xl w-full" alt="Reynolds Family Home before-and-after renovation" loading="lazy" decoding="async">
-                        </picture>
-                        <div class="absolute bottom-8 right-8 bg-white p-4 rounded-lg shadow-lg max-w-xs z-20 border-l-4 border-brand-wood">
-                            <p class="text-sm italic text-slate-600">"We applied on Monday and had keys by Friday. P4C handled all the VA paperwork."</p>
-                        </div>
-                    </div>
-                    <div class="lg:w-1/2">
-                        <h3 class="text-2xl font-bold text-brand-navy mb-4">The Reynolds Family</h3>
-                        <div class="flex items-center gap-2 mb-4">
-                            <span class="bg-green-100 text-green-800 text-xs px-3 py-1 rounded-full font-bold">HUD-VASH Success</span>
-                            <span class="text-slate-500 text-sm">📍 Tyler, TX</span>
-                        </div>
-                        <p class="text-slate-600 mb-6 leading-relaxed">
-                            Sgt. Reynolds returned to Tyler needing a wheelchair-accessible home for his wife and two children. Traditional landlords turned them away due to the specific renovations required. P4C acquired a dilapidated bungalow, widened every doorway, installed a custom ramp, and accepted their voucher without hesitation.
-                        </p>
-                        <div class="grid grid-cols-2 gap-4">
-                            <div class="p-4 bg-brand-beige rounded-lg">
-                                <span class="block text-2xl font-bold text-brand-navy mb-1">32</span>
-                                <span class="text-xs text-slate-500 uppercase">Days to Renovate</span>
-                            </div>
-                            <div class="p-4 bg-brand-beige rounded-lg">
-                                <span class="block text-2xl font-bold text-brand-navy mb-1">$0</span>
-                                <span class="text-xs text-slate-500 uppercase">Cost to Family</span>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <!-- Impact Metrics -->
-        <section class="py-16 bg-brand-navy text-white">
-            <div class="max-w-6xl mx-auto px-4">
-                <div class="text-center mb-12">
-                    <h2 class="text-3xl font-bold mb-4">Lives Changed, Communities Strengthened</h2>
-                    <p class="text-lg text-slate-300">The measurable impact of fair housing solutions</p>
-                </div>
-
-                <div class="grid grid-cols-2 md:grid-cols-4 gap-8">
-                    <div class="text-center">
-                        <svg xmlns="http://www.w3.org/2000/svg" class="h-10 w-10 mx-auto mb-3 text-brand-wood/80" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.5">
-                            <path stroke-linecap="round" stroke-linejoin="round" d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4"/>
-                        </svg>
-                        <div class="text-4xl font-bold text-brand-wood mb-2">120+</div>
-                        <div class="text-sm text-slate-300 uppercase tracking-wider">Safe Homes Created</div>
-                    </div>
-                    <div class="text-center">
-                        <svg xmlns="http://www.w3.org/2000/svg" class="h-10 w-10 mx-auto mb-3 text-brand-wood/80" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.5">
-                            <path stroke-linecap="round" stroke-linejoin="round" d="M14.828 14.828a4 4 0 01-5.656 0M9 10h.01M15 10h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
-                        </svg>
-                        <div class="text-4xl font-bold text-brand-wood mb-2">85+</div>
-                        <div class="text-sm text-slate-300 uppercase tracking-wider">Families Supported</div>
-                    </div>
-                    <div class="text-center">
-                        <svg xmlns="http://www.w3.org/2000/svg" class="h-10 w-10 mx-auto mb-3 text-brand-wood/80" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.5">
-                            <path stroke-linecap="round" stroke-linejoin="round" d="M11.049 2.927c.3-.921 1.603-.921 1.902 0l1.519 4.674a1 1 0 00.95.69h4.915c.969 0 1.371 1.24.588 1.81l-3.976 2.888a1 1 0 00-.363 1.118l1.518 4.674c.3.922-.755 1.688-1.538 1.118l-3.976-2.888a1 1 0 00-1.176 0l-3.976 2.888c-.783.57-1.838-.197-1.538-1.118l1.518-4.674a1 1 0 00-.363-1.118l-3.976-2.888c-.784-.57-.38-1.81.588-1.81h4.914a1 1 0 00.951-.69l1.519-4.674z" />
-                        </svg>
-                        <div class="text-4xl font-bold text-brand-wood mb-2">42</div>
-                        <div class="text-sm text-slate-300 uppercase tracking-wider">Veterans Housed</div>
-                    </div>
-                    <div class="text-center">
-                        <svg xmlns="http://www.w3.org/2000/svg" class="h-10 w-10 mx-auto mb-3 text-green-400/80" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.5">
-                            <path stroke-linecap="round" stroke-linejoin="round" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
-                        </svg>
-                        <div class="text-4xl font-bold text-green-400 mb-2">100%</div>
-                        <div class="text-sm text-slate-300 uppercase tracking-wider">Section 8 Excellence</div>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <!-- More Stories -->
-        <section class="py-20 bg-brand-beige">
-            <div class="max-w-6xl mx-auto px-4">
-                <div class="text-center mb-16">
-                    <h2 class="text-3xl font-bold text-brand-navy mb-4">Stories of Hope & Home</h2>
-                    <p class="text-lg text-slate-600">Every property tells a story of renewal and fresh starts</p>
-                </div>
-
-                <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
-                    <!-- Story Card 1 -->
-                    <div class="bg-white p-8 rounded-2xl shadow-wood border border-brand-beige">
-                        <div class="flex items-start gap-4">
-                            <picture class="w-16 h-16 rounded-full">
-                                <source srcset="public/images/avatars/team/team-placeholder.webp" type="image/webp">
-                                <img src="public/images/avatars/team/team-placeholder.png"
-                                     alt="Martinez family photo" class="w-16 h-16 rounded-full object-cover" onerror="this.src='public/images/icons/021-family.png'" loading="lazy" decoding="async">
-                            </picture>
-                            <div>
-                                <h3 class="text-xl font-bold text-brand-navy mb-2">The Martinez Family</h3>
-                                <div class="flex items-center gap-2 mb-3">
-                                    <span class="bg-blue-100 text-blue-800 text-xs px-2 py-1 rounded-full">First-Time Homebuyers</span>
-                                    <span class="text-slate-500 text-sm">📍 East Texas Region</span>
-                                </div>
-                                <p class="text-slate-600 mb-4">
-                                    After years of renting, the Martinezes found their forever home. Our fair market pricing made homeownership possible, and the premium renovations turned their house into a place their kids call "home."
-                                </p>
-                                <div class="text-sm text-slate-500">
-                                    <span class="font-semibold">Transformation:</span> "From apartment dwellers to homeowners in just 45 days"
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-
-                    <!-- Story Card 2 -->
-                    <div class="bg-white p-8 rounded-2xl shadow-wood border border-brand-beige">
-                        <div class="flex items-start gap-4">
-                            <img src="public/images/icons/034-soldier.png"
-                                 alt="Staff Sgt. Thompson veteran photo" class="w-16 h-16 rounded-full object-cover" loading="lazy" decoding="async">
-                            <div>
-                                <h3 class="text-xl font-bold text-brand-navy mb-2">Staff Sgt. Thompson</h3>
-                                <div class="flex items-center gap-2 mb-3">
-                                    <span class="bg-purple-100 text-purple-800 text-xs px-2 py-1 rounded-full">VA Transition Support</span>
-                                    <span class="text-slate-500 text-sm">📍 Longview, TX</span>
-                                </div>
-                                <p class="text-slate-600 mb-4">
-                                    Separating from 20 years of service, Sgt. Thompson needed more than housing—he needed community. Our veteran-owned approach created a seamless transition with renovated spaces honoring his service.
-                                </p>
-                                <div class="text-sm text-slate-500">
-                                    <span class="font-semibold">Impact:</span> "From barracks to beautiful Victorian home"
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-
-                    <!-- Story Card 3 -->
-                    <div class="bg-white p-8 rounded-2xl shadow-wood border border-brand-beige">
-                        <div class="flex items-start gap-4">
-                            <img src="public/images/icons/022-family-1.png"
-                                 alt="Garcia seniors family photo" class="w-16 h-16 rounded-full object-cover" loading="lazy" decoding="async">
-                            <div>
-                                <h3 class="text-xl font-bold text-brand-navy mb-2">The Garcia Seniors</h3>
-                                <div class="flex items-center gap-2 mb-3">
-                                    <span class="bg-green-100 text-green-800 text-xs px-2 py-1 rounded-full">ADA Compliant</span>
-                                    <span class="text-slate-500 text-sm">📍 Jefferson, TX</span>
-                                </div>
-                                <p class="text-slate-600 mb-4">
-                                    Living with mobility challenges, the Garcias needed accessible housing without breaking the bank. Our Section 8 partnership and ADA-compliant renovations created a safe, independent living environment.
-                                </p>
-                                <div class="text-sm text-slate-500">
-                                    <span class="font-semibold">Independence:</span> "Ability to live safely in our golden years"
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-
-                    <!-- Community Impact -->
-                    <div class="bg-white p-8 rounded-2xl shadow-wood border border-brand-beige">
-                        <div class="flex items-start gap-4">
-                            <div class="w-16 h-16 bg-brand-wood rounded-xl flex items-center justify-center shadow-lg shadow-brand-wood/30">
-                                <svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.5">
-                                    <path stroke-linecap="round" stroke-linejoin="round" d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z" />
-                                </svg>
-                            </div>
-                            <div>
-                                <h3 class="text-xl font-bold text-brand-navy mb-2">Neighborhood Renewal</h3>
-                                <div class="flex items-center gap-2 mb-3">
-                                    <span class="bg-gold-100 text-gold-800 text-xs px-2 py-1 rounded-full">Community Impact</span>
-                                    <span class="text-slate-500 text-sm">📍 East Texas Region</span>
-                                </div>
-                                <p class="text-slate-600 mb-4">
-                                    Our renovations don't just change homes—they transform neighborhoods. Fair housing stabilizes communities, supports local businesses, and creates sustainable growth for generations.
-                                </p>
-                                <div class="text-sm text-slate-500">
-                                    <span class="font-semibold">Broader Impact:</span> "Strengthening communities, building futures"
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <!-- Call to Action -->
-        <section class="py-20 bg-brand-navy text-white">
-            <div class="max-w-4xl mx-auto px-4 text-center">
-                <h2 class="text-3xl font-bold mb-6">Ready to Write Your Success Story?</h2>
-                <p class="text-lg text-slate-300 mb-8 max-w-2xl mx-auto">
-                    Join 120+ families who found their sanctuary through fair housing solutions.
-                    Let's create your story of hope and home.
+            <div class="relative z-20 max-w-7xl mx-auto px-4 w-full">
+                <span class="inline-block py-1 px-3 border border-brand-wood text-brand-wood text-xs font-bold tracking-widest uppercase mb-4 rounded bg-brand-navy/50 backdrop-blur-sm">
+                    Community Impact
+                </span>
+                <h1 class="text-5xl md:text-7xl font-bold text-white mb-6 leading-tight drop-shadow-lg">
+                    Real Families, <br>
+                    <span class="text-brand-wood">Real Sanctuaries</span>
+                </h1>
+                <p class="text-xl text-slate-100 max-w-lg mb-8 leading-relaxed drop-shadow-md">
+                    See the human impact of fair housing through stories of veterans rebuilding their futures.
                 </p>
 
-                <div class="flex flex-col sm:flex-row gap-4 justify-center">
-                    <a href="projects.html" class="wood-gradient-button px-8 py-4 rounded-xl font-semibold shadow-wood hover:shadow-xl transition-all">
-                        Browse Affordable Homes for Families & Veterans
-                    </a>
-                    <a href="contact.html" class="px-8 py-4 border-2 border-white text-white hover:bg-white hover:text-brand-navy rounded-xl font-semibold transition-all">
-                        Share Your Story
-                    </a>
-                </div>
+                <a href="#stories" class="inline-flex items-center gap-2 px-8 py-4 bg-brand-wood hover:bg-[#b07b48] text-white font-bold rounded-xl shadow-lg hover:shadow-2xl hover:-translate-y-1 transition-all duration-300">
+                    Read Our Stories
+                    <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 14l-7 7m0 0l-7-7m7 7V3"/></svg>
+                </a>
+            </div>
+        </section>
 
-                <div class="mt-12 text-center">
-                    <p class="text-slate-400 text-sm">
-                        <span class="text-brand-wood font-semibold">Keys within 30 days for qualified applicants</span>
-                    </p>
+        <section class="py-16 bg-brand-navy text-white border-b border-white/5">
+            <div class="max-w-7xl mx-auto px-4">
+                <div class="grid grid-cols-2 md:grid-cols-4 gap-8 text-center">
+                    <div class="p-6 rounded-xl hover:bg-white/5 transition">
+                        <div class="text-4xl font-bold text-brand-wood mb-2">120+</div>
+                        <div class="text-sm tracking-widest uppercase opacity-70">Safe Homes</div>
+                    </div>
+                    <div class="p-6 rounded-xl hover:bg-white/5 transition">
+                        <div class="text-4xl font-bold text-brand-wood mb-2">85+</div>
+                        <div class="text-sm tracking-widest uppercase opacity-70">Families Supported</div>
+                    </div>
+                    <div class="p-6 rounded-xl hover:bg-white/5 transition">
+                        <div class="text-4xl font-bold text-brand-wood mb-2">42</div>
+                        <div class="text-sm tracking-widest uppercase opacity-70">Veterans Housed</div>
+                    </div>
+                    <div class="p-6 rounded-xl hover:bg-white/5 transition">
+                        <div class="text-4xl font-bold text-brand-wood mb-2">100%</div>
+                        <div class="text-sm tracking-widest uppercase opacity-70">Section 8 Excellence</div>
+                    </div>
                 </div>
             </div>
         </section>
+
+        <section id="stories" class="py-20 bg-white">
+            <div class="max-w-6xl mx-auto px-4 text-center">
+                <h2 class="text-3xl font-bold text-brand-navy">Success Stories</h2>
+                <p class="mt-4 text-slate-600">Coming soon...</p>
+            </div>
+        </section>
+
     </main>
 
-    <!-- Footer -->
     <div id="footer-container"></div>
-
-    <!-- Component loader and common libraries (paths from root) -->
     <script src="components/component-loader.js"></script>
-    <script src="accessibility-enhanced.js"></script>
-    <script src="js/banner-loader.js" defer></script>
-    <script src="js/ui-header.js" defer></script>
-    <script src="js/static-search.js" defer></script>
-    <script src="js/app.js" defer></script>
+    <script src="js/accessibility-enhanced.js"></script>
     <script>
-        document.addEventListener('DOMContentLoaded', function() {
-            // Initialize all interactive features
-            if (window.P4C && window.P4C.init) {
-                window.P4C.init();
-            }
-
-            // Impact story animations
-            const storyCards = document.querySelectorAll('.grid .bg-white');
-            const observer = new IntersectionObserver((entries) => {
-                entries.forEach(entry => {
-                    if (entry.isIntersecting) {
-                        entry.target.style.transform = 'translateY(0)';
-                        entry.target.style.opacity = '1';
-                    }
-                });
-            }, { threshold: 0.1 });
-
-            storyCards.forEach(card => {
-                card.style.transform = 'translateY(20px)';
-                card.style.opacity = '0';
-                card.style.transition = 'all 0.6s ease-out';
-                observer.observe(card);
-            });
-
-            // Video fade-in handler
+        // Video Fade-In Script
+        document.addEventListener("DOMContentLoaded", function() {
             const video = document.getElementById('hero-video');
             if (video) {
-                // If video is already ready (cached), show immediately
-                if (video.readyState >= 3) {
-                    video.classList.add('video-loaded');
-                } else {
-                    // Otherwise wait for it to be ready to play
-                    video.addEventListener('canplay', () => {
-                        video.classList.add('video-loaded');
-                    });
-                }
+                video.addEventListener('loadeddata', () => video.classList.add('loaded'));
+                // Fallback if already cached
+                if (video.readyState >= 3) video.classList.add('loaded');
             }
         });
     </script>
