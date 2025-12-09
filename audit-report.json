@@ -1,0 +1,129 @@
+[
+  {
+    "file": "404.html",
+    "passed": true,
+    "diffs": []
+  },
+  {
+    "file": "about.html",
+    "passed": false,
+    "diffs": [
+      "❌ Missing script: components/component-loader.js",
+      "❌ Missing script: accessibility-enhanced.js"
+    ]
+  },
+  {
+    "file": "footer.html",
+    "passed": false,
+    "diffs": [
+      "❌ Missing CSS: css/styles.css",
+      "❌ Missing meta: <meta name=\"description\"",
+      "❌ Missing meta: <link rel=\"canonical\""
+    ]
+  },
+  {
+    "file": "header.html",
+    "passed": false,
+    "diffs": [
+      "❌ Missing footer container (<div id=\"footer-container\">)",
+      "❌ Missing CSS: css/styles.css",
+      "❌ Missing script: components/component-loader.js",
+      "❌ Missing script: accessibility-enhanced.js",
+      "❌ Missing meta: <meta name=\"description\"",
+      "❌ Missing meta: <link rel=\"canonical\"",
+      "⚠️ Missing skip-to-content link for accessibility"
+    ]
+  },
+  {
+    "file": "page-banner.html",
+    "passed": false,
+    "diffs": [
+      "❌ Missing CSS: css/styles.css",
+      "❌ Missing meta: <meta name=\"description\"",
+      "❌ Missing meta: <link rel=\"canonical\""
+    ]
+  },
+  {
+    "file": "contact.html",
+    "passed": false,
+    "diffs": [
+      "❌ Missing script: components/component-loader.js",
+      "❌ Missing script: accessibility-enhanced.js"
+    ]
+  },
+  {
+    "file": "get-started.html",
+    "passed": false,
+    "diffs": [
+      "❌ Missing header container (<div id=\"header-container\">)",
+      "❌ Missing footer container (<div id=\"footer-container\">)",
+      "❌ Missing script: components/component-loader.js",
+      "❌ Missing script: accessibility-enhanced.js",
+      "❌ Missing meta: <meta name=\"description\"",
+      "❌ Missing meta: <link rel=\"canonical\"",
+      "⚠️ Missing skip-to-content link for accessibility"
+    ]
+  },
+  {
+    "file": "impact.html",
+    "passed": true,
+    "diffs": []
+  },
+  {
+    "file": "index.html",
+    "passed": false,
+    "diffs": [
+      "❌ Missing script: components/component-loader.js",
+      "❌ Missing script: accessibility-enhanced.js",
+      "⚠️ Missing skip-to-content link for accessibility"
+    ]
+  },
+  {
+    "file": "privacy.html",
+    "passed": true,
+    "diffs": []
+  },
+  {
+    "file": "jefferson-riverfront.html",
+    "passed": true,
+    "diffs": []
+  },
+  {
+    "file": "longview-victorian.html",
+    "passed": true,
+    "diffs": []
+  },
+  {
+    "file": "tyler-ranch-home.html",
+    "passed": true,
+    "diffs": []
+  },
+  {
+    "file": "projects.html",
+    "passed": false,
+    "diffs": [
+      "❌ Missing script: components/component-loader.js",
+      "❌ Missing script: accessibility-enhanced.js"
+    ]
+  },
+  {
+    "file": "resources.html",
+    "passed": true,
+    "diffs": []
+  },
+  {
+    "file": "terms.html",
+    "passed": true,
+    "diffs": []
+  },
+  {
+    "file": "thank-you.html",
+    "passed": true,
+    "diffs": []
+  },
+  {
+    "file": "transparency.html",
+    "passed": true,
+    "diffs": []
+  }
+]

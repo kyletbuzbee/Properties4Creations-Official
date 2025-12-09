@@ -62,65 +62,421 @@
 
 <div class="max-w-5xl mx-auto my-16 px-4">
     <div class="text-center mb-8">
-        <h3 class="text-2xl font-bold text-brand-navy">See the Difference</h3>
-        <p class="text-slate-600">Drag the slider to compare before and after.</p>
+        <h3 class="text-2xl font-bold text-brand-navy">See the Transformation</h3>
+        <p class="text-slate-600">Click tabs to explore our renovation work across different rooms.</p>
     </div>
 
-    <div class="relative w-full h-[400px] md:h-[500px] rounded-2xl overflow-hidden shadow-2xl group select-none" id="comparison-slider">
-
-        <div class="absolute inset-0 w-full h-full">
-            <img src="public/images/properties/before-after/comparison/projects-after-kitchen.webp" alt="After Renovation" class="w-full h-full object-cover">
-            <span class="absolute top-4 right-4 bg-brand-navy/80 text-white px-3 py-1 rounded-md text-xs font-bold">AFTER</span>
+    <div class="w-full">
+        <!-- Tab Navigation -->
+        <div class="flex justify-center mb-6 border-b border-slate-200">
+            <button id="tab-kitchen" class="tab-button px-6 py-3 font-medium text-brand-navy border-b-2 border-transparent hover:border-brand-wood transition-colors focus:outline-none focus:border-brand-wood" data-tab="kitchen">Kitchen</button>
+            <button id="tab-bathroom" class="tab-button px-6 py-3 font-medium text-slate-600 border-b-2 border-transparent hover:border-brand-wood hover:text-brand-navy transition-colors focus:outline-none focus:border-brand-wood" data-tab="bathroom">Bathroom</button>
+            <button id="tab-living-room" class="tab-button px-6 py-3 font-medium text-slate-600 border-b-2 border-transparent hover:border-brand-wood hover:text-brand-navy transition-colors focus:outline-none focus:border-brand-wood" data-tab="living-room">Living Room</button>
+            <button id="tab-exterior" class="tab-button px-6 py-3 font-medium text-slate-600 border-b-2 border-transparent hover:border-brand-wood hover:text-brand-navy transition-colors focus:outline-none focus:border-brand-wood" data-tab="exterior">Exterior</button>
         </div>
 
-        <div class="absolute inset-0 w-1/2 h-full overflow-hidden border-r-2 border-white" id="slider-overlay">
-            <img src="public/images/properties/before-after/comparison/projects-kitchen-before.webp" alt="Before Renovation" class="absolute top-0 left-0 h-full max-w-none w-[200vw] object-cover" id="slider-before-img">
-            <span class="absolute top-4 left-4 bg-brand-wood/90 text-white px-3 py-1 rounded-md text-xs font-bold">BEFORE</span>
-        </div>
+        <!-- Tab Content -->
+        <div class="relative w-full h-[400px] md:h-[500px] rounded-2xl overflow-hidden shadow-2xl group select-none">
 
-        <div class="absolute top-0 bottom-0 left-1/2 w-10 -ml-5 cursor-ew-resize z-20 flex items-center justify-center pointer-events-none" id="slider-handle">
-            <div class="w-10 h-10 bg-white rounded-full shadow-lg flex items-center justify-center text-brand-navy">
-                <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 9l4-4 4 4m0 6l-4 4-4-4" /></svg>
+            <!-- Kitchen Tab -->
+            <div id="content-kitchen" class="tab-content absolute inset-0">
+                <div class="relative w-full h-full overflow-hidden">
+                    <img src="public/images/properties/before-after/comparison/projects-after-kitchen.webp" alt="Renovated kitchen after renovation" class="w-full h-full object-cover">
+                    <div class="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent"></div>
+                    <div class="absolute bottom-6 left-6 right-6 text-white">
+                        <h4 class="text-xl font-bold mb-2">Kitchen Renovation</h4>
+                        <p class="text-sm text-white/90">Modern appliances, custom cabinetry, and premium finishes</p>
+                    </div>
+                    <span class="absolute top-4 right-4 bg-green-500 text-white px-3 py-1 rounded-full text-xs font-bold">AFTER</span>
+                </div>
+                <!-- Before overlay -->
+                <div class="absolute inset-0 w-1/2 h-full overflow-hidden border-r-2 border-white" id="kitchen-slider-overlay">
+                    <img src="public/images/properties/before-after/comparison/projects-kitchen-before.webp" alt="Kitchen before renovation" class="absolute top-0 -left-1/2 h-full w-full object-cover object-center">
+                    <span class="absolute top-4 left-4 bg-brand-wood text-white px-3 py-1 rounded-full text-xs font-bold">BEFORE</span>
+                </div>
             </div>
-        </div>
 
-        <label for="comparison-slider-control" class="sr-only">Comparison slider control to reveal before/after renovation differences</label>
-        <input type="range" id="comparison-slider-control" min="0" max="100" value="50" class="absolute inset-0 w-full h-full opacity-0 cursor-ew-resize z-30" oninput="updateSlider(this.value)">
+            <!-- Bathroom Tab -->
+            <div id="content-bathroom" class="tab-content absolute inset-0 hidden">
+                <div class="relative w-full h-full overflow-hidden">
+                    <img src="public/images/properties/before-after/comparison/projects-after-bathroom.webp" alt="Renovated bathroom after renovation" class="w-full h-full object-cover">
+                    <div class="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent"></div>
+                    <div class="absolute bottom-6 left-6 right-6 text-white">
+                        <h4 class="text-xl font-bold mb-2">Bathroom Upgrade</h4>
+                        <p class="text-sm text-white/90">ADA-compliant fixtures and modern ceramic tile</p>
+                    </div>
+                    <span class="absolute top-4 right-4 bg-green-500 text-white px-3 py-1 rounded-full text-xs font-bold">AFTER</span>
+                </div>
+                <!-- Before overlay -->
+                <div class="absolute inset-0 w-1/2 h-full overflow-hidden border-r-2 border-white hidden" id="bathroom-slider-overlay">
+                    <img src="public/images/properties/before-after/comparison/projects-bathroom-before.webp" alt="Bathroom before renovation" class="absolute top-0 -left-1/2 h-full w-full object-cover object-center">
+                    <span class="absolute top-4 left-4 bg-brand-wood text-white px-3 py-1 rounded-full text-xs font-bold">BEFORE</span>
+                </div>
+            </div>
+
+            <!-- Living Room Tab -->
+            <div id="content-living-room" class="tab-content absolute inset-0 hidden">
+                <div class="relative w-full h-full overflow-hidden">
+                    <img src="public/images/properties/before-after/comparison/after_living_room.webp" alt="Renovated living room after renovation" class="w-full h-full object-cover">
+                    <div class="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent"></div>
+                    <div class="absolute bottom-6 left-6 right-6 text-white">
+                        <h4 class="text-xl font-bold mb-2">Living Room Transformation</h4>
+                        <p class="text-sm text-white/90">Spacious, comfortable family living spaces</p>
+                    </div>
+                    <span class="absolute top-4 right-4 bg-green-500 text-white px-3 py-1 rounded-full text-xs font-bold">AFTER</span>
+                </div>
+                <!-- Before overlay -->
+                <div class="absolute inset-0 w-1/2 h-full overflow-hidden border-r-2 border-white hidden" id="living-room-slider-overlay">
+                    <img src="public/images/properties/before-after/comparison/projects-before-living-room.webp" alt="Living room before renovation" class="absolute top-0 -left-1/2 h-full w-full object-cover object-center">
+                    <span class="absolute top-4 left-4 bg-brand-wood text-white px-3 py-1 rounded-full text-xs font-bold">BEFORE</span>
+                </div>
+            </div>
+
+            <!-- Exterior Tab -->
+            <div id="content-exterior" class="tab-content absolute inset-0 hidden">
+                <div class="relative w-full h-full overflow-hidden">
+                    <img src="public/images/properties/before-after/comparison/projects-front-porch-after.webp" alt="Front porch exterior after renovation" class="w-full h-full object-cover">
+                    <div class="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent"></div>
+                    <div class="absolute bottom-6 left-6 right-6 text-white">
+                        <h4 class="text-xl font-bold mb-2">Exterior Enhancement</h4>
+                        <p class="text-sm text-white/90">Curb appeal improvements and outdoor spaces</p>
+                    </div>
+                    <span class="absolute top-4 right-4 bg-green-500 text-white px-3 py-1 rounded-full text-xs font-bold">AFTER</span>
+                </div>
+                <!-- Before overlay -->
+                <div class="absolute inset-0 w-1/2 h-full overflow-hidden border-r-2 border-white hidden" id="exterior-slider-overlay">
+                    <img src="public/images/properties/before-after/comparison/projects-front-porch-before.webp" alt="Front porch exterior before renovation" class="absolute top-0 -left-1/2 h-full w-full object-cover object-center">
+                    <span class="absolute top-4 left-4 bg-brand-wood text-white px-3 py-1 rounded-full text-xs font-bold">BEFORE</span>
+                </div>
+            </div>
+
+            <!-- Slider Controls (shown on all tabs) -->
+            <div class="absolute top-0 bottom-0 left-1/2 w-10 -ml-5 cursor-ew-resize z-20">
+                <div class="w-10 h-10 bg-white rounded-full shadow-lg flex items-center justify-center text-brand-navy absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 9l4-4 4 4m0 6l-4 4-4-4" /></svg>
+                </div>
+            </div>
+
+            <label for="comparison-slider-control" class="sr-only">Comparison slider control to reveal before/after renovation differences</label>
+            <input type="range" id="comparison-slider-control" min="0" max="100" value="50" class="absolute inset-0 w-full h-full opacity-0 cursor-ew-resize z-30" oninput="updateSlider(this.value)">
+        </div>
     </div>
 </div>
 
 <script>
+    // Tab functionality for comparison slider
+    document.addEventListener('DOMContentLoaded', function() {
+        // Get all tab buttons and content areas
+        const tabButtons = document.querySelectorAll('.tab-button');
+        const currentSliderControl = document.getElementById('comparison-slider-control');
+
+        // Set default slider position to middle
+        if (currentSliderControl) {
+            updateSlider(currentSliderControl.value);
+        }
+
+        // Tab switching logic
+        tabButtons.forEach(button => {
+            button.addEventListener('click', function() {
+                const tabName = this.getAttribute('data-tab');
+
+                // Remove active state from all tabs
+                tabButtons.forEach(btn => {
+                    btn.classList.remove('text-brand-navy', 'border-brand-wood');
+                    btn.classList.add('text-slate-600', 'border-transparent');
+                });
+
+                // Add active state to clicked tab
+                this.classList.remove('text-slate-600', 'border-transparent');
+                this.classList.add('text-brand-navy', 'border-brand-wood');
+
+                // Hide all tab content
+                document.querySelectorAll('.tab-content').forEach(content => {
+                    content.classList.add('hidden');
+                });
+
+                // Hide all slider overlays
+                document.querySelectorAll('[id$="-slider-overlay"]').forEach(overlay => {
+                    overlay.classList.add('hidden');
+                });
+
+                // Show active tab content and slider overlay
+                const activeContent = document.getElementById('content-' + tabName);
+                const activeOverlay = document.getElementById(tabName + '-slider-overlay');
+
+                if (activeContent) {
+                    activeContent.classList.remove('hidden');
+                }
+
+                if (activeOverlay) {
+                    activeOverlay.classList.remove('hidden');
+                }
+
+                // Reset slider to middle position when switching tabs
+                if (currentSliderControl) {
+                    currentSliderControl.value = 50;
+                    updateSlider(50);
+                }
+            });
+        });
+
+        // Set default active tab (kitchen)
+        const defaultTab = document.getElementById('tab-kitchen');
+        if (defaultTab) {
+            defaultTab.click();
+        }
+    });
+
     function updateSlider(val) {
-        // Move the overlay divider
-        document.getElementById('slider-overlay').style.width = val + "%";
-        // Move the handle
-        document.getElementById('slider-handle').style.left = val + "%";
-        // Adjust the 'Before' image position to keep it stationary relative to viewport
-        // Note: The w-[200vw] class handles the aspect ratio, JS might need to fine tune if using strict pixels
-        // For a simple CSS-only valid approach, we assume object-cover works on the parent.
+        // Update all visible slider overlays
+        const activeOverlays = document.querySelectorAll('[id$="-slider-overlay"]:not(.hidden)');
+        activeOverlays.forEach(overlay => {
+            overlay.style.width = val + "%";
+        });
     }
 </script>
 
-<section id="properties" class="py-16 bg-slate-50">
-      <div class="max-w-7xl mx-auto px-4">
-        <div id="properties-container"></div>
-        <script>
-          document.addEventListener('DOMContentLoaded', async () => {
-            const container = document.getElementById('properties-container');
-            try {
-              const response = await fetch('public/properties-data.json');
-              const properties = await response.json();
-              container.innerHTML = '';
-              properties.forEach(prop => {
-                container.innerHTML += `<article>…</article>`;
-              });
-            } catch (err) {
-              container.innerHTML = '<p class="text-center text-red-500">Unable to load properties.</p>';
-            }
+<section class="py-16 bg-slate-50">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div class="text-center mb-12">
+      <span class="text-brand-wood font-bold uppercase tracking-wider text-sm">Available Properties</span>
+      <h2 class="text-3xl font-bold text-brand-navy mt-2 mb-4">Find Your New Home</h2>
+      <p class="text-lg text-slate-600 max-w-3xl mx-auto">Browse our professionally renovated homes across East Texas. All properties are fully renovated, Section 8 approved, and ready for your family.</p>
+    </div>
+
+    <div class="flex flex-wrap gap-2 justify-center mb-6" id="filter-chips">
+      <button onclick="filterProperties('all')" class="px-4 py-2 rounded-full bg-brand-navy text-white text-sm font-bold shadow-md hover:bg-brand-wood transition-colors">All</button>
+      <button onclick="filterProperties('Tyler')" class="px-4 py-2 rounded-full bg-white text-brand-navy border border-slate-200 text-sm font-medium hover:border-brand-wood hover:text-brand-wood transition-colors">Tyler</button>
+      <button onclick="filterProperties('Longview')" class="px-4 py-2 rounded-full bg-white text-brand-navy border border-slate-200 text-sm font-medium hover:border-brand-wood hover:text-brand-wood transition-colors">Longview</button>
+      <button onclick="filterProperties('Jefferson')" class="px-4 py-2 rounded-full bg-white text-brand-navy border border-slate-200 text-sm font-medium hover:border-brand-wood hover:text-brand-wood transition-colors">Jefferson</button>
+      <button onclick="filterProperties('Section 8')" class="px-4 py-2 rounded-full bg-green-50 text-green-700 border border-green-200 text-sm font-bold hover:bg-green-100 transition-colors flex items-center gap-2">
+        <span class="w-2 h-2 rounded-full bg-green-500"></span> Section 8
+      </button>
+    </div>
+
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8" id="properties-container">
+      <!-- Properties will be loaded here -->
+    </div>
+
+    <script>
+      document.addEventListener('DOMContentLoaded', async () => {
+        const container = document.getElementById('properties-container');
+        try {
+          const response = await fetch('public/properties-data.json');
+          const properties = await response.json();
+
+          container.innerHTML = '';
+
+          properties.forEach(prop => {
+            const isSection8 = prop.tags.some(tag => tag.includes('Section 8'));
+            const imageUrl = prop.images && prop.images.length > 0 ? prop.images[0] : 'public/images/logo/brand-logo-header-footer.svg';
+
+            const propertyCard = `
+              <article class="bg-white rounded-2xl shadow-lg overflow-hidden hover:shadow-xl transition-all duration-300 group">
+                <div class="relative">
+                  <img src="${imageUrl}" alt="${prop.title} property photo" class="w-full h-64 object-cover group-hover:scale-105 transition-transform duration-300" loading="lazy">
+                  <div class="absolute top-4 left-4 flex gap-2">
+                    ${prop.availability === 'available' ? '<span class="bg-green-500 text-white px-3 py-1 rounded-full text-xs font-bold">Available Now</span>' : ''}
+                    ${isSection8 ? '<span class="bg-green-600 text-white px-3 py-1 rounded-full text-xs font-bold">Section 8 Ready</span>' : '<span class="bg-amber-500 text-white px-3 py-1 rounded-full text-xs font-bold">Market Rate</span>'}
+                  </div>
+                  <div class="absolute top-4 right-4">
+                    <div class="bg-white/90 backdrop-blur-sm px-3 py-1 rounded-lg">
+                      <span class="text-2xl font-bold text-brand-navy">${prop.price.formatted}</span>
+                    </div>
+                  </div>
+                  <div class="absolute bottom-4 left-4 right-4">
+                    <div class="bg-white/90 backdrop-blur-sm p-3 rounded-lg">
+                      <div class="flex items-center gap-4 text-sm text-slate-600">
+                        <span class="flex items-center gap-1">
+                          <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 4a1 1 0 011-1h16a1 1 0 011 1v4a1 1 0 01-1 1H4a1 1 0 01-1-1V4z"/></svg>
+                          ${prop.bedrooms} BR
+                        </span>
+                        <span class="flex items-center gap-1">
+                          <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4M21 12a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
+                          ${prop.bathrooms} BA
+                        </span>
+                        <span class="flex items-center gap-1">
+                          <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 7v10c0 2.21 3.582 4 8 4s8-1.79 8-4V7"></path></svg>
+                          ${prop.sqft} sq ft
+                        </span>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="p-6">
+                  <div class="flex items-start justify-between mb-3">
+                    <div>
+                      <h3 class="text-xl font-bold text-brand-navy mb-1">${prop.title}</h3>
+                      <p class="text-slate-600 text-sm flex items-center gap-1">
+                        <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"/><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"/></svg>
+                        ${prop.location}
+                      </p>
+                    </div>
+                  </div>
+
+                  <p class="text-slate-600 text-sm mb-4 line-clamp-2">${prop.story_description}</p>
+
+                  <div class="flex flex-wrap gap-1 mb-4">
+                    ${prop.trust_badges.map(badge => `<span class="bg-brand-beige text-brand-wood text-xs px-2 py-1 rounded-md">${badge}</span>`).join('')}
+                  </div>
+
+                  <div class="flex gap-3">
+                    <a href="${prop.url}" class="flex-1 bg-brand-navy text-white text-center px-4 py-3 rounded-lg hover:bg-brand-wood transition-colors font-medium">
+                      View Details
+                    </a>
+                    <a href="contact.html" class="bg-white border border-brand-navy text-brand-navy px-4 py-3 rounded-lg hover:bg-brand-beige transition-colors font-medium">
+                      Contact
+                    </a>
+                  </div>
+                </div>
+              </article>
+            `;
+
+            container.innerHTML += propertyCard;
           });
-        </script>
-      </div>
-    </section>
+
+        } catch (err) {
+          console.error('Error loading properties:', err);
+          container.innerHTML = '<div class="col-span-full text-center py-12"><p class="text-red-500 font-medium">Unable to load properties. Please try again later.</p><p class="text-slate-600 text-sm mt-2">Error: ' + err.message + '</p></div>';
+        }
+      });
+    </script>
+  </div>
+</section>
+
+<script>
+    // Property filter chips functionality
+    let currentFilter = 'all';
+    let allProperties = [];
+
+    async function loadProperties() {
+        try {
+            const response = await fetch('public/properties-data.json');
+            const properties = await response.json();
+            allProperties = properties;
+            displayFilteredProperties();
+        } catch (err) {
+            console.error('Error loading properties:', err);
+        }
+    }
+
+    function filterProperties(filter) {
+        currentFilter = filter;
+
+        // Update button styles
+        document.querySelectorAll('#filter-chips button').forEach(button => {
+            button.className = button.className.replace('bg-brand-navy text-white', 'bg-white text-brand-navy border border-slate-200').replace('bg-green-50 text-green-700', 'bg-green-50 text-green-700 border border-green-200');
+        });
+
+        if (filter === 'all') {
+            document.querySelector('[onclick="filterProperties(\'all\')"]').className = 'px-4 py-2 rounded-full bg-brand-navy text-white text-sm font-bold shadow-md hover:bg-brand-wood transition-colors';
+        } else if (filter === 'Section 8') {
+            document.querySelector('[onclick="filterProperties(\'Section 8\')"]').className = 'px-4 py-2 rounded-full bg-green-50 text-green-700 border border-green-200 text-sm font-bold hover:bg-green-100 transition-colors flex items-center gap-2';
+        } else {
+            document.querySelector(`[onclick="filterProperties('${filter}')"]`).className = 'px-4 py-2 rounded-full bg-white text-brand-navy border border-brand-wood text-sm font-medium hover:bg-brand-wood hover:text-white transition-colors';
+        }
+
+        displayFilteredProperties();
+    }
+
+    function displayFilteredProperties() {
+        const container = document.getElementById('properties-container');
+        container.innerHTML = '';
+
+        let filteredProperties = allProperties;
+
+        if (currentFilter !== 'all') {
+            filteredProperties = allProperties.filter(prop => {
+                if (currentFilter === 'Section 8') {
+                    return prop.tags.some(tag => tag.includes('Section 8'));
+                }
+                return prop.location.includes(currentFilter);
+            });
+        }
+
+        if (filteredProperties.length === 0) {
+            container.innerHTML = '<div class="col-span-full text-center py-12"><p class="text-slate-600 text-lg">No properties found matching your criteria.</p><p class="text-slate-500">Try adjusting your search filters.</p></div>';
+            return;
+        }
+
+        filteredProperties.forEach(prop => {
+            const isSection8 = prop.tags.some(tag => tag.includes('Section 8'));
+            const imageUrl = prop.images && prop.images.length > 0 ? prop.images[0] : 'public/images/logo/brand-logo-header-footer.svg';
+
+            const propertyCard = `
+              <article class="bg-white rounded-2xl shadow-lg overflow-hidden hover:shadow-xl transition-all duration-300 group">
+                <div class="relative">
+                  <img src="${imageUrl}" alt="${prop.title} property photo" class="w-full h-64 object-cover group-hover:scale-105 transition-transform duration-300" loading="lazy">
+                  <div class="absolute top-4 left-4 flex gap-2">
+                    ${prop.availability === 'available' ? '<span class="bg-green-500 text-white px-3 py-1 rounded-full text-xs font-bold">Available Now</span>' : ''}
+                    ${isSection8 ? '<span class="bg-green-600 text-white px-3 py-1 rounded-full text-xs font-bold">Section 8 Ready</span>' : '<span class="bg-amber-500 text-white px-3 py-1 rounded-full text-xs font-bold">Market Rate</span>'}
+                  </div>
+                  <div class="absolute top-4 right-4">
+                    <div class="bg-white/90 backdrop-blur-sm px-3 py-1 rounded-lg">
+                      <span class="text-2xl font-bold text-brand-navy">${prop.price.formatted}</span>
+                    </div>
+                  </div>
+                  <div class="absolute bottom-4 left-4 right-4">
+                    <div class="bg-white/90 backdrop-blur-sm p-3 rounded-lg">
+                      <div class="flex items-center gap-4 text-sm text-slate-600">
+                        <span class="flex items-center gap-1">
+                          <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 4a1 1 0 011-1h16a1 1 0 011 1v4a1 1 0 01-1 1H4a1 1 0 01-1-1V4z"/></svg>
+                          ${prop.bedrooms} BR
+                        </span>
+                        <span class="flex items-center gap-1">
+                          <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4M21 12a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
+                          ${prop.bathrooms} BA
+                        </span>
+                        <span class="flex items-center gap-1">
+                          <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 7v10c0 2.21 3.582 4 8 4s8-1.79 8-4V7"></path></svg>
+                          ${prop.sqft} sq ft
+                        </span>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="p-6">
+                  <div class="flex items-start justify-between mb-3">
+                    <div>
+                      <h3 class="text-xl font-bold text-brand-navy mb-1">${prop.title}</h3>
+                      <p class="text-slate-600 text-sm flex items-center gap-1">
+                        <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"/><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"/></svg>
+                        ${prop.location}
+                      </p>
+                    </div>
+                  </div>
+
+                  <p class="text-slate-600 text-sm mb-4 line-clamp-2">${prop.story_description}</p>
+
+                  <div class="flex flex-wrap gap-1 mb-4">
+                    ${prop.trust_badges.map(badge => `<span class="bg-brand-beige text-brand-wood text-xs px-2 py-1 rounded-md">${badge}</span>`).join('')}
+                  </div>
+
+                  <div class="flex gap-3">
+                    <a href="${prop.url}" class="flex-1 bg-brand-navy text-white text-center px-4 py-3 rounded-lg hover:bg-brand-wood transition-colors font-medium">
+                      View Details
+                    </a>
+                    <a href="contact.html" class="bg-white border border-brand-navy text-brand-navy px-4 py-3 rounded-lg hover:bg-brand-beige transition-colors font-medium">
+                      Contact
+                    </a>
+                  </div>
+                </div>
+              </article>
+            `;
+
+            container.innerHTML += propertyCard;
+        });
+    }
+
+    // Initialize filter chips on page load
+    document.addEventListener('DOMContentLoaded', function() {
+        loadProperties();
+        // Set default active state for "All" button
+        document.querySelector('[onclick="filterProperties(\'all\')"]').className = 'px-4 py-2 rounded-full bg-brand-navy text-white text-sm font-bold shadow-md hover:bg-brand-wood transition-colors';
+    });
+</script>
   </main>
 
 <footer class="bg-brand-navy text-white border-t border-white/10 pt-16 pb-8">
@@ -129,7 +485,7 @@
 
             <div class="space-y-6">
                 <div class="flex items-center gap-3">
-                    <img src="public/images/logo/BRAND_LOGO.svg" alt="Properties 4 Creations" class="h-12 w-auto brightness-0 invert">
+                    <img src="public/images/logo/brand-logo-header-footer.svg" alt="Properties 4 Creations logo" class="h-12 w-auto brightness-0 invert" loading="lazy">
                     <div>
                         <h3 class="font-bold text-lg tracking-wide">Properties 4 Creations</h3>
                         <p class="text-xs text-brand-wood uppercase tracking-widest font-bold">Family & Veteran Housing</p>

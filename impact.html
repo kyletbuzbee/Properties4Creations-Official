@@ -40,77 +40,23 @@
 <body class="bg-brand-beige">
     <!-- Accessibility: Skip to main content -->
     <a href="#main" class="skip-to-content">Skip to main content</a>
-<div class="bg-brand-wood text-white text-xs font-bold py-2 text-center relative z-50">
-    <span class="hidden sm:inline">🇺🇸 Veteran Owned & Operated &nbsp;|&nbsp; </span>
-    <span>Serving Families & Veterans in East Texas</span>
-</div>
-<header id="main-header" class="sticky top-0 z-50 w-full glass-premium transition-all duration-300">
-    <nav role="navigation" aria-label="Main navigation" class="relative max-w-7xl mx-auto flex items-center justify-between px-4 py-4 sm:px-6 lg:px-8">
-        <div class="flex items-center gap-4">
-            <a href="impact.html" class="flex items-center gap-3 group" aria-label="Properties 4 Creations Home">
-                <img src="public/images/logo/brand-logo-header-footer.svg" alt="Properties 4 Creations Logo" class="h-10 w-auto group-hover:scale-105 transition-transform duration-200 drop-shadow-md">
-                <div class="hidden sm:block leading-tight">
-                    <div class="font-bold text-lg tracking-wide text-white text-shadow-sm">Properties 4 Creations</div>
-                    <div class="text-[10px] uppercase tracking-widest text-brand-wood font-bold">Families & Veteran Housing</div>
-                </div>
-            </a>
-        </div>
-        <div class="hidden md:flex items-center gap-8">
-            <a href="index.html" class="text-sm font-medium text-white/90 hover:text-white transition-all">Home</a>
-            <a href="projects.html" class="text-sm font-medium text-white/90 hover:text-white transition-all">Properties</a>
-            <a href="impact.html" class="text-sm font-medium text-white/90 hover:text-white bg-white/10 rounded-lg transition-all">Impact</a>
-            <a href="resources.html" class="text-sm font-medium text-white/90 hover:text-white transition-all">Resources</a>
-            <a href="get-started.html" class="inline-flex items-center justify-center px-5 py-2 text-sm font-bold text-white transition-all duration-200 bg-brand-wood/90 hover:bg-brand-wood rounded-lg shadow-lg border border-white/10 backdrop-blur-sm">Get Started</a>
-        </div>
-        <button id="mobile-menu-toggle" class="md:hidden p-2 text-white/80 hover:text-white focus:outline-none transition-colors" aria-label="Toggle mobile navigation menu" aria-expanded="false">
-            <svg class="w-8 h-8 drop-shadow-sm" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" d="M4 6h16M4 12h16M4 18h16"/></svg>
-        </button>
-    </nav>
-    <div id="mobile-menu" class="hidden md:hidden absolute w-full left-0 border-t border-white/10 bg-brand-navy/95 backdrop-blur-xl shadow-2xl">
-        <div class="px-4 pt-4 pb-8 space-y-3">
-            <a href="index.html" class="block px-4 py-3 rounded-xl text-base font-medium text-slate-300 hover:text-white hover:bg-white/5 transition-colors">Home</a>
-            <a href="projects.html" class="block px-4 py-3 rounded-xl text-base font-medium text-slate-300 hover:text-white hover:bg-white/5 transition-colors">Our Properties</a>
-            <a href="impact.html" class="block px-4 py-3 rounded-xl text-base font-medium text-white bg-white/10 border border-white/5">Impact</a>
-            <a href="resources.html" class="block px-4 py-3 rounded-xl text-base font-medium text-slate-300 hover:text-white hover:bg-white/5 transition-colors">Resources</a>
-            <a href="get-started.html" class="block px-4 py-3 rounded-xl text-base font-bold text-center text-white bg-brand-wood shadow-lg mt-6">Get Started</a>
-        </div>
-    </div>
-</header>
+    <div id="header-container"></div>
 
 <section class="relative h-[60vh] min-h-[500px] w-full overflow-hidden flex items-center justify-center will-change-transform">
-    <video
-        autoplay
-        muted
-        loop
-        playsinline
-        preload="metadata"
-        class="absolute inset-0 w-full h-full object-cover z-0 will-change-transform"
-        poster="public/images/banners/hero-impact_banner.webp"
-        aria-label="Hero video showcasing community impact and family success stories"
-        crossOrigin="anonymous"
-        onloadeddata="this.style.opacity='1'; this.style.filter='brightness(1)'"
-        oncanplaythrough="console.log('Video ready to play smoothly')"
-        onerror="console.warn('Video failed to load, showing fallback')"
-        style="opacity: 0; filter: brightness(0.8); transition: opacity 0.5s cubic-bezier(0.4, 0, 0.2, 1), filter 0.3s ease;"
-    >
-        <source src="public/videos/hero-impact-banner-1080.mp4" type="video/mp4; codecs='avc1.42E01E, mp4a.40.2'">
-        <track kind="captions" label="No captions available" srclang="en" default>
-        <!-- Highly optimized fallback -->
-        <p class="sr-only">Video unavailable. Hero banner shows community impact stories.</p>
-    </video>
-
-    <!-- Optimized progressive enhancement fallback -->
-    <picture class="absolute inset-0 w-full h-full z-0 opacity-0" style="transition: opacity 0.3s ease;">
-        <source srcset="public/images/banners/hero-impact_banner.webp" type="image/webp">
-        <img
-            src="public/images/banners/hero-impact_banner.webp"
-            alt="Community impact and family success stories banner"
-            class="absolute inset-0 w-full h-full object-cover will-change-transform"
-            loading="eager"
-            decoding="async"
-            style="filter: blur(0px); will-change: filter, transform;"
-        >
-    </picture>
+<video
+    id="hero-video"
+    autoplay
+    muted
+    loop
+    playsinline
+    preload="auto"
+    poster="public/images/banners/hero-impact_banner.webp"
+    class="absolute inset-0 w-full h-full object-cover z-0 hero-video"
+    aria-label="Hero video showcasing community impact"
+>
+    <source src="public/videos/hero-impact-banner-1080.mp4" type="video/mp4">
+    <p class="sr-only">Video unavailable. Hero banner shows community impact stories.</p>
+</video>
 
     <div class="absolute inset-0 bg-gradient-to-r from-brand-navy/90 via-brand-navy/70 to-transparent z-10"></div>
 
@@ -377,6 +323,20 @@
                 card.style.transition = 'all 0.6s ease-out';
                 observer.observe(card);
             });
+
+            // Video fade-in handler
+            const video = document.getElementById('hero-video');
+            if (video) {
+                // If video is already ready (cached), show immediately
+                if (video.readyState >= 3) {
+                    video.classList.add('video-loaded');
+                } else {
+                    // Otherwise wait for it to be ready to play
+                    video.addEventListener('canplay', () => {
+                        video.classList.add('video-loaded');
+                    });
+                }
+            }
         });
     </script>
 </body>

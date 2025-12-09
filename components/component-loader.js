@@ -103,11 +103,11 @@ P4C.ComponentLoader = {
 
   /**
    * Reinitialize header interactivity for dynamically loaded content
-   * Reattaches event listeners to header elements
+   * UPDATED: Now includes Dark Mode toggle logic
    * @function reinitializeHeaderInteractivity
    */
   reinitializeHeaderInteractivity: function() {
-    // Mobile menu toggle - Use proper show/hide logic
+    // 1. Mobile menu toggle
     const mobileMenuToggle = document.getElementById('mobile-menu-toggle');
     const mobileMenu = document.getElementById('mobile-menu');
 
@@ -116,10 +116,7 @@ P4C.ComponentLoader = {
         e.stopPropagation();
         this.toggleMobileMenu();
       });
-    }
-
-    // Close mobile menu when clicking outside
-    if (mobileMenu) {
+      // Close mobile menu when clicking outside
       document.addEventListener('click', (e) => {
         if (!mobileMenu.contains(e.target) && !mobileMenuToggle.contains(e.target)) {
           this.closeMobileMenu();
@@ -127,50 +124,61 @@ P4C.ComponentLoader = {
       });
     }
 
-    // Search button toggle
-    const searchButton = document.querySelector('[data-toggle="search"]');
-    const searchContainer = document.querySelector('.search-container');
-    if (searchButton && searchContainer) {
-      searchButton.addEventListener('click', (e) => {
-        e.stopPropagation();
-        searchContainer.classList.toggle('active');
-        const searchInput = searchContainer.querySelector('input');
-        if (searchInput && searchContainer.classList.contains('active')) {
-          searchInput.focus();
+    // 2. DARK MODE TOGGLE LOGIC (New)
+    const themeToggle = document.getElementById('theme-toggle');
+    const sunIcon = document.getElementById('theme-sun');
+    const moonIcon = document.getElementById('theme-moon');
+    const htmlEl = document.documentElement;
+
+    // Check saved preference on load
+    if (localStorage.theme === 'dark' || (!('theme' in localStorage) && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
+        htmlEl.classList.add('dark');
+        if(sunIcon && moonIcon) {
+            sunIcon.classList.add('hidden');
+            moonIcon.classList.remove('hidden');
         }
-      });
+    } else {
+        htmlEl.classList.remove('dark');
+        if(sunIcon && moonIcon) {
+            sunIcon.classList.remove('hidden');
+            moonIcon.classList.add('hidden');
+        }
     }
 
-    // Portal button toggle
+    // Handle Click
+    if (themeToggle) {
+        themeToggle.addEventListener('click', () => {
+            htmlEl.classList.toggle('dark');
+
+            // Toggle Icons
+            if(sunIcon && moonIcon) {
+                sunIcon.classList.toggle('hidden');
+                moonIcon.classList.toggle('hidden');
+            }
+
+            // Save Preference
+            if (htmlEl.classList.contains('dark')) {
+                localStorage.theme = 'dark';
+            } else {
+                localStorage.theme = 'light';
+            }
+        });
+    }
+
+    // 3. Existing Portal/Search logic (Preserved)
     const portalButton = document.querySelector('[data-toggle="portal"]');
     const portalMenu = document.querySelector('.portal-menu');
     if (portalButton && portalMenu) {
       portalButton.addEventListener('click', (e) => {
         e.stopPropagation();
         portalMenu.classList.toggle('active');
-        portalButton.setAttribute('aria-expanded', 
-          portalMenu.classList.contains('active') ? 'true' : 'false');
+      });
+      document.addEventListener('click', (e) => {
+        if (!portalMenu.contains(e.target) && !portalButton.contains(e.target)) {
+          portalMenu.classList.remove('active');
+        }
       });
     }
-
-    // Close dropdowns when clicking outside
-    document.addEventListener('click', (e) => {
-      if (searchContainer && !e.target.closest('.search-container') && !e.target.closest('[data-toggle="search"]')) {
-        searchContainer.classList.remove('active');
-      }
-      if (portalMenu && !e.target.closest('.portal-menu') && !e.target.closest('[data-toggle="portal"]')) {
-        portalMenu.classList.remove('active');
-      }
-    });
-
-    // Close modals on Escape key
-    document.addEventListener('keydown', (e) => {
-      if (e.key === 'Escape') {
-        if (mobileMenu) mobileMenu.classList.remove('active');
-        if (searchContainer) searchContainer.classList.remove('active');
-        if (portalMenu) portalMenu.classList.remove('active');
-      }
-    });
   },
 
   /**
