@@ -48,7 +48,7 @@
     <nav role="navigation" aria-label="Main navigation" class="relative max-w-7xl mx-auto flex items-center justify-between px-4 py-4 sm:px-6 lg:px-8">
         <div class="flex items-center gap-4">
             <a href="impact.html" class="flex items-center gap-3 group" aria-label="Properties 4 Creations Home">
-                <img src="public/images/logo/brand-logo-header1.svg" alt="Properties 4 Creations Logo" class="h-10 w-auto group-hover:scale-105 transition-transform duration-200 drop-shadow-md">
+                <img src="public/images/logo/brand-logo-header-footer.svg" alt="Properties 4 Creations Logo" class="h-10 w-auto group-hover:scale-105 transition-transform duration-200 drop-shadow-md">
                 <div class="hidden sm:block leading-tight">
                     <div class="font-bold text-lg tracking-wide text-white text-shadow-sm">Properties 4 Creations</div>
                     <div class="text-[10px] uppercase tracking-widest text-brand-wood font-bold">Families & Veteran Housing</div>
@@ -77,11 +77,40 @@
     </div>
 </header>
 
-<section class="relative h-[60vh] min-h-[500px] w-full overflow-hidden flex items-center justify-center">
-    <video autoplay muted loop playsinline class="absolute inset-0 w-full h-full object-cover z-0">
-        <source src="public/videos/hero-impact-banner-1080.mp4" type="video/mp4">
-        <img src="public/images/banners/hero-impact_banner.webp" alt="Impact Banner" class="w-full h-full object-cover">
+<section class="relative h-[60vh] min-h-[500px] w-full overflow-hidden flex items-center justify-center will-change-transform">
+    <video
+        autoplay
+        muted
+        loop
+        playsinline
+        preload="metadata"
+        class="absolute inset-0 w-full h-full object-cover z-0 will-change-transform"
+        poster="public/images/banners/hero-impact_banner.webp"
+        aria-label="Hero video showcasing community impact and family success stories"
+        crossOrigin="anonymous"
+        onloadeddata="this.style.opacity='1'; this.style.filter='brightness(1)'"
+        oncanplaythrough="console.log('Video ready to play smoothly')"
+        onerror="console.warn('Video failed to load, showing fallback')"
+        style="opacity: 0; filter: brightness(0.8); transition: opacity 0.5s cubic-bezier(0.4, 0, 0.2, 1), filter 0.3s ease;"
+    >
+        <source src="public/videos/hero-impact-banner-1080.mp4" type="video/mp4; codecs='avc1.42E01E, mp4a.40.2'">
+        <track kind="captions" label="No captions available" srclang="en" default>
+        <!-- Highly optimized fallback -->
+        <p class="sr-only">Video unavailable. Hero banner shows community impact stories.</p>
     </video>
+
+    <!-- Optimized progressive enhancement fallback -->
+    <picture class="absolute inset-0 w-full h-full z-0 opacity-0" style="transition: opacity 0.3s ease;">
+        <source srcset="public/images/banners/hero-impact_banner.webp" type="image/webp">
+        <img
+            src="public/images/banners/hero-impact_banner.webp"
+            alt="Community impact and family success stories banner"
+            class="absolute inset-0 w-full h-full object-cover will-change-transform"
+            loading="eager"
+            decoding="async"
+            style="filter: blur(0px); will-change: filter, transform;"
+        >
+    </picture>
 
     <div class="absolute inset-0 bg-gradient-to-r from-brand-navy/90 via-brand-navy/70 to-transparent z-10"></div>
 
@@ -154,18 +183,30 @@
 
                 <div class="grid grid-cols-2 md:grid-cols-4 gap-8">
                     <div class="text-center">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="h-10 w-10 mx-auto mb-3 text-brand-wood/80" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.5">
+                            <path stroke-linecap="round" stroke-linejoin="round" d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4"/>
+                        </svg>
                         <div class="text-4xl font-bold text-brand-wood mb-2">120+</div>
                         <div class="text-sm text-slate-300 uppercase tracking-wider">Safe Homes Created</div>
                     </div>
                     <div class="text-center">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="h-10 w-10 mx-auto mb-3 text-brand-wood/80" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.5">
+                            <path stroke-linecap="round" stroke-linejoin="round" d="M14.828 14.828a4 4 0 01-5.656 0M9 10h.01M15 10h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
+                        </svg>
                         <div class="text-4xl font-bold text-brand-wood mb-2">85+</div>
-                        <div class="text-sm text-slate-300 uppercase tracking-wider">Families With Stability</div>
+                        <div class="text-sm text-slate-300 uppercase tracking-wider">Families Supported</div>
                     </div>
                     <div class="text-center">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="h-10 w-10 mx-auto mb-3 text-brand-wood/80" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.5">
+                            <path stroke-linecap="round" stroke-linejoin="round" d="M11.049 2.927c.3-.921 1.603-.921 1.902 0l1.519 4.674a1 1 0 00.95.69h4.915c.969 0 1.371 1.24.588 1.81l-3.976 2.888a1 1 0 00-.363 1.118l1.518 4.674c.3.922-.755 1.688-1.538 1.118l-3.976-2.888a1 1 0 00-1.176 0l-3.976 2.888c-.783.57-1.838-.197-1.538-1.118l1.518-4.674a1 1 0 00-.363-1.118l-3.976-2.888c-.784-.57-.38-1.81.588-1.81h4.914a1 1 0 00.951-.69l1.519-4.674z" />
+                        </svg>
                         <div class="text-4xl font-bold text-brand-wood mb-2">42</div>
-                        <div class="text-sm text-slate-300 uppercase tracking-wider">Service Members Housed</div>
+                        <div class="text-sm text-slate-300 uppercase tracking-wider">Veterans Housed</div>
                     </div>
                     <div class="text-center">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="h-10 w-10 mx-auto mb-3 text-green-400/80" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.5">
+                            <path stroke-linecap="round" stroke-linejoin="round" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
+                        </svg>
                         <div class="text-4xl font-bold text-green-400 mb-2">100%</div>
                         <div class="text-sm text-slate-300 uppercase tracking-wider">Section 8 Excellence</div>
                     </div>
@@ -251,8 +292,10 @@
                     <!-- Community Impact -->
                     <div class="bg-white p-8 rounded-2xl shadow-wood border border-brand-beige">
                         <div class="flex items-start gap-4">
-                            <div class="w-16 h-16 bg-brand-navy rounded-full flex items-center justify-center">
-                                <span class="text-2xl text-white">🌟</span>
+                            <div class="w-16 h-16 bg-brand-wood rounded-xl flex items-center justify-center shadow-lg shadow-brand-wood/30">
+                                <svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.5">
+                                    <path stroke-linecap="round" stroke-linejoin="round" d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z" />
+                                </svg>
                             </div>
                             <div>
                                 <h3 class="text-xl font-bold text-brand-navy mb-2">Neighborhood Renewal</h3>
