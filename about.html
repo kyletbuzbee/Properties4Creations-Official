@@ -40,8 +40,43 @@
 <body class="bg-brand-beige">
     <!-- Accessibility: Skip to main content -->
     <a href="#main" class="skip-to-content">Skip to main content</a>
-    <div id="header-container" style="min-height: 76px;"></div>
-    <div id="page-banner-container"></div>
+<div class="bg-brand-wood text-white text-xs font-bold py-2 text-center relative z-50">
+    <span class="hidden sm:inline">🇺🇸 Veteran Owned & Operated &nbsp;|&nbsp; </span>
+    <span>Serving Families & Veterans in East Texas</span>
+</div>
+<header id="main-header" class="sticky top-0 z-50 w-full transition-all duration-300">
+    <div class="absolute inset-0 bg-brand-navy/95 backdrop-blur-md border-b border-white/10 shadow-lg"></div>
+    <nav role="navigation" aria-label="Main navigation" class="relative max-w-7xl mx-auto flex items-center justify-between px-4 py-4 sm:px-6 lg:px-8">
+        <div class="flex items-center gap-4">
+            <a href="about.html" class="flex items-center gap-3 group" aria-label="Properties 4 Creations Home">
+                <img src="public/images/logo/brand-logo-header1.svg" alt="Properties 4 Creations Logo" class="h-10 w-auto group-hover:scale-105 transition-transform duration-200 drop-shadow-md">
+                <div class="hidden sm:block leading-tight">
+                    <div class="font-bold text-lg tracking-wide text-white text-shadow-sm">Properties 4 Creations</div>
+                    <div class="text-[10px] uppercase tracking-widest text-brand-wood font-bold">Families & Veteran Housing</div>
+                </div>
+            </a>
+        </div>
+        <div class="hidden md:flex items-center gap-8">
+            <a href="index.html" class="text-sm font-medium text-white/90 hover:text-white transition-all">Home</a>
+            <a href="projects.html" class="text-sm font-medium text-white/90 hover:text-white transition-all">Properties</a>
+            <a href="impact.html" class="text-sm font-medium text-white/90 hover:text-white transition-all">Impact</a>
+            <a href="resources.html" class="text-sm font-medium text-white/90 hover:text-white transition-all">Resources</a>
+            <a href="get-started.html" class="inline-flex items-center justify-center px-5 py-2 text-sm font-bold text-white transition-all duration-200 bg-brand-wood/90 hover:bg-brand-wood rounded-lg shadow-lg border border-white/10 backdrop-blur-sm">Get Started</a>
+        </div>
+        <button id="mobile-menu-toggle" class="md:hidden p-2 text-white/80 hover:text-white focus:outline-none transition-colors">
+            <svg class="w-8 h-8 drop-shadow-sm" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M4 6h16M4 12h16M4 18h16"/></svg>
+        </button>
+    </nav>
+    <div id="mobile-menu" class="hidden md:hidden absolute w-full left-0 border-t border-white/10 bg-brand-navy/95 backdrop-blur-xl shadow-2xl">
+        <div class="px-4 pt-4 pb-8 space-y-3">
+            <a href="index.html" class="block px-4 py-3 rounded-xl text-base font-medium text-white bg-white/10 border border-white/5">Home</a>
+            <a href="projects.html" class="block px-4 py-3 rounded-xl text-base font-medium text-slate-300 hover:text-white hover:bg-white/5 transition-colors">Our Properties</a>
+            <a href="impact.html" class="block px-4 py-3 rounded-xl text-base font-medium text-slate-300 hover:text-white hover:bg-white/5 transition-colors">Impact</a>
+            <a href="resources.html" class="block px-4 py-3 rounded-xl text-base font-medium text-slate-300 hover:text-white hover:bg-white/5 transition-colors">Resources</a>
+            <a href="get-started.html" class="block px-4 py-3 rounded-xl text-base font-bold text-center text-white bg-brand-wood shadow-lg mt-6">Get Started</a>
+        </div>
+    </div>
+</header>
 
     <main>
     <script type="application/json" id="page-banner-config">
@@ -109,9 +144,30 @@
 
     <div id="footer-container"></div>
 
-    <!-- P4C Interactive Libraries -->
-    <script src="components/component-loader.js"></script>
-    <script src="accessibility-enhanced.js"></script>
-    <script src="js/banner-loader.js" defer></script>
+<script>
+    // Mobile Menu & Sticky Header Logic
+    document.addEventListener('DOMContentLoaded', () => {
+        const btn = document.getElementById('mobile-menu-toggle');
+        const menu = document.getElementById('mobile-menu');
+
+        // Toggle Mobile Menu
+        if (btn && menu) {
+            btn.addEventListener('click', (e) => {
+                e.stopPropagation();
+                menu.classList.toggle('hidden');
+                const isExpanded = menu.classList.contains('hidden') ? 'false' : 'true';
+                btn.setAttribute('aria-expanded', isExpanded);
+            });
+
+            // Close when clicking outside
+            document.addEventListener('click', (e) => {
+                if (!menu.contains(e.target) && !btn.contains(e.target)) {
+                    menu.classList.add('hidden');
+                    btn.setAttribute('aria-expanded', 'false');
+                }
+            });
+        }
+    });
+</script>
 </body>
 </html>

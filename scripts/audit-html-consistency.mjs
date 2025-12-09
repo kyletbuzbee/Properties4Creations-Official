@@ -1,10 +1,10 @@
 import fs from 'fs';
 import path from 'path';
 
-// Canonical baseline expectations
+// Canonical baseline expectations - UPDATED for consolidated CSS structure
 const baseline = {
-  css: ['design-tokens.css', 'components.css', 'main.css'],
-  scripts: ['component-loader.js', 'accessibility-enhanced.js'],
+  css: ['css/styles.css'],  // Single consolidated stylesheet
+  scripts: ['components/component-loader.js', 'accessibility-enhanced.js'],
   meta: ['<meta name="description"', '<link rel="canonical"'],
   headerMarker: ['<div id="header-container">', '<header'],
   footerMarker: ['<div id="footer-container">', '<footer']
@@ -14,8 +14,11 @@ const baseline = {
 const excludeFromHeaderFooterChecks = [
   'components/header.html',
   'components/footer.html',
+  'components/page-banner.html',
+  'footer.html',
   'footer-template.html',
   'header-template.html',
+  'page-banner.html',
   '404.html',  // Error pages should be standalone for fast loading
   'image-optimization-examples.html',  // Utility page (malformed HTML)
   'test-runner.html'   // Utility/testing page (may not need full structure)
@@ -42,11 +45,18 @@ function auditFile(filePath) {
   // Check header/footer (exclude certain special files)
   const shouldCheckHeaderFooter = !excludeFromHeaderFooterChecks.includes(fileName);
   if (shouldCheckHeaderFooter) {
-    if (!baseline.headerMarker.some(m => html.includes(m))) {
-      diffs.push('❌ Missing header include');
+    // Use more flexible regex to find header/footer containers
+    const hasHeader = /<div[^>]*id="header-container"[^>]*>/.test(html) ||
+                      baseline.headerMarker.some(m => html.includes(m));
+
+    const hasFooter = /<div[^>]*id="footer-container"[^>]*>/.test(html) ||
+                      baseline.footerMarker.some(m => html.includes(m));
+
+    if (!hasHeader) {
+      diffs.push('❌ Missing header container (<div id="header-container">)');
     }
-    if (!baseline.footerMarker.some(m => html.includes(m))) {
-      diffs.push('❌ Missing footer include');
+    if (!hasFooter) {
+      diffs.push('❌ Missing footer container (<div id="footer-container">)');
     }
   }
 

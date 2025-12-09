@@ -1,155 +1,67 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Properties 4 Creations - Veteran Housing Properties</title>
-    <meta name="description" content="Affordable housing solutions for families and veterans in East Texas. Transparent pricing, premium renovations, and community impact.">
-    <link rel="canonical" href="https://properties4creations.com/projects.html">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Properties 4 Creations - Veteran Housing Properties</title>
+  <meta name="description" content="Affordable housing solutions for families and veterans in East Texas. Transparent pricing, premium renovations, and community impact.">
+  <link rel="canonical" href="https://properties4creations.com/projects.html">
 
-    <script src="https://cdn.tailwindcss.com"></script>
-    <script>
-        tailwind.config = {
-            theme: {
-                extend: {
-                    colors: {
-                        brand: {
-                            navy: '#0B1120',
-                            wood: '#C28E5A',
-                            walnut: '#8B5E3C',
-                            beige: '#F5F5F0',
-                            surface: '#FFFFFF',
-                            slate: '#64748b'
-                        }
-                    },
-                    fontFamily: {
-                        heading: ['Merriweather', 'serif'],
-                        body: ['Inter', 'sans-serif']
-                    },
-                    boxShadow: {
-                        wood: '0 10px 25px -5px rgba(194, 142, 90, 0.4)',
-                        'navy': '0 10px 30px -10px rgba(11, 17, 32, 0.6)',
-                    }
-                }
-            }
-        }
-    </script>
-
-    <link rel="stylesheet" href="css/styles.css">
+  <link href="https://fonts.googleapis.com/css2?family=Merriweather:wght@400;700&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = { theme: { extend: {
+      colors:{ brand:{ navy:'#0B1120', wood:'#C28E5A', walnut:'#8B5E3C', beige:'#F5F5F0', surface:'#FFFFFF', slate:'#64748b' } },
+      fontFamily:{ heading:['Merriweather','serif'], body:['Inter','sans-serif'] },
+      boxShadow:{ wood:'0 10px 25px -5px rgba(194,142,90,.4)', navy:'0 10px 30px -10px rgba(11,17,32,.6)' }
+    } } };
+  </script>
+  <link rel="stylesheet" href="css/styles.css">
 </head>
 <body class="bg-brand-beige">
-    <!-- Accessibility: Skip to main content -->
-    <a href="#main" class="skip-to-content">Skip to main content</a>
-    <div id="header-container" style="min-height: 76px;"></div>
-    <div id="page-banner-container"></div>
+  <a href="#main" class="skip-to-content">Skip to main content</a>
+  <div id="header-container" style="min-height: 76px;"></div>
+  <div id="page-banner-container"></div>
 
-    <main>
-<script type="application/json" id="page-banner-config">
-{
-  "variant": "hero",
-  "title": "Transforming Properties into Homes",
-  "subtitle": "Explore our East Texas property portfolio — all designed for families and veterans.",
-  "background": "public/images/banners/hero-projects-banner.webp",
-  "eyebrow": "40+ Properties Renovated",
-  "showVoucherBadge": false,
-  "ctaText": "Browse Properties",
-  "ctaHref": "get-started.html"
-}
-</script>
+  <script type="application/json" id="page-banner-config">
+  {
+    "variant": "hero",
+    "title": "Transforming Properties into Homes",
+    "subtitle": "Explore our East Texas property portfolio — all designed for families and veterans.",
+    "background": "public/images/banners/hero-projects-banner.webp",
+    "eyebrow": "40+ Properties Renovated",
+    "showVoucherBadge": false,
+    "ctaText": "Browse Properties",
+    "ctaHref": "get-started.html"
+  }
+  </script>
 
-        <section id="properties" class="py-16 bg-slate-50">
-            <div class="max-w-7xl mx-auto px-4">
-                <div id="properties-container" class="space-y-12 max-w-5xl mx-auto min-h-[400px]">
-                    <div class="animate-pulse flex flex-col md:flex-row gap-8 bg-white p-6 rounded-2xl">
-                        <div class="md:w-5/12 h-64 bg-slate-200 rounded-xl"></div>
-                        <div class="md:w-7/12 space-y-4">
-                            <div class="h-8 bg-slate-200 rounded w-3/4"></div>
-                            <div class="h-4 bg-slate-200 rounded w-full"></div>
-                            <div class="h-4 bg-slate-200 rounded w-5/6"></div>
-                        </div>
-                    </div>
-                </div>
+  <main id="main" class="pt-16">
+    <section id="properties" class="py-16 bg-slate-50">
+      <div class="max-w-7xl mx-auto px-4">
+        <div id="properties-container"></div>
+        <script>
+          document.addEventListener('DOMContentLoaded', async () => {
+            const container = document.getElementById('properties-container');
+            try {
+              const response = await fetch('public/properties-data.json');
+              const properties = await response.json();
+              container.innerHTML = '';
+              properties.forEach(prop => {
+                container.innerHTML += `<article>…</article>`;
+              });
+            } catch (err) {
+              container.innerHTML = '<p class="text-center text-red-500">Unable to load properties.</p>';
+            }
+          });
+        </script>
+      </div>
+    </section>
+  </main>
 
-                <script>
-                document.addEventListener('DOMContentLoaded', async () => {
-                    const container = document.getElementById('properties-container');
-                    try {
-                        const response = await fetch('/public/properties-data.json');
-                        const properties = await response.json();
-                        container.innerHTML = '';
-
-                        properties.forEach(prop => {
-                            const isVoucher = prop.tags.includes('Section 8 Ready');
-                            const badgeColor = isVoucher ? 'bg-green-600' : 'bg-brand-navy';
-                            const badgeText = isVoucher ? 'Section 8 Ready' : 'Market Rate';
-
-                            const imageSrc = prop.images?.[0] || 'public/images/default-property.jpg';
-
-                            const cardHTML = `
-                            <article class="bg-white rounded-2xl shadow-wood overflow-hidden flex flex-col md:flex-row hover:shadow-lg transition-all duration-300 group border border-slate-100">
-                                <div class="md:w-5/12 relative overflow-hidden h-64 md:h-auto">
-                                    <picture class="block w-full h-full">
-                                        <source srcset="${imageSrc}" type="image/webp">
-                                        <img src="${imageSrc}" alt="${prop.title}" class="w-full h-full object-cover transform group-hover:scale-105 transition-transform duration-700" loading="lazy">
-                                    </picture>
-                                    <div class="absolute top-4 left-4">
-                                        <span class="${badgeColor} text-white px-4 py-1.5 rounded-full text-xs font-bold uppercase tracking-wider shadow-md">
-                                            ${badgeText}
-                                        </span>
-                                    </div>
-                                    <div class="absolute bottom-0 left-0 w-full bg-gradient-to-t from-black/60 to-transparent p-4">
-                                        <p class="text-white font-bold text-lg">${prop.price}</p>
-                                    </div>
-                                </div>
-                                <div class="md:w-7/12 p-8 flex flex-col justify-between">
-                                    <div>
-                                        <div class="flex items-center gap-2 mb-3 text-brand-wood font-medium text-sm">
-                                            <span>📍 ${prop.location}</span>
-                                        </div>
-                                        <h3 class="text-2xl font-heading font-bold text-brand-navy mb-3">
-                                            <a href="${prop.url}" class="hover:text-brand-wood transition-colors">${prop.title}</a>
-                                        </h3>
-                                        <p class="text-slate-600 mb-6 leading-relaxed text-sm line-clamp-3">
-                                            ${prop.story_description}
-                                        </p>
-                                        <div class="flex flex-wrap gap-2 mb-6">
-                                            ${prop.trust_badges.slice(0, 3).map(badge =>
-                                                `<span class="px-3 py-1 bg-brand-beige text-brand-navy text-xs font-medium rounded-lg border border-brand-wood/20 flex items-center gap-1"><span class="text-brand-wood">✓</span> ${badge}</span>`
-                                            ).join('')}
-                                        </div>
-                                    </div>
-                                    <div class="flex items-center justify-between pt-6 border-t border-slate-100">
-                                        <div class="text-xs text-slate-500">
-                                            <span class="font-semibold text-brand-navy">${prop.bedrooms}</span> Bed •
-                                            <span class="font-semibold text-brand-navy">${prop.bathrooms}</span> Bath •
-                                            <span class="font-semibold text-brand-navy">${prop.sqft}</span> sqft
-                                        </div>
-                                        <a href="contact.html" class="btn-base btn-secondary btn-sm">Browse Affordable Homes for Families & Veterans</a>
-                                    </div>
-                                </div>
-                            </article>
-                            `;
-                            container.innerHTML += cardHTML;
-                        });
-                    } catch (error) {
-                        console.error('Error loading properties:', error);
-                        container.innerHTML = '<p class="text-center text-red-500">Unable to load properties.</p>';
-                    }
-                });
-                </script>
-            </div>
-        </section>
-    </main>
-
-    <div id="footer-container"></div>
-
-    <!-- P4C Interactive Libraries -->
-    <script src="components/component-loader.js"></script>
-    <script src="accessibility-enhanced.js"></script>
-
-    <script src="js/banner-loader.js" defer></script>
-    <script src="js/ui-header.js" defer></script>
-    <script src="js/static-search.js" defer></script>
-    <script src="js/app.js" defer></script>
+  <div id="footer-container"></div>
+  <script src="components/component-loader.js" defer></script>
+  <script src="accessibility-enhanced.js" defer></script>
+  <script src="js/banner-loader.js" defer></script>
 </body>
 </html>
