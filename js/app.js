@@ -17,7 +17,6 @@ P4C.App.init = function() {
   this.setupGlobalEventHandlers();
   this.setupPerformanceMonitoring();
   this.setupAccessibilityFeatures();
-  console.log('✅ P4C Global App initialized');
 };
 
 /**
@@ -84,14 +83,13 @@ P4C.App.setupPerformanceMonitoring = function() {
       const observer = new PerformanceObserver((list) => {
         for (const entry of list.getEntries()) {
           if (entry.entryType === 'largest-contentful-paint') {
-            console.log(`LCP: ${entry.startTime}ms`);
             // Could send to analytics
           }
         }
       });
       observer.observe({ entryTypes: ['largest-contentful-paint'] });
     } catch (e) {
-      console.warn('LCP observer not supported');
+      // LCP observer not supported in this browser
     }
   }
 };

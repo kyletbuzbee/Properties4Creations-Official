@@ -10,35 +10,100 @@
 
   <link href="https://fonts.googleapis.com/css2?family=Merriweather:wght@400;700&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 
+  <!-- Open Graph / Facebook -->
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://properties4creations.com/">
+  <meta property="og:title" content="Premium Affordable Housing For Families and Veterans | Properties 4 Creations">
+  <meta property="og:description" content="Affordable housing solutions for families and veterans in East Texas. Transparent pricing, premium renovations, and community impact.">
+  <meta property="og:image" content="https://properties4creations.com/public/images/hero/front_porch_hero.webp">
 
-    <script src="https://cdn.tailwindcss.com"></script>
-    <script>
-    tailwind.config = {
-      darkMode: 'class',
-      theme: {
-        extend: {
-          colors: {
-            brand: {
-              navy: '#0B1120',
-              wood: '#C28E5A',
-              walnut: '#8B5E3C',
-              beige: '#F5F5F0',
-              surface: '#FFFFFF',
-              slate: '#64748b'
-            }
-          },
-          fontFamily: {
-            heading: ['Merriweather', 'serif'],
-            body: ['Inter', 'sans-serif']
-          },
-          boxShadow: {
-            wood: '0 10px 25px -5px rgba(194, 142, 90, 0.4)',
-            'navy': '0 10px 30px -10px rgba(11, 17, 32, 0.6)',
+  <!-- Twitter -->
+  <meta property="twitter:card" content="summary_large_image">
+  <meta property="twitter:url" content="https://properties4creations.com/">
+  <meta property="twitter:title" content="Premium Affordable Housing For Families and Veterans | Properties 4 Creations">
+  <meta property="twitter:description" content="Affordable housing solutions for families and veterans in East Texas. Transparent pricing, premium renovations, and community impact.">
+  <meta property="twitter:image" content="https://properties4creations.com/public/images/hero/front_porch_hero.webp">
+
+  <!-- Structured Data for Housing Search Engine Results -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": ["Organization", "LodgingBusiness"],
+    "name": "Properties 4 Creations",
+    "url": "https://properties4creations.com",
+    "logo": "https://properties4creations.com/public/images/logo/brand-logo-header-footer.svg",
+    "description": "Premium affordable housing solutions for veterans and families in East Texas with Section 8 and HUD-VASH voucher acceptance.",
+    "founder": "Kyle Buzbee",
+    "foundingDate": "2023",
+    "areaServed": ["Tyler, TX", "Longview, TX", "Jefferson, TX", "East Texas"],
+    "serviceType": "Housing Assistance",
+    "paymentAccepted": ["Section 8", "HUD-VASH", "Cash Payment"],
+    "currenciesAccepted": "USD",
+    "priceRange": "$900-$1,950",
+    "address": {
+      "@type": "PostalAddress",
+      "addressLocality": "Tyler",
+      "addressRegion": "TX",
+      "postalCode": "75701",
+      "addressCountry": "US"
+    },
+    "telephone": "+1-903-283-1770",
+    "email": "contact@properties4creations.com",
+    "knowsAbout": ["Section 8 Housing", "HUD-VASH Program", "Veteran Housing", "Family Housing"],
+    "hasOfferCatalog": {
+      "@type": "OfferCatalog",
+      "name": "Veteran Housing Properties",
+      "itemListElement": [
+        {
+          "@type": "Offer",
+          "itemOffered": {
+            "@type": "Apartment",
+            "name": "Tyler Ranch Home",
+            "accommodationFloorPlan": "3 Bedroom, 2 Bathroom",
+            "numberOfRooms": 3,
+            "numberOfBathroomsTotal": 2,
+            "floorSize": "1400 sq ft"
+          }
+        },
+        {
+          "@type": "Offer",
+          "itemOffered": {
+            "@type": "Apartment",
+            "name": "Longview Victorian",
+            "accommodationFloorPlan": "4 Bedroom, 3 Bathroom",
+            "numberOfRooms": 4,
+            "numberOfBathroomsTotal": 3,
+            "floorSize": "2200 sq ft"
+          }
+        },
+        {
+          "@type": "Offer",
+          "itemOffered": {
+            "@type": "Apartment",
+            "name": "Jefferson Riverfront",
+            "accommodationFloorPlan": "2 Bedroom, 1 Bathroom",
+            "numberOfRooms": 2,
+            "numberOfBathroomsTotal": 1,
+            "floorSize": "950 sq ft"
           }
         }
-      }
-    }
+      ]
+    },
+    "aggregateRating": {
+      "@type": "AggregateRating",
+      "ratingValue": "5.0",
+      "reviewCount": "40",
+      "bestRating": "5"
+    },
+    "sameAs": [
+      "https://www.facebook.com/Properties4Creations",
+      "https://twitter.com/P4Creations"
+    ]
+  }
   </script>
+
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script src="tailwind.config.js"></script>
     <link rel="stylesheet" href="css/styles.css">
 
     <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY=" crossorigin=""/>
@@ -169,7 +234,7 @@
 
                 <div class="relative z-10 h-full flex flex-col justify-between">
                     <div>
-                    <div class="w-12 h-12 bg-brand-navy text-white rounded-xl flex items-center justify-center mb-4">
+                    <div class="w-12 h-12 bg-brand-navy text-white rounded-xl flex items-center justify-center mb-4" loading="lazy">
                         <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
                             <path stroke-linecap="round" stroke-linejoin="round" d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4"/>
                         </svg>
@@ -227,50 +292,142 @@
 <section class="py-16 bg-white">
     <div class="max-w-7xl mx-auto px-4">
         <h2 class="text-3xl font-bold text-brand-navy mb-8 text-center">Our Footprint in East Texas</h2>
-        <div id="home-map" class="w-full h-[400px] rounded-2xl shadow-lg border border-slate-200 z-0 relative"></div>
+
+        <!-- Map Container with Loading States -->
+        <div id="map-container" class="w-full h-[400px] rounded-2xl shadow-lg border border-slate-200 relative overflow-hidden bg-slate-50">
+
+            <!-- Loading State -->
+            <div id="map-loading" class="absolute inset-0 flex flex-col items-center justify-center bg-white/90 backdrop-blur-sm z-10">
+                <div class="text-center">
+                    <div class="animate-spin rounded-full h-12 w-12 border-4 border-brand-wood border-t-transparent mb-4"></div>
+                    <p class="text-brand-slate font-medium">Loading Properties Map...</p>
+                    <p class="text-xs text-slate-500 mt-1">Connecting to map services</p>
+                </div>
+            </div>
+
+            <!-- Error State -->
+            <div id="map-error" class="hidden absolute inset-0 flex flex-col items-center justify-center bg-red-50 border border-red-200 z-10">
+                <div class="text-center max-w-md px-6">
+                    <svg class="w-16 h-16 text-red-400 mx-auto mb-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-2.5L13.732 4c-.77-.833-1.964-.833-2.732 0L3.732 16.5c-.77.833.192 2.5 1.732 2.5z"/>
+                    </svg>
+                    <h3 class="text-lg font-semibold text-red-800 mb-2">Map Unavailable</h3>
+                    <p class="text-red-600 text-sm mb-4">We're having trouble loading the interactive map, but our properties are still available!</p>
+                    <a href="/projects.html" class="inline-flex items-center px-6 py-3 bg-brand-wood text-white rounded-lg hover:bg-brand-walnut transition-colors">
+                        <svg class="w-5 h-5 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4"/>
+                        </svg>
+                        View All Properties
+                    </a>
+                </div>
+            </div>
+
+            <!-- Map Element -->
+            <div id="home-map" class="w-full h-full z-0 relative"></div>
+        </div>
+
+        <!-- Properties Summary Below Map -->
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-6 mt-8">
+            <div class="text-center p-6 bg-brand-beige rounded-xl border border-brand-navy/10">
+                <div class="text-3xl font-bold text-brand-navy mb-2">3</div>
+                <div class="text-brand-slate font-medium">Premium Properties</div>
+                <div class="text-xs text-slate-500 mt-1">Ready for occupancy</div>
+            </div>
+            <div class="text-center p-6 bg-brand-wood/5 rounded-xl border border-brand-wood/10">
+                <div class="text-3xl font-bold text-brand-wood mb-2">40+</div>
+                <div class="text-brand-slate font-medium">Families Housed</div>
+                <div class="text-xs text-slate-500 mt-1">Since 2023</div>
+            </div>
+            <div class="text-center p-6 bg-brand-navy/5 rounded-xl border border-brand-navy/10">
+                <div class="text-3xl font-bold text-green-600 mb-2">100%</div>
+                <div class="text-brand-slate font-medium">Voucher Accepted</div>
+                <div class="text-xs text-slate-500 mt-1">Section 8 & HUD-VASH</div>
+            </div>
+        </div>
     </div>
 </section>
   </main>
 
 <script>
 document.addEventListener('DOMContentLoaded', function() {
-    // 1. Initialize Map centered on Tyler, TX
-    var map = L.map('home-map').setView([32.3513, -95.3011], 9);
+    // Initialize map loading states
+    const mapContainer = document.getElementById('map-container');
+    const loadingState = document.getElementById('map-loading');
+    const errorState = document.getElementById('map-error');
+    const mapElement = document.getElementById('home-map');
 
-    // 2. Add Tile Layer (CartoDB Voyager for a clean look)
-    L.tileLayer('https://{s}.basemaps.cartocdn.com/rastertiles/voyager/{z}/{x}/{y}{r}.png', {
-        attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors &copy; <a href="https://carto.com/attributions">CARTO</a>',
-        subdomains: 'abcd',
-        maxZoom: 19
-    }).addTo(map);
+    // Show loading state initially
+    if (loadingState) loadingState.classList.remove('hidden');
+    if (errorState) errorState.classList.add('hidden');
 
-    // 3. Define Custom Icon
-    var houseIcon = L.icon({
-        iconUrl: 'public/images/icons/001-house.png', // Ensure this file exists
-        iconSize: [32, 32],
-        iconAnchor: [16, 32],
-        popupAnchor: [0, -32]
+    // Initialize map loading
+    initializeMap().then(() => {
+        // Map loaded successfully - hide loading and error states
+        if (loadingState) loadingState.classList.add('hidden');
+        if (errorState) errorState.classList.add('hidden');
+    }).catch(error => {
+        // Map failed to load - show error state
+        if (loadingState) loadingState.classList.add('hidden');
+        if (errorState) errorState.classList.remove('hidden');
+        console.warn('Map initialization failed:', error.message);
     });
 
-    // 4. Fetch Property Data and Plot
-    fetch('public/properties-data.json')
-        .then(response => response.json())
-        .then(data => {
+    async function initializeMap() {
+        try {
+            // 1. Initialize Map centered on Tyler, TX
+            const map = L.map('home-map').setView([32.3513, -95.3011], 9);
+
+            // 2. Add Tile Layer (CartoDB Voyager for a clean look)
+            L.tileLayer('https://{s}.basemaps.cartocdn.com/rastertiles/voyager/{z}/{x}/{y}{r}.png', {
+                attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors &copy; <a href="https://carto.com/attributions">CARTO</a>',
+                subdomains: 'abcd',
+                maxZoom: 19
+            }).addTo(map);
+
+            // 3. Define Custom Icon
+            const houseIcon = L.icon({
+                iconUrl: 'public/images/icons/001-house.png',
+                iconSize: [32, 32],
+                iconAnchor: [16, 32],
+                popupAnchor: [0, -32]
+            });
+
+            // 4. Fetch Property Data and Plot
+            const response = await fetch('public/properties-data.json');
+            if (!response.ok) {
+                throw new Error(`Failed to load property data: ${response.status}`);
+            }
+
+            const data = await response.json();
+
+            // Add markers for each property
             data.forEach(prop => {
-                if(prop.lat && prop.lng) {
-                    L.marker([prop.lat, prop.lng], {icon: houseIcon})
-                     .addTo(map)
-                     .bindPopup(`
-                        <div class="text-center p-1">
-                            <strong class="text-brand-navy block mb-1">${prop.title}</strong>
-                            <span class="text-green-600 font-bold">${prop.price}</span><br>
-                            <a href="${prop.url}" class="text-brand-wood text-xs underline mt-1 block">View Details</a>
-                        </div>
-                     `);
+                if (prop.lat && prop.lng) {
+                    L.marker([prop.lat, prop.lng], { icon: houseIcon })
+                        .addTo(map)
+                        .bindPopup(`
+                            <div class="text-center p-2">
+                                <strong class="text-brand-navy block mb-1">${prop.title || 'Available Property'}</strong>
+                                <span class="text-green-600 font-bold text-sm">${prop.price || 'Contact for pricing'}</span><br>
+                                <a href="${prop.url || '#'}" class="text-brand-wood text-xs underline mt-2 block hover:text-brand-navy">
+                                    ${prop.url ? 'View Details' : 'Coming Soon'}
+                                </a>
+                            </div>
+                        `);
                 }
             });
-        })
-        .catch(err => console.error('Error loading map data:', err));
+
+            // Ensure map is properly sized
+            setTimeout(() => {
+                map.invalidateSize();
+            }, 100);
+
+            return map;
+
+        } catch (error) {
+            throw new Error(`Map initialization failed: ${error.message}`);
+        }
+    }
 });
 </script>
 

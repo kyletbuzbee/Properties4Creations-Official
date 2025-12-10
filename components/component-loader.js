@@ -19,7 +19,6 @@ P4C.ComponentLoader = {
    * @function init
    */
   init: function() {
-    console.log('🔄 Loading P4C Components...');
     // Only load components if no existing elements are found
     if (!document.getElementById('main-header')) {
       this.loadHeader();
@@ -27,7 +26,6 @@ P4C.ComponentLoader = {
     if (!document.querySelector('footer')) {
       this.loadFooter();
     }
-    console.log('✅ P4C Components loaded (preserving existing)');
   },
 
   /**
@@ -298,15 +296,14 @@ document.addEventListener('DOMContentLoaded', () => {
   });
 });
 
-// Initialize PWA Service Worker registration
-if ('serviceWorker' in navigator) {
-  navigator.serviceWorker.register('/public/sw.js')
-    .then(function(registration) {
-      console.log('P4C Service Worker registered:', registration);
-    })
-    .catch(function(error) {
-      console.log('P4C Service Worker registration failed:', error);
+// Initialize PWA Service Worker registration (silently)
+// Note: Service worker file may not exist, so errors are handled silently
+if ('serviceWorker' in navigator && !window.P4C_SERVICE_WORKER_REGISTERED) {
+  navigator.serviceWorker.register('/public/sw.js', { scope: '/' })
+    .catch(function() {
+      // Silently handle service worker registration errors
     });
+  window.P4C_SERVICE_WORKER_REGISTERED = true;
 }
 
 // Initialize when DOM is ready

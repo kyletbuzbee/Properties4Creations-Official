@@ -1,6 +1,8 @@
-module.exports = {
+// P4C Tailwind Configuration
+// Moved from inline script for better performance
+
+tailwind.config = {
   darkMode: 'class',
-  content: ['./*.html'],
   theme: {
     extend: {
       colors: {
@@ -19,9 +21,8 @@ module.exports = {
       },
       boxShadow: {
         wood: '0 10px 25px -5px rgba(194, 142, 90, 0.4)',
-        navy: '0 10px 30px -10px rgba(11, 17, 32, 0.6)'
+        'navy': '0 10px 30px -10px rgba(11, 17, 32, 0.6)',
       }
     }
-  },
-  plugins: []
-}
+  }
+};

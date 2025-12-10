@@ -1,41 +1,34 @@
-# Ignore backups and logs
-*.bak
-*.log
-*.tmp
-test-runner-log
-
-# Ignore OS files
-.DS_Store
-Thumbs.db
-
-# Ignore duplicate CNAMEs if generated
-CNAME copy
-
 node_modules/
+*.log
+.DS_Store
 dist/
-.env
 .vscode/
+.lighthouseci/
 .idea/
+.env
+.env.local
+.coverage/
+.nyc_output/
 coverage/
-*.local
-*.swp
-*.swo
-*.pid
-*.seed
-*.pid.lock
-
-# Ignore build artifacts
-build/
-out/
+*.tgz
+*.tar.gz
+Thumbs.db
+ehthumbs.db
+Desktop.ini
+public/uploads/
+public/temp/
+node_modules
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+.vscode/test-results.xml
 .cache/
-*.exe
-*.dll
-*.so
-
-# Ignore package lock files
-package-lock.json
-yarn.lock
-.pnpm-debug.log
-.npmrc
-.pnpm-store/
-*.tsbuildinfo
+.parcel-cache
+.pnpm-debug.log*
+.vercel
+.netlify
+terraform.tfstate
+terraform.tfstate.backup
+*.tfvars
+.idea/
+/Projects/Properties4Creations-Official/.clinerules/
