@@ -4,6 +4,9 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Available Properties - Properties 4 Creations</title>
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <meta name="description" content="Browse affordable housing properties for veterans and families in Tyler, Longview, and East Texas. Section 8 approved homes with fair market pricing.">
+    <link rel="canonical" href="https://properties4creations.com/projects.html">
     <link rel="stylesheet" href="css/styles.css">
     <script src="https://cdn.tailwindcss.com"></script>
     <script>
@@ -35,28 +38,28 @@
 
                 <div class="relative w-full max-w-4xl mx-auto h-[400px] md:h-[500px] rounded-2xl overflow-hidden shadow-2xl group">
                     <div id="content-kitchen" class="absolute inset-0 w-full h-full">
-                        <div class="absolute inset-0 bg-cover bg-center" style="background-image: url('public/images/properties/before-after/projects_after_kitchen.webp');">
+                        <div class="absolute inset-0 comparison-bg-kitchen-after">
                             <span class="absolute top-4 right-4 bg-green-500 text-white px-3 py-1 rounded font-bold text-xs shadow-md">AFTER</span>
                         </div>
-                        <div class="overlay absolute inset-0 w-[50%] bg-cover bg-center border-r-2 border-white" style="background-image: url('public/images/properties/before-after/projects-kitchen-before.webp');">
+                        <div class="overlay absolute inset-0 w-[50%] comparison-bg-kitchen-before border-r-2 border-white">
                             <span class="absolute top-4 left-4 bg-brand-wood text-white px-3 py-1 rounded font-bold text-xs shadow-md">BEFORE</span>
                         </div>
-                        <input type="range" min="0" max="100" value="50" class="slider-control absolute inset-0 w-full h-full opacity-0 cursor-ew-resize z-20" oninput="updateSlider(this)">
+                        <input type="range" min="0" max="100" value="50" class="slider-control absolute inset-0 w-full h-full opacity-0 cursor-ew-resize z-20" oninput="updateSlider(this)" aria-label="Adjust before and after comparison in kitchen renovation">
                         <div class="slider-handle absolute top-1/2 left-1/2 w-8 h-8 bg-white rounded-full shadow-lg flex items-center justify-center -translate-x-1/2 -translate-y-1/2 z-10 pointer-events-none text-brand-navy">
-                            ↔
+                            <i data-lucide="arrow-left-right" class="w-4 h-4"></i>
                         </div>
                     </div>
 
                     <div id="content-living" class="absolute inset-0 w-full h-full hidden">
-                         <div class="absolute inset-0 bg-cover bg-center" style="background-image: url('public/images/properties/before-after/after_living_room.webp');">
+                         <div class="absolute inset-0 comparison-bg-living-after">
                             <span class="absolute top-4 right-4 bg-green-500 text-white px-3 py-1 rounded font-bold text-xs shadow-md">AFTER</span>
                         </div>
-                        <div class="overlay absolute inset-0 w-[50%] bg-cover bg-center border-r-2 border-white" style="background-image: url('public/images/properties/before-after/projects-before-living-room.webp');">
+                        <div class="overlay absolute inset-0 w-[50%] comparison-bg-living-before border-r-2 border-white">
                             <span class="absolute top-4 left-4 bg-brand-wood text-white px-3 py-1 rounded font-bold text-xs shadow-md">BEFORE</span>
                         </div>
-                        <input type="range" min="0" max="100" value="50" class="slider-control absolute inset-0 w-full h-full opacity-0 cursor-ew-resize z-20" oninput="updateSlider(this)">
+                        <input type="range" min="0" max="100" value="50" class="slider-control absolute inset-0 w-full h-full opacity-0 cursor-ew-resize z-20" oninput="updateSlider(this)" aria-label="Adjust before and after comparison in living room renovation">
                         <div class="slider-handle absolute top-1/2 left-1/2 w-8 h-8 bg-white rounded-full shadow-lg flex items-center justify-center -translate-x-1/2 -translate-y-1/2 z-10 pointer-events-none text-brand-navy">
-                            ↔
+                            <i data-lucide="arrow-left-right" class="w-4 h-4"></i>
                         </div>
                     </div>
                 </div>
@@ -74,13 +77,13 @@
                     <button class="bg-brand-navy text-white px-4 py-2 rounded-full text-sm">All</button>
                     <button class="bg-white text-slate-600 hover:bg-slate-100 px-4 py-2 rounded-full text-sm border border-slate-200">Tyler</button>
                     <button class="bg-white text-slate-600 hover:bg-slate-100 px-4 py-2 rounded-full text-sm border border-slate-200">Longview</button>
-                    <button class="bg-green-100 text-green-800 px-4 py-2 rounded-full text-sm border border-green-200 font-bold">• Section 8</button>
+                    <button class="bg-green-100 text-green-800 px-4 py-2 rounded-full text-sm border border-green-200 font-bold">? Section 8</button>
                 </div>
 
                 <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
                     <div class="bg-white rounded-xl overflow-hidden shadow-lg group hover:-translate-y-1 transition-all">
                         <div class="relative h-64 bg-slate-200">
-                             <img src="public/images/projects_finished_wood_deck.jpg" alt="Home" class="w-full h-full object-cover">
+                             <img src="public\images\before-after-comparison\projects-after-brick-patio.webp" alt="Home" class="w-full h-full object-cover">
                              <div class="absolute top-4 left-4 flex gap-2">
                                  <span class="bg-green-500 text-white text-xs font-bold px-2 py-1 rounded">Available Now</span>
                                  <span class="bg-brand-navy text-white text-xs font-bold px-2 py-1 rounded">Section 8 Ready</span>
@@ -91,11 +94,11 @@
                         </div>
                         <div class="p-6">
                             <h3 class="text-xl font-bold text-brand-navy mb-1">Tyler Ranch Home</h3>
-                            <p class="text-slate-500 text-sm mb-4">📍 Tyler, TX</p>
+                            <p class="text-slate-500 text-sm mb-4"><i data-lucide="map-pin" class="w-4 h-4 inline"></i> Tyler, TX</p>
                             <div class="flex gap-4 text-sm text-slate-600 mb-6 border-b border-slate-100 pb-4">
-                                <span>🛏️ 3 BR</span>
-                                <span>🚿 2 BA</span>
-                                <span>📏 1,850 sq ft</span>
+                                <span><i data-lucide="bed" class="w-4 h-4 inline mr-1"></i> 3 BR</span>
+                                <span><i data-lucide="shower-head" class="w-4 h-4 inline mr-1"></i> 2 BA</span>
+                                <span><i data-lucide="dimensions" class="w-4 h-4 inline mr-1"></i> 1,850 sq ft</span>
                             </div>
                             <div class="flex gap-3">
                                 <a href="tyler-ranch-home.html" class="flex-1 bg-brand-navy text-white text-center py-2 rounded-lg font-medium hover:bg-slate-800">View Details</a>
@@ -106,7 +109,7 @@
 
                     <div class="bg-white rounded-xl overflow-hidden shadow-lg group hover:-translate-y-1 transition-all">
                         <div class="relative h-64 bg-slate-200">
-                             <img src="public/images/properties/details/property-hero-1.jpg" alt="Home" class="w-full h-full object-cover">
+                             <img src="public\images\properties\properties-marshall-victorian.webp" alt="Home" class="w-full h-full object-cover">
                              <div class="absolute top-4 left-4 flex gap-2">
                                  <span class="bg-green-500 text-white text-xs font-bold px-2 py-1 rounded">Available Now</span>
                              </div>
@@ -116,11 +119,11 @@
                         </div>
                         <div class="p-6">
                             <h3 class="text-xl font-bold text-brand-navy mb-1">Longview Victorian</h3>
-                            <p class="text-slate-500 text-sm mb-4">📍 Longview, TX</p>
+                            <p class="text-slate-500 text-sm mb-4"><i data-lucide="map-pin" class="w-4 h-4 inline"></i> Longview, TX</p>
                             <div class="flex gap-4 text-sm text-slate-600 mb-6 border-b border-slate-100 pb-4">
-                                <span>🛏️ 4 BR</span>
-                                <span>🚿 2.5 BA</span>
-                                <span>📏 2,200 sq ft</span>
+                                <span><i data-lucide="bed" class="w-4 h-4 inline mr-1"></i> 4 BR</span>
+                                <span><i data-lucide="bath" class="w-4 h-4 inline mr-1"></i> 2.5 BA</span>
+                                <span><i data-lucide="ruler" class="w-4 h-4 inline mr-1"></i> 2,200 sq ft</span>
                             </div>
                             <div class="flex gap-3">
                                 <a href="longview-victorian.html" class="flex-1 bg-brand-navy text-white text-center py-2 rounded-lg font-medium hover:bg-slate-800">View Details</a>
@@ -131,7 +134,7 @@
 
                      <div class="bg-white rounded-xl overflow-hidden shadow-lg group hover:-translate-y-1 transition-all">
                         <div class="relative h-64 bg-slate-200">
-                             <img src="public/images/properties/neighborhood/bayou-scene.jpg" alt="Home" class="w-full h-full object-cover">
+                             <img src="" alt="Home" class="w-full h-full object-cover">
                              <div class="absolute top-4 left-4 flex gap-2">
                                  <span class="bg-green-500 text-white text-xs font-bold px-2 py-1 rounded">Available Now</span>
                              </div>
@@ -141,11 +144,11 @@
                         </div>
                         <div class="p-6">
                             <h3 class="text-xl font-bold text-brand-navy mb-1">Jefferson Riverfront</h3>
-                            <p class="text-slate-500 text-sm mb-4">📍 Jefferson, TX</p>
+                            <p class="text-slate-500 text-sm mb-4"><i data-lucide="map-pin" class="w-4 h-4 inline"></i> Jefferson, TX</p>
                             <div class="flex gap-4 text-sm text-slate-600 mb-6 border-b border-slate-100 pb-4">
-                                <span>🛏️ 2 BR</span>
-                                <span>🚿 1 BA</span>
-                                <span>📏 950 sq ft</span>
+                                <span><i data-lucide="bed" class="w-4 h-4 inline mr-1"></i> 2 BR</span>
+                                <span><i data-lucide="bath" class="w-4 h-4 inline mr-1"></i> 1 BA</span>
+                                <span><i data-lucide="ruler" class="w-4 h-4 inline mr-1"></i> 950 sq ft</span>
                             </div>
                             <div class="flex gap-3">
                                 <a href="jefferson-riverfront.html" class="flex-1 bg-brand-navy text-white text-center py-2 rounded-lg font-medium hover:bg-slate-800">View Details</a>
@@ -158,7 +161,8 @@
         </section>
     </main>
     <div id="footer-container"></div>
-    <script src="components/component-loader.js"></script>
+    <script src="js/component-loader.js"></script>
+    <script src="js/accessibility-enhanced.js"></script>
     <script>
         // Inline Slider Logic
         function updateSlider(input) {
@@ -184,5 +188,6 @@
             document.getElementById('tab-' + tab).className = "pb-2 px-4 text-brand-wood border-b-2 border-brand-wood font-bold transition-all";
         }
     </script>
+    <script>lucide.createIcons();</script>
 </body>
 </html>

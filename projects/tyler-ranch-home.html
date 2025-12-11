@@ -1,9 +1,10 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Tyler Ranch Home - East Texas Family Property | Properties 4 Creation</title>
+    <script src="https://unpkg.com/lucide@latest"></script>
     <meta name="description" content="Affordable housing solutions for families and veterans in East Texas. Transparent pricing, premium renovations, and community impact.">
     <link rel="canonical" href="https://properties4creations.com/projects/tyler-ranch-home.html">
 
@@ -204,10 +205,10 @@
 
                     <div id="content-deck" class="tab-content transition-opacity duration-300 opacity-100 absolute inset-0 z-10">
                         <div class="comparison-slider relative w-full h-[500px] group rounded-xl shadow-2xl overflow-hidden" style="container-type: inline-size;">
-                            <div class="absolute inset-0 bg-cover bg-center" style="background-image: url('/public/images/properties/before-after/projects_finished_wood_deck.jpg');">
+                            <div class="absolute inset-0 comparison-bg-deck-after">
                                 <span class="absolute top-4 right-4 bg-brand-wood/90 text-white px-3 py-1 rounded font-bold z-20 shadow-sm">AFTER</span>
                             </div>
-                            <div class="overlay absolute inset-0 w-[50%] bg-cover bg-center border-r-4 border-white z-10" style="background-image: url('/public/images/properties/before-after/projects_before_wood_deck.jpg');">
+                            <div class="overlay absolute inset-0 w-[50%] comparison-bg-deck-before border-r-4 border-white z-10">
                                 <span class="absolute top-4 left-4 bg-brand-navy/90 text-white px-3 py-1 rounded font-bold shadow-sm">BEFORE</span>
                             </div>
                             <input type="range" min="0" max="100" value="50" class="slider-control absolute inset-0 w-full h-full opacity-0 cursor-ew-resize z-30" aria-label="Deck renovation comparison">
@@ -219,10 +220,10 @@
 
                     <div id="content-kitchen" class="tab-content transition-opacity duration-300 opacity-0 absolute inset-0 z-0 pointer-events-none">
                         <div class="comparison-slider relative w-full h-[500px] group rounded-xl shadow-2xl overflow-hidden" style="container-type: inline-size;">
-                            <div class="absolute inset-0 bg-cover bg-center" style="background-image: url('/public/images/properties/before-after/projects_after_kitchen.webp');">
+                            <div class="absolute inset-0 comparison-bg-kitchen-after">
                                 <span class="absolute top-4 right-4 bg-brand-wood/90 text-white px-3 py-1 rounded font-bold z-20 shadow-sm">AFTER</span>
                             </div>
-                            <div class="overlay absolute inset-0 w-[50%] bg-cover bg-center border-r-4 border-white z-10" style="background-image: url('/public/images/properties/before-after/projects-kitchen-before.webp');">
+                            <div class="overlay absolute inset-0 w-[50%] comparison-bg-kitchen-before border-r-4 border-white z-10">
                                 <span class="absolute top-4 left-4 bg-brand-navy/90 text-white px-3 py-1 rounded font-bold shadow-sm">BEFORE</span>
                             </div>
                             <input type="range" min="0" max="100" value="50" class="slider-control absolute inset-0 w-full h-full opacity-0 cursor-ew-resize z-30" aria-label="Kitchen renovation comparison">
@@ -234,10 +235,10 @@
 
                     <div id="content-living" class="tab-content transition-opacity duration-300 opacity-0 absolute inset-0 z-0 pointer-events-none">
                         <div class="comparison-slider relative w-full h-[500px] group rounded-xl shadow-2xl overflow-hidden" style="container-type: inline-size;">
-                            <div class="absolute inset-0 bg-cover bg-center" style="background-image: url('/public/images/properties/before-after/after_living_room.webp');">
+                            <div class="absolute inset-0 comparison-bg-living-after">
                                 <span class="absolute top-4 right-4 bg-brand-wood/90 text-white px-3 py-1 rounded font-bold z-20 shadow-sm">AFTER</span>
                             </div>
-                            <div class="overlay absolute inset-0 w-[50%] bg-cover bg-center border-r-4 border-white z-10" style="background-image: url('/public/images/properties/before-after/projects-before-living-room.webp');">
+                            <div class="overlay absolute inset-0 w-[50%] comparison-bg-living-before border-r-4 border-white z-10">
                                 <span class="absolute top-4 left-4 bg-brand-navy/90 text-white px-3 py-1 rounded font-bold shadow-sm">BEFORE</span>
                             </div>
                             <input type="range" min="0" max="100" value="50" class="slider-control absolute inset-0 w-full h-full opacity-0 cursor-ew-resize z-30" aria-label="Living room renovation comparison">
@@ -639,5 +640,6 @@
     <script src="../accessibility-enhanced.js"></script>
     <script src="../js/banner-loader.js" defer></script>
 
+    <script>lucide.createIcons();</script>
 </body>
 </html>

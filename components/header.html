@@ -1,86 +1,55 @@
-<header id="main-header" class="sticky top-0 z-50 w-full transition-all duration-300 glass-premium shadow-lg">
-    <nav role="navigation" aria-label="Main navigation" class="relative max-w-7xl mx-auto flex items-center justify-between px-4 py-4 sm:px-6 lg:px-8">
-        
-        <div class="flex items-center gap-4">
-            <a href="index.html" class="flex items-center gap-3 group" aria-label="Properties 4 Creations Home">
-                <img src="public/images/logo/brand-logo-header-footer.svg" alt="Properties 4 Creations Logo" class="h-10 w-auto group-hover:scale-105 transition-transform duration-200 drop-shadow-md">
-                <div class="hidden sm:block leading-tight">
-                    <div class="font-bold text-lg tracking-wide text-white text-shadow-sm">Properties 4 Creations</div>
-                    <div class="text-[10px] uppercase tracking-widest text-brand-wood font-bold">Families & Veteran Housing</div>
-                </div>
+<!-- components/header.html -->
+<header id="main-header" class="fixed top-0 left-0 right-0 z-50 glass-premium shadow-lg">
+    <nav class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8" aria-label="Main navigation">
+        <div class="flex justify-between items-center h-16">
+            <!-- Logo -->
+            <a href="index.html" class="flex items-center space-x-3">
+                <img src="public/images/logo/logo-white.svg" alt="Properties 4 Creations" class="h-10 w-auto">
+                <span class="text-white font-bold text-lg hidden sm:block">
+                    Properties 4 Creations
+                </span>
             </a>
-        </div>
 
-        <div class="hidden md:flex items-center gap-6">
-            <a href="index.html" class="text-sm font-medium text-white/90 hover:text-white transition-all nav-link" data-page="home">Home</a>
-            <a href="projects.html" class="text-sm font-medium text-white/90 hover:text-white transition-all nav-link" data-page="projects">Properties</a>
-            <a href="impact.html" class="text-sm font-medium text-white/90 hover:text-white transition-all nav-link" data-page="impact">Impact</a>
-            <a href="resources.html" class="text-sm font-medium text-white/90 hover:text-white transition-all nav-link" data-page="resources">Resources</a>
-            
-            <a href="get-started.html" class="inline-flex items-center justify-center px-5 py-2 text-sm font-bold text-white transition-all duration-200 bg-brand-wood/90 hover:bg-brand-wood rounded-lg shadow-lg border border-white/10 backdrop-blur-sm hover:-translate-y-0.5">
-                Get Started
-            </a>
-        </div>
+            <!-- Desktop Navigation -->
+            <div class="hidden md:flex items-center space-x-2">
+                <a href="index.html" class="nav-link px-4 py-2 rounded-lg">Home</a>
+                <a href="about.html" class="nav-link px-4 py-2 rounded-lg">About</a>
+                <a href="projects.html" class="nav-link px-4 py-2 rounded-lg">Properties</a>
+                <a href="resources.html" class="nav-link px-4 py-2 rounded-lg">Resources</a>
+                <a href="impact.html" class="nav-link px-4 py-2 rounded-lg">Impact</a>
+                <a href="transparency.html" class="nav-link px-4 py-2 rounded-lg">Transparency</a>
+                <a href="faq.html" class="nav-link px-4 py-2 rounded-lg">FAQ</a>
+                <a href="contact.html" class="bg-wood text-white px-6 py-2 rounded-lg font-bold hover:bg-walnut">
+                    Contact Us
+                </a>
+            </div>
 
-        <div class="hidden md:flex items-center gap-2 ml-auto">
-            <button id="theme-toggle" class="p-2 rounded-full bg-white/10 hover:bg-white/20 text-white transition-all ml-4" aria-label="Toggle Dark Mode">
-                <svg id="theme-sun" class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 3v1m0 16v1m9-9h-1M4 12H3m15.364 6.364l-.707-.707M6.343 6.343l-.707-.707m12.728 0l-.707.707M6.343 17.657l-.707.707M16 12a4 4 0 11-8 0 4 4 0 018 0z"></path></svg>
-                <svg id="theme-moon" class="w-6 h-6 hidden" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M20.354 24.354A9 9 0 018.646 3.646 9.003 9.003 0 0012 21a9.003 9.003 0 008.354-5.646z"></path></svg>
+            <!-- Mobile Menu Button -->
+            <button id="mobile-menu-toggle" class="md:hidden text-white p-2" aria-expanded="false" aria-label="Menu">
+                <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"/>
+                </svg>
             </button>
         </div>
 
-        <button id="mobile-menu-toggle" class="md:hidden p-2 text-white/80 hover:text-white focus:outline-none transition-colors" aria-label="Toggle mobile navigation menu" aria-expanded="false">
-            <svg class="w-8 h-8 drop-shadow-sm" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24" aria-hidden="true">
-                <path stroke-linecap="round" stroke-linejoin="round" d="M4 6h16M4 12h16M4 18h16"/>
-            </svg>
-        </button>
-    </nav>
-
-    <div id="mobile-menu" class="md:hidden overflow-hidden transition-all duration-300 max-h-0 bg-brand-navy/95 backdrop-blur-xl border-t border-white/10 shadow-2xl">
-        <div class="px-4 pt-4 pb-8 space-y-3">
-            <a href="index.html" class="block px-4 py-3 rounded-xl text-base font-medium text-slate-300 hover:text-white hover:bg-white/5 transition-colors nav-link" data-page="home">Home</a>
-            <a href="projects.html" class="block px-4 py-3 rounded-xl text-base font-medium text-slate-300 hover:text-white hover:bg-white/5 transition-colors nav-link" data-page="projects">Our Properties</a>
-            <a href="impact.html" class="block px-4 py-3 rounded-xl text-base font-medium text-slate-300 hover:text-white hover:bg-white/5 transition-colors nav-link" data-page="impact">Impact</a>
-            <a href="resources.html" class="block px-4 py-3 rounded-xl text-base font-medium text-slate-300 hover:text-white hover:bg-white/5 transition-colors nav-link" data-page="resources">Resources</a>
-            <a href="transparency.html" class="block px-4 py-3 rounded-xl text-base font-medium text-slate-300 hover:text-white hover:bg-white/5 transition-colors nav-link" data-page="transparency">Transparency</a>
-            
-            <a href="get-started.html" class="block px-4 py-3 rounded-xl text-base font-bold text-center text-white bg-brand-wood shadow-lg mt-6 border border-white/10">Get Started</a>
-            
-            <div class="border-t border-white/10 mt-4 pt-4 flex gap-4 justify-center text-xs text-slate-400">
-                <a href="privacy.html" class="hover:text-white">Privacy</a>
-                <span>•</span>
-                <a href="contact.html" class="hover:text-white">Contact</a>
+        <!-- Mobile Menu -->
+        <div id="mobile-menu" class="md:hidden">
+            <div class="flex flex-col space-y-2 py-4">
+                <a href="index.html" class="mobile-nav-link px-4 py-3 rounded-lg">Home</a>
+                <a href="about.html" class="mobile-nav-link px-4 py-3 rounded-lg">About</a>
+                <a href="projects.html" class="mobile-nav-link px-4 py-3 rounded-lg">Properties</a>
+                <a href="resources.html" class="mobile-nav-link px-4 py-3 rounded-lg">Resources</a>
+                <a href="impact.html" class="mobile-nav-link px-4 py-3 rounded-lg">Impact</a>
+                <a href="transparency.html" class="mobile-nav-link px-4 py-3 rounded-lg">Transparency</a>
+                <a href="faq.html" class="mobile-nav-link px-4 py-3 rounded-lg">FAQ</a>
+                <a href="contact.html" class="mx-4 bg-wood text-white px-6 py-3 rounded-lg font-bold text-center">
+                    Contact Us
+                </a>
             </div>
         </div>
-    </div>
+    </nav>
 </header>
 
-<script>
-    // Dark mode toggle functionality
-    const toggleBtn = document.getElementById('theme-toggle');
-    const html = document.documentElement;
-    const sun = document.getElementById('theme-sun');
-    const moon = document.getElementById('theme-moon');
-
-    if (toggleBtn && sun && moon) {
-        toggleBtn.addEventListener('click', () => {
-            html.classList.toggle('dark');
-            if (html.classList.contains('dark')) {
-                sun.classList.remove('hidden');
-                moon.classList.add('hidden');
-                localStorage.setItem('theme', 'dark');
-            } else {
-                sun.classList.add('hidden');
-                moon.classList.remove('hidden');
-                localStorage.setItem('theme', 'light');
-            }
-        });
-
-        // Check saved preference
-        if (localStorage.getItem('theme') === 'dark') {
-            html.classList.add('dark');
-            sun.classList.remove('hidden');
-            moon.classList.add('hidden');
-        }
-    }
-</script>
+<!-- Spacer for fixed header -->
+<div class="h-16"></div>
+<!-- End of components/header.html -->

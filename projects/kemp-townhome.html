@@ -1,0 +1,528 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kemp Townhome - Affordable Veteran Housing | Properties 4 Creation</title>
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <meta name="description" content="Low-maintenance townhome in Kemp, TX perfect for veterans. Section 8 eligible with peaceful community setting. $650/month.">
+    <link rel="canonical" href="https://properties4creations.com/projects/kemp-townhome.html">
+
+    <!-- Structured Data for Property Listing -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Apartment",
+      "name": "Kemp Townhome - Veteran Housing Option",
+      "description": "1BR/1BA townhome in Kemp, TX. Low-maintenance living for veterans with Section 8 approval. Quiet, peaceful community.",
+      "url": "https://properties4creations.com/projects/kemp-townhome.html",
+      "address": {
+        "@type": "PostalAddress",
+        "addressLocality": "Kemp",
+        "addressRegion": "TX",
+        "addressCountry": "US"
+      },
+      "geo": {
+        "@type": "GeoCoordinates",
+        "latitude": "32.4421",
+        "longitude": "-96.2253"
+      },
+      "numberOfRooms": 3,
+      "numberOfBedrooms": 1,
+      "numberOfBathroomsTotal": 1,
+      "floorSize": {
+        "@type": "QuantitativeValue",
+        "value": 650,
+        "unitCode": "FTK"
+      },
+      "image": [
+        "https://properties4creations.com/public/images/projects/kemp-townhome-before.jpg",
+        "https://properties4creations.com/public/images/projects/kemp-townhome-after.jpg"
+      ],
+      "amenityFeature": [
+        {
+          "@type": "LocationFeatureSpecification",
+          "name": "Section 8 Approved",
+          "value": true
+        },
+        {
+          "@type": "LocationFeatureSpecification",
+          "name": "Low Maintenance Living",
+          "value": true
+        },
+        {
+          "@type": "LocationFeatureSpecification",
+          "name": "Peaceful Environment",
+          "value": true
+        },
+        {
+          "@type": "LocationFeatureSpecification",
+          "name": "Community Amenities",
+          "value": true
+        }
+      ],
+      "potentialAction": {
+        "@type": "ReserveAction",
+        "target": {
+          "@type": "EntryPoint",
+          "urlTemplate": "https://properties4creations.com/contact.html",
+          "inLanguage": "en-US",
+          "actionPlatform": [
+            "http://schema.org/DesktopWebPlatform",
+            "http://schema.org/MobileWebPlatform"
+          ]
+        },
+        "result": {
+          "@type": "LodgingReservation",
+          "lodgingUnitType": "Townhome"
+        }
+      },
+      "publisher": {
+        "@type": "RealEstateAgent",
+        "name": "Properties 4 Creation",
+        "telephone": "(903) 283-1770",
+        "address": {
+          "@type": "PostalAddress",
+          "addressLocality": "Tyler",
+          "addressRegion": "TX",
+          "addressCountry": "US"
+        }
+      }
+    }
+    </script>
+
+    <link rel="stylesheet" href="../css/styles.css">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        brand: { navy: 'var(--color-primary-navy)', wood: 'var(--color-accent-gold)', beige: 'var(--color-neutral-beige)' }
+                    },
+                    fontFamily: {
+                        heading: ['Merriweather','serif'],
+                        body: ['Inter','sans-serif']
+                    },
+                    boxShadow: {
+                        wood: 'var(--shadow-wood)',
+                        navy: 'var(--shadow-medium)'
+                    }
+                }
+            }
+        }
+    </script>
+
+    <style>
+        body { font-family: 'Merriweather', 'Inter', system-ui, -apple-system, sans-serif; }
+        .animate-fade-in-up { animation: fadeInUp 0.8s ease-out forwards; }
+        @keyframes fadeInUp { from { opacity: 0; transform: translateY(30px); } to { opacity: 1; transform: translateY(0); } }
+        @media (max-width: 475px) { h1 { font-size: 1.75rem; } h2 { font-size: 1.5rem; } }
+    </style>
+</head>
+<body class="bg-brand-beige">
+    <a href="#main" class="skip-to-content">Skip to main content</a>
+    <div id="header-container" style="min-height: 76px;"></div>
+    <div id="page-banner-container"></div>
+
+    <main class="pt-16">
+<script type="application/json" id="page-banner-config">
+{
+  "variant": "hero",
+  "title": "Low-Maintenance Living for East Texas Veterans",
+  "subtitle": "Peaceful townhome community in Kemp, perfect for veterans seeking easy, comfortable housing options.",
+  "background": "public/images/hero/front_porch_hero.webp",
+  "eyebrow": "Section 8 Eligible Starting at $650/mo",
+  "showVoucherBadge": true,
+  "ctaText": "Tour This Veteran-Friendly Home",
+  "ctaHref": "get-started.html"
+}
+</script>
+
+        <!-- Renovation Gallery -->
+        <section class="py-16 bg-white" id="renovation-gallery">
+            <div class="max-w-6xl mx-auto px-4">
+                <div class="text-center mb-12">
+                    <h2 class="text-3xl font-bold text-brand-navy mb-4">Modern Townhome Renovation</h2>
+                    <p class="text-lg text-slate-600">Classic East Texas charm meets modern veteran housing</p>
+                </div>
+
+                <div class="flex justify-center mb-8">
+                    <div class="inline-flex p-1 rounded-xl gap-2 bg-slate-100 border border-slate-200">
+                        <button onclick="switchTab('exterior')" id="tab-exterior"
+                                class="px-6 py-2 rounded-lg font-bold text-sm transition-all bg-brand-wood text-white shadow-md">
+                            Exterior
+                        </button>
+                        <button onclick="switchTab('interior')" id="tab-interior"
+                                class="px-6 py-2 rounded-lg font-bold text-sm transition-all text-slate-600 hover:text-brand-navy hover:bg-white">
+                            Interior
+                        </button>
+                    </div>
+                </div>
+
+                <div class="relative min-h-[500px]">
+                    <div id="content-exterior" class="tab-content transition-opacity duration-300 opacity-100 absolute inset-0 z-10">
+                        <div class="comparison-slider relative w-full h-[500px] group rounded-xl shadow-2xl overflow-hidden" style="container-type: inline-size;">
+                            <div class="absolute inset-0 comparison-bg-deck-after">
+                                <span class="absolute top-4 right-4 bg-brand-wood/90 text-white px-3 py-1 rounded font-bold z-20 shadow-sm">MODERN TOWNHOME</span>
+                            </div>
+                            <div class="overlay absolute inset-0 w-[50%] comparison-bg-deck-before border-r-4 border-white z-10">
+                                <span class="absolute top-4 left-4 bg-brand-navy/90 text-white px-3 py-1 rounded font-bold shadow-sm">BEFORE</span>
+                            </div>
+                            <input type="range" min="0" max="100" value="50" class="slider-control absolute inset-0 w-full h-full opacity-0 cursor-ew-resize z-30" aria-label="Townhome exterior renovation comparison">
+                            <div class="slider-handle absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 z-40 pointer-events-none text-white drop-shadow-md">
+                                <svg class="w-10 h-10" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 7h12m0 0l-4-4m4 4l-4 4m0 6H4m0 0l4 4m-4-4l4-4" /></svg>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div id="content-interior" class="tab-content transition-opacity duration-300 opacity-0 absolute inset-0 z-0 pointer-events-none">
+                        <div class="comparison-slider relative w-full h-[500px] group rounded-xl shadow-2xl overflow-hidden" style="container-type: inline-size;">
+                            <div class="absolute inset-0 comparison-bg-living-after">
+                                <span class="absolute top-4 right-4 bg-brand-wood/90 text-white px-3 py-1 rounded font-bold z-20 shadow-sm">AFTER</span>
+                            </div>
+                            <div class="overlay absolute inset-0 w-[50%] comparison-bg-kitchen-before border-r-4 border-white z-10">
+                                <span class="absolute top-4 left-4 bg-brand-navy/90 text-white px-3 py-1 rounded font-bold shadow-sm">BEFORE</span>
+                            </div>
+                            <input type="range" min="0" max="100" value="50" class="slider-control absolute inset-0 w-full h-full opacity-0 cursor-ew-resize z-30" aria-label="Townhome interior renovation comparison">
+                            <div class="slider-handle absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 z-40 pointer-events-none text-white drop-shadow-md">
+                                <svg class="w-10 h-10" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 7h12m0 0l-4-4m4 4l-4 4m0 6H4m0 0l4 4m-4-4l4-4" /></svg>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Property Overview -->
+        <section class="py-16 bg-white">
+            <div class="max-w-6xl mx-auto px-4">
+                <div class="grid grid-cols-1 lg:grid-cols-3 gap-12">
+                    <div class="lg:col-span-2">
+                        <h1 class="text-4xl font-bold text-brand-navy mb-4">Kemp Townhome</h1>
+
+                        <div class="flex flex-wrap items-center gap-4 mb-6">
+                            <span class="px-3 py-1 bg-green-100 text-green-800 rounded-full text-sm font-medium">Section 8 Ready</span>
+                            <span class="px-3 py-1 bg-blue-100 text-blue-800 rounded-full text-sm font-medium">Veteran Preferred</span>
+                            <span class="text-2xl font-bold text-brand-navy">$650/mo</span>
+                        </div>
+
+                        <p class="text-lg text-slate-700 mb-6">
+                            Perfect for veterans seeking maintenance-free living. This charming townhome offers modern comfort in a peaceful Kemp community, with Section 8 eligibility and easy access to Tyler amenities.
+                        </p>
+
+                        <!-- Renovation Specs -->
+                        <div class="bg-white border border-slate-200 rounded-xl p-8 shadow-sm my-12">
+                            <div class="flex items-center justify-between mb-6">
+                                <h3 class="text-2xl font-bold text-brand-navy">Townhome Renovation Specs</h3>
+                                <span class="bg-green-100 text-green-800 text-xs font-bold px-3 py-1 rounded-full">VETERAN APPROVED</span>
+                            </div>
+
+                            <div class="grid grid-cols-1 md:grid-cols-2 gap-y-4 gap-x-12 text-sm">
+                                <div class="flex justify-between border-b border-slate-100 pb-2">
+                                    <span class="text-slate-500">Flooring</span>
+                                    <span class="font-semibold text-brand-navy">Waterproof Luxury Vinyl</span>
+                                </div>
+                                <div class="flex justify-between border-b border-slate-100 pb-2">
+                                    <span class="text-slate-500">Kitchen</span>
+                                    <span class="font-semibold text-brand-navy">Updated Appliances</span>
+                                </div>
+                                <div class="flex justify-between border-b border-slate-100 pb-2">
+                                    <span class="text-slate-500">Bathroom</span>
+                                    <span class="font-semibold text-brand-navy">Modern Fixtures</span>
+                                </div>
+                                <div class="flex justify-between border-b border-slate-100 pb-2">
+                                    <span class="text-slate-500">Safety</span>
+                                    <span class="font-semibold text-brand-navy">Hardwired Smoke/CO</span>
+                                </div>
+                            </div>
+
+                            <div class="mt-6 p-4 bg-slate-50 rounded-lg flex items-start gap-3">
+                                <div class="text-2xl">🛡️</div>
+                                <p class="text-sm text-slate-600 leading-relaxed">
+                                    <strong>Veteran Guarantee:</strong> Low-maintenance living with guaranteed quick maintenance response. Perfect for veterans who want comfortable housing without the upkeep hassles.
+                                </p>
+                            </div>
+                        </div>
+
+                        <!-- Quick Facts -->
+                        <div class="grid grid-cols-2 md:grid-cols-4 gap-6 mb-8">
+                            <div class="text-center">
+                                <div class="text-2xl font-bold text-brand-navy">1</div>
+                                <div class="text-sm text-slate-600">Bedrooms</div>
+                            </div>
+                            <div class="text-center">
+                                <div class="text-2xl font-bold text-brand-navy">1</div>
+                                <div class="text-sm text-slate-600">Bathrooms</div>
+                            </div>
+                            <div class="text-center">
+                                <div class="text-2xl font-bold text-brand-navy">650</div>
+                                <div class="text-sm text-slate-600">Sq Ft</div>
+                            </div>
+                            <div class="text-center">
+                                <div class="text-2xl font-bold text-brand-navy">Peaceful</div>
+                                <div class="text-sm text-slate-600">Community</div>
+                            </div>
+                        </div>
+
+                        <!-- Amenities -->
+                        <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                            <div>
+                                <h3 class="text-xl font-bold text-brand-navy mb-3">Community Features</h3>
+                                <ul class="space-y-2 text-slate-700">
+                                    <li class="flex items-center gap-2">
+                                        <span class="text-green-500">✓</span>
+                                        Quiet neighborhood setting
+                                    </li>
+                                    <li class="flex items-center gap-2">
+                                        <span class="text-green-500">✓</span>
+                                        Walking paths nearby
+                                    </li>
+                                    <li class="flex items-center gap-2">
+                                        <span class="text-green-500">✓</span>
+                                        Community swimming pool
+                                    </li>
+                                    <li class="flex items-center gap-2">
+                                        <span class="text-green-500">✓</span>
+                                        Security lighting
+                                    </li>
+                                </ul>
+                            </div>
+
+                            <div>
+                                <h3 class="text-xl font-bold text-brand-navy mb-3">Unit Amenities</h3>
+                                <ul class="space-y-2 text-slate-700">
+                                    <li class="flex items-center gap-2">
+                                        <span class="text-green-500">✓</span>
+                                        Private patio space
+                                    </li>
+                                    <li class="flex items-center gap-2">
+                                        <span class="text-green-500">✓</span>
+                                        In-unit washer/dryer connections
+                                    </li>
+                                    <li class="flex items-center gap-2">
+                                        <span class="text-green-500">✓</span>
+                                        Window furnishings
+                                    </li>
+                                    <li class="flex items-center gap-2">
+                                        <span class="text-green-500">✓</span>
+                                        Extra storage
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Contact Card -->
+                    <div class="bg-slate-50 rounded-lg p-6 h-fit">
+                        <h3 class="text-xl font-bold text-brand-navy mb-4">Interested in This Townhome?</h3>
+
+                        <form
+                            id="property-inquiry"
+                            action=""
+                            method="POST"
+                            class="space-y-6">
+
+                    <input type="hidden" name="_subject" value="Lead: Kemp Townhome">
+                    <input type="hidden" name="_next" value="thank-you.html">
+
+                    <label for="name" class="block text-sm font-medium text-slate-700 mb-1">Full Name</label>
+                    <input type="text" id="name" name="name" required class="input-base">
+
+                    <label for="email" class="block text-sm font-medium text-slate-700 mb-1">Email</label>
+                    <input type="email" id="email" name="email" required class="input-base">
+
+                    <label for="phone" class="block text-sm font-medium text-slate-700 mb-1">Phone</label>
+                    <input type="tel" id="phone" name="phone" required class="input-base">
+
+                    <div class="flex items-center">
+                        <input type="checkbox" id="veteran-status" name="veteran-status" class="mr-2">
+                        <label for="veteran-status" class="text-sm text-slate-700">U.S. Military Veteran</label>
+                    </div>
+
+                    <button type="submit" class="btn-base btn-primary w-full rounded-lg py-3">
+                        Schedule Veteran Housing Tour
+                    </button>
+                        </form>
+
+                        <div class="mt-6 p-4 bg-green-50 border border-green-200 rounded-lg">
+                            <div class="flex items-start gap-3">
+                                <span class="text-green-600">🏘️</span>
+                                <div>
+                                    <h4 class="text-sm font-semibold text-green-800">Perfect Veteran Home</h4>
+                                    <p class="text-xs text-green-700 mt-1">Low maintenance, peaceful setting, veteran community</p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="mt-4 text-center">
+                    <p class="text-sm text-slate-600">Call to discuss veteran housing options</p>
+                    <a href="tel:+19032831770" class="text-brand-navy font-semibold hover:text-brand-tan" aria-label="Call us at 903-283-1770 for veteran housing assistance">
+                        (903) 283-1770
+                    </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Community Information -->
+        <section class="py-16 bg-slate-50">
+            <div class="max-w-6xl mx-auto px-4">
+                <h2 class="text-3xl font-bold text-brand-navy mb-8 text-center">Kemp Community & Amenities</h2>
+
+                <div class="grid grid-cols-1 lg:grid-cols-2 gap-12">
+                    <div>
+                        <h3 class="text-xl font-bold text-brand-navy mb-4">Peaceful Living</h3>
+                        <div class="space-y-4">
+                            <div class="bg-white p-4 rounded-lg shadow">
+                                <div class="flex justify-between items-center mb-2">
+                                    <span class="font-semibold">Kemp Townhomes</span>
+                                    <span class="px-2 py-1 bg-green-100 text-green-800 rounded text-xs">Community</span>
+                                </div>
+                                <div class="text-sm text-slate-600 mb-2">Your new peaceful home</div>
+                                <div class="w-full bg-slate-200 rounded-full h-2">
+                                    <div class="bg-green-500 h-2 rounded-full" style="width: 100%"></div>
+                                </div>
+                            </div>
+
+                            <div class="bg-white p-4 rounded-lg shadow">
+                                <div class="flex justify-between items-center mb-2">
+                                    <span class="font-semibold">Cedar Creek Lake</span>
+                                    <span class="px-2 py-1 bg-blue-100 text-blue-800 rounded text-xs">Recreation</span>
+                                </div>
+                                <div class="text-sm text-slate-600 mb-2">15-minute drive • Boating & recreation</div>
+                                <div class="text-xs text-slate-500">Longest earthen dam in the US</div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div>
+                        <h3 class="text-xl font-bold text-brand-navy mb-4">Convenient Access</h3>
+                        <div class="grid grid-cols-2 gap-4">
+                            <div class="bg-white p-4 rounded-lg shadow text-center">
+                                <div class="text-2xl mb-2">🛒</div>
+                                <div class="font-semibold">Walmart Supercenter</div>
+                                <div class="text-sm text-slate-600">2-minute drive</div>
+                            </div>
+
+                            <div class="bg-white p-4 rounded-lg shadow text-center">
+                                <div class="text-2xl mb-2">⛽</div>
+                                <div class="font-semibold">Gas Stations</div>
+                                <div class="text-sm text-slate-600">Multiple nearby</div>
+                            </div>
+
+                            <div class="bg-white p-4 rounded-lg shadow text-center">
+                                <div class="text-2xl mb-2">🏭</div>
+                                <div class="font-semibold">Local Employers</div>
+                                <div class="text-sm text-slate-600">Manufacturing & retail</div>
+                            </div>
+
+                            <div class="bg-white p-4 rounded-lg shadow text-center">
+                                <div class="text-2xl mb-2">🚗</div>
+                                <div class="font-semibold">Tyler Access</div>
+                                <div class="text-sm text-slate-600">20-minute drive</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Transformation Story -->
+        <section class="py-16 bg-white">
+            <div class="max-w-6xl mx-auto px-4">
+                <div class="text-center mb-12">
+                    <h2 class="text-3xl font-bold text-brand-navy mb-4">Townhome Transformation</h2>
+                    <p class="text-lg text-slate-600">Modern living meets veteran comfort</p>
+                </div>
+
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-8 mb-8">
+                    <div class="text-center">
+                        <div class="w-16 h-16 bg-red-100 rounded-full flex items-center justify-center mx-auto mb-4">
+                            <span class="text-2xl">🏠</span>
+                        </div>
+                        <h3 class="font-bold text-brand-navy mb-2">Traditional Townhome</h3>
+                        <p class="text-sm text-slate-600">Basic townhome in good condition, but outdated for modern veteran families.</p>
+                    </div>
+
+                    <div class="text-center">
+                        <div class="w-16 h-16 bg-yellow-100 rounded-full flex items-center justify-center mx-auto mb-4">
+                            <span class="text-2xl">🔧</span>
+                        </div>
+                        <h3 class="font-bold text-brand-navy mb-2">Veteran-Focused Update</h3>
+                        <p class="text-sm text-slate-600">Modern appliances, low-maintenance flooring, safety features, and comfortable living spaces.</p>
+                    </div>
+
+                    <div class="text-center">
+                        <div class="w-16 h-16 bg-green-100 rounded-full flex items-center justify-center mx-auto mb-4">
+                            <span class="text-2xl">⭐</span>
+                        </div>
+                        <h3 class="font-bold text-brand-navy mb-2">Perfect Veteran Home</h3>
+                        <p class="text-sm text-slate-600">Low-maintenance, safe, comfortable housing designed specifically for veterans' needs and lifestyle.</p>
+                    </div>
+                </div>
+
+                <div class="bg-slate-50 rounded-lg p-8">
+                    <blockquote class="text-lg text-slate-700 italic mb-4">
+                        "This townhome is exactly what veterans need - comfortable, easy to maintain, and in a peaceful community.
+                        No more worrying about upkeep when you should be focusing on rebuilding your life."
+                    </blockquote>
+                    <cite class="text-sm text-slate-500">- Veteran Resident, Kemp Townhomes Community</cite>
+                </div>
+            </div>
+        </section>
+
+        <!-- Related Properties -->
+        <section class="py-16 bg-slate-50">
+            <div class="max-w-6xl mx-auto px-4">
+                <div class="text-center mb-12">
+                    <h2 class="text-3xl font-bold text-brand-navy mb-4">Other Veteran Housing Options</h2>
+                    <p class="text-lg text-slate-600">Explore more comfortable, affordable homes across East Texas</p>
+                </div>
+
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                    <div class="bg-white rounded-lg shadow overflow-hidden">
+                        <div class="h-48 bg-slate-300 flex items-center justify-center">
+                            <span class="text-4xl">🏘️</span>
+                        </div>
+                        <div class="p-6">
+                            <h3 class="text-xl font-bold text-brand-navy mb-2">Mineola Modern Studio</h3>
+                            <p class="text-slate-600 text-sm mb-3">Efficient studio perfect for independent veterans</p>
+                            <div class="flex justify-between items-center">
+                                <span class="font-semibold text-lg">$525/mo</span>
+                                <a href="mineola-modern-studio.html" class="text-brand-sage hover:text-brand-olive font-medium">View Details →</a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="bg-white rounded-lg shadow overflow-hidden">
+                        <div class="h-48 bg-slate-300 flex items-center justify-center">
+                            <span class="text-4xl">🏙️</span>
+                        </div>
+                        <div class="p-6">
+                            <h3 class="text-xl font-bold text-brand-navy mb-2">Van Downtown Loft</h3>
+                            <p class="text-slate-600 text-sm mb-3">Urban loft with walking access to services</p>
+                            <div class="flex justify-between items-center">
+                                <span class="font-semibold text-lg">$800/mo</span>
+                                <a href="van-downtown-loft.html" class="text-brand-sage hover:text-brand-olive font-medium">View Details →</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="text-center mt-8">
+                    <a href="../projects.html" class="btn-secondary">
+                        View All East Texas Properties
+                    </a>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <div id="footer-container"></div>
+    <script src="../components/component-loader.js"></script>
+    <script src="../accessibility-enhanced.js"></script>
+    <script>lucide.createIcons();</script>
+</body>
+</html>

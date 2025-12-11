@@ -15,7 +15,7 @@
             <div class="lg:col-span-2">
                 <div class="flex items-center space-x-3 mb-6">
                     <div class="logo-container w-16 h-auto" aria-label="Properties 4 Creations logo: Affordable housing for families and veterans in East Texas">
-                        <img src="/public/images/logo/brand-logo-header-footer.svg" alt="Properties 4 Creations Logo" class="w-full h-auto">
+                        <img src="/public/images/logo/brand-logo-header-footer.svg" alt="Properties 4 Creations Logo" class="w-full h-auto footer-logo-filter">
                     </div>
                     <div>
                         <h3 class="text-xl font-bold tracking-wide text-white">Properties 4 Creations</h3>
@@ -24,15 +24,15 @@
                 </div>
                 <p class="text-slate-400 mb-6 leading-relaxed text-sm">
                     <strong>Properties 4 Creations, Tyler, TX 75701</strong><br>
-                    Expert renovations and fair housing solutions for veterans. Transparent pricing, quality workmanship, East Texas regional focus.
+                    Expert renovations and fair housing solutions for families and veterans. Transparent pricing, quality workmanship, East Texas regional focus.
                 </p>
                 <div class="space-y-3 text-sm">
                     <div class="flex items-center text-slate-300 hover:text-accent-gold-400 transition-colors">
-                        <span class="mr-3 text-accent-gold-500">📧</span>
+                        <i data-lucide="mail" class="w-5 h-5 mr-3 text-accent-gold-500"></i>
                         <a href="mailto:contact@properties4creations.com">contact@properties4creations.com</a>
                     </div>
                     <div class="flex items-center text-slate-300 hover:text-accent-gold-400 transition-colors">
-                        <span class="mr-3 text-accent-gold-500">📞</span>
+                        <i data-lucide="phone" class="w-5 h-5 mr-3 text-accent-gold-500"></i>
                         <a href="tel:+19032831770">(903) 283-1770</a>
                     </div>
                 </div>
@@ -123,82 +123,3 @@
         </div>
     </div>
 </footer>
-
-<script>
-(function() {
-  if (typeof window.footerInit === 'undefined') {
-    window.footerInit = true;
-
-    // Set current year
-    document.getElementById('current-year').textContent = new Date().getFullYear();
-
-    // Section 8 status indicator (mock live status)
-    const statusIndicator = document.getElementById('section8-status-indicator');
-    if (statusIndicator) {
-      statusIndicator.classList.add('animate-pulse');
-    }
-
-    // Accessibility toggle
-    const toggleBtn = document.getElementById('footer-accessibility-toggle');
-    const overlay = document.getElementById('accessibility-overlay');
-    const widget = document.getElementById('accessibility-widget');
-    const closeBtn = document.getElementById('accessibility-close');
-    const applyBtn = document.getElementById('accessibility-apply');
-
-    if (toggleBtn && overlay && widget) {
-      toggleBtn.addEventListener('click', () => {
-        widget.classList.toggle('hidden');
-        overlay.classList.toggle('hidden');
-      });
-
-      overlay.addEventListener('click', () => {
-        widget.classList.add('hidden');
-        overlay.classList.add('hidden');
-      });
-
-      if (closeBtn) closeBtn.addEventListener('click', () => {
-        widget.classList.add('hidden');
-        overlay.classList.add('hidden');
-      });
-
-
-      if (applyBtn) applyBtn.addEventListener('click', () => {
-        const textSize = document.getElementById('text-size-select').value;
-        const contrast = document.getElementById('contrast-select').value;
-        const motion = document.getElementById('motion-select').value;
-
-        // Apply safe inline styles
-        document.documentElement.style.fontSize = textSize === 'large' ? '112%' : textSize === 'extra-large' ? '125%' : '100%';
-        document.documentElement.classList.toggle('high-contrast', contrast === 'high');
-        document.documentElement.style.scrollBehavior = motion === 'reduced' ? 'auto' : 'smooth';
-        widget.classList.add('hidden');
-        overlay.classList.add('hidden');
-      });
-
-      // Load PWA install banner
-      fetch('/components/install-banner.html')
-        .then(response => {
-          if (!response.ok) {
-            throw new Error(`HTTP ${response.status}`);
-          }
-          return response.text();
-        })
-        .then(html => {
-          const placeholder = document.getElementById('pwa-banner-placeholder');
-          if (placeholder) {
-            placeholder.outerHTML = html;
-          }
-        })
-        .then(() => {
-          // Dynamically load PWA install script
-          const script = document.createElement('script');
-          script.src = '/js/pwa-install.js';
-          script.async = true;
-          document.head.appendChild(script);
-        })
-        .catch(err => console.error('PWA install setup failed:', err));
-    }
-  }
-})();
-
-</script>

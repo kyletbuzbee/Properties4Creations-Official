@@ -4,6 +4,9 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Start Your Application - Properties 4 Creations</title>
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <meta name="description" content="Begin your fair housing application process. We specialize in Section 8 and HUD-VASH voucher assistance for veterans and families in East Texas.">
+    <link rel="canonical" href="https://properties4creations.com/get-started.html">
     <link rel="stylesheet" href="css/styles.css">
     <script src="https://cdn.tailwindcss.com"></script>
     <script>
@@ -36,7 +39,7 @@
                 <div class="space-y-8">
                     <div class="flex gap-5">
                         <div class="w-12 h-12 rounded-full bg-brand-wood text-white flex items-center justify-center text-xl shadow-lg flex-shrink-0">
-                            🔍
+                            1
                         </div>
                         <div>
                             <h3 class="text-xl font-bold text-brand-navy">1. Check Eligibility</h3>
@@ -46,7 +49,7 @@
 
                     <div class="flex gap-5">
                         <div class="w-12 h-12 rounded-full bg-brand-navy text-white flex items-center justify-center text-xl shadow-lg flex-shrink-0">
-                            ✓
+                            2
                         </div>
                         <div>
                             <h3 class="text-xl font-bold text-brand-navy">2. Submit Details</h3>
@@ -56,7 +59,7 @@
 
                     <div class="flex gap-5">
                         <div class="w-12 h-12 rounded-full bg-green-600 text-white flex items-center justify-center text-xl shadow-lg flex-shrink-0">
-                            🔑
+                            3
                         </div>
                         <div>
                             <h3 class="text-xl font-bold text-brand-navy">3. Property Match</h3>
@@ -104,8 +107,8 @@
                     </div>
 
                     <div>
-                        <label class="block text-sm font-medium text-slate-700 mb-1">Current Housing Situation</label>
-                        <select class="w-full px-4 py-3 rounded-lg border border-slate-200 focus:border-brand-wood focus:ring-4 focus:ring-brand-wood/10 outline-none transition-all bg-white">
+                        <label class="block text-sm font-medium text-slate-700 mb-1" id="housing-label">Current Housing Situation</label>
+                        <select class="w-full px-4 py-3 rounded-lg border border-slate-200 focus:border-brand-wood focus:ring-4 focus:ring-brand-wood/10 outline-none transition-all bg-white" aria-labelledby="housing-label">
                             <option>I have a Section 8 Voucher</option>
                             <option>I have a HUD-VASH Voucher</option>
                             <option>I am a Cash Payer (Market Rate)</option>
@@ -114,16 +117,16 @@
 
                     <div class="grid grid-cols-2 gap-5">
                         <div>
-                            <label class="block text-sm font-medium text-slate-700 mb-1">Family Size</label>
-                            <select class="w-full px-4 py-3 rounded-lg border border-slate-200 focus:border-brand-wood focus:ring-4 focus:ring-brand-wood/10 outline-none transition-all bg-white">
+                            <label class="block text-sm font-medium text-slate-700 mb-1" id="family-label">Family Size</label>
+                            <select class="w-full px-4 py-3 rounded-lg border border-slate-200 focus:border-brand-wood focus:ring-4 focus:ring-brand-wood/10 outline-none transition-all bg-white" aria-labelledby="family-label">
                                 <option>1 Person</option>
                                 <option>2-3 People</option>
                                 <option>4+ People</option>
                             </select>
                         </div>
                         <div>
-                            <label class="block text-sm font-medium text-slate-700 mb-1">Desired Move-in</label>
-                            <select class="w-full px-4 py-3 rounded-lg border border-slate-200 focus:border-brand-wood focus:ring-4 focus:ring-brand-wood/10 outline-none transition-all bg-white">
+                            <label class="block text-sm font-medium text-slate-700 mb-1" id="movein-label">Desired Move-in</label>
+                            <select class="w-full px-4 py-3 rounded-lg border border-slate-200 focus:border-brand-wood focus:ring-4 focus:ring-brand-wood/10 outline-none transition-all bg-white" aria-labelledby="movein-label">
                                 <option>Immediately</option>
                                 <option>Next 30 Days</option>
                                 <option>Flexible</option>
@@ -149,5 +152,7 @@
     </main>
     <div id="footer-container"></div>
     <script src="components/component-loader.js"></script>
+    <script src="js/accessibility-enhanced.js"></script>
+    <script>lucide.createIcons();</script>
 </body>
 </html>

@@ -128,6 +128,143 @@ P4C.App.setupAccessibilityFeatures = function() {
 };
 
 /**
+ * Initialize map only when needed
+ */
+P4C.App.initMap = function() {
+  const mapContainer = document.getElementById('map-container');
+  if (!mapContainer) {
+    console.log('No map container found - skipping map initialization');
+    return Promise.resolve();
+  }
+
+  console.log('Initializing map...');
+
+  return new Promise((resolve, reject) => {
+    // Check if Leaflet is already loaded
+    if (typeof L !== 'undefined') {
+      this.renderMap().then(resolve).catch(reject);
+      return;
+    }
+
+    // Load Leaflet CSS
+    const cssLink = document.createElement('link');
+    cssLink.rel = 'stylesheet';
+    cssLink.href = 'https://unpkg.com/leaflet@1.9.4/dist/leaflet.css';
+    cssLink.integrity = 'sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY=';
+    cssLink.crossOrigin = '';
+    document.head.appendChild(cssLink);
+
+    // Load Leaflet JS
+    const script = document.createElement('script');
+    script.src = 'https://unpkg.com/leaflet@1.9.4/dist/leaflet.js';
+    script.integrity = 'sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo=';
+    script.crossOrigin = '';
+
+    script.onload = () => {
+      console.log('Leaflet loaded successfully');
+      this.renderMap().then(resolve).catch(reject);
+    };
+
+    script.onerror = () => {
+      console.error('Failed to load Leaflet');
+      this.showMapFallback();
+      reject(new Error('Failed to load Leaflet'));
+    };
+
+    document.head.appendChild(script);
+  });
+};
+
+/**
+ * Render the actual map functionality
+ */
+P4C.App.renderMap = function() {
+  return new Promise(async (resolve, reject) => {
+    try {
+      const mapContainer = document.getElementById('map-container');
+      const loadingState = document.getElementById('map-loading');
+      const errorState = document.getElementById('map-error');
+      const mapElement = document.getElementById('home-map');
+
+      // Hide loading and error states
+      if (loadingState) loadingState.classList.add('hidden');
+      if (errorState) errorState.classList.add('hidden');
+
+      // Initialize map centered on Tyler, TX
+      const map = L.map('home-map').setView([32.3513, -95.3011], 9);
+
+      // Add tile layer (CartoDB Voyager for clean look)
+      L.tileLayer('https://{s}.basemaps.cartocdn.com/rastertiles/voyager/{z}/{x}/{y}{r}.png', {
+        attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors &copy; <a href="https://carto.com/attributions">CARTO</a>',
+        subdomains: 'abcd',
+        maxZoom: 19
+      }).addTo(map);
+
+      // Custom house icon - uses PNG for map markers
+      // HEROICONS UPGRADE: Consider using Heroicons for map markers
+      const houseIcon = L.icon({
+        iconUrl: 'https://unpkg.com/leaflet@1.9.4/dist/images/marker-icon.png',
+        iconSize: [32, 32],
+        iconAnchor: [16, 32],
+        popupAnchor: [0, -32]
+      });
+
+      // Fetch and plot property data
+      const response = await fetch('public/properties-data.json');
+      if (!response.ok) {
+        throw new Error(`Failed to load property data: ${response.status}`);
+      }
+
+      const data = await response.json();
+
+      // Add markers for each property
+      data.forEach(prop => {
+        if (prop.lat && prop.lng) {
+          L.marker([prop.lat, prop.lng], { icon: houseIcon })
+            .addTo(map)
+            .bindPopup(`
+              <div class="text-center p-2">
+                <strong class="text-brand-navy block mb-1">${prop.title || 'Available Property'}</strong>
+                <span class="text-green-600 font-bold text-sm">${prop.price || 'Contact for pricing'}</span><br>
+                <a href="${prop.url || '#'}" class="text-brand-wood text-xs underline mt-2 block hover:text-brand-navy">
+                  ${prop.url ? 'View Details' : 'Coming Soon'}
+                </a>
+              </div>
+            `);
+        }
+      });
+
+      // Ensure map is properly sized
+      setTimeout(() => {
+        map.invalidateSize();
+      }, 100);
+
+      resolve(map);
+
+    } catch (error) {
+      console.error('Error rendering map:', error);
+      this.showMapFallback();
+      reject(error);
+    }
+  });
+};
+
+/**
+ * Show map fallback when loading fails
+ */
+P4C.App.showMapFallback = function() {
+  const mapContainer = document.getElementById('map-container');
+  const errorState = document.getElementById('map-error');
+  const loadingState = document.getElementById('map-loading');
+
+  // Hide loading state
+  if (loadingState) loadingState.classList.add('hidden');
+
+  // Show error state
+  if (errorState) errorState.classList.remove('hidden');
+};
+
+/**
  * Check if running in development mode
  */
 P4C.App.isDev = function() {

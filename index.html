@@ -4,9 +4,10 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Premium Affordable Housing For Families and Veterans | Properties 4 Creations</title>
+    <script src="https://unpkg.com/lucide@latest"></script>
   <meta name="description" content="Affordable housing solutions for families and veterans in East Texas. Transparent pricing, premium renovations, and community impact.">
   <link rel="canonical" href="https://properties4creations.com/">
-  <link rel="icon" href="public/images/logo/brand-logo-header-footer.svg" type="image/svg+xml" sizes="any">
+  <link rel="icon" href="public/images/logo/brand-logo.svg" type="image/svg+xml" sizes="any">
 
   <link href="https://fonts.googleapis.com/css2?family=Merriweather:wght@400;700&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 
@@ -106,46 +107,23 @@
   <script src="tailwind.config.js"></script>
     <link rel="stylesheet" href="css/styles.css">
 
-    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY=" crossorigin=""/>
-    <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js" integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo=" crossorigin=""></script>
+    <!-- Core Application Scripts -->
+    <script src="js/app.js" defer></script>
+    <script src="js/component-loader.js" defer></script>
+    <script src="js/accessibility-enhanced.js" defer></script>
+    <script src="js/static-forms.js" defer></script>
+    <script src="js/static-search.js" defer></script>
+
+
 <body class="bg-brand-beige">
+    <a href="#main" class="skip-to-content">Skip to main content</a>
+
 <div class="bg-brand-wood text-white text-xs font-bold py-2 text-center relative z-50">
-    <span class="hidden sm:inline">🇺🇸 Veteran Owned & Operated &nbsp;|&nbsp; </span>
+    <span class="hidden sm:inline">???? Veteran Owned & Operated &nbsp;|&nbsp; </span>
     <span>Serving Families & Veterans in East Texas</span>
 </div>
-<header id="main-header" class="sticky top-0 z-50 w-full glass-premium transition-all duration-300">
-    <nav role="navigation" aria-label="Main navigation" class="relative max-w-7xl mx-auto flex items-center justify-between px-4 py-4 sm:px-6 lg:px-8">
-        <div class="flex items-center gap-4">
-            <a href="index.html" class="flex items-center gap-3 group" aria-label="Properties 4 Creations Home">
-                <img src="public/images/logo/brand-logo-header-footer.svg" alt="Properties 4 Creations Logo" class="h-10 w-auto group-hover:scale-105 transition-transform duration-200 drop-shadow-md">
-                <div class="hidden sm:block leading-tight">
-                    <div class="font-bold text-lg tracking-wide text-white text-shadow-sm">Properties 4 Creations</div>
-                    <div class="text-[10px] uppercase tracking-widest text-brand-wood font-bold">Families & Veteran Housing</div>
-                </div>
-            </a>
-        </div>
-        <div class="hidden md:flex items-center gap-8">
-            <a href="index.html" class="text-sm font-medium text-white/90 hover:text-white transition-all">Home</a>
-            <a href="projects.html" class="text-sm font-medium text-white/90 hover:text-white transition-all">Properties</a>
-            <a href="impact.html" class="text-sm font-medium text-white/90 hover:text-white transition-all">Impact</a>
-            <a href="resources.html" class="text-sm font-medium text-white/90 hover:text-white transition-all">Resources</a>
-            <a href="get-started.html" class="inline-flex items-center justify-center px-5 py-2 text-sm font-bold text-white transition-all duration-200 bg-brand-wood/90 hover:bg-brand-wood rounded-lg shadow-lg border border-white/10 backdrop-blur-sm">Get Started</a>
-        </div>
-        <button id="mobile-menu-toggle" class="md:hidden p-2 text-white/80 hover:text-white focus:outline-none transition-colors" aria-label="Toggle mobile navigation menu" aria-expanded="false">
-            <svg class="w-8 h-8 drop-shadow-sm" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" d="M4 6h16M4 12h16M4 18h16"/></svg>
-        </button>
-    </nav>
-    <div id="mobile-menu" class="hidden md:hidden absolute w-full left-0 border-t border-white/10 bg-brand-navy/95 backdrop-blur-xl shadow-2xl">
-        <div class="px-4 pt-4 pb-8 space-y-3">
-            <a href="index.html" class="block px-4 py-3 rounded-xl text-base font-medium text-white bg-white/10 border border-white/5">Home</a>
-            <a href="projects.html" class="block px-4 py-3 rounded-xl text-base font-medium text-slate-300 hover:text-white hover:bg-white/5 transition-colors">Our Properties</a>
-            <a href="impact.html" class="block px-4 py-3 rounded-xl text-base font-medium text-slate-300 hover:text-white hover:bg-white/5 transition-colors">Impact</a>
-            <a href="resources.html" class="block px-4 py-3 rounded-xl text-base font-medium text-slate-300 hover:text-white hover:bg-white/5 transition-colors">Resources</a>
-            <a href="get-started.html" class="block px-4 py-3 rounded-xl text-base font-bold text-center text-white bg-brand-wood shadow-lg mt-6">Get Started</a>
-        </div>
-    </div>
-</header>
 
+<div id="header-container"></div>
 <section class="relative bg-brand-beige pt-10 pb-16 lg:pt-24 lg:pb-32 overflow-hidden">
   <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative">
 
@@ -350,83 +328,23 @@
 
 <script>
 document.addEventListener('DOMContentLoaded', function() {
-    // Initialize map loading states
+    // Initialize conditional map loading
     const mapContainer = document.getElementById('map-container');
-    const loadingState = document.getElementById('map-loading');
-    const errorState = document.getElementById('map-error');
-    const mapElement = document.getElementById('home-map');
 
-    // Show loading state initially
-    if (loadingState) loadingState.classList.remove('hidden');
-    if (errorState) errorState.classList.add('hidden');
+    if (mapContainer) {
+        // Show loading state initially
+        const loadingState = document.getElementById('map-loading');
+        const errorState = document.getElementById('map-error');
 
-    // Initialize map loading
-    initializeMap().then(() => {
-        // Map loaded successfully - hide loading and error states
-        if (loadingState) loadingState.classList.add('hidden');
+        if (loadingState) loadingState.classList.remove('hidden');
         if (errorState) errorState.classList.add('hidden');
-    }).catch(error => {
-        // Map failed to load - show error state
-        if (loadingState) loadingState.classList.add('hidden');
-        if (errorState) errorState.classList.remove('hidden');
-        console.warn('Map initialization failed:', error.message);
-    });
 
-    async function initializeMap() {
-        try {
-            // 1. Initialize Map centered on Tyler, TX
-            const map = L.map('home-map').setView([32.3513, -95.3011], 9);
-
-            // 2. Add Tile Layer (CartoDB Voyager for a clean look)
-            L.tileLayer('https://{s}.basemaps.cartocdn.com/rastertiles/voyager/{z}/{x}/{y}{r}.png', {
-                attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors &copy; <a href="https://carto.com/attributions">CARTO</a>',
-                subdomains: 'abcd',
-                maxZoom: 19
-            }).addTo(map);
-
-            // 3. Define Custom Icon
-            const houseIcon = L.icon({
-                iconUrl: 'public/images/icons/001-house.png',
-                iconSize: [32, 32],
-                iconAnchor: [16, 32],
-                popupAnchor: [0, -32]
-            });
-
-            // 4. Fetch Property Data and Plot
-            const response = await fetch('public/properties-data.json');
-            if (!response.ok) {
-                throw new Error(`Failed to load property data: ${response.status}`);
-            }
-
-            const data = await response.json();
-
-            // Add markers for each property
-            data.forEach(prop => {
-                if (prop.lat && prop.lng) {
-                    L.marker([prop.lat, prop.lng], { icon: houseIcon })
-                        .addTo(map)
-                        .bindPopup(`
-                            <div class="text-center p-2">
-                                <strong class="text-brand-navy block mb-1">${prop.title || 'Available Property'}</strong>
-                                <span class="text-green-600 font-bold text-sm">${prop.price || 'Contact for pricing'}</span><br>
-                                <a href="${prop.url || '#'}" class="text-brand-wood text-xs underline mt-2 block hover:text-brand-navy">
-                                    ${prop.url ? 'View Details' : 'Coming Soon'}
-                                </a>
-                            </div>
-                        `);
-                }
-            });
-
-            // Ensure map is properly sized
-            setTimeout(() => {
-                map.invalidateSize();
-            }, 100);
-
-            return map;
-
-        } catch (error) {
-            throw new Error(`Map initialization failed: ${error.message}`);
-        }
+        // Initialize map loading conditionally
+        P4C.App.initMap().then(() => {
+            console.log('Map initialized successfully');
+        }).catch(error => {
+            console.warn('Map initialization failed:', error.message);
+        });
     }
 });
 </script>
@@ -437,7 +355,7 @@ document.addEventListener('DOMContentLoaded', function() {
 
             <div class="space-y-6">
                 <div class="flex items-center gap-3">
-                    <img src="public/images/logo/brand-logo-header-footer.svg" alt="Properties 4 Creations logo" class="h-12 w-auto brightness-0 invert" loading="lazy">
+                    <img src="public/images/logo/brand-logo.svg" alt="Properties 4 Creations logo" class="h-12 w-auto brightness-0 invert" loading="lazy">
                     <div>
                         <h3 class="font-bold text-lg tracking-wide">Properties 4 Creations</h3>
                         <p class="text-xs text-brand-wood uppercase tracking-widest font-bold">Family & Veteran Housing</p>
@@ -534,5 +452,6 @@ document.addEventListener('DOMContentLoaded', function() {
     // Auto-update copyright year
     document.getElementById('current-year').textContent = new Date().getFullYear();
 </script>
+    <script>lucide.createIcons();</script>
 </body>
 </html>

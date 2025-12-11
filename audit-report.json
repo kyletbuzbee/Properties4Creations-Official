@@ -8,9 +8,7 @@
     "file": "about.html",
     "passed": false,
     "diffs": [
-      "❌ Missing script: accessibility-enhanced.js",
-      "❌ Missing meta: <meta name=\"description\"",
-      "❌ Missing meta: <link rel=\"canonical\""
+      "❌ Missing script: components/component-loader.js"
     ]
   },
   {
@@ -48,41 +46,111 @@
     "file": "contact.html",
     "passed": false,
     "diffs": [
-      "⚠️ Missing skip-to-content link for accessibility"
+      "❌ Missing script: components/component-loader.js"
     ]
   },
   {
     "file": "faq.html",
-    "passed": true,
-    "diffs": []
-  },
-  {
-    "file": "get-started.html",
     "passed": false,
     "diffs": [
-      "❌ Missing script: accessibility-enhanced.js",
-      "❌ Missing meta: <meta name=\"description\"",
-      "❌ Missing meta: <link rel=\"canonical\""
+      "❌ Missing script: components/component-loader.js"
     ]
   },
   {
-    "file": "impact.html",
+    "file": "get-started.html",
     "passed": true,
     "diffs": []
+  },
+  {
+    "file": "impact.html",
+    "passed": false,
+    "diffs": [
+      "❌ Missing script: components/component-loader.js"
+    ]
   },
   {
     "file": "index.html",
     "passed": false,
     "diffs": [
+      "❌ Missing script: components/component-loader.js"
+    ]
+  },
+  {
+    "file": "index.html",
+    "passed": false,
+    "diffs": [
+      "❌ Missing header container (<div id=\"header-container\">)",
+      "❌ Missing footer container (<div id=\"footer-container\">)",
+      "❌ Missing CSS: css/styles.css",
       "❌ Missing script: components/component-loader.js",
       "❌ Missing script: accessibility-enhanced.js",
+      "❌ Missing meta: <meta name=\"description\"",
+      "❌ Missing meta: <link rel=\"canonical\"",
+      "⚠️ Missing skip-to-content link for accessibility"
+    ]
+  },
+  {
+    "file": "index.html",
+    "passed": false,
+    "diffs": [
+      "❌ Missing header container (<div id=\"header-container\">)",
+      "❌ Missing footer container (<div id=\"footer-container\">)",
+      "❌ Missing CSS: css/styles.css",
+      "❌ Missing script: components/component-loader.js",
+      "❌ Missing script: accessibility-enhanced.js",
+      "❌ Missing meta: <meta name=\"description\"",
+      "❌ Missing meta: <link rel=\"canonical\"",
+      "⚠️ Missing skip-to-content link for accessibility"
+    ]
+  },
+  {
+    "file": "index.html",
+    "passed": false,
+    "diffs": [
+      "❌ Missing header container (<div id=\"header-container\">)",
+      "❌ Missing footer container (<div id=\"footer-container\">)",
+      "❌ Missing CSS: css/styles.css",
+      "❌ Missing script: components/component-loader.js",
+      "❌ Missing script: accessibility-enhanced.js",
+      "❌ Missing meta: <meta name=\"description\"",
+      "❌ Missing meta: <link rel=\"canonical\"",
+      "⚠️ Missing skip-to-content link for accessibility"
+    ]
+  },
+  {
+    "file": "snapshot.html",
+    "passed": false,
+    "diffs": [
+      "❌ Missing header container (<div id=\"header-container\">)",
+      "❌ Missing footer container (<div id=\"footer-container\">)",
+      "❌ Missing CSS: css/styles.css",
+      "❌ Missing script: components/component-loader.js",
+      "❌ Missing script: accessibility-enhanced.js",
+      "❌ Missing meta: <meta name=\"description\"",
+      "❌ Missing meta: <link rel=\"canonical\"",
+      "⚠️ Missing skip-to-content link for accessibility"
+    ]
+  },
+  {
+    "file": "uiMode.html",
+    "passed": false,
+    "diffs": [
+      "❌ Missing header container (<div id=\"header-container\">)",
+      "❌ Missing footer container (<div id=\"footer-container\">)",
+      "❌ Missing CSS: css/styles.css",
+      "❌ Missing script: components/component-loader.js",
+      "❌ Missing script: accessibility-enhanced.js",
+      "❌ Missing meta: <meta name=\"description\"",
+      "❌ Missing meta: <link rel=\"canonical\"",
       "⚠️ Missing skip-to-content link for accessibility"
     ]
   },
   {
     "file": "privacy.html",
-    "passed": true,
-    "diffs": []
+    "passed": false,
+    "diffs": [
+      "❌ Missing script: components/component-loader.js"
+    ]
   },
   {
     "file": "jefferson-riverfront.html",
@@ -90,7 +158,22 @@
     "diffs": []
   },
   {
+    "file": "kemp-townhome.html",
+    "passed": true,
+    "diffs": []
+  },
+  {
     "file": "longview-victorian.html",
+    "passed": true,
+    "diffs": []
+  },
+  {
+    "file": "marshall-historic-farm.html",
+    "passed": true,
+    "diffs": []
+  },
+  {
+    "file": "mineola-modern-studio.html",
     "passed": true,
     "diffs": []
   },
@@ -103,33 +186,35 @@
     "file": "projects.html",
     "passed": false,
     "diffs": [
-      "❌ Missing script: accessibility-enhanced.js",
-      "❌ Missing meta: <meta name=\"description\"",
-      "❌ Missing meta: <link rel=\"canonical\""
+      "❌ Missing script: components/component-loader.js"
     ]
   },
   {
     "file": "resources.html",
     "passed": false,
     "diffs": [
-      "❌ Missing script: accessibility-enhanced.js",
-      "❌ Missing meta: <meta name=\"description\"",
-      "❌ Missing meta: <link rel=\"canonical\""
+      "❌ Missing script: components/component-loader.js"
     ]
   },
   {
     "file": "terms.html",
-    "passed": true,
-    "diffs": []
+    "passed": false,
+    "diffs": [
+      "❌ Missing script: components/component-loader.js"
+    ]
   },
   {
     "file": "thank-you.html",
-    "passed": true,
-    "diffs": []
+    "passed": false,
+    "diffs": [
+      "❌ Missing script: components/component-loader.js"
+    ]
   },
   {
     "file": "transparency.html",
-    "passed": true,
-    "diffs": []
+    "passed": false,
+    "diffs": [
+      "❌ Missing script: components/component-loader.js"
+    ]
   }
 ]

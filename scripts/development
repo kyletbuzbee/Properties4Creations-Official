@@ -1,5 +1,0 @@
-fix(assets): resolve 404s favicon resources banner minified refs
-
-- resources.html: hero-resources-banner.png → hero-projects-banner.webp
-- index.html: add favicon BRAND_LOGO.svg; main.min.css → main.css; remove bundle.min.js
-- Ignore extension errors (contentScript.js)

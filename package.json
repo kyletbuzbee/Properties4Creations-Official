@@ -1,7 +1,7 @@
 {
   "name": "properties-4-creations-official",
-  "version": "3.0.0",
-  "description": "Properties 4 Creations - Veteran Housing Platform - Unified Static Architecture",
+  "version": "3.1.0",
+  "description": "Properties 4 Creations - Veteran Housing Platform - Unified Static Architecture with Testing & Accessibility",
   "main": "index.html",
   "scripts": {
     "dev": "npm run audit && npm run start",
@@ -11,7 +11,13 @@
     "optimize": "npm run convert-images && npm run audit && npm run build",
     "build": "echo 'Static site - no build step needed - ready for deployment'",
     "deploy": "echo 'Deploy to GitHub Pages or your hosting provider'",
-    "postinstall": "npm run audit"
+    "postinstall": "npm run audit",
+    "test": "npx playwright test",
+    "test:headed": "npx playwright test --headed",
+    "test:ui": "npx playwright test --ui",
+    "test:projects": "npx playwright test tests/projects.spec.js",
+    "test:debug": "npx playwright test --debug tests/projects.spec.js",
+    "test:report": "npx playwright show-report"
   },
   "repository": {
     "type": "git",
@@ -28,6 +34,7 @@
   "author": "Properties 4 Creations",
   "license": "MIT",
   "devDependencies": {
+    "@playwright/test": "^1.57.0",
     "autoprefixer": "^10.4.22",
     "postcss": "^8.5.6",
     "serve": "^14.2.1",
@@ -36,5 +43,9 @@
   "engines": {
     "node": ">=14.0.0"
   },
-  "homepage": "https://properties4creations.com"
+  "homepage": "https://properties4creations.com",
+  "dependencies": {
+    "g": "^2.0.1",
+    "playwright": "^1.57.0"
+  }
 }

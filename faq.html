@@ -4,8 +4,59 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>FAQ - Properties 4 Creations</title>
+    <script src="https://unpkg.com/lucide@latest"></script>
     <meta name="description" content="Frequently asked questions about Properties 4 Creations housing assistance, Section 8 vouchers, veterans programs, and East Texas housing services.">
     <link rel="canonical" href="https://properties4creations.com/faq.html">
+
+    <!-- FAQ Structured Data for Search Engine Results -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "FAQPage",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "Do you accept Section 8 Vouchers?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Yes! 100% of our properties are Section 8 and HUD-VASH eligible. We handle the paperwork with the housing authority to make the process smooth for you."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Is there an application fee?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "No. We believe in removing barriers to housing. Our initial application process is free for veterans and families with vouchers."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "What if I don't qualify for Section 8?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "We offer both voucher-accepted and market rate properties. Our renovations keep prices affordable with fair market rates starting at $800/month."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Do you work with veterans specifically?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Absolutely. As a veteran-owned company, we prioritize veteran families and partners with VA programs. We'll help you navigate VA benefits and voucher processes."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "What areas do you serve?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "We currently serve East Texas including Tyler, Longview, Jefferson, and surrounding areas. We can help with housing authority applications regardless of location."
+          }
+        }
+      ]
+    }
+    </script>
     <link rel="stylesheet" href="css/styles.css">
     <script src="https://cdn.tailwindcss.com"></script>
     <script>
@@ -34,7 +85,7 @@
                     <summary class="flex justify-between items-center font-medium cursor-pointer list-none p-6 text-brand-navy">
                         <span>Do you accept Section 8 Vouchers?</span>
                         <span class="transition group-open:rotate-180">
-                            <svg fill="none" height="24" shape-rendering="geometricPrecision" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" viewBox="0 0 24 24" width="24"><path d="M6 9l6 6 6-6"></path></svg>
+                            <i data-lucide="chevron-down" class="w-6 h-6"></i>
                         </span>
                     </summary>
                     <div class="text-slate-600 px-6 pb-6">
@@ -125,7 +176,8 @@
     </main>
 
     <div id="footer-container"></div>
-    <script src="components/component-loader.js"></script>
+    <script src="js/component-loader.js"></script>
     <script src="js/accessibility-enhanced.js"></script>
+    <script>lucide.createIcons();</script>
 </body>
 </html>

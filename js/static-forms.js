@@ -126,11 +126,11 @@
         }
       }
 
-      // Phone validation
+      // Phone validation (updated for better US number support)
       else if (type === 'tel' && value) {
-        const phoneRegex = /^[\+]?[1-9][\d]{0,15}$/;
+        const phoneRegex = /^[\+]?[1-9][\d]{0,15}$|^(\+?1[-.\s]?)?\(?[2-9]\d{2}\)?[-.\s]?\d{3}[-.\s]?\d{4}$/;
         if (!phoneRegex.test(value.replace(/[\s\-\(\)]/g, ''))) {
-          errorMessage = 'Please enter a valid phone number';
+          errorMessage = 'Please enter a valid US phone number (e.g., 903-555-0123)';
           isValid = false;
         }
       }
@@ -144,24 +144,37 @@
     },
 
     /**
-     * Show field error
+     * Show field error with accessibility attributes
      */
     showFieldError: function(field, message) {
       field.classList.add('error');
 
-      // Create error message element
+      // Set ARIA attributes for accessibility
+      field.setAttribute('aria-invalid', 'true');
+
+      // Generate stable error ID
+      const errorId = `${field.id || field.name}-error`;
+      field.setAttribute('aria-describedby', errorId);
+
+      // Create error message element with role="alert"
       const errorEl = document.createElement('div');
       errorEl.className = 'error-message';
+      errorEl.id = errorId;
+      errorEl.setAttribute('role', 'alert');
       errorEl.textContent = message;
 
       field.parentNode.insertBefore(errorEl, field.nextSibling);
     },
 
     /**
-     * Clear field error
+     * Clear field error and remove ARIA attributes
      */
     clearFieldError: function(field) {
       field.classList.remove('error');
+
+      // Remove ARIA attributes
+      field.removeAttribute('aria-invalid');
+      field.removeAttribute('aria-describedby');
 
       const errorEl = field.parentNode.querySelector('.error-message');
       if (errorEl) {
