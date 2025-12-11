@@ -18,11 +18,18 @@ P4C.ComponentLoader = {
    * Loads header and footer components only if no existing elements present
    * @function init
    */
-  init: function() {
-    // Only load components if no existing elements are found
-    if (!document.getElementById('main-header')) {
-      this.loadHeader();
-    }
+  // REPLACE LINES 16-18 IN js/component-loader.js
+init: function() {
+  const existingHeader = document.getElementById('main-header');
+  // Load header if it doesn't exist OR if it exists but is empty (placeholder)
+  if (!existingHeader || existingHeader.children.length === 0) {
+    this.loadHeader();
+  }
+
+  if (!document.querySelector('footer')) {
+    this.loadFooter();
+  }
+  // ... rest of function
 
     if (!document.querySelector('footer')) {
       this.loadFooter();

@@ -146,6 +146,20 @@
     ]
   },
   {
+    "file": "index.html",
+    "passed": false,
+    "diffs": [
+      "❌ Missing header container (<div id=\"header-container\">)",
+      "❌ Missing footer container (<div id=\"footer-container\">)",
+      "❌ Missing CSS: css/styles.css",
+      "❌ Missing script: components/component-loader.js",
+      "❌ Missing script: accessibility-enhanced.js",
+      "❌ Missing meta: <meta name=\"description\"",
+      "❌ Missing meta: <link rel=\"canonical\"",
+      "⚠️ Missing skip-to-content link for accessibility"
+    ]
+  },
+  {
     "file": "privacy.html",
     "passed": false,
     "diffs": [
