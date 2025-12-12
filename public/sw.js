@@ -31,7 +31,7 @@ const STATIC_ASSETS = [
   // Critical images for PWA
   '/public/images/logo/BRAND_LOGO.svg',
   '/public/images/banners/hero-projects-banner.webp',
-  '/public/images/hero/front_porch_hero.webp',
+  '/public/images/hero/hero-home-banner.webp',
   // Property data for offline viewing
   '/public/properties-data.json'
 ]

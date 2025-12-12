@@ -72,7 +72,8 @@
     "file": "index.html",
     "passed": false,
     "diffs": [
-      "❌ Missing script: components/component-loader.js"
+      "❌ Missing script: components/component-loader.js",
+      "⚠️ Missing skip-to-content link for accessibility"
     ]
   },
   {
