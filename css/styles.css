@@ -7,338 +7,188 @@
 /* ============================================================================
  * CSS VARIABLES - Brand Colors & Spacing
  * ============================================================================ */
+
 :root {
-  /* Brand Colors */
-  --color-primary-navy: #0B1120;
-  --color-primary-wood: #C28E5A;
-  --color-primary-walnut: #8B5E3C;
-  --color-primary-beige: #F5F5F0;
-  
-  /* Semantic Colors */
-  --color-success: #10b981;
-  --color-error: #ef4444;
-  --color-warning: #f59e0b;
-  
-  /* Spacing */
-  --spacing-xs: 0.25rem;
-  --spacing-sm: 0.5rem;
-  --spacing-md: 1rem;
-  --spacing-lg: 1.5rem;
-  --spacing-xl: 2rem;
-  
-  /* Typography */
-  --font-heading: 'Merriweather', serif;
-  --font-body: 'Inter', sans-serif;
-  
-  /* Transitions */
-  --transition-fast: 0.2s ease;
-  --transition-normal: 0.3s ease;
-  --transition-slow: 0.5s ease;
-  
-  /* Tab Size */
-  --tab-size-preference: 4;
+    /* Brand Colors */
+    --color-primary-navy: #0B1120;
+    --color-primary-wood: #C28E5A;
+    --color-primary-walnut: #8B5E3C;
+    --color-primary-beige: #F5F5F0;
+
+    /* Semantic Colors */
+    --color-success: #10b981;
+    --color-error: #ef4444;
+    --color-warning: #f59e0b;
+
+    /* Spacing */
+    --spacing-xs: 0.25rem;
+    --spacing-sm: 0.5rem;
+    --spacing-md: 1rem;
+    --spacing-lg: 1.5rem;
+    --spacing-xl: 2rem;
+
+    /* Typography */
+    --font-heading: 'Merriweather', serif;
+    --font-body: 'Inter', sans-serif;
+
+    /* Transitions */
+    --transition-fast: 0.2s ease;
+    --transition-normal: 0.3s ease;
+    --transition-slow: 0.5s ease;
 }
 
 /* ============================================================================
  * RESET & BASE STYLES
  * ============================================================================ */
+
 * {
-  box-sizing: border-box;
-  margin: 0;
-  padding: 0;
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
 }
 
 html {
-  scroll-behavior: smooth;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+    scroll-behavior: smooth;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
 }
 
 body {
-  font-family: var(--font-body);
-  line-height: 1.6;
-  color: #1e293b;
-  background-color: var(--color-primary-beige);
+    font-family: var(--font-body);
+    line-height: 1.6;
+    color: #1e293b;
+    background-color: var(--color-primary-beige);
 }
 
 /* ============================================================================
- * ACCESSIBILITY - Skip Links & Focus States
+ * HEADER & NAVIGATION - GLASSMORPHISM WITH VISIBLE TEXT
  * ============================================================================ */
 
-/* Skip to main content link */
-.skip-to-content {
-  position: absolute;
-  left: -9999px;
-  top: 0;
-  z-index: 9999;
-  padding: 1rem 1.5rem;
-  background: var(--color-primary-wood);
-  color: white;
-  text-decoration: none;
-  font-weight: bold;
-  border-radius: 0 0 0.5rem 0;
-  transition: left var(--transition-fast);
-}
-
-.skip-to-content:focus {
-  left: 0;
-  outline: 3px solid var(--color-primary-navy);
-  outline-offset: 2px;
-}
-
-/* Focus visible for keyboard navigation */
-*:focus-visible {
-  outline: 2px solid var(--color-primary-wood);
-  outline-offset: 2px;
-}
-
-/* Remove outline for mouse users */
-*:focus:not(:focus-visible) {
-  outline: none;
-}
-
-/* Screen reader only content */
-.sr-only {
-  position: absolute;
-  width: 1px;
-  height: 1px;
-  padding: 0;
-  margin: -1px;
-  overflow: hidden;
-  clip: rect(0, 0, 0, 0);
-  white-space: nowrap;
-  border-width: 0;
-}
-
-.sr-only-focusable:focus {
-  position: static;
-  width: auto;
-  height: auto;
-  padding: inherit;
-  margin: inherit;
-  overflow: visible;
-  clip: auto;
-  white-space: normal;
-}
-
-/* ============================================================================
- * NAVIGATION - Header Contrast Fixes
- * ============================================================================ */
-
-/* Glass header (dark background) */
-header.glass-premium {
-  background: rgba(11, 17, 32, 0.95);
-  -webkit-backdrop-filter: blur(12px);
-  backdrop-filter: blur(12px);
-}
-/* Navigation link colors moved to bottom - AVOIDS CONFLICTS */
-
-/* Light header (for pages with light hero) */
-header:not(.glass-premium) {
-  background: rgba(255, 255, 255, 0.98);
-  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
-}
-
-header:not(.glass-premium) nav a {
-  color: var(--color-primary-navy) !important;
-  font-weight: 600;
-  transition: all var(--transition-normal);
-}
-
-header:not(.glass-premium) nav a:hover {
-  color: var(--color-primary-wood) !important;
-}
-
-/* Active/highlighted navigation link */
-nav a.nav-active {
-  background: var(--color-primary-wood);
-  color: white !important;
-  padding: 0.5rem 1rem;
-  border-radius: 0.5rem;
-}
-
-/* Mobile menu */
-#mobile-menu {
-  max-height: 0;
-  overflow: hidden;
-  transition: max-height var(--transition-normal);
-}
-/* ============================================================================
- * HEADER & NAVIGATION - ENHANCED VISIBILITY
- * ============================================================================ */
-
-/* Glass header with dark background */
-header.glass-premium {
-    background: rgba(11, 17, 32, 0.95);
-    -webkit-backdrop-filter: blur(12px);
-    backdrop-filter: blur(12px);
+header#main-header {
+    position: fixed !important;
+    top: 0;
+    left: 0;
+    right: 0;
+    width: 100%;
+    z-index: 1000 !important;
+    
+    /* Glassmorphism Effect */
+    background: rgba(17, 24, 39, 0.4) !important;
+    backdrop-filter: blur(16px) !important;
+    -webkit-backdrop-filter: blur(16px) !important;
+    
+    /* Premium border */
     border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
 }
 
-/* Navigation links - ALWAYS WHITE */
-.nav-link {
+/* Force white text on all nav links */
+header nav a {
     color: white !important;
     font-weight: 600;
-    text-decoration: none;
-    display: inline-block;
-    position: relative;
+    text-shadow: 0 1px 2px rgba(0, 0, 0, 0.3);
 }
 
-.nav-link:hover {
-    color: #C28E5A !important; /* Wood/tan color on hover */
-    transform: translateY(-1px);
+header nav a:hover {
+    color: #C28E5A !important;
 }
 
-/* Active page indicator */
-.nav-link.bg-white\/20 {
-    background-color: rgba(255, 255, 255, 0.2);
-}
-
-/* Brand colors for CTAs */
-.bg-brand-wood {
-    background-color: #C28E5A;
-}
-
-.bg-brand-wood:hover,
-.hover\:bg-brand-walnut:hover {
-    background-color: #8B5E3C;
-}
-
-.bg-brand-navy {
-    background-color: #0B1120;
-}
-
-/* Mobile menu */
+/* Mobile Menu Glassmorphism */
 #mobile-menu {
-    background: rgba(11, 17, 32, 0.98);
-    border-radius: 0 0 0.5rem 0.5rem;
+    background: rgba(17, 24, 39, 0.95) !important;
+    backdrop-filter: blur(20px) !important;
+    -webkit-backdrop-filter: blur(20px) !important;
+}
+
+#mobile-menu.open {
+    max-height: 600px !important;
 }
 
 #mobile-menu a {
     color: white !important;
-    text-shadow: none;
+    font-weight: 600;
 }
 
 #mobile-menu a:hover {
-    background-color: rgba(255, 255, 255, 0.1);
+    background-color: rgba(255, 255, 255, 0.15) !important;
 }
 
-/* Ensure header stays on top */
-header {
-    z-index: 1000;
+/* Brand Colors */
+.bg-brand-wood {
+    background-color: #C28E5A !important;
 }
 
-/* ============================================================================
- * BACKGROUND IMAGES - Extracted from Inline Styles
- * ============================================================================ */
-
-/* Hero backgrounds */
-.hero-bg-frontporch {
-  background-image: url('/public/images/banners/hero-home-banner.webp');
-  background-size: cover;
-  background-position: center;
-  background-repeat: no-repeat;
+.bg-brand-walnut {
+    background-color: #8B5E3C !important;
 }
 
-.hero-bg-overlay {
-  opacity: 0.20;
+.text-brand-wood {
+    color: #C28E5A !important;
 }
 
-/* Comparison slider backgrounds */
-.comparison-bg-kitchen-before {
-  background-image: url('/public/images/before-after-comparison/projects-before-kitchen.webp');
-  background-size: cover;
-  background-position: center;
-  background-repeat: no-repeat;
+.hover\:bg-brand-walnut:hover {
+    background-color: #8B5E3C !important;
 }
 
-.comparison-bg-kitchen-after {
-  background-image: url('/public/images/before-after-comparison/projects-after-kitchen.webp');
-  background-size: cover;
-  background-position: center;
-  background-repeat: no-repeat;
+.hover\:text-brand-wood:hover {
+    color: #C28E5A !important;
 }
 
-.comparison-bg-living-before {
-  background-image: url('/public/images/before-after-comparison/projects-before-living-room.webp');
-  background-size: cover;
-  background-position: center;
-  background-repeat: no-repeat;
+/* Button Styles */
+.bg-brand-wood,
+.bg-wood {
+    background-color: #C28E5A !important;
 }
 
-.comparison-bg-living-after {
-  background-image: url('/public/images/before-after-comparison/projects-after-living-room.webp');
-  background-size: cover;
-  background-position: center;
-  background-repeat: no-repeat;
+.bg-brand-walnut,
+.bg-walnut {
+    background-color: #8B5E3C !important;
 }
 
-/* ============================================================================
- * COMPARISON SLIDERS - Projects Page
- * ============================================================================ */
-
-.comparison-slider {
-  position: relative;
-  width: 100%;
-  max-width: 56rem;
-  height: 400px;
-  margin: 0 auto;
-  border-radius: 1rem;
-  overflow: hidden;
-  box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+.hover\:bg-brand-walnut:hover,
+.hover\:bg-walnut:hover {
+    background-color: #8B5E3C !important;
 }
 
-@media (min-width: 768px) {
-  .comparison-slider {
-    height: 500px;
-  }
+.text-white {
+    color: white !important;
 }
 
-.comparison-slider .overlay {
-  border-right: 2px solid white;
-  transition: width 0.05s ease-out;
+.text-brand-wood {
+    color: #C28E5A !important;
 }
-
-.slider-control {
-  opacity: 0;
-  cursor: ew-resize;
-  z-index: 20;
-}
-
-.slider-handle {
-  width: 2rem;
-  height: 2rem;
-  background-color: white;
-  border-radius: 50%;
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  transform: translate(-50%, -50%);
-  pointer-events: none;
-  color: var(--color-primary-navy);
-  z-index: 10;
+.text-brand-walnut {
+    color: #8B5E3C !important;  
 }
 
 /* ============================================================================
- * HOVER EFFECTS
+ * HOME PAGE HERO BANNER - NO GLASSMORPHISM
  * ============================================================================ */
 
-.hover-lift {
-  transition: transform var(--transition-normal), box-shadow var(--transition-normal);
+.hero-home-banner {
+    background-attachment: fixed;
 }
 
-.hover-lift:hover {
-  transform: translateY(-8px) scale(1.02);
-  box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1);
+@media (max-width: 768px) {
+    .hero-home-banner {
+        background-attachment: scroll;
+        min-height: 550px !important;
+    }
 }
 
-.hover-card-lift {
-  transition: transform var(--transition-normal);
+/* ============================================================================
+ * HOME PAGE HERO BANNER
+ * ============================================================================ */
+
+.hero-home-banner {
+    background-attachment: fixed;
 }
 
-.hover-card-lift:hover {
-  transform: translateY(-4px);
+@media (max-width: 768px) {
+    .hero-home-banner {
+        background-attachment: scroll;
+        min-height: 500px !important;
+    }
 }
 
 /* ============================================================================
@@ -346,61 +196,42 @@ header {
  * ============================================================================ */
 
 .btn-primary {
-  background: var(--color-primary-navy);
-  color: white;
-  padding: 1rem 2rem;
-  border-radius: 0.75rem;
-  font-weight: bold;
-  text-decoration: none;
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  transition: all var(--transition-normal);
-  min-height: 44px; /* Touch target */
-  cursor: pointer;
-  border: none;
+    background: var(--color-primary-navy);
+    color: white;
+    padding: 1rem 2rem;
+    border-radius: 0.75rem;
+    font-weight: bold;
+    text-decoration: none;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    transition: all var(--transition-normal);
+    min-height: 44px;
+    cursor: pointer;
+    border: none;
 }
 
 .btn-primary:hover {
-  background: var(--color-primary-wood);
-  box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
-  transform: translateY(-2px);
-}
-
-.btn-secondary {
-  background: white;
-  color: var(--color-primary-navy);
-  padding: 1rem 2rem;
-  border: 2px solid var(--color-primary-navy);
-  border-radius: 0.75rem;
-  font-weight: bold;
-  text-decoration: none;
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  transition: all var(--transition-normal);
-  min-height: 44px;
-  cursor: pointer;
-}
-
-.btn-secondary:hover {
-  background: var(--color-primary-beige);
-  border-color: var(--color-primary-wood);
-  color: var(--color-primary-wood);
-}
-
-.btn-disabled {
-  background-color: #94a3b8 !important;
-  cursor: not-allowed !important;
-  opacity: 0.6;
-}
-
-.btn-disabled:hover {
-  transform: none !important;
+    background: var(--color-primary-wood);
+    box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
+    transform: translateY(-2px);
 }
 
 /* ============================================================================
- * FORMS - Validation & Accessibility
+ * HOVER EFFECTS
+ * ============================================================================ */
+
+.hover-lift {
+    transition: transform var(--transition-normal), box-shadow var(--transition-normal);
+}
+
+.hover-lift:hover {
+    transform: translateY(-8px) scale(1.02);
+    box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1);
+}
+
+/* ============================================================================
+ * FORMS
  * ============================================================================ */
 
 input[type="text"],
@@ -408,64 +239,30 @@ input[type="email"],
 input[type="tel"],
 textarea,
 select {
-  width: 100%;
-  padding: 0.75rem 1rem;
-  border: 2px solid #e2e8f0;
-  border-radius: 0.5rem;
-  font-size: 1rem;
-  transition: border-color var(--transition-fast);
-  -webkit-appearance: none;
-  -moz-appearance: none;
-  appearance: none;
+    width: 100%;
+    padding: 0.75rem 1rem;
+    border: 2px solid #e2e8f0;
+    border-radius: 0.5rem;
+    font-size: 1rem;
+    transition: border-color var(--transition-fast);
 }
 
-/* Ensure form elements don't zoom on iOS */
 @media (max-width: 768px) {
-  input[type="text"],
-  input[type="email"],
-  input[type="tel"],
-  textarea,
-  select {
-    font-size: 16px !important;
-  }
+    input[type="text"],
+    input[type="email"],
+    input[type="tel"],
+    textarea,
+    select {
+        font-size: 16px !important;
+    }
 }
 
 input:focus,
 textarea:focus,
 select:focus {
-  outline: none;
-  border-color: var(--color-primary-wood);
-  box-shadow: 0 0 0 3px rgba(194, 142, 90, 0.1);
-}
-
-/* Invalid state */
-input[aria-invalid="true"],
-textarea[aria-invalid="true"],
-select[aria-invalid="true"] {
-  border-color: var(--color-error);
-}
-
-input[aria-invalid="true"]:focus,
-textarea[aria-invalid="true"]:focus,
-select[aria-invalid="true"]:focus {
-  box-shadow: 0 0 0 3px rgba(239, 68, 68, 0.1);
-}
-
-/* Error messages */
-[role="alert"] {
-  color: var(--color-error);
-  font-size: 0.875rem;
-  margin-top: 0.25rem;
-}
-
-/* Touch targets (minimum 44x44px) */
-@media (max-width: 768px) {
-  .touch-target,
-  button,
-  a {
-    min-height: 44px !important;
-    min-width: 44px !important;
-  }
+    outline: none;
+    border-color: var(--color-primary-wood);
+    box-shadow: 0 0 0 3px rgba(194, 142, 90, 0.1);
 }
 
 /* ============================================================================
@@ -473,66 +270,31 @@ select[aria-invalid="true"]:focus {
  * ============================================================================ */
 
 @keyframes fadeIn {
-  from {
-    opacity: 0;
-    transform: translateY(20px);
-  }
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
 }
 
-@keyframes spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
-}
-
-@keyframes checkmark-appear {
-  from {
-    opacity: 0;
-    transform: scale(0.5);
-  }
-  to {
-    opacity: 1;
-    transform: scale(1);
-  }
-}
-
-.checkmark {
-  animation: checkmark-appear 0.3s ease forwards;
-  animation-play-state: paused;
-}
-
-.checkmark.animate {
-  animation-play-state: running;
+@keyframes bounce-slow {
+    0%, 100% {
+        transform: translateY(0);
+    }
+    50% {
+        transform: translateY(10px);
+    }
 }
 
 .fade-in {
-  animation: fadeIn 0.6s ease-out;
+    animation: fadeIn 0.6s ease-out;
 }
 
-.spinner-loading {
-  animation: spin 1s linear infinite;
-}
-
-/* ============================================================================
- * MAP CONTAINER
- * ============================================================================ */
-
-.map-container {
-  width: 100%;
-  height: 400px;
-  border-radius: 1rem;
-  box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
-  border: 1px solid #e2e8f0;
-  position: relative;
-  overflow: hidden;
-  background-color: #f8fafc;
+.animate-bounce-slow {
+    animation: bounce-slow 2s ease-in-out infinite;
 }
 
 /* ============================================================================
@@ -540,213 +302,57 @@ select[aria-invalid="true"]:focus {
  * ============================================================================ */
 
 .hidden {
-  display: none !important;
+    display: none !important;
 }
 
-.rotate-1 {
-  transform: rotate(1deg);
+img {
+    max-width: 100%;
+    height: auto;
+    display: block;
 }
+<nav class="fixed top-0 left-0 w-full z-50 flex items-center justify-between px-6 py-4 
+            bg-gray-900/40 backdrop-blur-md border-b border-white/10">
+  
+  <div class="text-white font-bold text-xl">
+    <img src="/logo.png" alt="Logo" class="h-8" />
+  </div>
 
-.rotate-0-hover {
-  transition: transform var(--transition-slow);
-}
+  <div class="space-x-6 text-gray-100 font-medium">
+    <a href="#" class="hover:text-white transition">Home</a>
+    <a href="#" class="hover:text-white transition">Available Homes</a>
+    <a href="#" class="hover:text-white transition">About</a>
+  </div>
 
-.rotate-0-hover:hover {
-  transform: rotate(0deg);
-}
-
-.word-wrap-break {
-  word-wrap: break-word;
-  overflow-wrap: break-word;
-}
-
-.z-neg-10 {
-  z-index: -10;
-}
-
-.z-1000 {
-  z-index: 1000;
-}
-
-/* ============================================================================
- * ADDITIONAL HEADER UTILITIES
- * ============================================================================ */
-
-/* Background color utilities */
-.bg-wood {
-    background-color: #C28E5A !important;
-}
-
-.bg-walnut {
-    background-color: #8B5E3C !important;
-}
-
-.hover\:bg-walnut:hover {
-    background-color: #8B5E3C !important;
-}
-
-/* Ensure header is always on top */
-header {
-    z-index: 1000 !important;
-}
-
-/* Force white text in navigation */
-header nav a {
-    color: white !important;
-}
-
-/* Mobile menu styling */
-.mobile-nav-link {
-    color: white !important;
-    font-weight: 600;
-}
-
-.mobile-nav-link:hover {
-    background-color: rgba(255, 255, 255, 0.1);
-}
-
-
+</nav>
 /* ============================================================================
  * RESPONSIVE IMAGES
  * ============================================================================ */
 
-img {
-  max-width: 100%;
-  height: auto;
-  display: block;
-}
-
 .property-card img {
-  aspect-ratio: 4/3;
-  object-fit: cover;
-  width: 100%;
+    aspect-ratio: 4/3;
+    object-fit: cover;
+    width: 100%;
 }
 
 /* ============================================================================
- * CODE BLOCKS
+ * MAP CONTAINER
  * ============================================================================ */
 
-pre, code {
-  tab-size: var(--tab-size-preference);
-  font-family: 'Courier New', monospace;
+.map-container {
+    width: 100%;
+    height: 400px;
+    border-radius: 1rem;
+    box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
+    border: 1px solid #e2e8f0;
+    position: relative;
+    overflow: hidden;
+    background-color: #f8fafc;
 }
 
 /* ============================================================================
- * PRINT STYLES
+ * NAVIGATION - FINAL OVERRIDES
  * ============================================================================ */
 
-@media print {
-  header,
-  footer,
-  nav,
-  .no-print {
-    display: none !important;
-  }
-  
-  body {
-    background: white;
-    color: black;
-  }
-  
-  a {
-    text-decoration: underline;
-  }
-  
-  a[href]:after {
-    content: " (" attr(href) ")";
-  }
-}
-
-/* ============================================================================
- * DARK MODE SUPPORT (Future Enhancement)
- * ============================================================================ */
-
-@media (prefers-color-scheme: dark) {
-  /* Dark mode styles can be added here when needed */
-}
-
-.nav-link:hover, nav a:hover {
-    color: #C28E5A !important;
-    background-color: rgba(255, 255, 255, 0.1);
-    transition: all 0.3s ease;
-}
-
-#mobile-menu a {
-    color: white !important;  /* ✅ CORRECT */
-    text-shadow: none;
-    font-weight: 600;
-}
-
-
-/* ============================================================================
- * FOOTER LOGO VISIBILITY FIX
- * ============================================================================ */
-
-.footer-logo-filter {
-    /* Add subtle background to make white logo visible */
-    background-color: rgba(255, 255, 255, 0.1);
-    border-radius: 0.5rem;
-    padding: 0.5rem;
-    -webkit-backdrop-filter: blur(8px);
-    backdrop-filter: blur(8px);
-    border: 1px solid rgba(255, 255, 255, 0.1);
-}
-
-/* ============================================================================
- * HEROICONS INTEGRATION
- * ============================================================================ */
-
-.heroicon-xs {
-    width: 16px;
-    height: 16px;
-}
-
-.heroicon-small, .heroicon-sm {
-    width: 20px;
-    height: 20px;
-}
-
-.heroicon-normal, .heroicon-base {
-    width: 24px;
-    height: 24px;
-}
-
-.heroicon-medium, .heroicon-md {
-    width: 32px;
-    height: 32px;
-}
-
-.heroicon-large, .heroicon-lg {
-    width: 48px;
-    height: 48px;
-}
-
-.heroicon-xl {
-    width: 64px;
-    height: 64px;
-}
-
-/* Heroicons color variants */
-.heroicon-primary {
-    color: #0B1120; /* Navy */
-}
-
-.heroicon-secondary {
-    color: #C28E5A; /* Wood/Brown */
-}
-
-.heroicon-white {
-    color: white;
-}
-
-.heroicon-warm {
-    color: #92400E; /* Warm brown */
-}
-/* ============================================================================
- * NAVIGATION - FINAL OVERRIDES (Must be at end of file)
- * ============================================================================ */
-
-/* Desktop navigation links - WHITE on dark header */
 header.glass-premium nav a {
     color: white !important;
     font-weight: 600;
@@ -757,21 +363,10 @@ header.glass-premium nav a:hover {
     background-color: rgba(255, 255, 255, 0.1);
 }
 
-/* Mobile menu - WHITE text */
 header.glass-premium #mobile-menu a {
     color: white !important;
 }
 
 header.glass-premium #mobile-menu a:hover {
     background-color: rgba(255, 255, 255, 0.15);
-}
-
-/* Contact button */
-.bg-wood {
-    background-color: #C28E5A !important;
-}
-
-.bg-wood:hover,
-.hover\:bg-walnut:hover {
-    background-color: #8B5E3C !important;
 }

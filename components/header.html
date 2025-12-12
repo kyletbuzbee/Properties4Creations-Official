@@ -1,31 +1,34 @@
-<!-- components/header.html -->
-<header id="main-header" class="fixed top-0 left-0 right-0 z-50 glass-premium shadow-lg">
+<header id="main-header" class="fixed top-0 left-0 right-0 z-[1000] bg-gray-900/40 backdrop-blur-md border-b border-white/10 shadow-lg">
     <nav class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8" aria-label="Main navigation">
         <div class="flex justify-between items-center h-16">
+            
             <!-- Logo -->
-            <a href="index.html" class="flex items-center space-x-3">
-                <img src="public/images/logo/logo-white.svg" alt="Properties 4 Creations" class="h-10 w-auto">
-                <span class="text-white font-bold text-lg hidden sm:block">
-                    Properties 4 Creations
-                </span>
+            <a href="index.html" class="flex items-center space-x-2 hover:opacity-80 transition-opacity">
+                <img src="public/images/logo/brand-logo-header-footer.svg" 
+                     alt="Properties 4 Creations" 
+                     class="h-10 w-auto brightness-0 invert"
+                     onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
+                <div class="bg-brand-wood text-white px-3 py-2 rounded-lg font-bold text-xl shadow-md hidden">P4C</div>
+                <span class="text-white font-bold text-lg hidden sm:block drop-shadow-lg">Properties 4 Creations</span>
             </a>
 
             <!-- Desktop Navigation -->
-            <div class="hidden md:flex items-center space-x-2">
-                <a href="index.html" class="nav-link px-4 py-2 rounded-lg">Home</a>
-                <a href="about.html" class="nav-link px-4 py-2 rounded-lg">About</a>
-                <a href="projects.html" class="nav-link px-4 py-2 rounded-lg">Properties</a>
-                <a href="resources.html" class="nav-link px-4 py-2 rounded-lg">Resources</a>
-                <a href="impact.html" class="nav-link px-4 py-2 rounded-lg">Impact</a>
-                <a href="transparency.html" class="nav-link px-4 py-2 rounded-lg">Transparency</a>
-                <a href="faq.html" class="nav-link px-4 py-2 rounded-lg">FAQ</a>
-                <a href="contact.html" class="bg-wood text-white px-6 py-2 rounded-lg font-bold hover:bg-walnut">
-                    Contact Us
-                </a>
+            <div class="hidden md:flex items-center space-x-1">
+                <a href="index.html" class="text-white hover:text-brand-wood hover:bg-white/10 px-4 py-2 rounded-lg font-semibold transition-all">Home</a>
+                <a href="about.html" class="text-white hover:text-brand-wood hover:bg-white/10 px-4 py-2 rounded-lg font-semibold transition-all">About</a>
+                <a href="projects.html" class="text-white hover:text-brand-wood hover:bg-white/10 px-4 py-2 rounded-lg font-semibold transition-all">Properties</a>
+                <a href="resources.html" class="text-white hover:text-brand-wood hover:bg-white/10 px-4 py-2 rounded-lg font-semibold transition-all">Resources</a>
+                <a href="impact.html" class="text-white hover:text-brand-wood hover:bg-white/10 px-4 py-2 rounded-lg font-semibold transition-all">Impact</a>
+                <a href="transparency.html" class="text-white hover:text-brand-wood hover:bg-white/10 px-4 py-2 rounded-lg font-semibold transition-all">Transparency</a>
+                <a href="faq.html" class="text-white hover:text-brand-wood hover:bg-white/10 px-4 py-2 rounded-lg font-semibold transition-all">FAQ</a>
+                <a href="contact.html" class="bg-brand-wood text-white px-6 py-2 rounded-lg font-bold hover:bg-brand-walnut transition-all shadow-md ml-2">Contact Us</a>
             </div>
 
             <!-- Mobile Menu Button -->
-            <button id="mobile-menu-toggle" class="md:hidden text-white p-2" aria-expanded="false" aria-label="Menu">
+            <button id="mobile-menu-toggle" 
+                    class="md:hidden text-white p-2 rounded-lg hover:bg-white/10 transition-colors" 
+                    aria-expanded="false" 
+                    aria-label="Toggle navigation menu">
                 <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"/>
                 </svg>
@@ -33,23 +36,20 @@
         </div>
 
         <!-- Mobile Menu -->
-        <div id="mobile-menu" class="md:hidden">
-            <div class="flex flex-col space-y-2 py-4">
-                <a href="index.html" class="mobile-nav-link px-4 py-3 rounded-lg">Home</a>
-                <a href="about.html" class="mobile-nav-link px-4 py-3 rounded-lg">About</a>
-                <a href="projects.html" class="mobile-nav-link px-4 py-3 rounded-lg">Properties</a>
-                <a href="resources.html" class="mobile-nav-link px-4 py-3 rounded-lg">Resources</a>
-                <a href="impact.html" class="mobile-nav-link px-4 py-3 rounded-lg">Impact</a>
-                <a href="transparency.html" class="mobile-nav-link px-4 py-3 rounded-lg">Transparency</a>
-                <a href="faq.html" class="mobile-nav-link px-4 py-3 rounded-lg">FAQ</a>
-                <a href="contact.html" class="mx-4 bg-wood text-white px-6 py-3 rounded-lg font-bold text-center">
-                    Contact Us
-                </a>
+        <div id="mobile-menu" class="md:hidden max-h-0 overflow-hidden transition-all duration-300 bg-gray-900/95 backdrop-blur-lg">
+            <div class="flex flex-col space-y-1 py-3 px-2">
+                <a href="index.html" class="text-white hover:bg-white/10 px-4 py-3 rounded-lg font-semibold transition-all">🏠 Home</a>
+                <a href="about.html" class="text-white hover:bg-white/10 px-4 py-3 rounded-lg font-semibold transition-all">ℹ️ About</a>
+                <a href="projects.html" class="text-white hover:bg-white/10 px-4 py-3 rounded-lg font-semibold transition-all">🏘️ Properties</a>
+                <a href="resources.html" class="text-white hover:bg-white/10 px-4 py-3 rounded-lg font-semibold transition-all">📚 Resources</a>
+                <a href="impact.html" class="text-white hover:bg-white/10 px-4 py-3 rounded-lg font-semibold transition-all">📊 Impact</a>
+                <a href="transparency.html" class="text-white hover:bg-white/10 px-4 py-3 rounded-lg font-semibold transition-all">🔍 Transparency</a>
+                <a href="faq.html" class="text-white hover:bg-white/10 px-4 py-3 rounded-lg font-semibold transition-all">❓ FAQ</a>
+                <a href="contact.html" class="mx-2 mt-2 bg-brand-wood text-white px-6 py-3 rounded-lg font-bold text-center hover:bg-brand-walnut transition-all shadow-md">📧 Contact Us</a>
             </div>
         </div>
     </nav>
 </header>
 
-<!-- Spacer for fixed header -->
-<div class="h-16"></div>
-<!-- End of components/header.html -->
+<!-- Spacer to prevent content jumping under fixed header -->
+<div class="h-16" aria-hidden="true"></div>
