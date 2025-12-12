@@ -1,132 +1,366 @@
 ﻿<!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Marshall Historic Farmhouse - Family Veteran Home | Properties 4 Creation</title>
-    <script src="https://unpkg.com/lucide@latest"></script>
-    <meta name="description" content="Historic restored farmhouse in Marshall, TX perfect for veteran families. Section 8 approved with 4BR, acreage, and modern amenities. $1,200/month.">
-    <link rel="canonical" href="https://properties4creations.com/projects/marshall-historic-farm.html">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Historic 1920s farmhouse for large families with 5 acres in Marshall, TX. Section 8 approved with preserved character and modern updates.">
+  <title>Marshall Historic Farmhouse • Properties 4 Creations</title>
 
-    <!-- Structured Data for Property Listing -->
-    <script type="application/ld+json">
-    {
-      "@context": "https://schema.org",
-      "@type": "House",
-      "name": "Marshall Historic Farmhouse - Family Veteran Home",
-      "description": "Restored historic farmhouse perfect for large veteran families. 4BR, 2BA with acreage in Marshall, TX. Section 8 approved with modern amenities preserved historic charm.",
-      "url": "https://properties4creations.com/projects/marshall-historic-farm.html",
-      "address": {
-        "@type": "PostalAddress",
-        "addressLocality": "Marshall",
-        "addressRegion": "TX",
-        "addressCountry": "US"
-      },
-      "geo": {
-        "@type": "GeoCoordinates",
-        "latitude": "32.5467",
-        "longitude": "-94.3674"
-      },
-      "numberOfRooms": 8,
-      "numberOfBedrooms": 4,
-      "numberOfBathroomsTotal": 2,
-      "floorSize": {
-        "@type": "QuantitativeValue",
-        "value": 2400,
-        "unitCode": "FTK"
-      },
-      "lotSize": {
-        "@type": "QuantitativeValue",
-        "value": 5,
-        "unitCode": "AC"
-      },
-      "image": [
-        "https://properties4creations.com/public/images/projects/marshall-farmhouse-before.jpg",
-        "https://properties4creations.com/public/images/projects/marshall-farmhouse-after.jpg"
-      ],
-      "amenityFeature": [
-        {
-          "@type": "LocationFeatureSpecification",
-          "name": "Section 8 Approved",
-          "value": true
-        },
-        {
-          "@type": "LocationFeatureSpecification",
-          "name": "Large Family Home",
-          "value": true
-        },
-        {
-          "@type": "LocationFeatureSpecification",
-          "name": "Historic Restoration",
-          "value": true
-        },
-        {
-          "@type": "LocationFeatureSpecification",
-          "name": "Spacious Yard",
-          "value": true
-        }
-      ],
-      "potentialAction": {
-        "@type": "ReserveAction",
-        "target": {
-          "@type": "EntryPoint",
-          "urlTemplate": "https://properties4creations.com/contact.html",
-          "inLanguage": "en-US",
-          "actionPlatform": [
-            "http://schema.org/DesktopWebPlatform",
-            "http://schema.org/MobileWebPlatform"
-          ]
-        },
-        "result": {
-          "@type": "LodgingReservation",
-          "lodgingUnitType": "Family Home"
-        }
-      },
-      "publisher": {
-        "@type": "RealEstateAgent",
-        "name": "Properties 4 Creation",
-        "telephone": "(903) 283-1770",
-        "address": {
-          "@type": "PostalAddress",
-          "addressLocality": "Tyler",
-          "addressRegion": "TX",
-          "addressCountry": "US"
-        }
-      }
+  <!-- Fonts and Icons -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Merriweather:wght@600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../css/styles.css">
+
+  <!-- Structured Data -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "SingleFamilyResidence",
+    "name": "Marshall Historic Farmhouse - Family Veteran Home",
+    "description": "Restored historic farmhouse perfect for large veteran families. 4BR, 2BA with 5 acres in Marshall, TX. Section 8 approved with modern amenities preserved historic charm.",
+    "url": "https://properties4creations.com/projects/marshall-historic-farm.html",
+    "address": {
+      "@type": "PostalAddress",
+      "addressLocality": "Marshall",
+      "addressRegion": "TX",
+      "addressCountry": "US"
+    },
+    "geo": {
+      "@type": "GeoCoordinates",
+      "latitude": "32.5467",
+      "longitude": "-94.3674"
+    },
+    "numberOfRooms": 8,
+    "numberOfBedrooms": 4,
+    "numberOfBathroomsTotal": 2,
+    "floorSize": {
+      "@type": "QuantitativeValue",
+      "value": 2400,
+      "unitCode": "FTK"
+    },
+    "lotSize": {
+      "@type": "QuantitativeValue",
+      "value": 5,
+      "unitCode": "AC"
     }
-    </script>
-
-    <link rel="stylesheet" href="../css/styles.css">
-    <script src="https://cdn.tailwindcss.com"></script>
-    <script>
-        tailwind.config = {
-            theme: {
-                extend: {
-                    colors: {
-                        brand: { navy: 'var(--color-primary-navy)', wood: 'var(--color-accent-gold)', beige: 'var(--color-neutral-beige)' }
-                    },
-                    fontFamily: {
-                        heading: ['Merriweather','serif'],
-                        body: ['Inter','sans-serif']
-                    },
-                    boxShadow: {
-                        wood: 'var(--shadow-wood)',
-                        navy: 'var(--shadow-medium)'
-                    }
-                }
-            }
-        }
-    </script>
-
-    <style>
-        body { font-family: 'Merriweather', 'Inter', system-ui, -apple-system, sans-serif; }
-        .animate-fade-in-up { animation: fadeInUp 0.8s ease-out forwards; }
-        @keyframes fadeInUp { from { opacity: 0; transform: translateY(30px); } to { opacity: 1; transform: translateY(0); } }
-        @media (max-width: 475px) { h1 { font-size: 1.75rem; } h2 { font-size: 1.5rem; } }
-    </style>
+  }
+  </script>
 </head>
-<body class="bg-brand-beige">
-    <a href="#main" class="skip-to-content">Skip to main content</a>
+<body>
+  <a href="#main" class="skip-to-content">Skip to main content</a>
+
+  <header data-component="header"></header>
+
+  <main id="main" class="page-shell">
+    <!-- HERO / SUMMARY -->
+    <section class="section" aria-labelledby="property-title">
+      <div class="content-grid row-enterprise">
+        <div class="stagger-item">
+          <p class="trust-badge mb-3">Marshall • Historic Farmhouse with Acreage</p>
+          <h1 id="property-title" class="gradient-text">
+            Marshall Historic Farmhouse
+          </h1>
+          <p class="text-lg text-slate-700">
+            Beautifully restored 1920s farmhouse perfect for large veteran families. 4BR/2BA home with 5 acres of land, Section 8 approved while preserving authentic East Texas character and craftsmanship. Space for children, gardens, and family activities in a peaceful Marshall setting.
+          </p>
+
+          <div class="meta-grid mt-4 mb-5 text-sm text-slate-700">
+            <div class="glass-card p-3">
+              <h3 class="text-sm font-semibold text-slate-900 mb-1">Bedrooms / Bathrooms</h3>
+              <p class="font-medium">4 Bed / 2 Bath</p>
+            </div>
+            <div class="glass-card p-3">
+              <h3 class="text-sm font-semibold text-slate-900 mb-1">Lot Size</h3>
+              <p class="font-medium">5 acres</p>
+            </div>
+            <div class="glass-card p-3">
+              <h3 class="text-sm font-semibold text-slate-900 mb-1">Schools</h3>
+              <p class="font-medium">Marshall ISD</p>
+            </div>
+          </div>
+
+          <div class="flex flex-wrap items-center gap-3">
+            <a href="#contact-section" class="btn btn-primary focus-ring-enterprise">
+              Schedule a tour
+            </a>
+            <a href="#features-specs"
+               class="btn btn-secondary focus-ring-enterprise">
+              View restoration details
+            </a>
+          </div>
+        </div>
+
+        <aside class="glass-card card-enterprise p-4 stagger-item" aria-label="Marshall Historic Farmhouse quick facts">
+          <img
+            src="public/images/marshall-farmhouse-hero.jpg"
+            alt="Front exterior of the restored 1920s farmhouse with historic details and surrounding acreage"
+            class="rounded-xl w-full object-cover mb-4"
+          />
+
+          <dl class="space-y-2 text-sm text-slate-700">
+            <div class="flex justify-between gap-4">
+              <dt class="font-medium text-slate-900">Status</dt>
+              <dd>Available</dd>
+            </div>
+            <div class="flex justify-between gap-4">
+              <dt class="font-medium text-slate-900">Monthly Rent</dt>
+              <dd class="font-semibold text-brand-walnut">$1,200</dd>
+            </div>
+            <div class="flex justify-between gap-4">
+              <dt class="font-medium text-slate-900">Deposit</dt>
+              <dd>$1,200</dd>
+            </div>
+          </dl>
+
+          <div class="mt-4 border-t border-slate-200 pt-3 text-sm text-slate-700">
+            <p class="font-semibold mb-1">Landlord Guarantee</p>
+            <p>
+              Historic preservation meets modern maintenance. 24/7 emergency support plus seasonal acreage upkeep keeps this farmhouse move-in ready year-round.
+            </p>
+          </div>
+
+          <div class="mt-4 border-t border-slate-200 pt-3 text-sm">
+            <p class="font-semibold mb-1">Call for farmhouse details</p>
+            <a href="tel:+19032831770" class="text-brand-walnut font-bold">
+              (903) 283-1770
+            </a>
+          </div>
+        </aside>
+      </div>
+    </section>
+
+    <!-- RENOVATION SPECS -->
+    <section class="section" id="features-specs" aria-labelledby="features-heading">
+      <div class="row-enterprise">
+        <header class="mb-4 stagger-item">
+          <h2 id="features-heading">Historic Farmhouse Features</h2>
+          <p class="text-slate-700">
+           Built in 1924, this East Texas farmhouse has been meticulously restored to preserve its authentic character while providing modern family comfort and safety. Featured work honored by the Texas Historical Commission.
+          </p>
+        </header>
+
+        <div class="content-grid">
+          <div class="stagger-item">
+            <h3 class="text-slate-900 mb-2">Preserved Heritage</h3>
+            <ul>
+              <li>Original 1920s masonry foundation intact</li>
+              <li>Authentic period millwork and trim restored</li>
+              <li>Historic wallpaper borders preserved</li>
+              <li>Original hardware and lighting fixtures</li>
+              <li>Wide-plank hardwood floors refinished</li>
+            </ul>
+          </div>
+
+          <div class="stagger-item">
+            <h3 class="text-slate-900 mb-2">Modern Family Updates</h3>
+            <ul>
+              <li>Updated plumbing and electrical systems</li>
+              <li>Modern kitchen with stainless appliances</li>
+              <li>New HVAC system with whole-home comfort</li>
+              <li>Safety upgrades including smoke/CO detectors</li>
+              <li>High-speed internet infrastructure</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- NEIGHBORHOOD & SCHOOLS -->
+    <section class="section section--subtle" aria-labelledby="neighborhood-heading">
+      <header class="mb-4">
+        <h2 id="neighborhood-heading">Marshall Community & Heritage District</h2>
+        <p class="text-slate-700">
+          East Texas's oldest inland town offers rich history, excellent schools, and a charming small-city atmosphere. Perfect for families seeking community and the authentic Texas experience in a safe, family-friendly environment.
+        </p>
+      </header>
+
+      <div class="content-grid">
+        <div>
+          <h3 class="text-slate-900">Marshall Independent Schools</h3>
+          <p>
+            Strong public school district with multiple highly-rated elementary schools, solid middle school programs, and competitive high school academics. Recent district improvements include STEM programs and modern facilities.
+          </p>
+
+          <h3 class="text-slate-900 mt-4">Historic District Benefits</h3>
+          <p>
+            Marshall's historic districts offer tax incentives for property preservation. Walking distance to downtown shopping, dining, antique stores, and cultural attractions. CHRISTUS hospital system provides comprehensive healthcare access.
+          </p>
+        </div>
+
+        <div>
+          <h3 class="text-slate-900">Regional Amenities</h3>
+          <ul>
+            <li>• Downtown Marshall historic attractions</li>
+            <li>• Lake O' the Pines recreation area (20-minute drive)</li>
+            <li>• Tyler cultural and shopping centers (30-minute drive)</li>
+            <li>• East Texas Baptist University campus</li>
+            <li>• Regional medical facilities nearby</li>
+          </ul>
+
+          <h3 class="text-slate-900 mt-4">Family Living</h3>
+          <p>Marshall combines small-town safety and charm with access to larger metro amenities. 5-acre property provides plenty of space for children to play, gardens to grow, and family activities. Quiet suburban location with easy highway access.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- TRANSFORMATION STORY -->
+    <section class="section" aria-labelledby="story-heading">
+      <header class="mb-4">
+        <h2 id="story-heading">Historic Preservation & Family Comfort</h2>
+        <p class="text-slate-700">
+          Restoring a piece of East Texas agricultural history while creating a perfect home for modern veteran families. This 1920s farmhouse represents the enduring spirit of Texas family living.
+        </p>
+      </header>
+
+      <div class="content-grid">
+        <div>
+          <h3 class="text-slate-900">1920s Agricultural Roots</h3>
+          <p>
+            Built during the East Texas oil boom era, this farmhouse was owned by pioneering families who helped develop the region's agricultural heritage. Its solid construction withstood decades of Texas weather and family living.
+          </p>
+
+          <h3 class="text-slate-900 mt-4">Meticulous Restoration</h3>
+          <p>
+            Every architectural detail carefully preserved while adding modern systems that ensure comfort and reliability. The restoration process honored by the Texas Historical Commission for authenticity and preservation excellence.
+          </p>
+
+          <h3 class="text-slate-900 mt-4">Perfect Family Home</h3>
+          <p>
+            With 4 bedrooms, 2 bathrooms, and 5 acres of land, this farmhouse provides everything a growing family needs. The preserved character creates a sense of history and stability that modern families cherish.
+          </p>
+        </div>
+
+        <aside class="glass-card p-4">
+          <p class="text-sm text-slate-500 mb-2 font-medium">Community guardian</p>
+          <blockquote class="text-sm text-slate-800">
+            "This old farmhouse has seen generations of Texas families grow and thrive. It's an honor to restore these historic homes and ensure they continue to serve new generations of veteran families who deserve the same stability."
+          </blockquote>
+          <cite class="text-sm text-slate-500 mt-2">- Licensed Historic Preservation Specialist</cite>
+        </aside>
+      </div>
+    </section>
+
+    <!-- SIMILAR PROPERTIES -->
+    <section class="section section--subtle" aria-labelledby="similar-heading">
+      <header class="mb-4">
+        <h2 id="similar-heading">East Texas Family Properties</h2>
+        <p class="text-slate-700">
+          Explore other family-friendly homes with character and space across East Texas. Each property offers the authentic regional experience while providing modern comfort and Section 8 eligibility.
+        </p>
+      </header>
+
+      <div class="row-enterprise">
+        <div class="glass-card card-enterprise p-4 stagger-item">
+          <h3 class="text-slate-900 mb-1">Tyler Ranch Home</h3>
+          <p class="text-sm text-slate-700 mb-3">
+            Spacious ranch home with room for family activities and growth
+          </p>
+          <a href="tyler-ranch-home.html" class="btn btn-secondary focus-ring-enterprise">
+            View details
+          </a>
+        </div>
+
+        <div class="glass-card card-enterprise p-4 stagger-item">
+          <h3 class="text-slate-900 mb-1">Jefferson Riverfront</h3>
+          <p class="text-sm text-slate-700 mb-3">
+            Charming riverside cabin with outdoor recreation access
+          </p>
+          <a href="jefferson-riverfront.html" class="btn btn-secondary focus-ring-enterprise">
+            View details
+          </a>
+        </div>
+
+        <div class="glass-card card-enterprise p-4 stagger-item">
+          <h3 class="text-slate-900 mb-1">Longview Victorian</h3>
+          <p class="text-sm text-slate-700 mb-3">
+            Historic 4BR home with preserved architectural details downtown
+          </p>
+          <a href="longview-victorian.html" class="btn btn-secondary focus-ring-enterprise">
+            View details
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- CONTACT / CTA -->
+    <section class="section" id="contact-section" aria-labelledby="contact-heading">
+      <div class="glass-card-dark p-5">
+        <div class="content-grid">
+          <div>
+            <h2 id="contact-heading" class="text-white mb-2">
+              Ready to see this historic farmhouse?
+            </h2>
+            <p class="text-slate-200">
+              Experience authentic East Texas family living on 5 beautiful acres. Share your family size and preferred viewing times. Our team will arrange a private tour of this meticulously restored farmhouse and discuss veteran family housing qualifications.
+            </p>
+          </div>
+
+          <form
+            class="space-y-3"
+            data-form-type="property-inquiry"
+            aria-label="Schedule a tour for Marshall Historic Farmhouse"
+          >
+            <div>
+              <label for="name" class="block text-sm font-medium text-slate-100 mb-1">Full name</label>
+              <input
+                id="name"
+                name="name"
+                type="text"
+                required
+                class="w-full px-3 py-2 rounded-md border border-slate-500 bg-slate-900/60 text-slate-50"
+              />
+            </div>
+
+            <div>
+              <label for="email" class="block text-sm font-medium text-slate-100 mb-1">Email</label>
+              <input
+                id="email"
+                name="email"
+                type="email"
+                required
+                class="w-full px-3 py-2 rounded-md border border-slate-500 bg-slate-900/60 text-slate-50"
+              />
+            </div>
+
+            <div>
+              <label for="phone" class="block text-sm font-medium text-slate-100 mb-1">Phone</label>
+              <input
+                id="phone"
+                name="phone"
+                type="tel"
+                required
+                class="w-full px-3 py-2 rounded-md border border-slate-500 bg-slate-900/60 text-slate-50"
+              />
+            </div>
+
+            <div>
+              <label for="message" class="block text-sm font-medium text-slate-100 mb-1">
+                Preferred tour times / family needs
+              </label>
+              <textarea
+                id="message"
+                name="message"
+                rows="3"
+                class="w-full px-3 py-2 rounded-md border border-slate-500 bg-slate-900/60 text-slate-50"
+              ></textarea>
+            </div>
+
+            <button type="submit" class="btn btn-primary w-full focus-ring-enterprise">
+              Submit request
+            </button>
+          </form>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer data-component="footer"></footer>
+
+  <script src="../js/component-loader.js" defer></script>
+  <script src="../js/accessibility-enhanced.js" defer></script>
+  <script src="../js/static-forms.js" defer></script>
+</body>
     <div id="header-container" style="min-height: 76px;"></div>
     <div id="page-banner-container"></div>
 

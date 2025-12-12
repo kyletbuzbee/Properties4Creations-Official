@@ -1,51 +1,48 @@
-<header id="main-header" class="fixed top-0 left-0 right-0 z-[1000] bg-gray-900/40 backdrop-blur-md border-b border-white/10 shadow-lg">
-    <nav class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8" aria-label="Main navigation">
-        <div class="flex justify-between items-center h-16">
-            
-    <!-- Logo -->
-    <a href="index.html" class="flex items-center space-x-2 hover:opacity-80 transition-opacity bg-transparent border-0 outline-none">
-    <img src="public/images/logo/brand-logo.svg"
-         alt="Properties 4 Creations"
-         class="h-14 w-auto"
-         onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
-        <div class="bg-brand-wood text-white px-3 py-2 rounded-lg font-bold text-xl shadow-md hidden">P4C</div>
-        <span class="text-white font-bold text-lg hidden sm:block drop-shadow-lg">Properties 4 Creations</span>
+<header id="main-header">
+    <nav aria-label="Main navigation">
+        <div>
+            <!-- Logo -->
+            <a href="index.html">
+                <img src="public/images/logo/brand-logo.svg"
+                     alt="Properties 4 Creations"
+                     onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
+                <div>P4C</div>
+                <span>Properties 4 Creations</span>
             </a>
 
             <!-- Desktop Navigation -->
-            <div class="hidden md:flex items-center space-x-1">
-                <a href="index.html" class="text-white hover:text-brand-wood hover:bg-white/10 px-4 py-2 rounded-lg font-semibold transition-all">Home</a>
-                <a href="about.html" class="text-white hover:text-brand-wood hover:bg-white/10 px-4 py-2 rounded-lg font-semibold transition-all">About</a>
-                <a href="projects.html" class="text-white hover:text-brand-wood hover:bg-white/10 px-4 py-2 rounded-lg font-semibold transition-all">Properties</a>
-                <a href="resources.html" class="text-white hover:text-brand-wood hover:bg-white/10 px-4 py-2 rounded-lg font-semibold transition-all">Resources</a>
-                <a href="impact.html" class="text-white hover:text-brand-wood hover:bg-white/10 px-4 py-2 rounded-lg font-semibold transition-all">Impact</a>
-                <a href="transparency.html" class="text-white hover:text-brand-wood hover:bg-white/10 px-4 py-2 rounded-lg font-semibold transition-all">Transparency</a>
-                <a href="faq.html" class="text-white hover:text-brand-wood hover:bg-white/10 px-4 py-2 rounded-lg font-semibold transition-all">FAQ</a>
-                <a href="contact.html" class="bg-brand-wood text-white px-6 py-2 rounded-lg font-bold hover:bg-brand-walnut transition-all shadow-md ml-2">Contact Us</a>
+            <div>
+                <a href="index.html">Home</a>
+                <a href="about.html">About</a>
+                <a href="projects.html">Properties</a>
+                <a href="resources.html">Resources</a>
+                <a href="impact.html">Impact</a>
+                <a href="transparency.html">Transparency</a>
+                <a href="faq.html">FAQ</a>
+                <a href="contact.html">Contact Us</a>
             </div>
 
             <!-- Mobile Menu Button -->
-            <button id="mobile-menu-toggle" 
-                    class="md:hidden text-white p-2 rounded-lg hover:bg-white/10 transition-colors" 
-                    aria-expanded="false" 
+            <button id="mobile-menu-toggle"
+                    aria-expanded="false"
                     aria-label="Toggle navigation menu">
-                <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <svg fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"/>
                 </svg>
             </button>
         </div>
 
         <!-- Mobile Menu -->
-        <div id="mobile-menu" class="md:hidden max-h-0 overflow-hidden transition-all duration-300 bg-gray-900/95 backdrop-blur-lg">
-            <div class="flex flex-col space-y-1 py-3 px-2">
-                <a href="index.html" class="text-white hover:bg-white/10 px-4 py-3 rounded-lg font-semibold transition-all">🏠 Home</a>
-                <a href="about.html" class="text-white hover:bg-white/10 px-4 py-3 rounded-lg font-semibold transition-all">ℹ️ About</a>
-                <a href="projects.html" class="text-white hover:bg-white/10 px-4 py-3 rounded-lg font-semibold transition-all">🏘️ Properties</a>
-                <a href="resources.html" class="text-white hover:bg-white/10 px-4 py-3 rounded-lg font-semibold transition-all">📚 Resources</a>
-                <a href="impact.html" class="text-white hover:bg-white/10 px-4 py-3 rounded-lg font-semibold transition-all">📊 Impact</a>
-                <a href="transparency.html" class="text-white hover:bg-white/10 px-4 py-3 rounded-lg font-semibold transition-all">🔍 Transparency</a>
-                <a href="faq.html" class="text-white hover:bg-white/10 px-4 py-3 rounded-lg font-semibold transition-all">❓ FAQ</a>
-                <a href="contact.html" class="mx-2 mt-2 bg-brand-wood text-white px-6 py-3 rounded-lg font-bold text-center hover:bg-brand-walnut transition-all shadow-md">📧 Contact Us</a>
+        <div id="mobile-menu">
+            <div>
+                <a href="index.html">🏠 Home</a>
+                <a href="about.html">ℹ️ About</a>
+                <a href="projects.html">🏘️ Properties</a>
+                <a href="resources.html">📚 Resources</a>
+                <a href="impact.html">📊 Impact</a>
+                <a href="transparency.html">🔍 Transparency</a>
+                <a href="faq.html">❓ FAQ</a>
+                <a href="contact.html">📧 Contact Us</a>
             </div>
         </div>
     </nav>

@@ -1,121 +1,361 @@
 ﻿<!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Mineola Modern Studio - Veteran Studio Apartment | Properties 4 Creation</title>
-    <script src="https://unpkg.com/lucide@latest"></script>
-    <meta name="description" content="Clean, modern studio apartment for independent veterans. Affordable housing at $525/mo with amenities and Section 8 eligibility. Mineola, TX.">
-    <link rel="canonical" href="https://properties4creations.com/projects/mineola-modern-studio.html">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Efficient studio apartment perfect for independent veterans at $525/month. Clean, modern amenities with Section 8 approval in Mineola, TX.">
+  <title>Mineola Modern Studio • Properties 4 Creations</title>
 
-    <!-- Structured Data for Property Listing -->
-    <script type="application/ld+json">
-    {
-      "@context": "https://schema.org",
-      "@type": "Apartment",
-      "name": "Mineola Modern Studio - Veteran Studio Apartment",
-      "description": "Efficient studio apartment perfect for independent veterans or small households. Clean, modern, and affordable in Mineola, TX.",
-      "url": "https://properties4creations.com/projects/mineola-modern-studio.html",
-      "address": {
-        "@type": "PostalAddress",
-        "addressLocality": "Mineola",
-        "addressRegion": "TX",
-        "addressCountry": "US"
-      },
-      "geo": {
-        "@type": "GeoCoordinates",
-        "latitude": "32.6629",
-        "longitude": "-95.4883"
-      },
-      "numberOfRooms": 2,
-      "numberOfBedrooms": 0,
-      "numberOfBathroomsTotal": 1,
-      "floorSize": {
-        "@type": "QuantitativeValue",
-        "value": 425,
-        "unitCode": "FTK"
-      },
-      "image": [
-        "https://properties4creations.com/public/images/projects/mineola-studio-modern.jpg",
-        "https://properties4creations.com/public/images/projects/mineola-studio-kitchen.jpg"
-      ],
-      "amenityFeature": [
-        {
-          "@type": "LocationFeatureSpecification",
-          "name": "Senior Friendly",
-          "value": true
-        },
-        {
-          "@type": "LocationFeatureSpecification",
-          "name": "Pet Policy Flexible",
-          "value": true
-        },
-        {
-          "@type": "LocationFeatureSpecification",
-          "name": "Low Cost Housing",
-          "value": true
-        }
-      ],
-      "potentialAction": {
-        "@type": "ReserveAction",
-        "target": {
-          "@type": "EntryPoint",
-          "urlTemplate": "https://properties4creations.com/contact.html",
-          "inLanguage": "en-US",
-          "actionPlatform": [
-            "http://schema.org/DesktopWebPlatform",
-            "http://schema.org/MobileWebPlatform"
-          ]
-        },
-        "result": {
-          "@type": "LodgingReservation",
-          "lodgingUnitType": "Studio Apartment"
-        }
-      },
-      "publisher": {
-        "@type": "RealEstateAgent",
-        "name": "Properties 4 Creation",
-        "telephone": "(903) 283-1770",
-        "address": {
-          "@type": "PostalAddress",
-          "addressLocality": "Tyler",
-          "addressRegion": "TX",
-          "addressCountry": "US"
-        }
-      }
+  <!-- Fonts and Icons -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Merriweather:wght@600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../css/styles.css">
+
+  <!-- Structured Data -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "SingleFamilyResidence",
+    "@type": "Apartment",
+    "name": "Mineola Modern Studio - Veteran Studio Apartment",
+    "description": "Efficient studio apartment perfect for independent veterans or small households. Clean, modern, and affordable in Mineola, TX.",
+    "url": "https://properties4creations.com/projects/mineola-modern-studio.html",
+    "address": {
+      "@type": "PostalAddress",
+      "addressLocality": "Mineola",
+      "addressRegion": "TX",
+      "addressCountry": "US"
+    },
+    "geo": {
+      "@type": "GeoCoordinates",
+      "latitude": "32.6629",
+      "longitude": "-95.4883"
+    },
+    "numberOfRooms": 2,
+    "numberOfBedrooms": 0,
+    "numberOfBathroomsTotal": 1,
+    "floorSize": {
+      "@type": "QuantitativeValue",
+      "value": 425,
+      "unitCode": "FTK"
     }
-    </script>
-
-    <link rel="stylesheet" href="../css/styles.css">
-    <script src="https://cdn.tailwindcss.com"></script>
-    <script>
-        tailwind.config = {
-            theme: {
-                extend: {
-                    colors: {
-                        brand: { navy: 'var(--color-primary-navy)', wood: 'var(--color-accent-gold)', beige: 'var(--color-neutral-beige)' }
-                    },
-                    fontFamily: {
-                        heading: ['Merriweather','serif'],
-                        body: ['Inter','sans-serif']
-                    },
-                    boxShadow: {
-                        wood: 'var(--shadow-wood)',
-                        navy: 'var(--shadow-medium)'
-                    }
-                }
-            }
-        }
-    </script>
-
-    <style>
-        body { font-family: 'Merriweather', 'Inter', system-ui, -apple-system, sans-serif; }
-        .animate-fade-in-up { animation: fadeInUp 0.8s ease-out forwards; }
-        @keyframes fadeInUp { from { opacity: 0; transform: translateY(30px); } to { opacity: 1; transform: translateY(0); } }
-        @media (max-width: 475px) { h1 { font-size: 1.75rem; } h2 { font-size: 1.5rem; } }
-    </style>
+  }
+  </script>
 </head>
-<body class="bg-brand-beige">
+<body>
+  <a href="#main" class="skip-to-content">Skip to main content</a>
+
+  <header data-component="header"></header>
+
+  <main id="main" class="page-shell">
+    <!-- HERO / SUMMARY -->
+    <section class="section" aria-labelledby="property-title">
+      <div class="content-grid row-enterprise">
+        <div class="stagger-item">
+          <p class="trust-badge mb-3">Mineola • Modern Studio for Veterans</p>
+          <h1 id="property-title" class="gradient-text">
+            Mineola Modern Studio
+          </h1>
+          <p class="text-lg text-slate-700">
+            Efficient 425 sq ft studio apartment perfect for independent veterans, seniors, or anyone seeking affordable housing. Clean, modern amenities with Section 8 approval in peaceful Mineola with easy access to Tyler services.
+          </p>
+
+          <div class="meta-grid mt-4 mb-5 text-sm text-slate-700">
+            <div class="glass-card p-3">
+              <h3 class="text-sm font-semibold text-slate-900 mb-1">Bedrooms / Bathrooms</h3>
+              <p class="font-medium">Studio / 1 Bath</p>
+            </div>
+            <div class="glass-card p-3">
+              <h3 class="text-sm font-semibold text-slate-900 mb-1">Square Feet</h3>
+              <p class="font-medium">425 sq ft</p>
+            </div>
+            <div class="glass-card p-3">
+              <h3 class="text-sm font-semibold text-slate-900 mb-1">Location</h3>
+              <p class="font-medium">Mineola, TX</p>
+            </div>
+          </div>
+
+          <div class="flex flex-wrap items-center gap-3">
+            <a href="#contact-section" class="btn btn-primary focus-ring-enterprise">
+              Schedule a tour
+            </a>
+            <a href="#features-specs"
+               class="btn btn-secondary focus-ring-enterprise">
+              View studio features
+            </a>
+          </div>
+        </div>
+
+        <aside class="glass-card card-enterprise p-4 stagger-item" aria-label="Mineola Modern Studio quick facts">
+          <img
+            src="public/images/mineola-modern-studio-hero.jpg"
+            alt="Front exterior of the clean modern studio apartment building in Mineola"
+            class="rounded-xl w-full object-cover mb-4"
+          />
+
+          <dl class="space-y-2 text-sm text-slate-700">
+            <div class="flex justify-between gap-4">
+              <dt class="font-medium text-slate-900">Status</dt>
+              <dd>Available</dd>
+            </div>
+            <div class="flex justify-between gap-4">
+              <dt class="font-medium text-slate-900">Monthly Rent</dt>
+              <dd class="font-semibold text-brand-walnut">$525</dd>
+            </div>
+            <div class="flex justify-between gap-4">
+              <dt class="font-medium text-slate-900">Deposit</dt>
+              <dd>$525</dd>
+            </div>
+          </dl>
+
+          <div class="mt-4 border-t border-slate-200 pt-3 text-sm text-slate-700">
+            <p class="font-semibold mb-1">Landlord Guarantee</p>
+            <p>
+              Efficient maintenance for easy living. 24/7 emergency support plus regular systems checks keep this studio in perfect condition for independent living.
+            </p>
+          </div>
+
+          <div class="mt-4 border-t border-slate-200 pt-3 text-sm">
+            <p class="font-semibold mb-1">Call for veteran studio details</p>
+            <a href="tel:+19032831770" class="text-brand-walnut font-bold">
+              (903) 283-1770
+            </a>
+          </div>
+        </aside>
+      </div>
+    </section>
+
+    <!-- RENOVATION SPECS -->
+    <section class="section" id="features-specs" aria-labelledby="features-heading">
+      <div class="row-enterprise">
+        <header class="mb-4 stagger-item">
+          <h2 id="features-heading">Modern Studio Amenities</h2>
+          <p class="text-slate-700">
+            Thoughtfully designed for independent living, this 425 sq ft studio offers efficiency and comfort. Clean, modern finishes with all essential amenities in a convenient location with easy access to Tyler services.
+          </p>
+        </header>
+
+        <div class="content-grid">
+          <div class="stagger-item">
+            <h3 class="text-slate-900 mb-2">Efficiency Features</h3>
+            <ul>
+              <li>Bright LED lighting fixtures throughout</li>
+              <li>Full-size refrigerator included</li>
+              <li>Easy-clean laminate flooring</li>
+              <li>Step-free design for accessibility</li>
+              <li>Multiple built-in storage solutions</li>
+            </ul>
+          </div>
+
+          <div class="stagger-item">
+            <h3 class="text-slate-900 mb-2">Convenience Amenities</h3>
+            <ul>
+              <li>Modern bathroom with walk-in shower</li>
+              <li>Window air conditioning unit</li>
+              <li>High-speed internet infrastructure</li>
+              <li>Energy-efficient appliances</li>
+              <li>Pet-friendly community (upon approval)</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- NEIGHBORHOOD & SCHOOLS -->
+    <section class="section section--subtle" aria-labelledby="neighborhood-heading">
+      <header class="mb-4">
+        <h2 id="neighborhood-heading">Mineola Community & Access</h2>
+        <p class="text-slate-700">
+          Peaceful small-town atmosphere with convenient access to comprehensive services. 25-minute drive to Tyler connects you to major healthcare facilities, shopping, and entertainment while enjoying the calm of smaller community living.
+        </p>
+      </header>
+
+      <div class="content-grid">
+        <div>
+          <h3 class="text-slate-900">Local Services</h3>
+          <p>
+            Complete local healthcare center plus 25-minute drive access to Tyler VA Medical Center. Mineola offers essential services and a welcoming community atmosphere perfect for independent living.
+          </p>
+
+          <h3 class="text-slate-900 mt-4">Convenient Access</h3>
+          <p>
+            All essential amenities within minutes: grocery stores, gas stations, restaurants, and pharmacies. Quiet residential area provides peaceful living while maintaining proximity to urban conveniences.
+          </p>
+        </div>
+
+        <div>
+          <h3 class="text-slate-900">Location Benefits</h3>
+          <ul>
+            <li>• 25-minute drive to Downtown Tyler</li>
+            <li>• Mineola Healthcare Center - local medical</li>
+            <li>• Tyler VA Medical Center - 25 minutes</li>
+            <li>• Job opportunities in growing area</li>
+            <li>• Safe, welcoming community atmosphere</li>
+          </ul>
+
+          <h3 class="text-slate-900 mt-4">Transportation</h3>
+          <p>Located just off major highways, the studio provides excellent access throughout the region. Whether you need daily shopping or major healthcare, everything is conveniently accessible.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- TRANSFORMATION STORY -->
+    <section class="section" aria-labelledby="story-heading">
+      <header class="mb-4">
+        <h2 id="story-heading">Comfortable Independent Living</h2>
+        <p class="text-slate-700">
+          Designed specifically for veterans and seniors seeking affordable, supportive housing. This modern studio combines efficiency, cleanliness, and convenience in a perfect blend for independent living.
+        </p>
+      </header>
+
+      <div class="content-grid">
+        <div>
+          <h3 class="text-slate-900">Veteran-First Design</h3>
+          <p>
+            Every upgrade chosen specifically for veterans transitioning to civilian life. From accessible design to low-maintenance features, this studio supports veterans who prefer the independence of their own space while staying connected to community resources.
+          </p>
+
+          <h3 class="text-slate-900 mt-4">Modern Efficiency</h3>
+          <p>
+            Smart design maximizes comfort in minimal space. High-quality appliances, bright lighting, and thoughtful storage solutions make independent living easy and enjoyable in this clean, modern environment.
+          </p>
+
+          <h3 class="text-slate-900 mt-4">Perfect Location</h3>
+          <p>
+            Mineola offers the ideal balance of peaceful small-town living with ready access to comprehensive services. Whether dining locally or accessing major healthcare in Tyler, this studio connects you to exactly what you need.
+          </p>
+        </div>
+
+        <aside class="glass-card p-4">
+          <p class="text-sm text-slate-500 mb-2 font-medium">Efficiency meets comfort</p>
+          <blockquote class="text-sm text-slate-800">
+            "This studio perfectly combines the independence veterans want with the support systems they need. Clean, efficient, and located where you can access services without feeling isolated from community."
+          </blockquote>
+          <cite class="text-sm text-slate-500 mt-2">- Veterans Service Coordinator</cite>
+        </aside>
+      </div>
+    </section>
+
+    <!-- SIMILAR PROPERTIES -->
+    <section class="section section--subtle" aria-labelledby="similar-heading">
+      <header class="mb-4">
+        <h2 id="similar-heading">Affordable Veteran Housing Options</h2>
+        <p class="text-slate-700">
+          Explore our most budget-friendly housing solutions for veterans seeking independent living, each offering full amenities and Section 8 approval at competitive pricing.
+        </p>
+      </header>
+
+      <div class="row-enterprise">
+        <div class="glass-card card-enterprise p-4 stagger-item">
+          <h3 class="text-slate-900 mb-1">Tyler Ranch Home</h3>
+          <p class="text-sm text-slate-700 mb-3">
+            Spacious 3BR family home with modern updates
+          </p>
+          <a href="tyler-ranch-home.html" class="btn btn-secondary focus-ring-enterprise">
+            View details
+          </a>
+        </div>
+
+        <div class="glass-card card-enterprise p-4 stagger-item">
+          <h3 class="text-slate-900 mb-1">Jefferson Riverfront</h3>
+          <p class="text-sm text-slate-700 mb-3">
+            2BR cabin-style home on Big Cypress Bayou
+          </p>
+          <a href="jefferson-riverfront.html" class="btn btn-secondary focus-ring-enterprise">
+            View details
+          </a>
+        </div>
+
+        <div class="glass-card card-enterprise p-4 stagger-item">
+          <h3 class="text-slate-900 mb-1">Longview Victorian</h3>
+          <p class="text-sm text-slate-700 mb-3">
+            4BR historic home with downtown amenities
+          </p>
+          <a href="longview-victorian.html" class="btn btn-secondary focus-ring-enterprise">
+            View details
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- CONTACT / CTA -->
+    <section class="section" id="contact-section" aria-labelledby="contact-heading">
+      <div class="glass-card-dark p-5">
+        <div class="content-grid">
+          <div>
+            <h2 id="contact-heading" class="text-white mb-2">
+              Ready to tour this modern studio?
+            </h2>
+            <p class="text-slate-200">
+              Experience our most affordable Section 8 approved housing option. Share your interest and preferred viewing time. Our team will coordinate your private studio tour and discuss veteran housing qualifications including senior discounts.
+            </p>
+          </div>
+
+          <form
+            class="space-y-3"
+            data-form-type="property-inquiry"
+            aria-label="Schedule a tour for Mineola Modern Studio"
+          >
+            <div>
+              <label for="name" class="block text-sm font-medium text-slate-100 mb-1">Full name</label>
+              <input
+                id="name"
+                name="name"
+                type="text"
+                required
+                class="w-full px-3 py-2 rounded-md border border-slate-500 bg-slate-900/60 text-slate-50"
+              />
+            </div>
+
+            <div>
+              <label for="email" class="block text-sm font-medium text-slate-100 mb-1">Email</label>
+              <input
+                id="email"
+                name="email"
+                type="email"
+                required
+                class="w-full px-3 py-2 rounded-md border border-slate-500 bg-slate-900/60 text-slate-50"
+              />
+            </div>
+
+            <div>
+              <label for="phone" class="block text-sm font-medium text-slate-100 mb-1">Phone</label>
+              <input
+                id="phone"
+                name="phone"
+                type="tel"
+                required
+                class="w-full px-3 py-2 rounded-md border border-slate-500 bg-slate-900/60 text-slate-50"
+              />
+            </div>
+
+            <div>
+              <label for="message" class="block text-sm font-medium text-slate-100 mb-1">
+                Preferred tour times / questions
+              </label>
+              <textarea
+                id="message"
+                name="message"
+                rows="3"
+                class="w-full px-3 py-2 rounded-md border border-slate-500 bg-slate-900/60 text-slate-50"
+              ></textarea>
+            </div>
+
+            <button type="submit" class="btn btn-primary w-full focus-ring-enterprise">
+              Submit request
+            </button>
+          </form>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer data-component="footer"></footer>
+
+  <script src="../js/component-loader.js" defer></script>
+  <script src="../js/accessibility-enhanced.js" defer></script>
+  <script src="../js/static-forms.js" defer></script>
     <a href="#main" class="skip-to-content">Skip to main content</a>
     <div id="header-container" style="min-height: 76px;"></div>
     <div id="page-banner-container"></div>

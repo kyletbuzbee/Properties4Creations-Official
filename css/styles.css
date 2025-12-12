@@ -1,11 +1,11 @@
 /* ============================================================================
  * Properties 4 Creations - Main Stylesheet
- * Veteran & Family Housing in East Texas
- * Updated: December 2025
+ * Veteran & Family Housing in East Texas - Consolidated & Cleaned Up
+ * Updated: December 2025 (Clean Version)
  * ============================================================================ */
 
 /* ============================================================================
- * CSS VARIABLES - Brand Colors & Spacing
+ * CSS VARIABLES - Brand Colors & Spacing (Core Foundation)
  * ============================================================================ */
 
 :root {
@@ -38,7 +38,7 @@
 }
 
 /* ============================================================================
- * RESET & BASE STYLES
+ * RESET & BASE STYLES (Essential Foundation)
  * ============================================================================ */
 
 * {
@@ -53,15 +53,235 @@ html {
     -moz-osx-font-smoothing: grayscale;
 }
 
-body {
-    font-family: var(--font-body);
-    line-height: 1.6;
-    color: #1e293b;
-    background-color: var(--color-primary-beige);
+img {
+    max-width: 100%;
+    height: auto;
+}
+/* ============================================================================
+ * LAYOUT SHELL & GRID (Clean Container System)
+ * ============================================================================ */
+
+.page-shell {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 6rem 1.5rem 4rem; /* account for fixed header */
+}
+
+.section {
+  padding: 3rem 0;
+}
+
+.section--subtle {
+  padding: 2.25rem 0;
+}
+
+.section--tight {
+  padding: 1.75rem 0;
+}
+
+.section + .section {
+  border-top: 1px solid rgba(148, 163, 184, 0.15);
+}
+
+/* Two-column layout that collapses cleanly on mobile */
+.content-grid {
+  display: grid;
+  grid-template-columns: minmax(0, 3fr) minmax(0, 2fr);
+  gap: 2.5rem;
+  align-items: flex-start;
+}
+
+@media (max-width: 900px) {
+  .page-shell {
+    padding: 5rem 1.25rem 3rem;
+  }
+  .content-grid {
+    grid-template-columns: minmax(0, 1fr);
+    gap: 2rem;
+  }
+}
+
+/* Simple key meta grid (beds/baths/area) */
+.meta-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+  gap: 0.75rem;
 }
 
 /* ============================================================================
- * HEADER & NAVIGATION - GLASSMORPHISM WITH VISIBLE TEXT
+ * TYPOGRAPHY SYSTEM (Hierarchical & Readable)
+ * ============================================================================ */
+
+body {
+  font-family: var(--font-body);
+  line-height: 1.65;
+  font-size: 1rem;
+  color: #1e293b;
+  background-color: var(--color-primary-beige);
+}
+
+h1, h2, h3, h4 {
+  font-family: var(--font-heading);
+  color: #0f172a;
+  line-height: 1.25;
+}
+
+h1 {
+  font-size: clamp(2rem, 3vw, 2.75rem);
+  margin-bottom: 0.75rem;
+}
+
+h2 {
+  font-size: clamp(1.5rem, 2.3vw, 2rem);
+  margin-bottom: 0.5rem;
+}
+
+h3 {
+  font-size: 1.25rem;
+  margin-bottom: 0.35rem;
+}
+
+p {
+  margin-bottom: 0.9rem;
+  max-width: 70ch;
+}
+
+.section p:last-child {
+  margin-bottom: 0;
+}
+
+.section ul,
+.section ol {
+  margin: 0.25rem 0 0.9rem 1.25rem;
+  padding-left: 1.25rem;
+}
+
+.section li + li {
+  margin-top: 0.25rem;
+}
+
+/* ============================================================================
+ * BUTTONS (CONSOLIDATED SYSTEM - Core Actions)
+ * ============================================================================ */
+
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.35rem;
+  padding: 0.8rem 1.6rem;
+  border-radius: 9999px;
+  font-weight: 600;
+  font-size: 0.95rem;
+  text-decoration: none;
+  border: 1px solid transparent;
+  cursor: pointer;
+  min-height: 44px;
+  transition: all var(--transition-normal);
+}
+
+.btn-primary {
+  background: var(--color-primary-navy);
+  color: #ffffff;
+  position: relative;
+  overflow: hidden;
+}
+
+.btn-primary::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    120deg,
+    transparent 0%,
+    rgba(255, 255, 255, 0.25) 40%,
+    transparent 80%
+  );
+  transform: translateX(-100%);
+  transition: transform 0.6s ease;
+}
+
+.btn-primary:hover::before {
+  transform: translateX(100%);
+}
+
+.btn-primary:hover {
+  background: var(--color-primary-wood);
+  transform: translateY(-2px);
+  box-shadow: 0 12px 25px rgba(15, 23, 42, 0.2);
+}
+
+.btn-primary:active {
+  transform: translateY(0);
+  box-shadow: 0 6px 12px rgba(15, 23, 42, 0.25);
+}
+
+.btn-secondary {
+  background: rgba(255, 255, 255, 0.8);
+  color: var(--color-primary-navy);
+  border-color: rgba(148, 163, 184, 0.7);
+}
+
+.btn-secondary:hover {
+  border-color: var(--color-primary-walnut);
+  background-color: #ffffff;
+  color: var(--color-primary-walnut);
+}
+
+/* ============================================================================
+ * ACCESSIBILITY & CARDS (Inclusive Design)
+ * ============================================================================ */
+
+a,
+button {
+  outline-offset: 2px;
+}
+
+a:focus-visible,
+button:focus-visible,
+[tabindex]:focus-visible {
+  outline: 2px solid var(--color-primary-wood);
+  outline-offset: 3px;
+}
+
+.glass-card {
+  background: rgba(255, 255, 255, 0.9);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  border-radius: 1rem;
+  border: 1px solid rgba(148, 163, 184, 0.4);
+  box-shadow: 0 8px 24px rgba(15, 23, 42, 0.15);
+}
+
+.glass-card-dark {
+  background: rgba(11, 17, 32, 0.9);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  border-radius: 1rem;
+  border: 1px solid rgba(148, 163, 184, 0.4);
+  color: #e5e7eb;
+}
+
+/* Hero banner (single, cleaned-up version) */
+.hero-home-banner {
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  min-height: 650px;
+  display: flex;
+  align-items: center;
+}
+
+@media (max-width: 768px) {
+  .hero-home-banner {
+    background-attachment: scroll;
+    min-height: 520px;
+  }
+}
+
+/* ============================================================================
+ * HEADER & NAVIGATION (Fixed with Glassmorphism)
  * ============================================================================ */
 
 header#main-header {
@@ -71,18 +291,14 @@ header#main-header {
     right: 0;
     width: 100%;
     z-index: 1000 !important;
-    
-    /* Glassmorphism Effect */
     background: rgba(17, 24, 39, 0.4) !important;
     backdrop-filter: blur(16px) !important;
     -webkit-backdrop-filter: blur(16px) !important;
-    
-    /* Premium border */
     border-bottom: 1px solid rgba(255, 255, 255, 0.1);
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
 }
 
-/* Force white text on all nav links */
+/* Force readable nav links */
 header nav a {
     color: white !important;
     font-weight: 600;
@@ -93,7 +309,7 @@ header nav a:hover {
     color: #C28E5A !important;
 }
 
-/* Mobile Menu Glassmorphism */
+/* Mobile menu */
 #mobile-menu {
     background: rgba(17, 24, 39, 0.95) !important;
     backdrop-filter: blur(20px) !important;
@@ -113,125 +329,8 @@ header nav a:hover {
     background-color: rgba(255, 255, 255, 0.15) !important;
 }
 
-/* Brand Colors */
-.bg-brand-wood {
-    background-color: #C28E5A !important;
-}
-
-.bg-brand-walnut {
-    background-color: #8B5E3C !important;
-}
-
-.text-brand-wood {
-    color: #C28E5A !important;
-}
-
-.hover\:bg-brand-walnut:hover {
-    background-color: #8B5E3C !important;
-}
-
-.hover\:text-brand-wood:hover {
-    color: #C28E5A !important;
-}
-
-/* Button Styles */
-.bg-brand-wood,
-.bg-wood {
-    background-color: #C28E5A !important;
-}
-
-.bg-brand-walnut,
-.bg-walnut {
-    background-color: #8B5E3C !important;
-}
-
-.hover\:bg-brand-walnut:hover,
-.hover\:bg-walnut:hover {
-    background-color: #8B5E3C !important;
-}
-
-.text-white {
-    color: white !important;
-}
-
-.text-brand-wood {
-    color: #C28E5A !important;
-}
-.text-brand-walnut {
-    color: #8B5E3C !important;  
-}
-
 /* ============================================================================
- * HOME PAGE HERO BANNER - NO GLASSMORPHISM
- * ============================================================================ */
-
-.hero-home-banner {
-    background-attachment: fixed;
-}
-
-@media (max-width: 768px) {
-    .hero-home-banner {
-        background-attachment: scroll;
-        min-height: 550px !important;
-    }
-}
-
-/* ============================================================================
- * HOME PAGE HERO BANNER
- * ============================================================================ */
-
-.hero-home-banner {
-    background-attachment: fixed;
-}
-
-@media (max-width: 768px) {
-    .hero-home-banner {
-        background-attachment: scroll;
-        min-height: 500px !important;
-    }
-}
-
-/* ============================================================================
- * BUTTONS & INTERACTIVE ELEMENTS
- * ============================================================================ */
-
-.btn-primary {
-    background: var(--color-primary-navy);
-    color: white;
-    padding: 1rem 2rem;
-    border-radius: 0.75rem;
-    font-weight: bold;
-    text-decoration: none;
-    display: inline-flex;
-    align-items: center;
-    justify-content: center;
-    transition: all var(--transition-normal);
-    min-height: 44px;
-    cursor: pointer;
-    border: none;
-}
-
-.btn-primary:hover {
-    background: var(--color-primary-wood);
-    box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
-    transform: translateY(-2px);
-}
-
-/* ============================================================================
- * HOVER EFFECTS
- * ============================================================================ */
-
-.hover-lift {
-    transition: transform var(--transition-normal), box-shadow var(--transition-normal);
-}
-
-.hover-lift:hover {
-    transform: translateY(-8px) scale(1.02);
-    box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1);
-}
-
-/* ============================================================================
- * FORMS
+ * FORMS & INPUTS (Accessible & Consistent)
  * ============================================================================ */
 
 input[type="text"],
@@ -244,7 +343,7 @@ select {
     border: 2px solid #e2e8f0;
     border-radius: 0.5rem;
     font-size: 1rem;
-    transition: border-color var(--transition-fast);
+    transition: border-color 0.2s ease;
 }
 
 @media (max-width: 768px) {
@@ -266,80 +365,9 @@ select:focus {
 }
 
 /* ============================================================================
- * ANIMATIONS
+ * LEAFLET MAP STYLING (Custom Overlay)
  * ============================================================================ */
 
-@keyframes fadeIn {
-    from {
-        opacity: 0;
-        transform: translateY(20px);
-    }
-    to {
-        opacity: 1;
-        transform: translateY(0);
-    }
-}
-
-@keyframes bounce-slow {
-    0%, 100% {
-        transform: translateY(0);
-    }
-    50% {
-        transform: translateY(10px);
-    }
-}
-
-.fade-in {
-    animation: fadeIn 0.6s ease-out;
-}
-
-.animate-bounce-slow {
-    animation: bounce-slow 2s ease-in-out infinite;
-}
-
-/* ============================================================================
- * UTILITY CLASSES
- * ============================================================================ */
-
-.hidden {
-    display: none !important;
-}
-
-img {
-    max-width: 100%;
-    height: auto;
-    display: block;
-}
-/* ============================================================================
- * RESPONSIVE IMAGES
- * ============================================================================ */
-
-.property-card img {
-    aspect-ratio: 4/3;
-    object-fit: cover;
-    width: 100%;
-}
-
-/* ============================================================================
- * MAP CONTAINER
- * ============================================================================ */
-
-.map-container {
-    width: 100%;
-    height: 400px;
-    border-radius: 1rem;
-    box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
-    border: 1px solid #e2e8f0;
-    position: relative;
-    overflow: hidden;
-    background-color: #04264a;
-}
-
-/* ============================================================================
- * LEAFLET MAP STYLING
- * ============================================================================ */
-
-/* Override Leaflet default styles for better integration */
 .leaflet-container {
     background: #f8f9fa !important;
     border-radius: 1rem !important;
@@ -382,7 +410,6 @@ img {
     backdrop-filter: blur(4px) !important;
 }
 
-/* Custom marker animations */
 .leaflet-marker-icon {
     transition: transform 0.2s ease !important;
 }
@@ -391,345 +418,90 @@ img {
     transform: scale(1.1) !important;
 }
 
-/* Map legend styling */
 .map-legend {
     margin: 0 !important;
 }
 
 /* ============================================================================
- * CLEANED UP NAVIGATION STYLING
+ * ANIMATIONS & MICRO-INTERACTIONS (Subtle & Accessible)
  * ============================================================================ */
 
-/* Remove conflicting nav link overrides */
-header nav a {
-    /* Clear any background colors and borders from debug styles */
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(20px); }
+    to { opacity: 1; transform: translateY(0); }
 }
 
-/* Logo and home link styling - remove any white containers */
-header#main-header nav a[href="index.html"] {
-    background: transparent !important;
-    border: none !important;
-    outline: none !important;
+.fade-in {
+    animation: fadeIn 0.6s ease-out;
 }
 
-header#main-header nav a[href="index.html"] img {
-    background: transparent !important;
-    border: none !important;
-}
-
-/* Ensure logo has proper sizing */
-header#main-header nav a[href="index.html"] img.h-14 {
-    height: 3.5rem !important;
-    width: auto !important;
-}
-
-/* Ensure desktop navigation visibility with proper specificity */
-header#main-header nav .hidden.md\:flex {
-    display: flex !important;
-    align-items: center;
-    gap: 0.5rem;
-}
-
-/* Clean navigation link styling */
-header#main-header nav a {
-    color: white !important;
-    font-weight: 600;
-    text-decoration: none;
-    padding: 0.5rem 1rem;
-    border-radius: 0.5rem;
-    transition: all 0.3s ease;
-    text-shadow: 0 1px 2px rgba(0, 0, 0, 0.5);
-    position: relative;
-    z-index: 1001;
-}
-
-/* Hover effects */
-header#main-header nav a:hover {
-    color: #C28E5A !important;
-    background-color: rgba(255, 255, 255, 0.1);
-    transform: translateY(-1px);
-}
-
-/* Special styling for Contact Us button */
-header#main-header nav a[href*="contact"] {
-    background-color: #C28E5A !important;
-    color: white !important;
-    margin-left: 0.5rem;
-    padding: 0.5rem 1.5rem;
-    font-weight: 700;
-}
-
-header#main-header nav a[href*="contact"]:hover {
-    background-color: #8B5E3C !important;
+/* Hover effects (subtle lift) */
+.hover-lift:hover {
+    transform: translateY(-8px);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
 /* ============================================================================
- * NAVIGATION - FINAL OVERRIDES
+ * MEDIA QUERIES & RESPONSIVE DESIGN
  * ============================================================================ */
 
-header.glass-premium nav a {
-    color: white !important;
-    font-weight: 600;
+@media (max-width: 1200px) {
+    .page-shell {
+        padding: 5.5rem 1.25rem 3.5rem;
+    }
 }
 
-header.glass-premium nav a:hover {
-    color: #C28E5A !important;
-    background-color: rgba(255, 255, 255, 0.1);
-}
-
-header.glass-premium #mobile-menu a {
-    color: white !important;
-}
-
-header.glass-premium #mobile-menu a:hover {
-    background-color: rgba(255, 255, 255, 0.15);
+@media (max-width: 768px) {
+    h1 {
+        font-size: clamp(1.75rem, 4vw, 2rem);
+    }
+    h2 {
+        font-size: clamp(1.5rem, 3.5vw, 1.75rem);
+    }
 }
 
 /* ============================================================================
- * ENTERPRISE-GRADE ANIMATIONS & MICRO-INTERACTIONS
+ * UTILITY CLASSES (Shared & Reusable)
  * ============================================================================ */
 
-/* Premium Button Animations */
-.btn-primary {
-    position: relative;
-    overflow: hidden;
-    transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+.hidden {
+    display: none !important;
 }
 
-.btn-primary::before {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: -100%;
-    width: 100%;
-    height: 100%;
-    background: linear-gradient(90deg, transparent, rgba(255,255,255,0.3), transparent);
-    transition: left 0.5s ease;
-}
+/* ============================================================================
+ * HIGH CONTRAST & ACCESSIBILITY SUPPORT
+ * ============================================================================ */
 
-.btn-primary:hover::before {
-    left: 100%;
-}
-
-.btn-primary:hover {
-    transform: translateY(-3px) scale(1.05);
-    box-shadow: 0 20px 40px rgba(194, 142, 90, 0.3);
-}
-
-.btn-primary:active {
-    transform: translateY(-1px) scale(1.02);
-}
-
-/* Enhanced Card Hover Effects */
-.card-enterprise {
-    transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
-    transform-origin: center;
-}
-
-.card-enterprise:hover {
-    transform: translateY(-12px) rotateX(2deg) rotateY(-2deg);
-    box-shadow: 0 25px 50px rgba(0, 0, 0, 0.15);
-}
-
-.card-enterprise::before {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    background: linear-gradient(135deg, rgba(194, 142, 90, 0.1), rgba(11, 17, 32, 0.05));
-    opacity: 0;
-    transition: opacity 0.3s ease;
-    border-radius: inherit;
-    z-index: -1;
-}
-
-.card-enterprise:hover::before {
-    opacity: 1;
-}
-
-/* Gradient Text Animation */
-.gradient-text {
-    background: linear-gradient(135deg, #0B1120 0%, #C28E5A 50%, #8B5E3C 100%);
-    background-size: 200% 200%;
-    background-clip: text;
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    animation: gradient-shift 3s ease infinite;
-}
-
-@keyframes gradient-shift {
-    0%, 100% {
-        background-position: 0% 50%;
-    }
-    50% {
-        background-position: 100% 50%;
+@media (prefers-contrast: high) {
+    .glass-card {
+        background-color: #ffffff !important;
+        border: 2px solid #000000 !important;
     }
 }
 
-/* Pulse Animation for Trust Indicators */
-.trust-pulse {
-    animation: trust-pulse 2s infinite;
-}
-
-@keyframes trust-pulse {
-    0%, 100% {
-        transform: scale(1);
-        box-shadow: 0 0 0 0 rgba(194, 142, 90, 0.7);
-    }
-    70% {
-        transform: scale(1.05);
-        box-shadow: 0 0 0 10px rgba(194, 142, 90, 0);
+@media (prefers-reduced-motion: reduce) {
+    *,
+    *::before,
+    *::after {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
+        scroll-behavior: auto !important;
     }
 }
 
-/* Floating Animation */
-@keyframes float {
-    0%, 100% {
-        transform: translateY(0px);
-    }
-    50% {
-        transform: translateY(-10px);
-    }
-}
+/* ============================================================================
+ * PRINT STYLES
+ * ============================================================================ */
 
-.float-animation {
-    animation: float 6s ease-in-out infinite;
-}
-
-/* Stagger Animation for Lists */
-.stagger-item {
-    opacity: 0;
-    transform: translateY(30px);
-    animation: stagger-fade-in 0.8s ease-out forwards;
-}
-
-.stagger-item:nth-child(1) { animation-delay: 0.1s; }
-.stagger-item:nth-child(2) { animation-delay: 0.2s; }
-.stagger-item:nth-child(3) { animation-delay: 0.3s; }
-.stagger-item:nth-child(4) { animation-delay: 0.4s; }
-.stagger-item:nth-child(5) { animation-delay: 0.5s; }
-
-@keyframes stagger-fade-in {
-    to {
-        opacity: 1;
-        transform: translateY(0);
-    }
-}
-
-/* Enhanced Focus States */
-.focus-ring-enterprise {
-    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-}
-
-.focus-ring-enterprise:focus-visible {
-    outline: none;
-    box-shadow: 0 0 0 3px rgba(194, 142, 90, 0.5);
-    transform: scale(1.02);
-}
-
-/* Loading Shimmer Effect */
-@keyframes shimmer {
-    0% {
-        background-position: -200px 0;
-    }
-    100% {
-        background-position: calc(200px + 100%) 0;
-    }
-}
-
-.loading-shimmer {
-    background: linear-gradient(90deg, #f0f0f0 25%, #e0e0e0 50%, #f0f0f0 75%);
-    background-size: 200px 100%;
-    animation: shimmer 1.5s infinite;
-}
-
-/* Smooth Section Transitions */
-section {
-    position: relative;
-}
-
-section::before {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    height: 100%;
-    background: inherit;
-    z-index: -1;
-    transform-origin: bottom;
-    transform: scaleY(0);
-    animation: section-reveal 0.8s ease-out forwards;
-}
-
-@keyframes section-reveal {
-    from {
-        transform: scaleY(0);
-    }
-    to {
-        transform: scaleY(1);
-    }
-}
-
-/* Enhanced Modal/Overlay Effects */
-.modal-enterprise {
-    backdrop-filter: blur(8px);
-    -webkit-backdrop-filter: blur(8px);
-}
-
-.modal-enterprise::before {
-    content: '';
-    position: fixed;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    background: radial-gradient(circle at center, rgba(194, 142, 90, 0.1), rgba(11, 17, 32, 0.3));
-    animation: fade-in 0.3s ease-out;
-}
-
-.modal-enterprise::before {
-    content: '';
-    position: fixed;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    background: radial-gradient(circle at center, rgba(194, 142, 90, 0.1), rgba(11, 17, 32, 0.3));
-    animation: fade-in 0.3s ease-out;
-}
-
-/* Smooth Scroll Behavior Enhancement */
-html {
-    scroll-behavior: smooth;
-    scroll-padding-top: 100px;
-}
-
-/* Custom Scrollbar Styling */
-::-webkit-scrollbar {
-    width: 8px;
-    height: 8px;
-}
-
-::-webkit-scrollbar-track {
-    background: #f1f1f1;
-    border-radius: 4px;
-}
-
-::-webkit-scrollbar-thumb {
-    background: linear-gradient(135deg, #C28E5A, #8B5E3C);
-    border-radius: 4px;
-}
-
-::-webkit-scrollbar-thumb:hover {
-    background: linear-gradient(135deg, #8B5E3C, #6B4228);
-}
-
-/* Print Styles */
 @media print {
     .no-print {
+        display: none !important;
+    }
+
+    header#main-header,
+    nav,
+    .hero-home-banner {
         display: none !important;
     }
 
@@ -743,160 +515,86 @@ html {
         text-decoration: none;
         color: #000;
     }
-}
 
-/* High Contrast Mode Support */
-@media (prefers-contrast: high) {
-    .bg-brand-beige {
-        background-color: #fff !important;
-    }
-
-    .text-brand-navy {
-        color: #000 !important;
-    }
-
-    .border-slate-200 {
-        border-color: #000 !important;
+    .glass-card {
+        background: #fff !important;
+        box-shadow: none !important;
+        border: 1px solid #ccc !important;
     }
 }
 
-/* Reduced Motion Support */
-@media (prefers-reduced-motion: reduce) {
-    *,
-    *::before,
-    *::after {
-        animation-duration: 0.01ms !important;
-        animation-iteration-count: 1 !important;
-        transition-duration: 0.01ms !important;
-        scroll-behavior: auto !important;
-    }
+/* ============================================================================
+ * LEGACY COMPATIBILITY (Remove After Migration)
+ * ============================================================================ */
+
+/* Brand utility classes (deprecated - use .btn-* instead) */
+.bg-brand-wood {
+    background-color: #C28E5A !important;
 }
 
-/* Enterprise Row Animations */
-.row-enterprise {
+.bg-brand-walnut {
+    background-color: #8B5E3C !important;
+}
+
+.text-brand-wood {
+    color: #C28E5A !important;
+}
+
+.hover\:bg-brand-walnut:hover {
+    background-color: #8B5E3C !important;
+}
+
+.hover\:text-brand-wood:hover {
+    color: #C28E5A !important;
+}
+
+/* Legacy button aliases (deprecated - use .btn-primary directly) */
+.btn-donate,
+.btn-cta,
+.button-primary,
+.btn-main {
+    background: var(--color-primary-navy);
+    color: #ffffff;
+    position: relative;
+    overflow: hidden;
+}
+
+/* Legacy card classes (simplified from enterprise) */
+.card-enterprise {
+    background: rgba(255, 255, 255, 0.9);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    border-radius: 1rem;
+    border: 1px solid rgba(148, 163, 184, 0.4);
+    box-shadow: 0 8px 24px rgba(15, 23, 42, 0.15);
+}
+
+.card-enterprise:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.12);
+}
+
+/* Enterprise animations (kept for existing pages) */
+.enterprise-row-grid {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
     gap: 2rem;
-    position: relative;
 }
 
-.row-enterprise > * {
-    opacity: 0;
-    transform: translateY(40px);
-    animation: enterprise-row-appear 0.8s ease-out forwards;
+.gradient-text {
+    background: linear-gradient(135deg, #0B1120 0%, #C28E5A 50%, #8B5E3C 100%);
+    background-size: 200% 200%;
+    
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    animation: gradient-shift 3s ease infinite;
 }
 
-.row-enterprise > *:nth-child(1) { animation-delay: 0.1s; }
-.row-enterprise > *:nth-child(2) { animation-delay: 0.2s; }
-.row-enterprise > *:nth-child(3) { animation-delay: 0.3s; }
-.row-enterprise > *:nth-child(4) { animation-delay: 0.4s; }
-.row-enterprise > *:nth-child(5) { animation-delay: 0.5s; }
-.row-enterprise > *:nth-child(6) { animation-delay: 0.6s; }
-
-@keyframes enterprise-row-appear {
-    to {
-        opacity: 1;
-        transform: translateY(0);
-    }
+@keyframes gradient-shift {
+    0%, 100% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
 }
 
-/* Premium Loading States */
-.loading-enterprise {
-    background: linear-gradient(110deg, #f3f4f6 8%, #e5e7eb 18%, #f3f4f6 33%);
-    background-size: 200% 100%;
-    animation: enterprise-loading 1.5s ease-in-out infinite;
-}
-
-@keyframes enterprise-loading {
-    0% { background-position: 200% 0; }
-    100% { background-position: -200% 0; }
-}
-
-/* Parallax Container */
-.parallax-container {
-    perspective: 1000px;
-    overflow-x: hidden;
-}
-
-.parallax-element {
-    transform: translateZ(0);
-    will-change: transform;
-}
-
-/* Glassmorphism Utility Classes */
-.glass-card {
-    background: rgba(255, 255, 255, 0.8);
-    backdrop-filter: blur(10px);
-    -webkit-backdrop-filter: blur(10px);
-    border: 1px solid rgba(255, 255, 255, 0.18);
-    box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
-}
-
-.glass-card-dark {
-    background: rgba(11, 17, 32, 0.8);
-    backdrop-filter: blur(10px);
-    -webkit-backdrop-filter: blur(10px);
-    border: 1px solid rgba(255, 255, 255, 0.18);
-}
-
-/* Enterprise Final Touch - Trust Badge */
-.trust-badge {
-    background: linear-gradient(135deg, #C28E5A 0%, #8B5E3C 100%);
-    color: white;
-    padding: 0.25rem 0.75rem;
-    font-size: 0.75rem;
-    font-weight: 600;
-    border-radius: 9999px;
-    display: inline-flex;
-    align-items: center;
-    gap: 0.25rem;
-    box-shadow: 0 2px 8px rgba(194, 142, 90, 0.3);
-}
-
-.trust-badge::before {
-    content: '✓';
-    font-weight: bold;
-    color: white;
-}
-
-/* Interactive Icon Animations */
-.icon-enterprise {
-    transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
-}
-
-.icon-enterprise:hover {
-    transform: scale(1.2) rotate(15deg);
-    filter: drop-shadow(0 10px 20px rgba(194, 142, 90, 0.4));
-}
-
-/* Premium Notification Styles */
-.toast-enterprise {
-    background: rgba(11, 17, 32, 0.95);
-    backdrop-filter: blur(10px);
-    -webkit-backdrop-filter: blur(10px);
-    border: 1px solid rgba(194, 142, 90, 0.3);
-    animation: toast-slide-in 0.5s ease-out;
-}
-
-@keyframes toast-slide-in {
-    from {
-        transform: translateX(100%);
-        opacity: 0;
-    }
-    to {
-        transform: translateX(0);
-        opacity: 1;
-    }
-}
-
-/* Testimonial Carousel Effect (future enhancement) */
-.testimonial-active {
-    transform: scale(1.05);
-    z-index: 10;
-    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.2);
-}
-
-.testimonial-inactive {
-    transform: scale(0.95) translateX(-50px);
-    opacity: 0.7;
-}
+/* ============================================================================
+ * CLEAN CODE FINISH
+ * ============================================================================ */
