@@ -49,19 +49,46 @@
 
     loadFooter: async function () {
       try {
+        console.log("🔧 Loading footer from components/footer.html...");
         const response = await fetch("components/footer.html", { cache: "no-cache" });
         if (!response.ok) throw new Error(`Failed to load footer: ${response.status}`);
 
         const html = await response.text();
+        console.log("📋 Footer HTML loaded, length:", html.length);
+
         const container = document.getElementById("footer-container");
+        console.log("🏷️ Footer container found:", !!container, container);
 
         if (container) {
           container.innerHTML = html;
+          console.log("✅ Footer HTML inserted into container");
         } else {
           document.body.insertAdjacentHTML("beforeend", html);
+          console.log("✅ Footer HTML appended to body");
         }
+
+        // Check footer elements exist after loading
+        setTimeout(() => {
+          const footer = document.querySelector("footer");
+          console.log("🦶 Footer element found:", !!footer, footer);
+        }, 100);
+
       } catch (err) {
         console.error("❌ Error loading footer:", err);
+        console.error("❌ Error details:", err.message);
+
+        // Fallback: create a basic footer
+        const fallbackFooter = `<footer class="bg-brand-navy text-white text-center py-8 px-4">
+          <div class="max-w-4xl mx-auto">
+            <p>&copy; ${new Date().getFullYear()} Properties 4 Creations</p>
+            <p class="text-sm text-slate-400 mt-2">Footer loading failed. Please refresh the page.</p>
+          </div>
+        </footer>`;
+
+        const container = document.getElementById("footer-container");
+        if (container) {
+          container.innerHTML = fallbackFooter;
+        }
       }
     },
 

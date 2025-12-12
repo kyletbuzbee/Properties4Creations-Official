@@ -310,20 +310,6 @@ img {
     height: auto;
     display: block;
 }
-<nav class="fixed top-0 left-0 w-full z-50 flex items-center justify-between px-6 py-4 
-            bg-gray-900/40 backdrop-blur-md border-b border-white/10">
-  
-  <div class="text-white font-bold text-xl">
-    <img src="/logo.png" alt="Logo" class="h-8" />
-  </div>
-
-  <div class="space-x-6 text-gray-100 font-medium">
-    <a href="#" class="hover:text-white transition">Home</a>
-    <a href="#" class="hover:text-white transition">Available Homes</a>
-    <a href="#" class="hover:text-white transition">About</a>
-  </div>
-
-</nav>
 /* ============================================================================
  * RESPONSIVE IMAGES
  * ============================================================================ */
@@ -346,7 +332,135 @@ img {
     border: 1px solid #e2e8f0;
     position: relative;
     overflow: hidden;
-    background-color: #f8fafc;
+    background-color: #04264a;
+}
+
+/* ============================================================================
+ * LEAFLET MAP STYLING
+ * ============================================================================ */
+
+/* Override Leaflet default styles for better integration */
+.leaflet-container {
+    background: #f8f9fa !important;
+    border-radius: 1rem !important;
+    font-family: 'Inter', sans-serif !important;
+}
+
+.leaflet-popup-content-wrapper {
+    border-radius: 12px !important;
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15) !important;
+    border: none !important;
+}
+
+.leaflet-popup-tip {
+    background: white !important;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1) !important;
+}
+
+.leaflet-popup-content {
+    margin: 0 !important;
+    line-height: 1.4 !important;
+}
+
+.leaflet-control-zoom-in,
+.leaflet-control-zoom-out {
+    background: rgba(11, 17, 32, 0.9) !important;
+    color: white !important;
+    border: none !important;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2) !important;
+}
+
+.leaflet-control-zoom-in:hover,
+.leaflet-control-zoom-out:hover {
+    background: rgba(194, 142, 90, 0.9) !important;
+}
+
+.leaflet-control-attribution {
+    font-size: 11px !important;
+    background: rgba(255, 255, 255, 0.9) !important;
+    -webkit-backdrop-filter: blur(4px) !important;
+    backdrop-filter: blur(4px) !important;
+}
+
+/* Custom marker animations */
+.leaflet-marker-icon {
+    transition: transform 0.2s ease !important;
+}
+
+.leaflet-marker-icon:hover {
+    transform: scale(1.1) !important;
+}
+
+/* Map legend styling */
+.map-legend {
+    margin: 0 !important;
+}
+
+/* ============================================================================
+ * CLEANED UP NAVIGATION STYLING
+ * ============================================================================ */
+
+/* Remove conflicting nav link overrides */
+header nav a {
+    /* Clear any background colors and borders from debug styles */
+}
+
+/* Logo and home link styling - remove any white containers */
+header#main-header nav a[href="index.html"] {
+    background: transparent !important;
+    border: none !important;
+    outline: none !important;
+}
+
+header#main-header nav a[href="index.html"] img {
+    background: transparent !important;
+    border: none !important;
+}
+
+/* Ensure logo has proper sizing */
+header#main-header nav a[href="index.html"] img.h-14 {
+    height: 3.5rem !important;
+    width: auto !important;
+}
+
+/* Ensure desktop navigation visibility with proper specificity */
+header#main-header nav .hidden.md\:flex {
+    display: flex !important;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+/* Clean navigation link styling */
+header#main-header nav a {
+    color: white !important;
+    font-weight: 600;
+    text-decoration: none;
+    padding: 0.5rem 1rem;
+    border-radius: 0.5rem;
+    transition: all 0.3s ease;
+    text-shadow: 0 1px 2px rgba(0, 0, 0, 0.5);
+    position: relative;
+    z-index: 1001;
+}
+
+/* Hover effects */
+header#main-header nav a:hover {
+    color: #C28E5A !important;
+    background-color: rgba(255, 255, 255, 0.1);
+    transform: translateY(-1px);
+}
+
+/* Special styling for Contact Us button */
+header#main-header nav a[href*="contact"] {
+    background-color: #C28E5A !important;
+    color: white !important;
+    margin-left: 0.5rem;
+    padding: 0.5rem 1.5rem;
+    font-weight: 700;
+}
+
+header#main-header nav a[href*="contact"]:hover {
+    background-color: #8B5E3C !important;
 }
 
 /* ============================================================================

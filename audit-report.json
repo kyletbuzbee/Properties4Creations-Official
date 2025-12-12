@@ -50,6 +50,13 @@
     ]
   },
   {
+    "file": "employment.html",
+    "passed": false,
+    "diffs": [
+      "❌ Missing script: components/component-loader.js"
+    ]
+  },
+  {
     "file": "faq.html",
     "passed": false,
     "diffs": [

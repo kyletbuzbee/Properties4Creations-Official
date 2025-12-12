@@ -248,11 +248,22 @@ P4C.Accessibility = {
    */
   ensureAltText: function() {
     const images = document.querySelectorAll('img');
-    
+
     images.forEach((img, index) => {
       const alt = img.getAttribute('alt');
       const src = img.src || img.getAttribute('data-src') || 'unknown';
-      
+
+      // Skip map tiles - they are decorative and screen readers should skip them
+      if (src.includes('tile.openstreetmap.org') ||
+          src.includes('stamen-tiles') ||
+          src.includes('openstreetmap.org') ||
+          img.closest('.leaflet-container') ||
+          img.closest('[aria-label*="map"]') ||
+          img.closest('[role="img"]') ||
+          img.parentElement?.classList.contains('leaflet-pane')) {
+        return; // Skip map tiles entirely
+      }
+
       // Check for missing alt text
       if (!alt || alt.trim() === '') {
         console.warn(
@@ -262,9 +273,9 @@ P4C.Accessibility = {
           `Bad example: "image1.jpg" or "image" or "photo"`
         );
       }
-      
+
       // Check for insufficient alt text
-      else if (alt.toLowerCase() === 'image' || 
+      else if (alt.toLowerCase() === 'image' ||
                alt.toLowerCase() === 'photo' ||
                alt.toLowerCase() === 'picture' ||
                alt.toLowerCase().match(/^image\d+/) ||
