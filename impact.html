@@ -31,9 +31,11 @@
 
     <main id="main">
         <section class="relative h-[80vh] min-h-[500px] flex items-center justify-center overflow-hidden">
-            <video id="hero-video" autoplay muted loop class="hero-video absolute inset-0 w-full h-full object-cover z-0">
-                <source src="public/videos/hero-impact-banner.mp4" type="video/mp4">
-            </video>
+                            <video id="hero-video" autoplay muted loop class="hero-video absolute inset-0 w-full h-full object-cover z-0 opacity-40" poster="public/images/banners/hero-impact-banner.webp" preload="metadata">
+                                <source src="public/videos/hero-our-work-banner.mp4" type="video/mp4">
+                                <!-- Fallback image for browsers that don't support video -->
+                                <img src="public/images/banners/hero-impact-banner.webp" alt="Transformed homes for veterans and families" class="absolute inset-0 w-full h-full object-cover z-0">
+                            </video>
             <img src="public/images/banners/hero-impact-banner.webP" alt="Impact Banner" class="absolute inset-0 w-full h-full object-cover -z-10">
 
             <div class="absolute inset-0 bg-gradient-to-r from-brand-navy/90 via-brand-navy/60 to-black/30 z-10"></div>
@@ -90,7 +92,7 @@
     </main>
 
     <div id="footer-container"></div>
-    <script src="js/component-loader.js"></script>
+    <script src="js/component-loader.js" defer></script>
     <script src="js/accessibility-enhanced.js"></script>
     <script>
         // Video Fade-In Script

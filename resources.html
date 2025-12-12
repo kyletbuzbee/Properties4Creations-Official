@@ -26,6 +26,27 @@
     <a href="#main" class="skip-to-content">Skip to main content</a>
     <div id="header-container"></div>
 
+    <!-- Page Banner -->
+    <div class="relative bg-gradient-to-r from-brand-navy to-brand-wood text-white py-12 overflow-hidden">
+        <div class="absolute inset-0 opacity-10">
+            <div class="absolute top-0 right-0 w-64 h-64 bg-white rounded-full blur-3xl"></div>
+            <div class="absolute bottom-0 left-0 w-48 h-48 bg-white rounded-full blur-2xl"></div>
+        </div>
+
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-[999]">
+            <nav class="flex items-center text-sm mb-4" aria-label="Breadcrumb">
+                <a href="index.html" class="text-white/80 hover:text-white transition-colors">Home</a>
+                <svg class="w-4 h-4 mx-2 text-white/60" fill="currentColor" viewBox="0 0 20 20">
+                    <path fill-rule="evenodd" d="M7.293 14.707a1 1 0 010-1.414L10.586 10 7.293 6.707a1 1 0 011.414-1.414l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414 0z" clip-rule="evenodd"/>
+                </svg>
+                <span class="text-white font-medium">Resources</span>
+            </nav>
+
+            <h1 class="text-4xl md:text-5xl font-heading font-bold text-white">Resources & Benefits</h1>
+            <p class="text-lg text-white/90 mt-4 max-w-2xl">Navigate VA programs, HUD assistance, and housing benefits to secure affordable housing.</p>
+        </div>
+    </div>
+
     <main id="main">
         <section class="py-20 text-center px-4">
             <span class="text-brand-wood font-bold tracking-widest uppercase text-sm">VA Benefits</span>
@@ -134,7 +155,7 @@
 
     </main>
     <div id="footer-container"></div>
-    <script src="js/component-loader.js"></script>
+    <script src="js/component-loader.js" defer></script>
     <script src="js/accessibility-enhanced.js"></script>
     <script>lucide.createIcons();</script>
 </body>

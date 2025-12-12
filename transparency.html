@@ -113,23 +113,30 @@
     <a href="#main" class="skip-to-content">Skip to main content</a>
     <!-- Header -->
     <div id="header-container"></div>
-<div id="page-banner-container"></div>
 
+    <!-- Page Banner -->
+    <div class="relative bg-gradient-to-r from-brand-navy to-brand-wood text-white py-12 overflow-hidden">
+        <div class="absolute inset-0 opacity-10">
+            <div class="absolute top-0 right-0 w-64 h-64 bg-white rounded-full blur-3xl"></div>
+            <div class="absolute bottom-0 left-0 w-48 h-48 bg-white rounded-full blur-2xl"></div>
+        </div>
 
-        <!-- Main Content -->
-    <main id="main" class="pt-16">
-<script type="application/json" id="page-banner-config">
-{
-  "variant": "hero",
-  "title": "Our Renovation Standards",
-  "subtitle": "Complete transparency in every renovation ? from copper plumbing to modern electrical systems. We certify every upgrade and stand behind our work.",
-  "background": "public/images/banners/hero-transparency-banner.webP",
-  "eyebrow": "Certified Renovations",
-  "showVoucherBadge": false,
-  "ctaText": "View Our Properties",
-  "ctaHref": "projects.html"
-}
-</script>
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-[999]">
+            <nav class="flex items-center text-sm mb-4" aria-label="Breadcrumb">
+                <a href="index.html" class="text-white/80 hover:text-white transition-colors">Home</a>
+                <svg class="w-4 h-4 mx-2 text-white/60" fill="currentColor" viewBox="0 0 20 20">
+                    <path fill-rule="evenodd" d="M7.293 14.707a1 1 0 010-1.414L10.586 10 7.293 6.707a1 1 0 011.414-1.414l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414 0z" clip-rule="evenodd"/>
+                </svg>
+                <span class="text-white font-medium">Renovation Standards</span>
+            </nav>
+
+            <h1 class="text-4xl md:text-5xl font-heading font-bold text-white">Our Renovation Standards</h1>
+            <p class="text-lg text-white/90 mt-4 max-w-2xl">Complete transparency in every renovation—from copper plumbing to modern electrical systems. We certify every upgrade and stand behind our work.</p>
+        </div>
+    </div>
+
+    <!-- Main Content -->
+    <main id="main">
 
         <!-- Renovation Standards Checklist -->
         <section class="py-16 bg-white">
@@ -403,7 +410,8 @@
 
     <!-- P4C Interactive Libraries -->
     <!-- Interactive JavaScript Libraries - Bundled for Performance -->
-    <script src="js/component-loader.js"></script>
+    <script src="js/component-loader.js" defer></script>
+    <script src="js/accessibility-enhanced.js"></script>
     <script src="accessibility-enhanced.js"></script>
 
     <!-- Transparency Page Interactions -->
