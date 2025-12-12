@@ -298,6 +298,61 @@ header#main-header {
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
 }
 
+header nav > div:first-child {
+    display: flex !important;
+    align-items: center !important;
+    justify-content: space-between !important;
+    padding: 0.75rem 1.5rem !important;
+}
+
+header nav > div:first-child > div:nth-child(2) {
+    display: none !important;
+}
+
+header nav > div:first-child > div:nth-child(3) {
+    display: flex !important;
+    align-items: center !important;
+    gap: 0.5rem !important;
+}
+
+header nav > div:first-child > div:nth-child(3) a {
+    padding: 0.5rem 1rem !important;
+    text-decoration: none !important;
+    border-radius: 0.25rem !important;
+}
+
+@media (min-width: 768px) {
+    header nav > div:first-child > div:nth-child(2) {
+        display: flex !important;
+        align-items: center !important;
+        gap: 1rem !important;
+    }
+
+    header nav > div:first-child > div:nth-child(3) {
+        display: none !important;
+    }
+}
+
+/* Logo styling */
+header .logo-link {
+    display: flex !important;
+    align-items: center !important;
+    gap: 0.35rem !important;
+    text-decoration: none !important;
+}
+
+header img {
+    height: 32px !important;
+    width: auto !important;
+}
+
+header .logo-fallback {
+    color: white !important;
+    font-weight: 600 !important;
+    text-shadow: 0 1px 2px rgba(0, 0, 0, 0.3) !important;
+    font-size: 1.125rem !important;
+}
+
 /* Force readable nav links */
 header nav a {
     color: white !important;
@@ -562,8 +617,8 @@ select:focus {
 /* Legacy card classes (simplified from enterprise) */
 .card-enterprise {
     background: rgba(255, 255, 255, 0.9);
-    backdrop-filter: blur(10px);
     -webkit-backdrop-filter: blur(10px);
+    backdrop-filter: blur(10px);
     border-radius: 1rem;
     border: 1px solid rgba(148, 163, 184, 0.4);
     box-shadow: 0 8px 24px rgba(15, 23, 42, 0.15);
@@ -584,9 +639,9 @@ select:focus {
 .gradient-text {
     background: linear-gradient(135deg, #0B1120 0%, #C28E5A 50%, #8B5E3C 100%);
     background-size: 200% 200%;
-    
     -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
+    -webkit-text-fill-color: transparent;    
+    background-clip: text;
     animation: gradient-shift 3s ease infinite;
 }
 
