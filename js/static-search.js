@@ -14,7 +14,7 @@ if (!P4C.Search) {
 /**
  * Initialize search functionality
  */
-P4C.Search.init = function() {
+P4C.Search.init = function () {
   this.setupSearchInput();
   this.loadProperties();
 };
@@ -22,7 +22,7 @@ P4C.Search.init = function() {
 /**
  * Setup search input handling
  */
-P4C.Search.setupSearchInput = function() {
+P4C.Search.setupSearchInput = function () {
   const searchInput = document.getElementById('search-input');
 
   if (!searchInput) return;
@@ -48,7 +48,7 @@ P4C.Search.setupSearchInput = function() {
 /**
  * Load properties for search indexing
  */
-P4C.Search.loadProperties = async function() {
+P4C.Search.loadProperties = async function () {
   try {
     const response = await fetch('/public/properties-data.json');
     if (!response.ok) {
@@ -64,10 +64,10 @@ P4C.Search.loadProperties = async function() {
 /**
  * Create searchable index from properties
  */
-P4C.Search.createSearchIndex = function(properties) {
+P4C.Search.createSearchIndex = function (properties) {
   if (!Array.isArray(properties)) return [];
 
-  return properties.map(prop => ({
+  return properties.map((prop) => ({
     ...prop,
     searchText: [
       prop.title || '',
@@ -77,15 +77,17 @@ P4C.Search.createSearchIndex = function(properties) {
       (prop.bedrooms || '') + ' bedroom',
       (prop.bathrooms || '') + ' bathroom',
       '$' + (prop.price || ''),
-      prop.sqft ? prop.sqft + ' sqft' : ''
-    ].join(' ').toLowerCase()
+      prop.sqft ? prop.sqft + ' sqft' : '',
+    ]
+      .join(' ')
+      .toLowerCase(),
   }));
 };
 
 /**
  * Perform search and display results
  */
-P4C.Search.performSearch = function(query) {
+P4C.Search.performSearch = function (query) {
   const resultsContainer = document.getElementById('search-results');
   const searchContainer = document.querySelector('.search-container');
 
@@ -101,7 +103,7 @@ P4C.Search.performSearch = function(query) {
 
   const queryLower = query.toLowerCase();
   const results = this.indexedProperties
-    .filter(prop => prop.searchText.includes(queryLower))
+    .filter((prop) => prop.searchText.includes(queryLower))
     .slice(0, 5); // Limit to 5 results
 
   if (!resultsContainer) {
@@ -116,12 +118,13 @@ P4C.Search.performSearch = function(query) {
 /**
  * Create search results container
  */
-P4C.Search.createResultsContainer = function(searchContainer) {
+P4C.Search.createResultsContainer = function (searchContainer) {
   if (!searchContainer) return;
 
   const resultsDiv = document.createElement('div');
   resultsDiv.id = 'search-results';
-  resultsDiv.className = 'search-results absolute top-full left-0 right-0 bg-white border border-slate-200 rounded-lg shadow-xl max-h-80 overflow-y-auto z-50 mt-1';
+  resultsDiv.className =
+    'search-results absolute top-full left-0 right-0 bg-white border border-slate-200 rounded-lg shadow-xl max-h-80 overflow-y-auto z-50 mt-1';
 
   searchContainer.appendChild(resultsDiv);
 };
@@ -129,21 +132,22 @@ P4C.Search.createResultsContainer = function(searchContainer) {
 /**
  * Display search results
  */
-P4C.Search.displayResults = function(results, container, query) {
+P4C.Search.displayResults = function (results, container, query) {
   if (results.length === 0) {
-    container.innerHTML = '<div class="p-4 text-slate-500 text-center">No properties found</div>';
+    container.innerHTML =
+      '<div class="p-4 text-slate-500 text-center">No properties found</div>';
     return;
   }
 
   container.innerHTML = `
     <div class="p-2">
       <div class="text-xs text-slate-500 mb-2 px-2">Found ${results.length} propert${results.length === 1 ? 'y' : 'ies'}</div>
-      ${results.map(prop => this.renderResult(prop)).join('')}
+      ${results.map((prop) => this.renderResult(prop)).join('')}
     </div>
   `;
 
   // Add click handlers to results
-  container.querySelectorAll('.search-result-item').forEach(item => {
+  container.querySelectorAll('.search-result-item').forEach((item) => {
     item.addEventListener('click', () => {
       const url = item.dataset.url;
       if (url) {
@@ -156,7 +160,7 @@ P4C.Search.displayResults = function(results, container, query) {
 /**
  * Render individual search result
  */
-P4C.Search.renderResult = function(prop) {
+P4C.Search.renderResult = function (prop) {
   const url = prop.url || `/projects/${prop.id || 'property'}.html`;
 
   return `
@@ -175,6 +179,6 @@ P4C.Search.renderResult = function(prop) {
 };
 
 // Initialize search when DOM is ready
-document.addEventListener('DOMContentLoaded', function() {
+document.addEventListener('DOMContentLoaded', function () {
   P4C.Search.init();
 });

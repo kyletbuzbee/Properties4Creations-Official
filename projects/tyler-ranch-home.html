@@ -41,8 +41,8 @@
         "unitCode": "AC"
       },
       "image": [
-        "https://properties4creations.com/public/images/projects_finished_wood_deck.jpg",
-        "https://properties4creations.com/public/images/projects_before_wood_deck.jpg"
+        "https://properties4creations.com/public/images/projects_finished_wood_deck.webp",
+        "https://properties4creations.com/public/images/projects_before_wood_deck.webp"
       ],
       "amenityFeature": [
         {
@@ -102,10 +102,9 @@
     </script>
 
     <!-- Unified master stylesheet (bundles design tokens, components, main, animations) -->
-    <link rel="stylesheet" href="../css/styles.css">
+    <link rel="stylesheet" href="css/styles-prod.css">
 
     <link href="https://fonts.googleapis.com/css2?family=Merriweather:wght@400;700&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
-    <script src="https://cdn.tailwindcss.com"></script>
     <script>
         tailwind.config = {
             theme: {
@@ -272,7 +271,75 @@
                             Walking distance to excellent Carmel Academy and Tyler Junior College.
                         </p>
 
-                        <div class="bg-white border border-slate-200 rounded-xl p-8 shadow-sm my-12">
+                        <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-6 text-sm text-slate-700">
+                            <div class="glass-card p-3">
+                                <h3 class="text-sm font-semibold text-slate-900 mb-1">Bedrooms / Bathrooms</h3>
+                                <p class="font-medium">3 Bed / 2 Bath</p>
+                            </div>
+                            <div class="glass-card p-3">
+                                <h3 class="text-sm font-semibold text-slate-900 mb-1">Square Feet</h3>
+                                <p class="font-medium">1,850 sq ft</p>
+                            </div>
+                            <div class="glass-card p-3">
+                                <h3 class="text-sm font-semibold text-slate-900 mb-1">Lot Size</h3>
+                                <p class="font-medium">1.5 acres</p>
+                            </div>
+                            <div class="glass-card p-3">
+                                <h3 class="text-sm font-semibold text-slate-900 mb-1">Schools</h3>
+                                <p class="font-medium">Tyler ISD</p>
+                            </div>
+                        </div>
+
+                        <div class="flex flex-wrap items-center gap-3 mb-8">
+                            <a href="#contact-section" class="btn btn-primary focus-ring-enterprise">
+                                Schedule a tour
+                            </a>
+                            <a href="#renovation-gallery" class="btn btn-secondary focus-ring-enterprise">
+                                View renovations
+                            </a>
+                        </div>
+                    </div>
+
+                    <!-- Property Hero Image -->
+                    <aside class="glass-card card-enterprise p-4 stagger-item" aria-label="Tyler Ranch Home quick facts">
+                        <img
+                            src="public/images/properties/properties-tyler-ranch-home.webp"
+                            alt="Front exterior of the charming 3BR/2BA ranch home in Tyler with mature trees and landscaping"
+                            class="rounded-xl w-full object-cover mb-4"
+                        />
+
+                        <dl class="space-y-2 text-sm text-slate-700">
+                            <div class="flex justify-between gap-4">
+                                <dt class="font-medium text-slate-900">Status</dt>
+                                <dd>Available</dd>
+                            </div>
+                            <div class="flex justify-between gap-4">
+                                <dt class="font-medium text-slate-900">Monthly Rent</dt>
+                                <dd class="font-semibold text-brand-walnut">$1,800</dd>
+                            </div>
+                            <div class="flex justify-between gap-4">
+                                <dt class="font-medium text-slate-900">Deposit</dt>
+                                <dd>$1,800</dd>
+                            </div>
+                        </dl>
+
+                        <div class="mt-4 border-t border-slate-200 pt-3 text-sm text-slate-700">
+                            <p class="font-semibold mb-1">Landlord Guarantee</p>
+                            <p>
+                                We manage what we renovate. 24/7 emergency support keeps your family ranch home in perfect condition year-round.
+                            </p>
+                        </div>
+
+                        <div class="mt-4 border-t border-slate-200 pt-3 text-sm">
+                            <p class="font-semibold mb-1">Call for family home details</p>
+                            <a href="tel:+19032831770" class="text-brand-walnut font-bold">
+                                (903) 283-1770
+                            </a>
+                        </div>
+                    </aside>
+                </div>
+
+                <div class="bg-white border border-slate-200 rounded-xl p-8 shadow-sm my-12">
     <div class="flex items-center justify-between mb-6">
         <h3 class="text-2xl font-bold text-brand-navy">Renovation Specifications</h3>
         <span class="bg-green-100 text-green-800 text-xs font-bold px-3 py-1 rounded-full">CERTIFIED INSPECTION</span>

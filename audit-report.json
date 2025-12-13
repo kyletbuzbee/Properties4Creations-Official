@@ -1,13 +1,16 @@
 [
   {
     "file": "404.html",
-    "passed": true,
-    "diffs": []
+    "passed": false,
+    "diffs": [
+      "❌ Missing CSS: css/styles.css"
+    ]
   },
   {
     "file": "about.html",
     "passed": false,
     "diffs": [
+      "❌ Missing CSS: css/styles.css",
       "❌ Missing script: components/component-loader.js"
     ]
   },
@@ -46,13 +49,16 @@
     "file": "contact.html",
     "passed": false,
     "diffs": [
-      "❌ Missing script: components/component-loader.js"
+      "❌ Missing CSS: css/styles.css",
+      "❌ Missing script: components/component-loader.js",
+      "⚠️ Missing skip-to-content link for accessibility"
     ]
   },
   {
     "file": "employment.html",
     "passed": false,
     "diffs": [
+      "❌ Missing CSS: css/styles.css",
       "❌ Missing script: components/component-loader.js"
     ]
   },
@@ -60,18 +66,22 @@
     "file": "faq.html",
     "passed": false,
     "diffs": [
+      "❌ Missing CSS: css/styles.css",
       "❌ Missing script: components/component-loader.js"
     ]
   },
   {
     "file": "get-started.html",
-    "passed": true,
-    "diffs": []
+    "passed": false,
+    "diffs": [
+      "❌ Missing CSS: css/styles.css"
+    ]
   },
   {
     "file": "impact.html",
     "passed": false,
     "diffs": [
+      "❌ Missing CSS: css/styles.css",
       "❌ Missing script: components/component-loader.js"
     ]
   },
@@ -79,7 +89,63 @@
     "file": "index.html",
     "passed": false,
     "diffs": [
+      "❌ Missing CSS: css/styles.css",
       "❌ Missing script: components/component-loader.js",
+      "⚠️ Missing skip-to-content link for accessibility"
+    ]
+  },
+  {
+    "file": "standalone-flow-template.html",
+    "passed": false,
+    "diffs": [
+      "❌ Missing header container (<div id=\"header-container\">)",
+      "❌ Missing footer container (<div id=\"footer-container\">)",
+      "❌ Missing CSS: css/styles.css",
+      "❌ Missing script: components/component-loader.js",
+      "❌ Missing script: accessibility-enhanced.js",
+      "❌ Missing meta: <meta name=\"description\"",
+      "❌ Missing meta: <link rel=\"canonical\"",
+      "⚠️ Missing skip-to-content link for accessibility"
+    ]
+  },
+  {
+    "file": "standalone-template.html",
+    "passed": false,
+    "diffs": [
+      "❌ Missing header container (<div id=\"header-container\">)",
+      "❌ Missing footer container (<div id=\"footer-container\">)",
+      "❌ Missing CSS: css/styles.css",
+      "❌ Missing script: components/component-loader.js",
+      "❌ Missing script: accessibility-enhanced.js",
+      "❌ Missing meta: <meta name=\"description\"",
+      "❌ Missing meta: <link rel=\"canonical\"",
+      "⚠️ Missing skip-to-content link for accessibility"
+    ]
+  },
+  {
+    "file": "templates.html",
+    "passed": false,
+    "diffs": [
+      "❌ Missing header container (<div id=\"header-container\">)",
+      "❌ Missing CSS: css/styles.css",
+      "❌ Missing script: components/component-loader.js",
+      "❌ Missing script: accessibility-enhanced.js",
+      "❌ Missing meta: <meta name=\"description\"",
+      "❌ Missing meta: <link rel=\"canonical\"",
+      "⚠️ Missing skip-to-content link for accessibility"
+    ]
+  },
+  {
+    "file": "SpecRunner.html",
+    "passed": false,
+    "diffs": [
+      "❌ Missing header container (<div id=\"header-container\">)",
+      "❌ Missing footer container (<div id=\"footer-container\">)",
+      "❌ Missing CSS: css/styles.css",
+      "❌ Missing script: components/component-loader.js",
+      "❌ Missing script: accessibility-enhanced.js",
+      "❌ Missing meta: <meta name=\"description\"",
+      "❌ Missing meta: <link rel=\"canonical\"",
       "⚠️ Missing skip-to-content link for accessibility"
     ]
   },
@@ -154,6 +220,48 @@
     ]
   },
   {
+    "file": "angular.html",
+    "passed": false,
+    "diffs": [
+      "❌ Missing header container (<div id=\"header-container\">)",
+      "❌ Missing footer container (<div id=\"footer-container\">)",
+      "❌ Missing CSS: css/styles.css",
+      "❌ Missing script: components/component-loader.js",
+      "❌ Missing script: accessibility-enhanced.js",
+      "❌ Missing meta: <meta name=\"description\"",
+      "❌ Missing meta: <link rel=\"canonical\"",
+      "⚠️ Missing skip-to-content link for accessibility"
+    ]
+  },
+  {
+    "file": "tslib.es6.html",
+    "passed": false,
+    "diffs": [
+      "❌ Missing header container (<div id=\"header-container\">)",
+      "❌ Missing footer container (<div id=\"footer-container\">)",
+      "❌ Missing CSS: css/styles.css",
+      "❌ Missing script: components/component-loader.js",
+      "❌ Missing script: accessibility-enhanced.js",
+      "❌ Missing meta: <meta name=\"description\"",
+      "❌ Missing meta: <link rel=\"canonical\"",
+      "⚠️ Missing skip-to-content link for accessibility"
+    ]
+  },
+  {
+    "file": "tslib.html",
+    "passed": false,
+    "diffs": [
+      "❌ Missing header container (<div id=\"header-container\">)",
+      "❌ Missing footer container (<div id=\"footer-container\">)",
+      "❌ Missing CSS: css/styles.css",
+      "❌ Missing script: components/component-loader.js",
+      "❌ Missing script: accessibility-enhanced.js",
+      "❌ Missing meta: <meta name=\"description\"",
+      "❌ Missing meta: <link rel=\"canonical\"",
+      "⚠️ Missing skip-to-content link for accessibility"
+    ]
+  },
+  {
     "file": "index.html",
     "passed": false,
     "diffs": [
@@ -171,43 +279,64 @@
     "file": "privacy.html",
     "passed": false,
     "diffs": [
+      "❌ Missing CSS: css/styles.css",
       "❌ Missing script: components/component-loader.js"
     ]
   },
   {
     "file": "jefferson-riverfront.html",
-    "passed": true,
-    "diffs": []
+    "passed": false,
+    "diffs": [
+      "❌ Missing CSS: css/styles.css",
+      "❌ Missing script: components/component-loader.js",
+      "❌ Missing meta: <link rel=\"canonical\""
+    ]
   },
   {
     "file": "kemp-townhome.html",
-    "passed": true,
-    "diffs": []
+    "passed": false,
+    "diffs": [
+      "❌ Missing CSS: css/styles.css",
+      "❌ Missing meta: <link rel=\"canonical\""
+    ]
   },
   {
     "file": "longview-victorian.html",
-    "passed": true,
-    "diffs": []
+    "passed": false,
+    "diffs": [
+      "❌ Missing CSS: css/styles.css",
+      "❌ Missing script: components/component-loader.js",
+      "❌ Missing meta: <link rel=\"canonical\""
+    ]
   },
   {
     "file": "marshall-historic-farm.html",
-    "passed": true,
-    "diffs": []
+    "passed": false,
+    "diffs": [
+      "❌ Missing CSS: css/styles.css",
+      "❌ Missing meta: <link rel=\"canonical\""
+    ]
   },
   {
     "file": "mineola-modern-studio.html",
-    "passed": true,
-    "diffs": []
+    "passed": false,
+    "diffs": [
+      "❌ Missing CSS: css/styles.css",
+      "❌ Missing meta: <link rel=\"canonical\""
+    ]
   },
   {
     "file": "tyler-ranch-home.html",
-    "passed": true,
-    "diffs": []
+    "passed": false,
+    "diffs": [
+      "❌ Missing CSS: css/styles.css"
+    ]
   },
   {
     "file": "projects.html",
     "passed": false,
     "diffs": [
+      "❌ Missing CSS: css/styles.css",
       "❌ Missing script: components/component-loader.js"
     ]
   },
@@ -215,6 +344,7 @@
     "file": "resources.html",
     "passed": false,
     "diffs": [
+      "❌ Missing CSS: css/styles.css",
       "❌ Missing script: components/component-loader.js"
     ]
   },
@@ -222,6 +352,7 @@
     "file": "terms.html",
     "passed": false,
     "diffs": [
+      "❌ Missing CSS: css/styles.css",
       "❌ Missing script: components/component-loader.js"
     ]
   },
@@ -229,6 +360,7 @@
     "file": "thank-you.html",
     "passed": false,
     "diffs": [
+      "❌ Missing CSS: css/styles.css",
       "❌ Missing script: components/component-loader.js"
     ]
   },
@@ -236,6 +368,7 @@
     "file": "transparency.html",
     "passed": false,
     "diffs": [
+      "❌ Missing CSS: css/styles.css",
       "❌ Missing script: components/component-loader.js"
     ]
   }

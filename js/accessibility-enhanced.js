@@ -18,7 +18,7 @@ P4C.Accessibility = {
    * Sets up focus states, skip links, and keyboard navigation
    * @function init
    */
-  init: function() {
+  init: function () {
     console.log('♿ Initializing Accessibility Features...');
     this.enhanceFocusStates();
     this.createSkipLink();
@@ -32,7 +32,7 @@ P4C.Accessibility = {
    * Adds focus-ring class and CSS styling to interactive elements
    * @function enhanceFocusStates
    */
-  enhanceFocusStates: function() {
+  enhanceFocusStates: function () {
     // Create style element for focus-ring if it doesn't exist
     if (!document.getElementById('p4c-focus-ring-styles')) {
       const styleElement = document.createElement('style');
@@ -71,8 +71,10 @@ P4C.Accessibility = {
     }
 
     // Add focus-ring class to all buttons and links
-    const buttons = document.querySelectorAll('button, a[href], input[type="button"], input[type="submit"]');
-    buttons.forEach(element => {
+    const buttons = document.querySelectorAll(
+      'button, a[href], input[type="button"], input[type="submit"]',
+    );
+    buttons.forEach((element) => {
       element.classList.add('focus-ring');
     });
   },
@@ -82,7 +84,7 @@ P4C.Accessibility = {
    * Adds screenreader-visible skip link at top of page
    * @function createSkipLink
    */
-  createSkipLink: function() {
+  createSkipLink: function () {
     // Check if skip link already exists
     if (document.getElementById('skip-to-main-content')) {
       return;
@@ -158,7 +160,7 @@ P4C.Accessibility = {
    * Handles Ctrl+K for search, Escape for modals, and other keyboard interactions
    * @function setupKeyboardNavigation
    */
-  setupKeyboardNavigation: function() {
+  setupKeyboardNavigation: function () {
     document.addEventListener('keydown', (e) => {
       // Ctrl/Cmd + K for search
       if ((e.ctrlKey || e.metaKey) && e.key === 'k') {
@@ -203,9 +205,15 @@ P4C.Accessibility = {
         }
 
         // Close modals with proper ARIA
-        const modals = document.querySelectorAll('[role="dialog"][aria-modal="true"], #accessibility-widget');
-        modals.forEach(modal => {
-          if (modal.classList.contains('active') || modal.classList.contains('open') || !modal.classList.contains('hidden')) {
+        const modals = document.querySelectorAll(
+          '[role="dialog"][aria-modal="true"], #accessibility-widget',
+        );
+        modals.forEach((modal) => {
+          if (
+            modal.classList.contains('active') ||
+            modal.classList.contains('open') ||
+            !modal.classList.contains('hidden')
+          ) {
             modal.classList.remove('active', 'open');
             modal.classList.add('hidden');
             modal.setAttribute('aria-hidden', 'true');
@@ -217,20 +225,28 @@ P4C.Accessibility = {
       // Arrow key navigation in lists/grids (if they have role="listbox" or similar)
       if (['ArrowUp', 'ArrowDown', 'ArrowLeft', 'ArrowRight'].includes(e.key)) {
         const focusedElement = document.activeElement;
-        const listbox = focusedElement.closest('[role="listbox"], [role="grid"], [role="menu"]');
+        const listbox = focusedElement.closest(
+          '[role="listbox"], [role="grid"], [role="menu"]',
+        );
 
         if (listbox) {
-          const items = Array.from(listbox.querySelectorAll('[role="option"], [role="gridcell"], [role="menuitem"]'));
+          const items = Array.from(
+            listbox.querySelectorAll(
+              '[role="option"], [role="gridcell"], [role="menuitem"]',
+            ),
+          );
           const currentIndex = items.indexOf(focusedElement);
 
           if (currentIndex !== -1) {
             let nextIndex = currentIndex;
 
             if (['ArrowUp', 'ArrowLeft'].includes(e.key)) {
-              nextIndex = currentIndex === 0 ? items.length - 1 : currentIndex - 1;
+              nextIndex =
+                currentIndex === 0 ? items.length - 1 : currentIndex - 1;
               e.preventDefault();
             } else if (['ArrowDown', 'ArrowRight'].includes(e.key)) {
-              nextIndex = currentIndex === items.length - 1 ? 0 : currentIndex + 1;
+              nextIndex =
+                currentIndex === items.length - 1 ? 0 : currentIndex + 1;
               e.preventDefault();
             }
 
@@ -246,7 +262,7 @@ P4C.Accessibility = {
    * Scans all img tags and warns if alt text is missing or insufficient
    * @function ensureAltText
    */
-  ensureAltText: function() {
+  ensureAltText: function () {
     const images = document.querySelectorAll('img');
 
     images.forEach((img, index) => {
@@ -254,13 +270,15 @@ P4C.Accessibility = {
       const src = img.src || img.getAttribute('data-src') || 'unknown';
 
       // Skip map tiles - they are decorative and screen readers should skip them
-      if (src.includes('tile.openstreetmap.org') ||
-          src.includes('stamen-tiles') ||
-          src.includes('openstreetmap.org') ||
-          img.closest('.leaflet-container') ||
-          img.closest('[aria-label*="map"]') ||
-          img.closest('[role="img"]') ||
-          img.parentElement?.classList.contains('leaflet-pane')) {
+      if (
+        src.includes('tile.openstreetmap.org') ||
+        src.includes('stamen-tiles') ||
+        src.includes('openstreetmap.org') ||
+        img.closest('.leaflet-container') ||
+        img.closest('[aria-label*="map"]') ||
+        img.closest('[role="img"]') ||
+        img.parentElement?.classList.contains('leaflet-pane')
+      ) {
         return; // Skip map tiles entirely
       }
 
@@ -268,38 +286,42 @@ P4C.Accessibility = {
       if (!alt || alt.trim() === '') {
         console.warn(
           `⚠️ [Accessibility] Image #${index + 1} is missing alt text: ${src}\n` +
-          `Recommendation: Provide a descriptive alt text that describes the image content.\n` +
-          `Good example: "Veteran walking into new home"\n` +
-          `Bad example: "image1.jpg" or "image" or "photo"`
+            'Recommendation: Provide a descriptive alt text that describes the image content.\n' +
+            'Good example: "Veteran walking into new home"\n' +
+            'Bad example: "image1.jpg" or "image" or "photo"',
         );
       }
 
       // Check for insufficient alt text
-      else if (alt.toLowerCase() === 'image' ||
-               alt.toLowerCase() === 'photo' ||
-               alt.toLowerCase() === 'picture' ||
-               alt.toLowerCase().match(/^image\d+/) ||
-               alt.toLowerCase().match(/^photo\d+/) ||
-               /\.(jpg|jpeg|png|gif|webp)$/i.test(alt)) {
+      else if (
+        alt.toLowerCase() === 'image' ||
+        alt.toLowerCase() === 'photo' ||
+        alt.toLowerCase() === 'picture' ||
+        alt.toLowerCase().match(/^image\d+/) ||
+        alt.toLowerCase().match(/^photo\d+/) ||
+        /\.(jpg|jpeg|png|gif|webp)$/i.test(alt)
+      ) {
         console.warn(
           `⚠️ [Accessibility] Image #${index + 1} has generic alt text: "${alt}" (${src})\n` +
-          `Recommendation: Provide a descriptive alt text that explains the image content and context.\n` +
-          `Current: "${alt}"\n` +
-          `Good example: "Veteran walking into new home"\n` +
-          `Better practice: Use specific, descriptive text relevant to the page context`
+            'Recommendation: Provide a descriptive alt text that explains the image content and context.\n' +
+            `Current: "${alt}"\n` +
+            'Good example: "Veteran walking into new home"\n' +
+            'Better practice: Use specific, descriptive text relevant to the page context',
         );
       }
     });
 
     if (images.length > 0) {
-      console.log(`✅ [Accessibility] Scanned ${images.length} image(s) for alt text`);
+      console.log(
+        `✅ [Accessibility] Scanned ${images.length} image(s) for alt text`,
+      );
     }
-  }
+  },
 };
 
 // Initialize when DOM is ready
 if (document.readyState === 'loading') {
-  document.addEventListener('DOMContentLoaded', function() {
+  document.addEventListener('DOMContentLoaded', function () {
     P4C.Accessibility.init();
   });
 } else {

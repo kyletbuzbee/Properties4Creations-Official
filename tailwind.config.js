@@ -1,4 +1,11 @@
-tailwind.config = {
+/** @type {import('tailwindcss').Config} */
+export default {
+    content: [
+        "./*.html",
+        "./projects/*.html",
+        "./components/*.html",
+        "./js/**/*.js"
+    ],
     theme: {
         extend: {
             colors: {
@@ -15,5 +22,6 @@ tailwind.config = {
                 body: ['Inter', 'sans-serif']
             }
         }
-    }
+    },
+    plugins: [],
 }

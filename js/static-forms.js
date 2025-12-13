@@ -3,22 +3,21 @@
  * Handles form submission, validation, and basic interactivity
  */
 
-(function() {
+(function () {
   'use strict';
 
   // Form validation and submission handler
   window.P4CForms = {
-
     /**
      * Initialize all forms on the page
      */
-    init: function() {
+    init: function () {
       console.log('🚀 Initializing P4C Forms...');
 
       // Get all forms on the page
       const forms = document.querySelectorAll('form');
 
-      forms.forEach(form => {
+      forms.forEach((form) => {
         this.setupForm(form);
       });
 
@@ -29,11 +28,11 @@
     /**
      * Set up individual form
      */
-    setupForm: function(form) {
+    setupForm: function (form) {
       // Add input validation
       const inputs = form.querySelectorAll('input, textarea, select');
 
-      inputs.forEach(input => {
+      inputs.forEach((input) => {
         // Real-time validation
         input.addEventListener('blur', () => this.validateField(input));
         input.addEventListener('input', () => this.clearFieldError(input));
@@ -51,7 +50,7 @@
     /**
      * Handle form submission
      */
-    handleSubmit: function(e) {
+    handleSubmit: function (e) {
       const form = e.target;
 
       // Only handle P4C forms
@@ -86,11 +85,13 @@
     /**
      * Validate entire form
      */
-    validateForm: function(form) {
-      const inputs = form.querySelectorAll('input[required], textarea[required], select[required]');
+    validateForm: function (form) {
+      const inputs = form.querySelectorAll(
+        'input[required], textarea[required], select[required]',
+      );
       let isValid = true;
 
-      inputs.forEach(input => {
+      inputs.forEach((input) => {
         if (!this.validateField(input)) {
           isValid = false;
         }
@@ -102,7 +103,7 @@
     /**
      * Validate individual field
      */
-    validateField: function(field) {
+    validateField: function (field) {
       const value = field.value.trim();
       const type = field.type;
       let isValid = true;
@@ -128,9 +129,11 @@
 
       // Phone validation (updated for better US number support)
       else if (type === 'tel' && value) {
-        const phoneRegex = /^[\+]?[1-9][\d]{0,15}$|^(\+?1[-.\s]?)?\(?[2-9]\d{2}\)?[-.\s]?\d{3}[-.\s]?\d{4}$/;
+        const phoneRegex =
+          /^[\+]?[1-9][\d]{0,15}$|^(\+?1[-.\s]?)?\(?[2-9]\d{2}\)?[-.\s]?\d{3}[-.\s]?\d{4}$/;
         if (!phoneRegex.test(value.replace(/[\s\-\(\)]/g, ''))) {
-          errorMessage = 'Please enter a valid US phone number (e.g., 903-555-0123)';
+          errorMessage =
+            'Please enter a valid US phone number (e.g., 903-555-0123)';
           isValid = false;
         }
       }
@@ -146,7 +149,7 @@
     /**
      * Show field error with accessibility attributes
      */
-    showFieldError: function(field, message) {
+    showFieldError: function (field, message) {
       field.classList.add('error');
 
       // Set ARIA attributes for accessibility
@@ -169,7 +172,7 @@
     /**
      * Clear field error and remove ARIA attributes
      */
-    clearFieldError: function(field) {
+    clearFieldError: function (field) {
       field.classList.remove('error');
 
       // Remove ARIA attributes
@@ -185,14 +188,17 @@
     /**
      * Set form loading state
      */
-    setFormLoading: function(form, isLoading) {
+    setFormLoading: function (form, isLoading) {
       const submitBtn = form.querySelector('button[type="submit"]');
 
       if (submitBtn) {
         submitBtn.disabled = isLoading;
-        submitBtn.textContent = isLoading ?
-          'Submitting...' :
-          submitBtn.textContent.replace('Submitting...', submitBtn.getAttribute('data-original-text') || 'Submit');
+        submitBtn.textContent = isLoading
+          ? 'Submitting...'
+          : submitBtn.textContent.replace(
+              'Submitting...',
+              submitBtn.getAttribute('data-original-text') || 'Submit',
+            );
 
         if (!submitBtn.getAttribute('data-original-text')) {
           submitBtn.setAttribute('data-original-text', submitBtn.textContent);
@@ -201,7 +207,7 @@
 
       // Disable all inputs
       const inputs = form.querySelectorAll('input, textarea, select, button');
-      inputs.forEach(input => {
+      inputs.forEach((input) => {
         input.disabled = isLoading;
       });
     },
@@ -209,7 +215,7 @@
     /**
      * Handle successful submission
      */
-    handleSubmissionSuccess: function(form, data) {
+    handleSubmissionSuccess: function (form, data) {
       console.log('✅ Form submitted successfully');
 
       // Reset form
@@ -218,7 +224,9 @@
 
       // Find redirect URL
       const redirectInput = form.querySelector('input[name="_next"]');
-      const redirectUrl = redirectInput ? redirectInput.value : 'thank-you.html';
+      const redirectUrl = redirectInput
+        ? redirectInput.value
+        : 'thank-you.html';
 
       // Show success message
       this.showSuccessMessage(form);
@@ -232,10 +240,12 @@
     /**
      * Show success message
      */
-    showSuccessMessage: function(form) {
+    showSuccessMessage: function (form) {
       const successEl = document.createElement('div');
-      successEl.className = 'success-message p-4 bg-green-100 text-green-800 rounded-lg mt-4';
-      successEl.textContent = 'Thank you! Your message has been sent successfully.';
+      successEl.className =
+        'success-message p-4 bg-green-100 text-green-800 rounded-lg mt-4';
+      successEl.textContent =
+        'Thank you! Your message has been sent successfully.';
 
       form.appendChild(successEl);
 
@@ -245,14 +255,16 @@
           successEl.remove();
         }
       }, 3000);
-    }
+    },
   };
 
   // Initialize when DOM is ready
   if (document.readyState === 'loading') {
-    document.addEventListener('DOMContentLoaded', window.P4CForms.init.bind(window.P4CForms));
+    document.addEventListener(
+      'DOMContentLoaded',
+      window.P4CForms.init.bind(window.P4CForms),
+    );
   } else {
     window.P4CForms.init();
   }
-
 })();

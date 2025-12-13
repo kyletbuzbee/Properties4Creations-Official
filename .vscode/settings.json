@@ -1,3 +1,28 @@
 {
-    "svg.preview.background": "transparent"
+  // 1. Core Editor Settings (Ensures automatic formatting)
+  "editor.defaultFormatter": "esbenp.prettier-vscode",
+  "editor.formatOnSave": true,
+  "editor.codeActionsOnSave": {
+    "source.fixAll.eslint": "explicit" // Automatically runs ESLint fixes on save
+  },
+  "files.eol": "\n", // Standardizes line endings to LF
+
+  // 2. Prettier/Formatting Rules (Matches standard JS/Modular style)
+  "prettier.tabWidth": 2,
+  "prettier.useTabs": false,
+  "prettier.singleQuote": true, // Enforces single quotes ('')
+  "prettier.trailingComma": "all",
+  "prettier.printWidth": 100,
+
+  // 3. Tailwind CSS Integration
+  "tailwindCSS.experimental.classRegex": [
+    // Ensures Tailwind IntelliSense works within custom JS modules/templates
+    ["className:\\s*\"([^\\\"]*)\"", "\"([^\\\"]*)\""],
+    ["tw`([^`]*)`", "(?:'|\\\"|`)([^'\\\"`]*)"],
+    ["html:\\s*`([^`]*)`", "(?:'|\\\"|`)([^'\\\"`]*)"]
+  ],
+
+  // 4. Headwind (Tailwind Class Sorting)
+  "headwind.classOrdering": "alphabetical", // Enforces a single, fixed order for all Tailwind classes
+  "headwind.runOnSave": true
 }

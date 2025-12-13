@@ -1,0 +1,165 @@
+# Page snapshot
+
+```yaml
+- generic [active] [ref=e1]:
+  - link "Skip to main content" [ref=e2] [cursor=pointer]:
+    - /url: "#main"
+  - link "Skip to main content" [ref=e3] [cursor=pointer]:
+    - /url: "#main"
+  - banner [ref=e5]:
+    - navigation "Main navigation" [ref=e6]:
+      - generic [ref=e7]:
+        - link "Properties 4 Creations" [ref=e8] [cursor=pointer]:
+          - /url: index.html
+          - img "Properties 4 Creations" [ref=e9]
+        - button "Toggle navigation menu" [ref=e10]:
+          - img
+      - generic [ref=e13]:
+        - link "Home" [ref=e14] [cursor=pointer]:
+          - /url: index.html
+        - link "About" [ref=e15] [cursor=pointer]:
+          - /url: about.html
+        - link "Properties" [ref=e16] [cursor=pointer]:
+          - /url: projects.html
+        - link "Resources" [ref=e17] [cursor=pointer]:
+          - /url: resources.html
+        - link "Impact" [ref=e18] [cursor=pointer]:
+          - /url: impact.html
+        - link "Transparency" [ref=e19] [cursor=pointer]:
+          - /url: transparency.html
+        - link "FAQ" [ref=e20] [cursor=pointer]:
+          - /url: faq.html
+        - link "Contact Us" [ref=e21] [cursor=pointer]:
+          - /url: contact.html
+  - main [ref=e23]:
+    - generic [ref=e25]:
+      - generic [ref=e26]:
+        - text: Our Properties
+        - heading "Excellence in Every Detail" [level=2] [ref=e27]
+        - paragraph [ref=e28]: See how we transform distressed properties into beautiful, affordable homes
+      - generic [ref=e30]: Your browser does not support the video tag.
+    - generic [ref=e32]:
+      - heading "See the Transformation" [level=2] [ref=e33]
+      - paragraph [ref=e34]: Click tabs to explore our renovation work across different rooms.
+      - generic [ref=e35]:
+        - button "Kitchen" [ref=e36]
+        - button "Living Room" [ref=e37]
+      - generic:
+        - generic:
+          - generic [ref=e38]: AFTER
+          - generic [ref=e39]: BEFORE
+          - slider "Adjust before and after comparison in kitchen renovation" [ref=e40]: "50"
+          - img [ref=e42]
+    - generic [ref=e46]:
+      - generic [ref=e47]:
+        - text: Our Work
+        - heading "Transformation Gallery" [level=2] [ref=e48]
+        - paragraph [ref=e49]: See our renovation work across East Texas communities
+      - generic [ref=e50]:
+        - generic [ref=e51]:
+          - img "Beautifully renovated living room with hardwood floors and modern furnishings" [ref=e53]
+          - generic [ref=e54]:
+            - heading "Modern Family Living" [level=3] [ref=e55]
+            - paragraph [ref=e56]: Complete renovation with custom finishes
+          - generic [ref=e57]: Living Room
+        - generic [ref=e58]:
+          - img "Modern kitchen renovation with stainless steel appliances and granite countertops" [ref=e60]
+          - generic [ref=e61]:
+            - heading "Gourmet Kitchen" [level=3] [ref=e62]
+            - paragraph [ref=e63]: Stainless steel appliances and premium finishes
+          - generic [ref=e64]: Kitchen
+        - generic [ref=e65]:
+          - img "Beautifully renovated home exterior with fresh paint and landscaping" [ref=e67]
+          - generic [ref=e68]:
+            - heading "Curb Appeal Excellence" [level=3] [ref=e69]
+            - paragraph [ref=e70]: Complete exterior transformation
+          - generic [ref=e71]: Exterior
+        - generic [ref=e72]:
+          - img "Luxury bathroom renovation with marble countertops and frameless glass shower" [ref=e74]
+          - generic [ref=e75]:
+            - heading "Spa-Like Bathroom" [level=3] [ref=e76]
+            - paragraph [ref=e77]: Luxury finishes and modern design
+          - generic [ref=e78]: Bathroom
+        - generic [ref=e79]:
+          - img "Master bedroom with custom closets and cozy lighting" [ref=e81]
+          - generic [ref=e82]:
+            - heading "Master Suite Retreat" [level=3] [ref=e83]
+            - paragraph [ref=e84]: Newly renovated countertops and shower
+          - generic [ref=e85]: Bedroom
+        - generic [ref=e86]:
+          - img "Welcoming community common area perfect for families" [ref=e88]
+          - generic [ref=e89]:
+            - heading "Community Focus" [level=3] [ref=e90]
+            - paragraph [ref=e91]: Building better communities together
+          - generic [ref=e92]: Community
+      - link "View All Properties" [ref=e94] [cursor=pointer]:
+        - /url: contact.html
+        - text: View All Properties
+        - img [ref=e95]
+  - contentinfo [ref=e98]:
+    - generic [ref=e99]:
+      - generic [ref=e100]:
+        - generic [ref=e101]:
+          - generic [ref=e102]:
+            - img "Properties 4 Creations Logo" [ref=e103]:
+              - generic [ref=e104]: Properties 4
+              - generic [ref=e105]: Creations
+            - generic [ref=e112]:
+              - heading "Properties 4 Creations" [level=3] [ref=e113]
+              - paragraph [ref=e114]: Family Veteran Housing
+          - paragraph [ref=e115]: Rebuilding East Texas communities one home at a time. We provide premium, safe, and dignified housing for veterans and families.
+          - generic [ref=e117]: Section 8 Vouchers Accepted
+        - generic [ref=e118]:
+          - heading "Company" [level=4] [ref=e119]
+          - list [ref=e120]:
+            - listitem [ref=e121]:
+              - link "About Us" [ref=e122] [cursor=pointer]:
+                - /url: about.html
+            - listitem [ref=e123]:
+              - link "Our Properties" [ref=e124] [cursor=pointer]:
+                - /url: projects.html
+            - listitem [ref=e125]:
+              - link "Community Impact" [ref=e126] [cursor=pointer]:
+                - /url: impact.html
+            - listitem [ref=e127]:
+              - link "Renovation Standards" [ref=e128] [cursor=pointer]:
+                - /url: transparency.html
+        - generic [ref=e129]:
+          - heading "Residents" [level=4] [ref=e130]
+          - list [ref=e131]:
+            - listitem [ref=e132]:
+              - link "Apply for Housing" [ref=e133] [cursor=pointer]:
+                - /url: get-started.html
+            - listitem [ref=e134]:
+              - link "Veteran Resources" [ref=e135] [cursor=pointer]:
+                - /url: resources.html
+            - listitem [ref=e136]:
+              - link "Maintenance Request" [ref=e137] [cursor=pointer]:
+                - /url: contact.html
+            - listitem [ref=e138]:
+              - link "FAQs" [ref=e139] [cursor=pointer]:
+                - /url: faq.html
+        - generic [ref=e140]:
+          - heading "Contact" [level=4] [ref=e141]
+          - list [ref=e142]:
+            - listitem [ref=e143]:
+              - img [ref=e144]
+              - generic [ref=e147]:
+                - text: Tyler, TX 75701
+                - text: Serving East Texas
+            - listitem [ref=e148]:
+              - img [ref=e149]
+              - link "(903) 283-1770" [ref=e151] [cursor=pointer]:
+                - /url: tel:19032831770
+            - listitem [ref=e152]:
+              - img [ref=e153]
+              - link "contact@properties4creations.com" [ref=e155] [cursor=pointer]:
+                - /url: mailto:contact@properties4creations.com
+      - generic [ref=e156]:
+        - paragraph [ref=e157]: © 2025 Properties 4 Creations. All rights reserved.
+        - generic [ref=e158]:
+          - link "Privacy Policy" [ref=e159] [cursor=pointer]:
+            - /url: privacy.html
+          - link "Terms of Service" [ref=e160] [cursor=pointer]:
+            - /url: terms.html
+```

@@ -2,14 +2,19 @@
 // Google Apps Script Integration - Production Ready
 
 async function submitLead(formEl) {
-  const url = 'https://script.google.com/macros/s/AKfycbwxz5eoaGgYOoaKTKEfMm2jHo7buxNnHyu5lkZCkhDYLfbRqNRUW90Sk9yrXGRLjMM3Gw/exec';
+  const url =
+    'https://script.google.com/macros/s/AKfycbwxz5eoaGgYOoaKTKEfMm2jHo7buxNnHyu5lkZCkhDYLfbRqNRUW90Sk9yrXGRLjMM3Gw/exec';
   const data = {
     name: formEl.querySelector('[name="name"]').value.trim(),
     email: formEl.querySelector('[name="email"]').value.trim(),
     phone: formEl.querySelector('[name="phone"]').value.trim(),
     veteran: !!formEl.querySelector('[name="veteran"]')?.checked,
-    message: (formEl.querySelector('[name="message"]') || formEl.querySelector('[textarea]'))?.value?.trim() || '',
-    source: window.location.pathname
+    message:
+      (
+        formEl.querySelector('[name="message"]') ||
+        formEl.querySelector('[textarea]')
+      )?.value?.trim() || '',
+    source: window.location.pathname,
   };
 
   // Enhanced client validation
@@ -27,7 +32,7 @@ async function submitLead(formEl) {
     const resp = await fetch(url, {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
-      body: JSON.stringify(data)
+      body: JSON.stringify(data),
     });
 
     const json = await resp.json();
@@ -39,9 +44,9 @@ async function submitLead(formEl) {
       // Analytics tracking
       if (window.gtag) {
         gtag('event', 'form_submission', {
-          'event_category': 'engagement',
-          'event_label': 'property_inquiry',
-          'value': 1
+          event_category: 'engagement',
+          event_label: 'property_inquiry',
+          value: 1,
         });
       }
 
@@ -64,7 +69,8 @@ function isValidEmail(email) {
 
 function showFormSuccess(formEl, data) {
   const successDiv = document.createElement('div');
-  successDiv.className = 'bg-green-50 border border-green-200 text-green-800 px-4 py-3 rounded-lg mb-4';
+  successDiv.className =
+    'bg-green-50 border border-green-200 text-green-800 px-4 py-3 rounded-lg mb-4';
   successDiv.setAttribute('role', 'alert');
   successDiv.innerHTML = `
     <div class="flex">
@@ -88,7 +94,8 @@ function showFormSuccess(formEl, data) {
 
 function showFormError(formEl, message) {
   const errorDiv = document.createElement('div');
-  errorDiv.className = 'bg-red-50 border border-red-200 text-red-800 px-4 py-3 rounded-lg mb-4';
+  errorDiv.className =
+    'bg-red-50 border border-red-200 text-red-800 px-4 py-3 rounded-lg mb-4';
   errorDiv.setAttribute('role', 'alert');
   errorDiv.innerHTML = `
     <div class="flex">
@@ -115,10 +122,12 @@ function showFormError(formEl, message) {
 
 // Auto-initialize on form pages
 document.addEventListener('DOMContentLoaded', () => {
-  const forms = document.querySelectorAll('form[id*="property-inquiry"], form[action*="property-inquiry"]');
+  const forms = document.querySelectorAll(
+    'form[id*="property-inquiry"], form[action*="property-inquiry"]',
+  );
 
-  forms.forEach(form => {
-    form.addEventListener('submit', function(e) {
+  forms.forEach((form) => {
+    form.addEventListener('submit', function (e) {
       e.preventDefault();
       submitLead(this).catch(console.error);
     });
@@ -128,7 +137,8 @@ document.addEventListener('DOMContentLoaded', () => {
   const urlParams = new URLSearchParams(window.location.search);
   if (urlParams.get('success') === 'true') {
     const successDiv = document.createElement('div');
-    successDiv.className = 'bg-green-50 border border-green-200 text-green-800 px-4 py-3 rounded-lg mb-4 max-w-md mx-auto';
+    successDiv.className =
+      'bg-green-50 border border-green-200 text-green-800 px-4 py-3 rounded-lg mb-4 max-w-md mx-auto';
     successDiv.innerHTML = `
       <div class="flex">
         <div class="flex-shrink-0">
