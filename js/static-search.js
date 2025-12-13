@@ -132,7 +132,7 @@ P4C.Search.createResultsContainer = function (searchContainer) {
 /**
  * Display search results
  */
-P4C.Search.displayResults = function (results, container, query) {
+P4C.Search.displayResults = function (results, container, _query) {
   if (results.length === 0) {
     container.innerHTML =
       '<div class="p-4 text-slate-500 text-center">No properties found</div>';

@@ -1,0 +1,382 @@
+- [x] Identify related issues (CORS/403 errors)
+- [x] Fix header.html inline scripts 
+- [x] Fix footer.html inline scripts
+- [ ] Test component loading without errors
+- [ ] Verify dark mode functionality
+# 3. Press Insert+Down Arrow (browse mode)
+# 4. Test:
+   - Headings announced correctly?
+   - Form labels read aloud?
+   - Error messages announced?
+   - Images have alt text?
+Mac (VoiceOver - Built-in):
+
+bash
+# 1. Press Cmd+F5 to enable
+# 2. Press Ctrl+Option+Right Arrow to navigate
+# 3. Same tests as above
+Quick Test Checklist:
+
+ All images have meaningful alt text
+
+ Form errors announced by screen reader
+
+ Headings in logical order (h1 → h2 → h3)
+
+ Skip link works (Tab → Enter)
+
+ No "image" or "button" spoken without context
+
+Automated Accessibility Tools
+WAVE (Web Accessibility Evaluation Tool):
+
+text
+1. Visit: https://wave.webaim.org/
+2. Enter your URL
+3. Check for:
+   - 0 Errors (red icons)
+   - <5 Contrast errors
+   - 0 Alerts for missing landmarks
+Lighthouse (Chrome DevTools):
+
+bash
+1. Open DevTools (F12)
+2. Go to "Lighthouse" tab
+3. Check "Accessibility" only
+4. Click "Analyze"
+5. Target: 90+ score
+4️⃣ Performance Testing (Level 2)
+PageSpeed Insights
+Test each major page:
+
+text
+1. Visit: https://pagespeed.web.dev/
+2. Enter URL: https://properties4creations.com
+3. Wait for results
+4. Check Mobile scores:
+   - Performance: 80+ (Green)
+   - Accessibility: 90+
+   - Best Practices: 90+
+   - SEO: 90+
+Key Metrics:
+
+LCP (Largest Contentful Paint): <2.5s ✅
+
+FID (First Input Delay): <100ms ✅
+
+CLS (Cumulative Layout Shift): <0.1 ✅
+
+WebPageTest
+Advanced performance testing:
+
+text
+1. Visit: https://www.webpagetest.org/
+2. Enter URL
+3. Test Settings:
+   - Location: Dallas, TX (closest to your users)
+   - Browser: Chrome
+   - Connection: 3G (mobile users)
+4. Run Test
+5. Check:
+   - First Byte Time: <600ms
+   - Start Render: <1.5s
+   - Fully Loaded: <5s
+Chrome DevTools Network Tab
+Manual performance check:
+
+bash
+1. Open DevTools → Network tab
+2. Throttle to "Slow 3G"
+3. Reload page
+4. Check:
+   - Total page size: <500KB ideal
+   - Number of requests: <50 ideal
+   - Largest resources: Images should be compressed
+   - CSS/JS: Should be deferred/async
+5️⃣ SEO Testing (Level 2)
+Google Rich Results Test
+Test structured data:
+
+text
+1. Visit: https://search.google.com/test/rich-results
+2. Enter URL: https://properties4creations.com
+3. Check for:
+   - Organization schema: Valid ✅
+   - No errors
+
+For FAQ page:
+1. Test: https://properties4creations.com/faq.html
+2. Check for:
+   - FAQPage schema: Valid ✅
+Meta Tags Checker
+Use browser inspector:
+
+bash
+1. Right-click page → Inspect
+2. Find <head> section
+3. Verify each page has:
+   - <title> (unique, <60 chars)
+   - <meta name="description"> (unique, <160 chars)
+   - <link rel="canonical">
+   - Open Graph tags (og:title, og:description, og:image)
+Mobile-Friendly Test
+text
+1. Visit: https://search.google.com/test/mobile-friendly
+2. Enter URL
+3. Should pass with "Page is mobile-friendly" ✅
+6️⃣ Cross-Browser Testing (Level 2)
+Required Browsers
+Desktop:
+
+ Chrome/Edge (Chromium) - 90%+ users
+
+ Firefox - Check for CSS differences
+
+ Safari (Mac) - Check for -webkit- issues
+
+Mobile:
+
+ iOS Safari (iPhone)
+
+ Chrome Android
+
+BrowserStack (Free Trial)
+If you don't have all devices:
+
+text
+1. Visit: https://www.browserstack.com/
+2. Sign up for free trial
+3. Test on:
+   - iPhone 12 (iOS Safari)
+   - Samsung Galaxy S21 (Chrome Android)
+   - iPad Pro (Safari)
+Quick Cross-Browser Checklist
+ All CSS renders correctly (no missing styles)
+
+ Fonts load properly
+
+ Forms submit successfully
+
+ JavaScript works (no console errors)
+
+ Touch events work on mobile
+
+7️⃣ Form Validation Testing (Level 1)
+Test Matrix
+Contact Form:
+
+Field	Test Input	Expected Result
+First Name	(empty)	"First name is required"
+First Name	"A"	"Must be 2+ characters"
+First Name	"John123"	"Letters only" ✅ (if you added this)
+Email	(empty)	"Email is required"
+Email	"notanemail"	"Invalid email"
+Email	"test@example.com"	✅ Valid
+Phone	"123"	"Invalid phone"
+Phone	"(903) 283-1770"	✅ Valid
+Phone	"903-283-1770"	✅ Valid
+Message	(empty)	"Message is required"
+Message	"Hi"	"Minimum 10 characters"
+Test ARIA announcements:
+
+text
+1. Enable screen reader (NVDA/VoiceOver)
+2. Leave email blank and blur
+3. Should hear: "Email address is required"
+4. Check DevTools:
+   - <input aria-invalid="true">
+   - <div role="alert">Email address is required</div>
+8️⃣ Security Testing (Level 3)
+Basic Security Checks
+Headers Check:
+
+bash
+# Use securityheaders.com
+1. Visit: https://securityheaders.com/
+2. Enter: https://properties4creations.com
+3. Should have:
+   - X-Content-Type-Options: nosniff
+   - X-Frame-Options: SAMEORIGIN
+   (Your host may provide these automatically)
+SSL Certificate:
+
+text
+1. Check URL shows https:// with lock icon
+2. Visit: https://www.ssllabs.com/ssltest/
+3. Should get A or A+ rating
+No Sensitive Data in Client:
+
+bash
+1. Open DevTools → Sources
+2. Search all JS files for:
+   - "api_key"
+   - "password"
+   - "secret"
+   - Should find ZERO matches ✅
+9️⃣ Code Quality Testing (Level 2)
+HTML Validation
+text
+1. Visit: https://validator.w3.org/
+2. Enter URL or upload HTML
+3. Target: 0 errors
+   - Warnings are okay if intentional
+Common errors to fix:
+
+Duplicate IDs
+
+Unclosed tags
+
+Invalid nesting (e.g., <div> inside <p>)
+
+CSS Validation
+text
+1. Visit: https://jigsaw.w3.org/css-validator/
+2. Upload css/styles.css
+3. Target: 0 errors
+   - Vendor prefix warnings are okay
+JavaScript Console Check
+bash
+# On EVERY page:
+1. Open DevTools (F12)
+2. Go to Console tab
+3. Refresh page
+4. Should see:
+   - 0 errors (red) ✅
+   - Warnings okay if from external libraries
+🔟 Link Testing (Level 2)
+Internal Links
+Manual check:
+
+text
+Test on homepage:
+- [ ] All nav links work
+- [ ] Footer links work
+- [ ] "Get Started" button → get-started.html
+- [ ] "View Properties" → projects.html
+- [ ] No 404 errors
+Automated check (if using Node.js):
+
+bash
+# Install broken-link-checker
+npm install -g broken-link-checker
+
+# Test your site
+blc http://localhost:8000 -ro
+
+# Should show 0 broken links
+External Links
+Check these open in new tabs:
+
+ Social media links (if any)
+
+ External resource links
+
+ Privacy policy external references
+
+📋 Pre-Deployment Checklist
+Before pushing to production:
+
+Critical (Must Pass)
+ All pages load without errors
+
+ Forms submit successfully
+
+ Mobile menu works
+
+ No broken images
+
+ Comparison sliders functional
+
+ Contact form validation works
+
+ Screen reader can navigate site
+
+ Lighthouse Accessibility >90
+
+High Priority (Should Pass)
+ PageSpeed Mobile >80
+
+ WAVE shows 0 errors
+
+ All internal links work
+
+ Meta tags present on all pages
+
+ CSS/JS have no console errors
+
+Nice-to-Have
+ Cross-browser tested (Chrome, Safari, Firefox)
+
+ WebPageTest scores good
+
+ Security headers present
+
+ HTML/CSS validated
+
+🛠️ Testing Tools Summary
+Free & Essential:
+
+Chrome DevTools (built-in)
+
+Lighthouse (built into Chrome)
+
+WAVE (accessibility)
+
+PageSpeed Insights (performance)
+
+Google Rich Results Test (SEO)
+
+HTML Validator
+
+NVDA screen reader (Windows) or VoiceOver (Mac)
+
+Paid/Optional:
+
+BrowserStack (cross-browser, free trial)
+
+WebPageTest (advanced performance)
+
+💾 Testing Timeline
+Before each deployment:
+
+text
+Quick Test (30 min):
+✓ Visual check on desktop/mobile
+✓ Forms submit
+✓ Navigation works
+✓ No console errors
+
+Full Test (2 hours):
+✓ All browsers
+✓ Lighthouse audit
+✓ Accessibility check
+✓ Link validation
+After major refactor (like inline styles):
+
+text
+Comprehensive Test (4 hours):
+✓ Everything above
+✓ Screen reader test
+✓ Performance benchmarks
+✓ Cross-browser verification
+✓ HTML/CSS validation
+🚨 What to Do If Tests Fail
+If visual regression found:
+
+bash
+git diff index.html  # Check what changed
+# Compare screenshots before/after
+# Fix CSS or revert changes
+If accessibility fails:
+
+bash
+# Run WAVE to find specific issues
+# Fix one error at a time
+# Re-test with screen reader
+If performance drops:
+
+bash
+# Check DevTools Network tab
+# Look for large resources
+# Ensure lazy loading active
+# Check if images compressed

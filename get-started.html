@@ -8,76 +8,13 @@
     <meta name="description" content="Begin your fair housing application process. We specialize in Section 8 and HUD-VASH voucher assistance for veterans and families in East Texas.">
     <link rel="canonical" href="https://properties4creations.com/get-started.html">
     <link rel="stylesheet" href="css/styles-prod.css">
-    <script>
-        tailwind.config = {
-            theme: {
-                extend: {
-                    colors: {
-                        brand: { navy: '#0B1120', wood: '#C28E5A', beige: '#F5F5F0' }
-                    }
-                }
-            }
-        }
-    </script>
-</head>
+    </head>
 <body class="bg-brand-beige">
     <a href="#main" class="skip-to-content">Skip to main content</a>
     <div id="header-container"></div>
 
     <main id="main" class="py-16 md:py-24 px-4">
         <div class="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-2 gap-16 items-start">
-
-            <div>
-                <h1 class="text-4xl md:text-5xl font-bold text-brand-navy mb-6 leading-tight">
-                    Find Your New Home <br> in East Texas
-                </h1>
-                <p class="text-lg text-slate-600 mb-12 leading-relaxed">
-                    We prioritize Veterans and Families with HUD-VASH or Section 8 vouchers. Our application process is fast, transparent, and dignified.
-                </p>
-
-                <div class="space-y-8">
-                    <div class="flex gap-5">
-                        <div class="w-12 h-12 rounded-full bg-brand-wood text-white flex items-center justify-center text-xl shadow-lg flex-shrink-0">
-                            1
-                        </div>
-                        <div>
-                            <h3 class="text-xl font-bold text-brand-navy">1. Check Eligibility</h3>
-                            <p class="text-slate-600 text-sm mt-1">Do you have a voucher or proof of income? We accept Section 8 (Tyler/Longview) and HUD-VASH.</p>
-                        </div>
-                    </div>
-
-                    <div class="flex gap-5">
-                        <div class="w-12 h-12 rounded-full bg-brand-navy text-white flex items-center justify-center text-xl shadow-lg flex-shrink-0">
-                            2
-                        </div>
-                        <div>
-                            <h3 class="text-xl font-bold text-brand-navy">2. Submit Details</h3>
-                            <p class="text-slate-600 text-sm mt-1">Fill out the form on this page. No application fees required to start the conversation.</p>
-                        </div>
-                    </div>
-
-                    <div class="flex gap-5">
-                        <div class="w-12 h-12 rounded-full bg-green-600 text-white flex items-center justify-center text-xl shadow-lg flex-shrink-0">
-                            3
-                        </div>
-                        <div>
-                            <h3 class="text-xl font-bold text-brand-navy">3. Property Match</h3>
-                            <p class="text-slate-600 text-sm mt-1">We match you with available renovated homes that fit your family size and voucher limits.</p>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="mt-12 bg-white p-6 rounded-xl border-l-4 border-brand-wood shadow-sm">
-                    <p class="italic text-slate-600 mb-4">"I was tired of landlords turning me away because of my voucher. Properties 4 Creations treated me like a VIP."</p>
-                    <div class="flex items-center gap-3">
-                        <div class="w-10 h-10 bg-slate-200 rounded-full flex items-center justify-center font-bold text-slate-500">RJ</div>
-                        <div>
-                            <p class="font-bold text-brand-navy text-sm">Robert J.</p>
-                            <p class="text-xs text-slate-500">Army Veteran, Tyler TX</p>
-                        </div>
-                    </div>
-                </div>
-            </div>
 
             <div class="bg-white p-8 md:p-10 rounded-3xl shadow-2xl relative">
                 <h2 class="text-2xl font-bold text-brand-navy mb-8">Start Your Application</h2>
@@ -86,38 +23,38 @@
                     <div class="grid grid-cols-2 gap-5">
                         <div>
                             <label class="block text-sm font-medium text-slate-700 mb-1">First Name</label>
-                            <input type="text" placeholder="John" class="w-full px-4 py-3 rounded-lg border border-slate-200 focus:border-brand-wood focus:ring-4 focus:ring-brand-wood/10 outline-none transition-all">
+                            <input type="text" name="firstName" placeholder="John" required class="w-full px-4 py-3 rounded-lg border border-slate-200 focus:border-brand-wood focus:ring-4 focus:ring-brand-wood/10 outline-none transition-all">
                         </div>
                         <div>
                             <label class="block text-sm font-medium text-slate-700 mb-1">Last Name</label>
-                            <input type="text" placeholder="Doe" class="w-full px-4 py-3 rounded-lg border border-slate-200 focus:border-brand-wood focus:ring-4 focus:ring-brand-wood/10 outline-none transition-all">
+                            <input type="text" name="lastName" placeholder="Doe" required class="w-full px-4 py-3 rounded-lg border border-slate-200 focus:border-brand-wood focus:ring-4 focus:ring-brand-wood/10 outline-none transition-all">
                         </div>
                     </div>
 
                     <div class="grid grid-cols-1 md:grid-cols-2 gap-5">
                         <div>
                             <label class="block text-sm font-medium text-slate-700 mb-1">Phone Number</label>
-                            <input type="tel" placeholder="(903) 555-0123" class="w-full px-4 py-3 rounded-lg border border-slate-200 focus:border-brand-wood focus:ring-4 focus:ring-brand-wood/10 outline-none transition-all">
+                            <input type="tel" name="phone" placeholder="(903) 555-0123" required class="w-full px-4 py-3 rounded-lg border border-slate-200 focus:border-brand-wood focus:ring-4 focus:ring-brand-wood/10 outline-none transition-all">
                         </div>
                         <div>
                             <label class="block text-sm font-medium text-slate-700 mb-1">Email Address</label>
-                            <input type="email" placeholder="john@example.com" class="w-full px-4 py-3 rounded-lg border border-slate-200 focus:border-brand-wood focus:ring-4 focus:ring-brand-wood/10 outline-none transition-all">
+                            <input type="email" name="email" placeholder="john@example.com" required class="w-full px-4 py-3 rounded-lg border border-slate-200 focus:border-brand-wood focus:ring-4 focus:ring-brand-wood/10 outline-none transition-all">
                         </div>
                     </div>
 
                     <div>
                         <label class="block text-sm font-medium text-slate-700 mb-1" id="housing-label">Current Housing Situation</label>
-                        <select class="w-full px-4 py-3 rounded-lg border border-slate-200 focus:border-brand-wood focus:ring-4 focus:ring-brand-wood/10 outline-none transition-all bg-white" aria-labelledby="housing-label">
-                            <option>I have a Section 8 Voucher</option>
-                            <option>I have a HUD-VASH Voucher</option>
-                            <option>I am a Cash Payer (Market Rate)</option>
+                        <select name="housing-situation" required class="w-full px-4 py-3 rounded-lg border border-slate-200 focus:border-brand-wood focus:ring-4 focus:ring-brand-wood/10 outline-none transition-all bg-white" aria-labelledby="housing-label">
+                            <option value="section8">I have a Section 8 Voucher</option>
+                            <option value="hudvash">I have a HUD-VASH Voucher</option>
+                            <option value="market">I am a Cash Payer (Market Rate)</option>
                         </select>
                     </div>
 
                     <div class="grid grid-cols-2 gap-5">
                         <div>
                             <label class="block text-sm font-medium text-slate-700 mb-1" id="family-label">Family Size</label>
-                            <select class="w-full px-4 py-3 rounded-lg border border-slate-200 focus:border-brand-wood focus:ring-4 focus:ring-brand-wood/10 outline-none transition-all bg-white" aria-labelledby="family-label">
+                            <select name="family-size" required class="w-full px-4 py-3 rounded-lg border border-slate-200 focus:border-brand-wood focus:ring-4 focus:ring-brand-wood/10 outline-none transition-all bg-white" aria-labelledby="family-label">
                                 <option>1 Person</option>
                                 <option>2-3 People</option>
                                 <option>4+ People</option>
@@ -125,17 +62,20 @@
                         </div>
                         <div>
                             <label class="block text-sm font-medium text-slate-700 mb-1" id="movein-label">Desired Move-in</label>
-                            <select class="w-full px-4 py-3 rounded-lg border border-slate-200 focus:border-brand-wood focus:ring-4 focus:ring-brand-wood/10 outline-none transition-all bg-white" aria-labelledby="movein-label">
+                            <select name="move-in" required class="w-full px-4 py-3 rounded-lg border border-slate-200 focus:border-brand-wood focus:ring-4 focus:ring-brand-wood/10 outline-none transition-all bg-white" aria-labelledby="movein-label">
                                 <option>Immediately</option>
                                 <option>Next 30 Days</option>
                                 <option>Flexible</option>
                             </select>
                         </div>
                     </div>
+                    
+                    <input type="hidden" name="veteran-status" value="pending">
+                    <input type="hidden" name="subject" value="housing-application">
 
                     <div>
                         <label class="block text-sm font-medium text-slate-700 mb-1">Additional Details</label>
-                        <textarea rows="3" placeholder="Tell us about your housing needs..." class="w-full px-4 py-3 rounded-lg border border-slate-200 focus:border-brand-wood focus:ring-4 focus:ring-brand-wood/10 outline-none transition-all"></textarea>
+                        <textarea rows="3" name="message" placeholder="Tell us about your housing needs..." class="w-full px-4 py-3 rounded-lg border border-slate-200 focus:border-brand-wood focus:ring-4 focus:ring-brand-wood/10 outline-none transition-all"></textarea>
                     </div>
 
                     <button type="submit" class="w-full bg-brand-wood hover:bg-yellow-600 text-white font-bold py-4 rounded-xl shadow-lg hover:shadow-xl hover:-translate-y-1 transition-all">
@@ -143,15 +83,14 @@
                     </button>
 
                     <p class="text-xs text-center text-slate-400 mt-4">
-                        By clicking submit, you agree to our <a href="#" class="underline">Privacy Policy</a>. We respect your data.
+                        By clicking submit, you agree to our <a href="privacy.html" class="underline">Privacy Policy</a>. We respect your data.
                     </p>
                 </form>
             </div>
         </div>
     </main>
     <div id="footer-container"></div>
-    <script src="components/component-loader.js"></script>
-    <script src="js/accessibility-enhanced.js"></script>
-    <script>lucide.createIcons();</script>
+    <script src="js/component-loader.js"></script> <script src="js/accessibility-enhanced.js"></script>
+    <script src="js/static-forms.js"></script> <script>lucide.createIcons();</script>
 </body>
 </html>

@@ -11,7 +11,7 @@ P4C.App = {
   init: function () {
     console.log('🏠 Properties 4 Creations - Application Initialized');
 
-    // Initialize mobile menu if component loader hasn't
+    // Initialize mobile menu
     this.initMobileMenu();
 
     // Initialize map if on home page
@@ -67,7 +67,7 @@ P4C.App = {
       mapContainer.innerHTML = '';
 
       // Initialize Leaflet map
-      const map = L.map('map-container', {
+      const _map = L.map('map-container', {
         center: [32.3, -95.3], // Center of East Texas area
         zoom: 9,
         zoomControl: true,
@@ -82,12 +82,11 @@ P4C.App = {
         'Interactive map showing Properties 4 Creations service areas in East Texas',
       );
       mapElement.setAttribute('role', 'img');
-
       // Add OpenStreetMap tiles (free and reliable)
       L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
         attribution: '© OpenStreetMap contributors',
         maxZoom: 18,
-      }).addTo(map);
+      }).addTo(_map);
 
       // Custom marker icons using SVG
       const createCustomIcon = (color) => {
@@ -103,7 +102,7 @@ P4C.App = {
       // Add Tyler marker
       const tylerMarker = L.marker([32.3513, -95.3011], {
         icon: createCustomIcon('#C28E5A'), // Wood color
-      }).addTo(map);
+      }).addTo(_map);
 
       tylerMarker.bindPopup(
         `
@@ -122,7 +121,7 @@ P4C.App = {
       // Add Longview marker
       const longviewMarker = L.marker([32.5007, -94.7405], {
         icon: createCustomIcon('#0B1120'), // Navy color
-      }).addTo(map);
+      }).addTo(_map);
 
       longviewMarker.bindPopup(
         `
@@ -159,11 +158,11 @@ P4C.App = {
                 `;
         return div;
       };
-      legend.addTo(map);
+      legend.addTo(_map);
 
       // Fit map to show both markers with padding
       const group = new L.featureGroup([tylerMarker, longviewMarker]);
-      map.fitBounds(group.getBounds().pad(0.2));
+      _map.fitBounds(group.getBounds().pad(0.2));
 
       // Open both popups on desktop
       if (window.innerWidth >= 768) {

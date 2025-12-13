@@ -317,6 +317,11 @@ img {
   #mobile-menu {
     display: none !important;
   }
+
+  /* Hide mobile menu toggle button on desktop */
+  #mobile-menu-toggle {
+    display: none !important;
+  }
 }
 
 @media (min-width: 1024px) {
@@ -582,6 +587,7 @@ header#main-header {
     border-bottom: 1px solid rgba(255, 255, 255, 0.1);
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
 }
+}
 
 header nav > div:first-child {
     display: flex !important;
@@ -611,6 +617,7 @@ header nav > div:first-child > div:nth-child(3) a {
         display: flex !important;
         align-items: center !important;
         gap: 1rem !important;
+        margin-left: auto !important; /* Right-align desktop navigation */
     }
 
     header nav > div:first-child > div:nth-child(3) {
@@ -649,25 +656,28 @@ header nav a:hover {
     color: #C28E5A !important;
 }
 
+
+
 /* Mobile menu - IMPORTANT: Only visible on mobile, hidden on desktop */
 #mobile-menu {
+    /* CRITICAL FIX: Hide by default to prevent FOUC */
+    max-height: 0 !important;
+    overflow: hidden !important; 
+    transition: max-height 0.4s ease-in-out, opacity 0.4s ease; /* Ensure smooth transition */
+    opacity: 0.95; /* Default opacity setting */
+    
     background: rgba(17, 24, 39, 0.95) !important;
     backdrop-filter: blur(20px) !important;
     -webkit-backdrop-filter: blur(20px) !important;
 }
 
 #mobile-menu.open {
-    max-height: 600px !important;
+    max-height: 600px !important; /* Large enough height to show content */
+    opacity: 1;
 }
 
 #mobile-menu a {
-    color: white !important;
-    font-weight: 600;
-}
-
-#mobile-menu a:hover {
-    background-color: rgba(255, 255, 255, 0.15) !important;
-}
+/* ... existing styles ... */
 
 /* ============================================================================
  * FORMS & INPUTS (Accessible & Consistent)
@@ -922,6 +932,77 @@ button:focus-visible,
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
     gap: 2rem;
+}
+
+/* ============================================================================
+ * FOOTER STYLING - Ensure white text and proper grid layout
+ * ============================================================================ */
+
+#footer-container footer a {
+    color: #ffffff !important;
+    text-decoration: none !important;
+    border: none !important;
+}
+
+#footer-container footer a:hover {
+    color: #C28E5A !important; /* Brand wood color for hover */
+    text-decoration: none !important;
+}
+#footer-container footer a:hover {
+    color: var(--color-primary-wood) !important;
+    text-decoration: none !important;
+}
+
+#footer-container footer .grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 3rem;
+}
+
+@media (min-width: 768px) {
+    #footer-container footer .grid {
+        grid-template-columns: 1fr 1fr;
+        gap: 3rem;
+    }
+}
+
+@media (min-width: 1024px) {
+    #footer-container footer .grid {
+        grid-template-columns: 1fr 1fr 1fr 1fr;
+        gap: 3rem;
+    }
+}
+
+/* Remove any browser default link styling from footer */
+#footer-container footer li a,
+#footer-container footer li span,
+#footer-container footer li {
+    color: #94a3b8 !important; /* slate-400 */
+}
+
+#footer-container footer li a:hover {
+    color: #ffffff !important;
+}
+
+#footer-container footer li a[href*="tel"],
+#footer-container footer li a[href*="mailto"] {
+    color: #ffffff !important;
+}
+
+#footer-container footer li a[href*="tel"]:hover,
+#footer-container footer li a[href*="mailto"]:hover {
+    color: #C28E5A !important;
+}
+
+/* Ensure footer copyright and bottom links are white */
+#footer-container footer .border-t a {
+    color: #94a3b8 !important; /* slate-400 */
+    text-decoration: none !important;
+}
+
+#footer-container footer .border-t a:hover {
+    color: #C28E5A !important; /* brand-wood */
+    text-decoration: none !important;
 }
 
 /* ============================================================================

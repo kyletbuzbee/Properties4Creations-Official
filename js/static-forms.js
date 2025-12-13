@@ -154,8 +154,8 @@
       // Phone validation (updated for better US number support)
       else if (type === 'tel' && value) {
         const phoneRegex =
-          /^[\+]?[1-9][\d]{0,15}$|^(\+?1[-.\s]?)?\(?[2-9]\d{2}\)?[-.\s]?\d{3}[-.\s]?\d{4}$/;
-        if (!phoneRegex.test(value.replace(/[\s\-\(\)]/g, ''))) {
+          /^[+]?[1-9][\d]{0,15}$|^(?:1[-.\s]?)?\(?[2-9]\d{2}\)?[-.\s]?\d{3}[-.\s]?\d{4}$/;
+        if (!phoneRegex.test(value.replace(/[\s-()]/g, ''))) {
           errorMessage =
             'Please enter a valid US phone number (e.g., 903-555-0123)';
           isValid = false;
@@ -239,7 +239,7 @@
     /**
      * Handle successful submission
      */
-    handleSubmissionSuccess: function (form, data) {
+    handleSubmissionSuccess: function (form, _data) {
       console.log('✅ Form submitted successfully');
 
       // Reset form
