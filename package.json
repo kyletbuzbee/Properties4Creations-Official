@@ -33,7 +33,8 @@
     "headed": "npx playwright test --headed",
     "ui": "npx playwright test --ui",
     "debug": "npx playwright test --debug tests/projects.spec.js",
-    "report": "npx playwright show-report"
+    "report": "npx playwright show-report",
+    "prepare": "husky"
   },
   "repository": {
     "type": "git",
@@ -58,6 +59,7 @@
     "eslint": "^9.39.2",
     "eslint-config-prettier": "^10.1.8",
     "eslint-plugin-prettier": "^5.5.4",
+    "husky": "^9.1.7",
     "jest": "^30.2.0",
     "jsdom": "^27.3.0",
     "lighthouse": "^13.0.1",
