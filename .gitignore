@@ -1,34 +1,165 @@
+# ============================================================================
+# Properties 4 Creations - Comprehensive .gitignore
+# Node.js Housing Platform for Veterans & Families
+# ============================================================================
+
+# Dependencies
 node_modules/
-*.log
-.DS_Store
-dist/
-.vscode/
-.lighthouseci/
-.idea/
-.env
-.env.local
-.coverage/
-.nyc_output/
-coverage/
-*.tgz
-*.tar.gz
-Thumbs.db
-ehthumbs.db
-Desktop.ini
-public/uploads/
-public/temp/
-node_modules
 npm-debug.log*
 yarn-debug.log*
 yarn-error.log*
-.vscode/test-results.xml
-.cache/
-.parcel-cache
+pnpm-debug.log*
 .pnpm-debug.log*
+
+# Runtime data
+pids
+*.pid
+*.seed
+*.pid.lock
+
+# Coverage directory used by tools like istanbul
+coverage/
+.coverage/
+.nyc_output/
+*.lcov
+*.info
+
+# Logs
+logs
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+lerna-debug.log*
+.pnpm-debug.log*
+
+# Log files from development servers
+.log
+logs/
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
 .vercel
 .netlify
+
+# OS generated files
+.DS_Store
+.DS_Store?
+._*
+.Spotlight-V100
+.Trashes
+ehthumbs.db
+Thumbs.db
+Desktop.ini
+
+# IDE / Editor files
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+.project
+.classpath
+.settings/
+*.sublime-project
+*.sublime-workspace
+
+# Playwright
+test-results/
+playwright-report/
+playwright/.cache/
+playwright-report/data/
+playwright-report/index.html
+localhost_*.html
+localhost_*.report.html
+
+# Jest
+jest-output.xml
+test-results.xml
+test-results/
+.jest/
+coverage-report/
+
+# Lighthouse CI
+.lighthouseci/
+lighthouserc/
+*.report.html
+
+# Build outputs
+dist/
+build/
+out/
+.next/
+.nuxt/
+.output/
+.parcel-cache/
+.cache/
+.parcel-cache
+
+# Environment variables
+.env
+.env*.local
+.env.local
+.env.development.local
+.env.test.local
+.env.production.local
+
+# Local Netlify folder
+.netlify/
+
+# Vercel
+.vercel
+
+# Terraform
 terraform.tfstate
 terraform.tfstate.backup
 *.tfvars
-.idea/
-/Projects/Properties4Creations-Official/.clinerules/
+.terraform/
+terraform.tfvars
+
+# Temporary files
+*.tmp
+*.temp
+*.bak
+*.backup
+*~
+.cache/
+
+# Archive files
+*.7z
+*.dmg
+*.gz
+*.iso
+*.jar
+*.rar
+*.tar
+*.zip
+
+# Application specific
+public/uploads/
+public/temp/
+public/process/
+public/screenshots/
+
+# Windows
+Thumbs.db
+ehthumbs.db
+Desktop.ini
+
+# Project specific paths (housing platform artifacts)
+.clinerules/
+.husky/_/
+*.report.md
+audit-report.*
+*.mongodb
+
+# Development artifacts
+local-*.html
+test-*.html
+debug-*.html
+temp-*/
+
+# ============================================================================
+# END OF .GITIGNORE - Production Ready Configuration
+# ============================================================================
