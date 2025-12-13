@@ -26,7 +26,6 @@
     document.head.appendChild(script);
 
     // Initialize gtag
-    /* global dataLayer */
     window.dataLayer = window.dataLayer || [];
     function gtag(){
       // eslint-disable-next-line no-undef
