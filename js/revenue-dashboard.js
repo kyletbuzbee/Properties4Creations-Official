@@ -151,13 +151,15 @@
       return `
         <div class="bg-slate-50 p-4 rounded-lg">
           <h3 class="font-bold text-brand-navy mb-3">Lead Generation (7 days)</h3>
+          <div class="text-xs text-slate-600 mb-3">Business Model: 65% Families, 25% Veterans, 10% General</div>
           <div class="space-y-2">
             ${last7Days.map(day => `
               <div class="flex justify-between items-center text-sm">
                 <span>${day.date}</span>
                 <div class="flex gap-4">
-                  <span class="text-green-600">${day.general} general</span>
-                  <span class="text-blue-600">${day.veteran} veteran</span>
+                  <span class="text-green-600">${day.family} families</span>
+                  <span class="text-blue-600">${day.veteran} veterans</span>
+                  <span class="text-amber-600">${day.general} general</span>
                   <span class="font-bold">${day.total}</span>
                 </div>
               </div>
@@ -223,7 +225,7 @@
     },
 
     /**
-     * Get last N days data for leads
+     * Get last N days data for leads - Veterans & Families
      */
     getLastDaysData: function(days) {
       const result = [];
@@ -237,12 +239,15 @@
                  new Date(m.timestamp).toDateString() === date.toDateString();
         });
 
-        const veteran = dayLeads.filter(m => m.extra?.isVeteran).length;
-        const general = dayLeads.length - veteran;
+        // Categorize leads: Families (primary), Veterans, General
+        const veteran = dayLeads.filter(m => m.extra?.applicantType === 'veteran').length;
+        const family = dayLeads.filter(m => m.extra?.applicantType === 'family').length;
+        const general = dayLeads.filter(m => m.extra?.applicantType === 'general').length;
 
         result.push({
           date: dateStr,
           total: dayLeads.length,
+          family: family,
           veteran: veteran,
           general: general
         });
@@ -272,13 +277,13 @@
   // Add method for external integration
   if (window.P4CAnalytics) {
     const originalTrackLeadGen = window.P4CAnalytics.trackLeadGeneration;
-    window.P4CAnalytics.trackLeadGeneration = function(formType, propertyId, veteranStatus, leadValue) {
+    window.P4CAnalytics.trackLeadGeneration = function(formType, propertyId, applicantType, leadValue) {
       // Call original
-      originalTrackLeadGen.call(this, formType, propertyId, veteranStatus, leadValue);
+      originalTrackLeadGen.call(this, formType, propertyId, applicantType, leadValue);
 
-      // Track in dashboard
+      // Track in dashboard with proper applicant type
       RevenueDashboard.addMetric('lead_revenue', leadValue);
-      RevenueDashboard.addMetric('lead_submitted', 1, undefined, { propertyId, isVeteran: veteranStatus });
+      RevenueDashboard.addMetric('lead_submitted', 1, undefined, { propertyId, applicantType: applicantType });
     };
   }
 

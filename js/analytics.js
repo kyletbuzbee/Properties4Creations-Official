@@ -1,6 +1,6 @@
 /**
  * P4C Analytics - Business Revenue Tracking
- * Google Analytics 4 implementation for veteran housing conversions
+ * Google Analytics 4 implementation for veterans & families housing
  */
 
 (function() {
@@ -35,21 +35,21 @@
     window.gtag = gtag;
     gtag('js', new Date());
     gtag('config', GA_MEASUREMENT_ID, {
-      // Custom configurations for veteran housing
+      // Custom configurations for veterans & families housing
       custom_map: {
         'dimension1': 'property_type',
-        'dimension2': 'military_status',
+        'dimension2': 'applicant_type', // veteran, family, general
         'dimension3': 'housing_budget'
       },
       custom_settings: {
-        // Track veteran conversions with higher monetary value
+        // Track all housing applicant types
         'send_page_view': true,
         'allow_google_signals': true,
         'allow_ad_features': true
       }
     });
 
-    console.log('GA: Google Analytics initialized for veteran housing tracking');
+    console.log('GA: Google Analytics initialized for veterans & families housing');
   }
 
   // Track property views (crucial for revenue optimization)
@@ -67,12 +67,22 @@
     });
   }
 
-  // Track lead generation (highest value events)
-  function trackLeadGeneration(formType, propertyId, veteranStatus, leadValue = 0) {
+  // Track lead generation (highest value events) - Veterans & Families
+  function trackLeadGeneration(formType, propertyId, applicantType, leadValue = 0) {
     if (!window.gtag) return;
 
-    // Calculate estimated lead value based on property and veteran status
-    const baseValue = leadValue || (veteranStatus ? 800 : 600); // Higher value for veterans
+    // Calculate estimated lead value based on applicant type
+    // Business model: Families (65%), Veterans (25%), General (10%)
+    let baseValue = leadValue || 600; // Default family/general value
+    let applicantCategory = 'family'; // Default to families
+
+    if (applicantType === 'veteran') {
+      baseValue = leadValue || 800; // Higher lifetime value for veterans
+      applicantCategory = 'veteran';
+    } else if (applicantType === 'general') {
+      baseValue = leadValue || 500; // Lower value for general inquiries
+      applicantCategory = 'general';
+    }
 
     gtag('event', 'generate_lead', {
       event_category: 'conversion',
@@ -80,7 +90,7 @@
       value: baseValue,
       currency: 'USD',
       form_type: formType,
-      veteran_applicant: veteranStatus,
+      applicant_type: applicantCategory,
       lead_source: 'website_direct'
     });
 
@@ -88,7 +98,7 @@
     gtag('event', 'add_to_cart', {
       items: [{
         item_id: propertyId,
-        item_name: `${propertyId} - ${veteranStatus ? 'Veteran' : 'General'} Application`,
+        item_name: `${propertyId} - ${applicantCategory} Application`,
         category: 'Housing_Applications',
         quantity: 1,
         price: baseValue,

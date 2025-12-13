@@ -73,14 +73,28 @@
       data.timestamp = new Date().toISOString();
       data.page = window.location.pathname;
 
-      // Track lead generation with analytics
-      if (window.P4CAnalytics && data['veteran']) {
+      // Track lead generation with analytics - Veterans & Families
+      if (window.P4CAnalytics) {
         // Extract property ID from form action or hidden input
         const propertyId = data._subject?.replace('Lead: ', '') || 'unknown-property';
-        const veteranStatus = data.veteran || false;
-        const leadValue = data._subject ? (veteranStatus ? 800 : 600) : 200; // Higher value for veterans
+        const isVeteran = data.veteran || false;
 
-        window.P4CAnalytics.trackLeadGeneration('property_inquiry', propertyId, veteranStatus, leadValue);
+        // Determine applicant type based on form data and business model
+        let applicantType = 'family'; // Default to families (65% of business)
+
+        if (isVeteran) {
+          applicantType = 'veteran'; // Veterans (25%)
+        } else if (data._subject && data._subject.includes('general')) {
+          applicantType = 'general'; // General inquiries (10%)
+        }
+        // Most form submissions will be families - our primary market
+
+        // Calculate lead value based on applicant type
+        const leadValue = (applicantType === 'veteran') ? 800 :
+                         (applicantType === 'family') ? 600 :
+                         500; // General
+
+        window.P4CAnalytics.trackLeadGeneration('property_inquiry', propertyId, applicantType, leadValue);
       }
 
       // Simulate form submission (replace with actual endpoint)
