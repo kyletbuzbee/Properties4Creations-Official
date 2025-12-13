@@ -1,0 +1,243 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Business Analytics Dashboard • Properties 4 Creations</title>
+    <meta name="description" content="Business performance tracking and revenue analytics for veteran housing services.">
+
+    <!-- Styles -->
+    <link rel="stylesheet" href="css/styles-prod.css">
+    <link href="https://fonts.googleapis.com/css2?family=Merriweather:wght@400;700&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+    <style>
+        :root {
+            --corporate-navy: #1e293b;
+            --corporate-emerald: #059669;
+        }
+        body { font-family: 'Merriweather', 'Inter', system-ui, -apple-system, sans-serif; }
+    </style>
+</head>
+<body class="bg-brand-beige">
+    <!-- Accessibility: Skip to main content -->
+    <a href="#main" class="skip-to-content">Skip to main content</a>
+
+    <!-- Header -->
+    <header class="fixed top-0 left-0 right-0 bg-gray-900/95 backdrop-blur-lg border-b border-white/10 z-50">
+        <div class="max-w-7xl mx-auto px-4 py-3">
+            <div class="flex items-center justify-between">
+                <a href="/" class="font-bold text-white text-xl">Properties 4 Creations</a>
+                <nav class="flex items-center gap-4">
+                    <a href="/" class="text-white/80 hover:text-white text-sm">Website</a>
+                    <span class="text-white/60 text-sm">Analytics Dashboard</span>
+                </nav>
+            </div>
+        </div>
+    </header>
+
+    <!-- Main Content -->
+    <main id="main" class="pt-20 pb-16">
+        <div class="max-w-7xl mx-auto px-4">
+
+            <!-- Header Section -->
+            <div class="text-center mb-12">
+                <h1 class="text-4xl font-bold text-brand-navy mb-4">Business Analytics Dashboard</h1>
+                <p class="text-lg text-slate-600 max-w-2xl mx-auto">
+                    Real-time insights into your veteran housing business performance, revenue tracking, and growth metrics.
+                </p>
+            </div>
+
+            <!-- Revenue Dashboard Container -->
+            <div id="p4c-revenue-dashboard"></div>
+
+            <!-- Additional Analytics Sections -->
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-8 mt-12">
+
+                <!-- Marketing Performance -->
+                <div class="bg-white rounded-xl shadow-lg p-6">
+                    <h2 class="text-xl font-bold text-brand-navy mb-4">Marketing Channels Performance</h2>
+                    <div class="space-y-3">
+                        <div class="flex justify-between items-center p-3 bg-green-50 rounded-lg">
+                            <span class="text-sm font-medium">Direct Website Traffic</span>
+                            <span class="text-sm font-bold text-green-600">Leading Source</span>
+                        </div>
+                        <div class="flex justify-between items-center p-3 bg-blue-50 rounded-lg">
+                            <span class="text-sm font-medium">Veteran Social Media</span>
+                            <span class="text-sm font-bold text-blue-600">Strong Performance</span>
+                        </div>
+                        <div class="flex justify-between items-center p-3 bg-amber-50 rounded-lg">
+                            <span class="text-sm font-medium">Local Referrals</span>
+                            <span class="text-sm font-bold text-amber-600">Growing Channel</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Business Goals -->
+                <div class="bg-white rounded-xl shadow-lg p-6">
+                    <h2 class="text-xl font-bold text-brand-navy mb-4">2025 Growth Goals</h2>
+                    <div class="space-y-4">
+                        <div class="flex items-center justify-between">
+                            <span class="text-sm font-medium">Monthly Veteran Families</span>
+                            <span class="text-sm font-bold">70+ (Current: 40)</span>
+                        </div>
+                        <div class="w-full bg-slate-200 rounded-full h-2">
+                            <div class="bg-green-500 h-2 rounded-full" style="width: 57%"></div>
+                        </div>
+                        <div class="flex items-center justify-between">
+                            <span class="text-sm font-medium">Property Portfolio</span>
+                            <span class="text-sm font-bold">35+ (Current: 25)</span>
+                        </div>
+                        <div class="w-full bg-slate-200 rounded-full h-2">
+                            <div class="bg-blue-500 h-2 rounded-full" style="width: 71%"></div>
+                        </div>
+                        <div class="flex items-center justify-between">
+                            <span class="text-sm font-medium">Monthly Revenue</span>
+                            <span class="text-sm font-bold">$500K (Current: $180K)</span>
+                        </div>
+                        <div class="w-full bg-slate-200 rounded-full h-2">
+                            <div class="bg-purple-500 h-2 rounded-full" style="width: 36%"></div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Revenue Opportunities -->
+                <div class="bg-white rounded-xl shadow-lg p-6">
+                    <h2 class="text-xl font-bold text-brand-navy mb-4">Revenue Optimization Suggestions</h2>
+                    <div class="space-y-4">
+                        <div class="p-4 border border-green-200 bg-green-50 rounded-lg">
+                            <h4 class="font-semibold text-green-800 mb-2">SEO Enhancement</h4>
+                            <p class="text-sm text-green-700 mb-2">
+                                Target "veteran housing Texas" and "HUD-VASH homes East Texas" keywords
+                            </p>
+                            <div class="text-xs text-green-600">Potential: $2,500/month additional revenue</div>
+                        </div>
+                        <div class="p-4 border border-blue-200 bg-blue-50 rounded-lg">
+                            <h4 class="font-semibold text-blue-800 mb-2">Veteran Service Partnerships</h4>
+                            <p class="text-sm text-blue-700 mb-2">
+                                Direct partnerships with DAV, VFW, and VA medical centers
+                            </p>
+                            <div class="text-xs text-blue-600">Potential: 15+ direct referrals/month</div>
+                        </div>
+                        <div class="p-4 border border-amber-200 bg-amber-50 rounded-lg">
+                            <h4 class="font-semibold text-amber-800 mb-2">Property Development Expansion</h4>
+                            <p class="text-sm text-amber-700 mb-2">
+                                Acquire 3 additional properties in strategic locations
+                            </p>
+                            <div class="text-xs text-amber-600">Potential: $150K additional monthly revenue</div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Performance Alerts -->
+                <div class="bg-white rounded-xl shadow-lg p-6">
+                    <h2 class="text-xl font-bold text-brand-navy mb-4">Performance Alerts & Actions</h2>
+                    <div class="space-y-3">
+                        <div class="p-3 bg-yellow-50 border border-yellow-200 rounded-lg">
+                            <div class="flex items-start gap-2">
+                                <span class="text-yellow-500 text-lg">⚠️</span>
+                                <div>
+                                    <h4 class="text-sm font-semibold text-yellow-800">Mobile Conversion Rate Below Target</h4>
+                                    <p class="text-xs text-yellow-700 mt-1">Optimize mobile form UX - currently 35% vs target 50%</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="p-3 bg-green-50 border border-green-200 rounded-lg">
+                            <div class="flex items-start gap-2">
+                                <span class="text-green-500 text-lg">✅</span>
+                                <div>
+                                    <h4 class="text-sm font-semibold text-green-800">Veteran Lead Quality Excellent</h4>
+                                    <p class="text-xs text-green-700 mt-1">85% conversion rate on veteran applicants</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="p-3 bg-blue-50 border border-blue-200 rounded-lg">
+                            <div class="flex items-start gap-2">
+                                <span class="text-blue-500 text-lg">📈</span>
+                                <div>
+                                    <h4 class="text-sm font-semibold text-blue-800">Property Views Increasing</h4>
+                                    <p class="text-xs text-blue-700 mt-1">25% growth in property page views this month</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+
+            <!-- Export Data Section -->
+            <div class="mt-12 bg-white rounded-xl shadow-lg p-6">
+                <h2 class="text-xl font-bold text-brand-navy mb-4">Data Export & Reporting</h2>
+                <div class="flex flex-wrap gap-4">
+                    <button onclick="exportAnalyticsData()"
+                            class="px-6 py-2 bg-brand-wood text-white rounded-lg hover:bg-brand-walnut transition-colors">
+                        Export Analytics Data
+                    </button>
+                    <button onclick="exportLeadData()"
+                            class="px-6 py-2 bg-brand-navy text-white rounded-lg hover:bg-brand-walnut transition-colors">
+                        Export Lead Data
+                    </button>
+                    <button onclick="generateMonthlyReport()"
+                            class="px-6 py-2 bg-slate-600 text-white rounded-lg hover:bg-slate-700 transition-colors">
+                        Generate Monthly Report
+                    </button>
+                </div>
+            </div>
+
+        </div>
+    </main>
+
+    <!-- Scripts -->
+    <script src="js/component-loader.js" defer></script>
+    <script src="js/analytics.js" defer></script>
+    <script src="js/revenue-dashboard.js" defer></script>
+
+    <script>
+        // Export functions
+        function exportAnalyticsData() {
+            const data = window.P4CRevenueDashboard?.metrics || [];
+            downloadJSON(data, 'analytics-data.json');
+        }
+
+        function exportLeadData() {
+            const leads = (window.P4CRevenueDashboard?.metrics || []).filter(m => m.type === 'lead_submitted');
+            downloadJSON(leads, 'lead-data.json');
+        }
+
+        function generateMonthlyReport() {
+            const report = {
+                generated: new Date().toISOString(),
+                summary: {
+                    totalRevenue: '$' + ((window.P4CRevenueDashboard?.metrics || [])
+                        .filter(m => m.type === 'lead_revenue')
+                        .reduce((sum, m) => sum + m.value, 0)).toLocaleString(),
+                    totalLeads: (window.P4CRevenueDashboard?.metrics || [])
+                        .filter(m => m.type === 'lead_submitted').length,
+                    veteranLeads: (window.P4CRevenueDashboard?.metrics || [])
+                        .filter(m => m.type === 'lead_submitted' && m.extra?.isVeteran).length
+                }
+            };
+            downloadJSON(report, 'monthly-report.json');
+        }
+
+        function downloadJSON(data, filename) {
+            const blob = new Blob([JSON.stringify(data, null, 2)], { type: 'application/json' });
+            const url = URL.createObjectURL(blob);
+            const a = document.createElement('a');
+            a.href = url;
+            a.download = filename;
+            document.body.appendChild(a);
+            a.click();
+            document.body.removeChild(a);
+            URL.revokeObjectURL(url);
+        }
+
+        // Initialize dashboard if scripts loaded
+        setTimeout(() => {
+            if (window.P4CRevenueDashboard) {
+                window.P4CRevenueDashboard.init();
+            }
+        }, 100);
+    </script>
+
+</body>
+</html>

@@ -73,6 +73,16 @@
       data.timestamp = new Date().toISOString();
       data.page = window.location.pathname;
 
+      // Track lead generation with analytics
+      if (window.P4CAnalytics && data['veteran']) {
+        // Extract property ID from form action or hidden input
+        const propertyId = data._subject?.replace('Lead: ', '') || 'unknown-property';
+        const veteranStatus = data.veteran || false;
+        const leadValue = data._subject ? (veteranStatus ? 800 : 600) : 200; // Higher value for veterans
+
+        window.P4CAnalytics.trackLeadGeneration('property_inquiry', propertyId, veteranStatus, leadValue);
+      }
+
       // Simulate form submission (replace with actual endpoint)
       console.log('📤 Form submission data:', data);
 
